@@ -1,0 +1,103 @@
+// Colors
+
+$white:                         white;
+
+$red:                           #fb6b75;
+$blue:                          #6977fd;
+$green:                         #7be87a;
+$yellow:                        #fbfb7e;
+
+$gray:                          #bfc9db;
+$gray-dark:                     #8f9ebc;
+$gray-light:                    #f5f8fa;
+
+// UI
+
+$ui-seperator-width:            .5px;
+$ui-seperator-color:            $gray;
+
+// Typography
+
+$type-base-family:              -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !default;
+
+$type-displaylll-size:           4.8rem;
+$type-displaylll-weight:         200;
+$type-displaylll-line-height:    6.4rem;
+$type-displaylll-letter-spacing: tracking-to-ems(7);
+
+$type-displayll-size:           3.2rem;
+$type-displayll-weight:         300;
+$type-displayll-line-height:    4.8rem;
+$type-displayll-letter-spacing: tracking-to-ems(10);
+
+$type-displayl-size:            2.8rem;
+$type-displayl-weight:          300;
+$type-displayl-line-height:     3.4rem;
+$type-displayl-letter-spacing:  tracking-to-ems(13);
+
+$type-displaym-size:            2.2rem;
+$type-displaym-weight:          300;
+$type-displaym-line-height:     2.8rem;
+$type-displaym-letter-spacing:  tracking-to-ems(16);
+
+$type-displays-size:            2.0rem;
+$type-displays-weight:          300;
+$type-displays-line-height:     2.4rem;
+$type-displays-letter-spacing:  tracking-to-ems(19);
+
+$type-headline-size:            1.7rem;
+$type-headline-weight:          500;
+$type-headline-line-height:     2.2rem;
+// $type-headline-letter-spacing:  tracking-to-ems(-24);
+$type-headline-letter-spacing:  0;
+
+$type-body2-size:                1.7rem;
+$type-body2-weight:              normal;
+$type-body2-line-height:         2.4rem;
+// $type-body2-letter-spacing:      tracking-to-ems(-24);
+$type-body2-letter-spacing:      0;
+
+$type-body-size:                1.7rem;
+$type-body-weight:              normal;
+$type-body-line-height:         2.2rem;
+// $type-body-letter-spacing:      tracking-to-ems(-24);
+$type-body-letter-spacing:      0;
+
+$type-callout-size:             1.6rem;
+$type-callout-weight:           normal;
+$type-callout-line-height:      2.1rem;
+$type-callout-letter-spacing:   tracking-to-ems(-20);
+
+$type-subhead-size:             1.5rem;
+$type-subhead-weight:           normal;
+$type-subhead-line-height:      2.0rem;
+$type-subhead-letter-spacing:   tracking-to-ems(-16);
+
+$type-note-size:                1.3rem;
+$type-note-weight:              normal;
+$type-note-line-height:         1.8rem;
+$type-note-letter-spacing:      tracking-to-ems(-6);
+
+$type-caption1-size:            1.2rem;
+$type-caption1-weight:          normal;
+$type-caption1-line-height:     1.6rem;
+$type-caption1-letter-spacing:  0;
+
+$type-caption2-size:            1.1rem;
+$type-caption2-weight:          normal;
+$type-caption2-line-height:     1.3rem;
+$type-caption2-letter-spacing:  tracking-to-ems(6);
+
+// Media Query
+
+$breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
+
+$media-expressions: (
+  'screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
+)

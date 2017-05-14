@@ -1,0 +1,23 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="/css/{{ index .Site.Data.css.hash "main.css" }}" />
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    <main>
+      <article>
+        <h1>{{ .Title }}</h1>
+        {{ .Content }}
+      </article>
+    </main>
+    {{ partial "footer.html" . }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/{{ index .Site.Data.js.hash "main.js" }}"></script>
+  </body>
+</html>

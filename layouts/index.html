@@ -1,0 +1,194 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{{ .Title }}</title>
+    <link rel="stylesheet" href="/css/{{ index .Site.Data.css.hash "main.css" }}" />
+  </head>
+  <body>
+    {{ partial "header.html" . }}
+    <main>
+      <section class="hero">
+        <h1>I reimagine experiences for ambitious software.</h1>
+      </section>
+      <section class="experience">
+        <div class="wrapper">
+          <p>From 2003, I made Flash and CSS websites and rode the Web 2.0 wave.</p>
+          <p>From 2008, I started focusing on UI and UX and helped launch software products for businesses in various industries.</p>
+          <p>These are some of the companies and brands I have created for.</p>
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <article class="swiper-slide card">
+              <figure>
+                <img src="/img/logo_mydoc.svg" alt="MyDoc logo">
+                <figcaption>
+                  <div>
+                    Mydoc
+                    <div class="category">Healthcare</div>
+                  </div>
+                  <a href="#">Details</a>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="swiper-slide card">
+              <figure>
+                <img src="/img/logo_intersective.svg" alt="Intersective logo">
+                <figcaption>
+                  <div>
+                    Intersective
+                    <div class="category">Education</div>
+                  </div>
+                  <a href="#">Details</a>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="swiper-slide card">
+              <figure>
+                <img src="/img/logo_singaporebrides.png" width="150" height="40" alt="SingaporeBrides logo">
+                <figcaption>
+                  <div>
+                    SingaporeBrides
+                    <div class="category">Weddings</div>
+                  </div>
+                  <a href="#">Details</a>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="swiper-slide card">
+              <figure>
+                <img src="/img/logo_verifone.svg" alt="Verifone logo">
+                <figcaption>
+                  <div>
+                    Verifone
+                    <div class="category">Payments</div>
+                  </div>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="swiper-slide card">
+              <figure>
+                <img src="/img/logo_mozat.png" width="125" height="47" alt="Mozat logo">
+                <figcaption>
+                  <div>
+                    Mozat
+                    <div class="category">Mobile</div>
+                  </div>
+                  <a href="#">Details</a>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="swiper-slide card">
+              <figure>
+                <img src="/img/logo_sony.svg" alt="SONY logo">
+                <figcaption>
+                  <div>
+                    SONY
+                    <div class="category">Consumer Electronics</div>
+                  </div>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="swiper-slide card">
+              <figure>
+                <img src="/img/logo_yahoo.svg" alt="Yahoo logo">
+                <figcaption>
+                  <div>
+                    Yahoo
+                    <div class="category">Internet Services</div>
+                  </div>
+                </figcaption>
+              </figure>
+            </article>
+          </div>
+        </div>
+      </section>
+      <section class="services">
+        <div class="wrapper">
+          <p>These common terms describe my services I’m currently focused on.</p>
+          <div class="pills">
+            <span class="pill pill-white">Product Design</span>
+            <span class="pill pill-white">User Interface</span>
+            <span class="pill pill-white">UX</span>
+            <span class="pill pill-white">User Experience</span>
+            <span class="pill pill-white">UI/UX</span>
+            <span class="pill pill-white">App Design</span>
+            <span class="pill pill-white">UI Design</span>
+            <span class="pill pill-white">Design Thinking</span>
+            <span class="pill pill-white">iOS Apps</span>
+            <span class="pill pill-white">Android Apps</span>
+            <span class="pill pill-white">Material Design</span>
+            <span class="pill pill-white">Graphic Design</span>
+          </div>
+        </div>
+      </section>
+      <section class="client-work">
+        <header>
+          <h2>
+            <a href="#">Client Work</a>
+          </h2>
+        </header>
+        <div class="wrapper">
+          <p>You may be interested in these case studies.</p>
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            <article class="swiper-slide card">
+              <figure>
+                <div class="work-preview" style="background-image:url('/img/work_preview_mydoc.png')"></div>
+                <figcaption>
+                  <div>
+                    <h3>Mydoc</h3>
+                    <div class="category">Healthcare</div>
+                  </div>
+                  <p>A better engagement platform for patients and healthcare professionals, enhanced with artificial intelligence.</p>
+                </figcaption>
+              </figure>
+              <a href="#">View More</a>
+            </article>
+            <article class="swiper-slide card">
+              <figure>
+                <div class="work-preview" style="background-image:url('/img/work_preview_intersective.png')"></div>
+                <figcaption>
+                  <div>
+                    <h3>Intersective</h3>
+                    <div class="category">Education</div>
+                  </div>
+                  <p>Increased student participation through gamification, personal analytics and familiar  social experience
+                </figcaption>
+              </figure>
+              <a href="#">View More</a>
+            </article>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+      <section class="ideas">
+        <header>
+          <h2>
+            <a href="#">Ideas</a>
+          </h2>
+        </header>
+        <div class="wrapper">
+          <p>Being an introspective person who reads a lot, I have pondered deeply on various subjects of interest. These articles discuss ideas related not only to my fields of expertise but also on Psychology, Philosophy and Cooking.</p>
+          <div class="deck">
+            {{ range .Data.Pages }}
+            <article class="card">
+              <h3>{{ .Title }}</h3>
+              <div class="topic-label">{{ .Params.Topic }}</div>
+              <div class="topic-icon topic-{{ .Params.Topic }}"></div>
+              <a href="{{ .RelPermalink }}">Read More</a>
+            </article>
+            {{ end }}
+          </div>
+        </div>
+      </section>
+    </main>
+    {{ partial "footer.html" . }}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/{{ index .Site.Data.js.hash "main.js" }}"></script>
+  </body>
+</html>

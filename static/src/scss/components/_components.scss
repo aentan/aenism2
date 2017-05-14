@@ -1,0 +1,53 @@
+// Pill
+
+.pill {
+  @include type-note();
+
+  border-radius:        15px;
+  display:              inline-block;
+  padding:              6px 12px;
+  text-decoration:      none;
+  transition:           background-color .5s;
+}
+
+.pill-red {
+  background-color:     $red;
+  color:                $white;
+
+  &:hover {
+    background-color:   darken($red, 15%);
+  }
+}
+
+.pill-blue {
+  background-color:     $blue;
+  color:                $white;
+
+  &:hover {
+    background-color:   darken($blue, 15%);
+  }
+}
+
+.pill-white {
+  background-color:     $white;
+  color:                $gray-dark;
+}
+
+// Card
+
+.card {
+  background-color:     $white;
+  border-radius:        10px;
+}
+
+// Swiper
+
+.swiper-pagination-bullet {
+  background-color:     $gray-dark;
+  opacity:              .25;
+}
+
+.swiper-pagination-bullet-active {
+  background-color:     $blue;
+  opacity:              1;
+}

@@ -1,0 +1,103 @@
+@mixin type-displaylll() {
+  font-size:      $type-displaylll-size;
+  font-family:    $type-base-family;
+  font-weight:    $type-displaylll-weight;
+  line-height:    $type-displaylll-line-height;
+  letter-spacing: $type-displaylll-letter-spacing;
+}
+
+@mixin type-displayll() {
+  font-size:      $type-displayll-size;
+  font-family:    $type-base-family;
+  font-weight:    $type-displayll-weight;
+  line-height:    $type-displayll-line-height;
+  letter-spacing: $type-displayll-letter-spacing;
+}
+
+@mixin type-displayl() {
+  font-size:      $type-displayl-size;
+  font-family:    $type-base-family;
+  font-weight:    $type-displayl-weight;
+  line-height:    $type-displayl-line-height;
+  letter-spacing: $type-displayl-letter-spacing;
+}
+
+@mixin type-displaym() {
+  font-size:      $type-displaym-size;
+  font-family:    $type-base-family;
+  font-weight:    $type-displaym-weight;
+  line-height:    $type-displaym-line-height;
+  letter-spacing: $type-displaym-letter-spacing;
+}
+
+@mixin type-displays() {
+  font-size:      $type-displays-size;
+  font-family:    $type-base-family;
+  font-weight:    $type-displays-weight;
+  line-height:    $type-displays-line-height;
+  letter-spacing: $type-displays-letter-spacing;
+}
+
+@mixin type-headline() {
+  font-size:      $type-headline-size;
+  font-family:    $type-base-family;
+  font-weight:    $type-headline-weight;
+  line-height:    $type-headline-line-height;
+  letter-spacing: $type-headline-letter-spacing;
+}
+
+@mixin type-body2() {
+  font-size:      $type-body2-size;
+  font-family:    $type-base-family;
+  font-weight:    $type-body2-weight;
+  line-height:    $type-body2-line-height;
+  letter-spacing: $type-body2-letter-spacing;
+}
+
+@mixin type-body() {
+  font-size:      $type-body-size;
+  font-family:    $type-base-family;
+  font-weight:    $type-body-weight;
+  line-height:    $type-body-line-height;
+  letter-spacing: $type-body-letter-spacing;
+}
+
+@mixin type-callout() {
+  font-size:      $type-callout-size;
+  font-family:    $type-base-family;
+  font-weight:    $type-callout-weight;
+  line-height:    $type-callout-line-height;
+  letter-spacing: $type-callout-letter-spacing;
+}
+
+@mixin type-subhead() {
+  font-size:      $type-subhead-size;
+  font-family:    $type-base-family;
+  font-weight:    $type-subhead-weight;
+  line-height:    $type-subhead-line-height;
+  letter-spacing: $type-subhead-letter-spacing;
+}
+
+@mixin type-note() {
+  font-size:      $type-note-size;
+  font-family:    $type-base-family;
+  font-weight:    $type-note-weight;
+  line-height:    $type-note-line-height;
+  letter-spacing: $type-note-letter-spacing;
+}
+
+@mixin type-caption1() {
+  font-size:      $type-caption1-size;
+  font-family:    $type-base-family;
+  font-weight:    $type-caption1-weight;
+  line-height:    $type-caption1-line-height;
+  letter-spacing: $type-caption1-letter-spacing;
+}
+
+@mixin type-caption2() {
+  font-size:      $type-caption2-size;
+  font-family:    $type-base-family;
+  font-weight:    $type-caption2-weight;
+  line-height:    $type-caption2-line-height;
+  letter-spacing: $type-caption2-letter-spacing;
+}

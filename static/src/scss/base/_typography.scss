@@ -1,0 +1,13 @@
+html {
+  font-size:                62.5%;
+}
+
+body {
+  @include type-body();
+  color:                    $gray-dark;
+}
+
+a {
+  color:                    $blue;
+  text-decoration:          none;
+}

@@ -1,0 +1,8 @@
+baseURL: "https://aenism.com/"
+languageCode: "en-us"
+title: "Aenism"
+permalinks:
+  article: /:title/
+taxonomies:
+  category: "categories"
+  tag: "tags"
