@@ -7,7 +7,63 @@ body {
   color:                    $gray-dark;
 }
 
+h2 {
+  @include type-displayl();
+}
+
+h3 {
+  @include type-displaym();
+}
+
+h4,
+.lead {
+  @include type-displays();
+}
+
 a {
   color:                    $blue;
   text-decoration:          none;
+}
+
+hr {
+  background-color:         transparent;
+  border:                   0;
+  font-size:                24px;
+  height:                   20px;
+  margin:                   30px 0;
+  text-align:               center;
+  text-shadow:              0px 2px 3px rgba(0, 0, 0, 0.45);
+
+  &:before {
+    content:                "🍪";
+  }
+
+  @include media(">=tablet") {
+    margin:                 60px 0;
+  }
+}
+
+main > article {
+  p {
+    @include type-body2();
+
+    margin:                 0;
+    padding:                0;
+
+    +p {
+      text-indent:          1.5rem;
+
+      @include media(">=tablet") {
+        text-indent:        3rem;
+      }
+    }
+
+    &.lead {
+      margin-bottom:        30px;
+
+      + p {
+        text-indent:        0;
+      }
+    }
+  }
 }

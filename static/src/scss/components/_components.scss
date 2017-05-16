@@ -7,7 +7,7 @@
   display:              inline-block;
   padding:              6px 12px;
   text-decoration:      none;
-  transition:           background-color .5s;
+  transition:           background-color .25s;
 }
 
 .pill-red {
@@ -38,6 +38,7 @@
 .card {
   background-color:     $white;
   border-radius:        10px;
+  color:                $gray-dark;
 }
 
 // Swiper

@@ -3,7 +3,8 @@ var gulp         = require("gulp"),
     sass         = require("gulp-sass"),
     autoprefixer = require("gulp-autoprefixer"),
     hash         = require("gulp-hash"),
-    del          = require("del")
+    del          = require("del"),
+    svgmin       = require('gulp-svgmin')
 
 // Compile SCSS files to CSS
 gulp.task("scss", function () {
@@ -12,7 +13,6 @@ gulp.task("scss", function () {
     del(["static/css/**/*"])
 
     //compile hashed css files
-    // gulp.src("static/src/scss/**/*.scss")
     gulp.src(["static/vendor/css/**/*", "static/src/scss/main.scss"])
         .pipe(sass({
             outputStyle : "compressed"
@@ -44,6 +44,17 @@ gulp.task("img", function () {
         //.pipe(gulp.dest("data/img"))
 })
 
+// Hash SVG
+gulp.task("svg", function () {
+    del(["static/svg/**/*"])
+    gulp.src("static/src/svg/**/*")
+        .pipe(svgmin())
+        // .pipe(hash())
+        .pipe(gulp.dest("layouts/partials/svg"))
+        // .pipe(hash.manifest("hash.json"))
+        //.pipe(gulp.dest("data/img"))
+})
+
 // Hash javascript
 gulp.task("js", function () {
     del(["static/js/**/*"])
@@ -56,9 +67,10 @@ gulp.task("js", function () {
 })
 
 // Watch asset folder for changes
-gulp.task("watch", ["scss", "img", "js"], function () {
+gulp.task("watch", ["scss", "img", "svg", "js"], function () {
     gulp.watch("static/src/scss/**/*", ["scss"])
     gulp.watch("static/src/img/**/*", ["img"])
+    gulp.watch("static/src/svg/**/*", ["svg"])
     gulp.watch("static/src/js/**/*", ["js"])
 })
 

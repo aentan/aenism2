@@ -12,8 +12,12 @@
     {{ partial "header.html" . }}
     <main>
       <article>
-        <h1>{{ .Title }}</h1>
-        {{ .Content }}
+        <header>
+          <h1>{{ .Title }}</h1>
+        </header>
+        <div class="wrapper">
+          {{ .Content }}
+        </div>
       </article>
     </main>
     {{ partial "footer.html" . }}

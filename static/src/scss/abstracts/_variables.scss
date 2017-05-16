@@ -13,7 +13,7 @@ $gray-light:                    #f5f8fa;
 
 // UI
 
-$ui-seperator-width:            .5px;
+$ui-seperator-width:            1px;
 $ui-seperator-color:            $gray;
 
 // Typography
@@ -90,7 +90,7 @@ $type-caption2-letter-spacing:  tracking-to-ems(6);
 
 // Media Query
 
-$breakpoints: (phone: 320px, tablet: 768px, desktop: 1024px);
+$breakpoints: (phone: 374px, tablet: 767px, desktop: 1023px);
 
 $media-expressions: (
   'screen': 'screen',
@@ -100,4 +100,4 @@ $media-expressions: (
   'portrait': '(orientation: portrait)',
   'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
   'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
-)
+);

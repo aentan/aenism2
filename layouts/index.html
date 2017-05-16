@@ -16,19 +16,19 @@
       </section>
       <section class="experience">
         <div class="wrapper">
-          <p>From 2003, I made Flash and CSS websites and rode the Web 2.0 wave.</p>
-          <p>From 2008, I started focusing on UI and UX and helped launch software products for businesses in various industries.</p>
+          <p>I am Aen, a software product designer.</p>
+          <p>From 2003, I made Flash and CSS websites and rode the Web 2.0 wave. From 2008, I started focusing on UI and UX and helped launch software products for businesses in various industries.</p>
           <p>These are some of the companies and brands I have created for.</p>
         </div>
         <div class="swiper-container">
           <div class="swiper-wrapper">
             <article class="swiper-slide card">
               <figure>
-                <img src="/img/logo_mydoc.svg" alt="MyDoc logo">
+                {{ partial "svg/logo_mydoc.svg" . }}
                 <figcaption>
                   <div>
                     Mydoc
-                    <div class="category">Healthcare</div>
+                    <div class="topic">Healthcare</div>
                   </div>
                   <a href="#">Details</a>
                 </figcaption>
@@ -36,11 +36,11 @@
             </article>
             <article class="swiper-slide card">
               <figure>
-                <img src="/img/logo_intersective.svg" alt="Intersective logo">
+                {{ partial "svg/logo_intersective.svg" . }}
                 <figcaption>
                   <div>
                     Intersective
-                    <div class="category">Education</div>
+                    <div class="topic">Education</div>
                   </div>
                   <a href="#">Details</a>
                 </figcaption>
@@ -48,11 +48,11 @@
             </article>
             <article class="swiper-slide card">
               <figure>
-                <img src="/img/logo_singaporebrides.png" width="150" height="40" alt="SingaporeBrides logo">
+                {{ partial "svg/logo_singaporebrides.svg" . }}
                 <figcaption>
                   <div>
                     SingaporeBrides
-                    <div class="category">Weddings</div>
+                    <div class="topic">Weddings</div>
                   </div>
                   <a href="#">Details</a>
                 </figcaption>
@@ -60,22 +60,22 @@
             </article>
             <article class="swiper-slide card">
               <figure>
-                <img src="/img/logo_verifone.svg" alt="Verifone logo">
+                {{ partial "svg/logo_verifone.svg" . }}
                 <figcaption>
                   <div>
                     Verifone
-                    <div class="category">Payments</div>
+                    <div class="topic">Payments</div>
                   </div>
                 </figcaption>
               </figure>
             </article>
             <article class="swiper-slide card">
               <figure>
-                <img src="/img/logo_mozat.png" width="125" height="47" alt="Mozat logo">
+                {{ partial "svg/logo_mozat.svg" . }}
                 <figcaption>
                   <div>
                     Mozat
-                    <div class="category">Mobile</div>
+                    <div class="topic">Mobile</div>
                   </div>
                   <a href="#">Details</a>
                 </figcaption>
@@ -83,22 +83,45 @@
             </article>
             <article class="swiper-slide card">
               <figure>
-                <img src="/img/logo_sony.svg" alt="SONY logo">
+                {{ partial "svg/logo_toc.svg" . }}
                 <figcaption>
                   <div>
-                    SONY
-                    <div class="category">Consumer Electronics</div>
+                    The Open Company
+                    <div class="topic">Useful Goods</div>
+                  </div>
+                  <a href="#">Details</a>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="swiper-slide card">
+              <figure>
+                {{ partial "svg/logo_hungrygowhere.svg" . }}
+                <figcaption>
+                  <div>
+                    HungryGoWhere
+                    <div class="topic">Food</div>
                   </div>
                 </figcaption>
               </figure>
             </article>
             <article class="swiper-slide card">
               <figure>
-                <img src="/img/logo_yahoo.svg" alt="Yahoo logo">
+                {{ partial "svg/logo_sony.svg" . }}
+                <figcaption>
+                  <div>
+                    SONY
+                    <div class="topic">Consumer Electronics</div>
+                  </div>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="swiper-slide card">
+              <figure>
+                {{ partial "svg/logo_yahoo.svg" . }}
                 <figcaption>
                   <div>
                     Yahoo
-                    <div class="category">Internet Services</div>
+                    <div class="topic">Internet Services</div>
                   </div>
                 </figcaption>
               </figure>
@@ -108,7 +131,9 @@
       </section>
       <section class="services">
         <div class="wrapper">
-          <p>These common terms describe my services I’m currently focused on.</p>
+          <p>I have many skills. The services I’m currently focused on providing can be described by these common terms.</p>
+        </div>
+        <div class="wrapper">
           <div class="pills">
             <span class="pill pill-white">Product Design</span>
             <span class="pill pill-white">User Interface</span>
@@ -125,6 +150,30 @@
           </div>
         </div>
       </section>
+      <section class="accolades">
+        <div class="wrapper">
+          <p>These are some of the publications my work has been featured in.</p>
+        </div>
+        <div class="logos">
+          {{ partial "svg/logo_techcrunch.svg" . }}
+          {{ partial "svg/logo_smashingmag.svg" . }}
+          {{ partial "svg/logo_coolhunting.svg" . }}
+          {{ partial "svg/logo_tnw.svg" . }}
+          {{ partial "svg/logo_lifehacker.svg" . }}
+          {{ partial "svg/logo_ixda.svg" . }}
+          {{ partial "svg/logo_boingboing.svg" . }}
+          {{ partial "svg/logo_cnbc.svg" . }}
+          {{ partial "svg/logo_rockport.svg" . }}
+          {{ partial "svg/logo_designdesign.svg" . }}
+          {{ partial "svg/logo_designmodo.svg" . }}
+          {{ partial "svg/logo_fastcodesign.svg" . }}
+          {{ partial "svg/logo_gestalten.svg" . }}
+          {{ partial "svg/logo_upout.svg" . }}
+          {{ partial "svg/logo_bltd.svg" . }}
+          {{ partial "svg/logo_up.svg" . }}
+          {{ partial "svg/logo_barcamp.svg" . }}
+        </div>
+      </section>
       <section class="client-work">
         <header>
           <h2>
@@ -136,32 +185,21 @@
         </div>
         <div class="swiper-container">
           <div class="swiper-wrapper">
+            {{ range where .Data.Pages "Section" "work" }}
             <article class="swiper-slide card">
               <figure>
-                <div class="work-preview" style="background-image:url('/img/work_preview_mydoc.png')"></div>
+                <div class="work-preview" style="background-image:url('{{ .Params.Image }}')"></div>
                 <figcaption>
                   <div>
-                    <h3>Mydoc</h3>
-                    <div class="category">Healthcare</div>
+                    <h3>{{ .Title }}</h3>
+                    <div class="topic">{{ .Params.Topic }}</div>
                   </div>
-                  <p>A better engagement platform for patients and healthcare professionals, enhanced with artificial intelligence.</p>
+                  <p>{{ .Params.Description }}</p>
                 </figcaption>
               </figure>
-              <a href="#">View More</a>
+              <a href="{{ .RelPermalink }}">Read More</a>
             </article>
-            <article class="swiper-slide card">
-              <figure>
-                <div class="work-preview" style="background-image:url('/img/work_preview_intersective.png')"></div>
-                <figcaption>
-                  <div>
-                    <h3>Intersective</h3>
-                    <div class="category">Education</div>
-                  </div>
-                  <p>Increased student participation through gamification, personal analytics and familiar  social experience
-                </figcaption>
-              </figure>
-              <a href="#">View More</a>
-            </article>
+            {{ end }}
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -174,16 +212,16 @@
         </header>
         <div class="wrapper">
           <p>Being an introspective person who reads a lot, I have pondered deeply on various subjects of interest. These articles discuss ideas related not only to my fields of expertise but also on Psychology, Philosophy and Cooking.</p>
-          <div class="deck">
-            {{ range .Data.Pages }}
-            <article class="card">
-              <h3>{{ .Title }}</h3>
-              <div class="topic-label">{{ .Params.Topic }}</div>
-              <div class="topic-icon topic-{{ .Params.Topic }}"></div>
-              <a href="{{ .RelPermalink }}">Read More</a>
-            </article>
-            {{ end }}
-          </div>
+        </div>
+        <div class="deck">
+          {{ range where .Data.Pages "Section" "ideas" }}
+          <article class="card">
+            <h3>{{ .Title }}</h3>
+            <div class="topic-label">{{ .Params.Topic }}</div>
+            <div class="topic-icon topic-{{ .Params.Topic }}"></div>
+            <a href="{{ .RelPermalink }}">Read More</a>
+          </article>
+          {{ end }}
         </div>
       </section>
     </main>
