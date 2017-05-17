@@ -4,7 +4,8 @@ var gulp         = require("gulp"),
     autoprefixer = require("gulp-autoprefixer"),
     hash         = require("gulp-hash"),
     del          = require("del"),
-    svgmin       = require('gulp-svgmin')
+    svgmin       = require('gulp-svgmin'),
+    imagemin     = require('gulp-imagemin')
 
 // Compile SCSS files to CSS
 gulp.task("scss", function () {
@@ -38,6 +39,7 @@ gulp.task("watch", ["scss"], function () {
 gulp.task("img", function () {
     del(["static/img/**/*"])
     gulp.src("static/src/img/**/*")
+        // .pipe(imagemin())
         // .pipe(hash())
         .pipe(gulp.dest("static/img"))
         // .pipe(hash.manifest("hash.json"))
@@ -71,7 +73,7 @@ gulp.task("watch", ["scss", "img", "svg", "js"], function () {
     gulp.watch("static/src/scss/**/*", ["scss"])
     gulp.watch("static/src/img/**/*", ["img"])
     gulp.watch("static/src/svg/**/*", ["svg"])
-    gulp.watch("static/src/js/**/*", ["js"])
+    gulp.watch(["static/vendor/js/**/*", "static/src/js/**/*"], ["js"])
 })
 
 // Set watch as default task

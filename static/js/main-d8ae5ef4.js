@@ -251,6 +251,335 @@
   
 })(this);
 
+;(function (root, factory) {
+    if (typeof define === "function" && define.amd) {
+        // AMD. Register as an anonymous module.
+        define(["jquery"], factory);
+    } else {
+        // Browser globals
+        factory(root.jQuery);
+    }
+}(this, function ($) {
+    "use strict";
+
+    var ParallaxScroll,
+        defaults = {
+          friction: 0.5,
+          direction: "vertical"
+        },
+        $win = $(window),
+        lastTickTime = 0;
+
+    window.requestAnimationFrame = function (callback) {
+      var currTime = new Date().getTime();
+      var timeToCall = Math.max(0, 5 - (currTime - lastTickTime));
+      var id = window.setTimeout(function () {
+        callback(currTime + timeToCall);
+      }, timeToCall);
+      lastTickTime = currTime + timeToCall;
+      return id;
+    };
+
+    ParallaxScroll = function (background, options) {
+      return {
+        init: function () {
+          this.$background = $(background);
+          this.settings = $.extend({}, defaults, options);
+          this._initStyles();
+          this._bindEvents();
+        },
+        _initStyles: function () {
+          this.$background.css({
+            "background-attachment": "scroll"
+          });
+        },
+        _visibleInViewport: function () {
+          var vpHeight  = $win.height();
+          var rec = this.$background.get(0).getBoundingClientRect();
+          return (rec.top < vpHeight && rec.bottom > 0) || (rec.bottom <= vpHeight && rec.top > vpHeight);
+      	},
+        _bindEvents: function () {
+          var self = this;
+          $win.on("load scroll resize", function () {
+            self._requestTick();
+          });
+        },
+        _requestTick: function () {
+          var self = this;
+          if (!this.ticking) {
+            this.ticking = true;
+            requestAnimationFrame(function () {
+              self._updateBgPos();
+            });
+          }
+        },
+        _updateBgPos: function () {
+          if (this._visibleInViewport()) {
+            var winW = $win.width();
+            var winH = $win.height();
+            var imgW = this.$background.data("width");
+            var imgH = this.$background.data("height");
+            var imgA = imgW / imgH;
+            var bgW = this.$background.outerWidth();
+            var bgH = this.$background.outerHeight();
+            var bgA = bgW / bgH;
+            var revA = bgA < imgA;
+            var bgScale = bgW / imgW;
+            var bgScaledH = imgH * bgScale;
+            var bgScaledW = imgW * bgScale;
+            var bgOffsetTop = this.$background.offset().top;
+            var winScrollTop = $win.scrollTop();
+            var bgScrollTop = winScrollTop - bgOffsetTop;
+            var xDistToMove = winH + bgScaledH;
+            var yDistToMove = winW + bgScaledW;
+            var xf1 = bgScrollTop * (winH / xDistToMove);
+            var xf2 = bgScrollTop / winH;
+            var yf1 = bgScrollTop * (winW / yDistToMove);
+            var yf2 = bgScrollTop / winW;
+            var centerOffsetY = Math.abs(winH - bgScaledH) / 2;
+            centerOffsetY = revA ? centerOffsetY * xf2 : centerOffsetY;
+            var centerOffsetX = Math.abs(winW - bgScaledW) / 2;
+            centerOffsetX = revA ? centerOffsetX : centerOffsetX * yf2;
+            var bgFriction = revA? this.settings.friction * (bgA * 2) : this.settings.friction * bgA;
+            var bgSize;
+            var bgPos;
+            if (this.settings.direction === "horizontal") {
+              bgSize = revA ? winW + "px auto" : "auto " + winH + "px";
+              bgPos = (centerOffsetX - (yf1 * bgFriction)) + "px 50%";
+            } else {
+              bgSize = revA ? "auto " + winH + "px" : winW + "px auto";
+              bgPos = "50% " + ((xf1 * bgFriction) - centerOffsetY) + "px";
+            }
+            this.$background.css({
+              "background-size": bgSize,
+              "background-position": bgPos
+            });
+          }
+          this.ticking = false;
+        }
+      };
+    };
+
+    ParallaxScroll.defaults = defaults;
+    $.fn.parallaxScroll = function (options) {
+      return this.each(function () {
+        new ParallaxScroll(this, options).init();
+      });
+    };
+
+    return ParallaxScroll;
+}));
+/*!
+ * jQuery.scrollTo
+ * Copyright (c) 2007-2015 Ariel Flesler - aflesler ○ gmail • com | http://flesler.blogspot.com
+ * Licensed under MIT
+ * http://flesler.blogspot.com/2007/10/jqueryscrollto.html
+ * @projectDescription Lightweight, cross-browser and highly customizable animated scrolling with jQuery
+ * @author Ariel Flesler
+ * @version 2.1.2
+ */
+;(function(factory) {
+	'use strict';
+	if (typeof define === 'function' && define.amd) {
+		// AMD
+		define(['jquery'], factory);
+	} else if (typeof module !== 'undefined' && module.exports) {
+		// CommonJS
+		module.exports = factory(require('jquery'));
+	} else {
+		// Global
+		factory(jQuery);
+	}
+})(function($) {
+	'use strict';
+
+	var $scrollTo = $.scrollTo = function(target, duration, settings) {
+		return $(window).scrollTo(target, duration, settings);
+	};
+
+	$scrollTo.defaults = {
+		axis:'xy',
+		duration: 0,
+		limit:true
+	};
+
+	function isWin(elem) {
+		return !elem.nodeName ||
+			$.inArray(elem.nodeName.toLowerCase(), ['iframe','#document','html','body']) !== -1;
+	}		
+
+	$.fn.scrollTo = function(target, duration, settings) {
+		if (typeof duration === 'object') {
+			settings = duration;
+			duration = 0;
+		}
+		if (typeof settings === 'function') {
+			settings = { onAfter:settings };
+		}
+		if (target === 'max') {
+			target = 9e9;
+		}
+
+		settings = $.extend({}, $scrollTo.defaults, settings);
+		// Speed is still recognized for backwards compatibility
+		duration = duration || settings.duration;
+		// Make sure the settings are given right
+		var queue = settings.queue && settings.axis.length > 1;
+		if (queue) {
+			// Let's keep the overall duration
+			duration /= 2;
+		}
+		settings.offset = both(settings.offset);
+		settings.over = both(settings.over);
+
+		return this.each(function() {
+			// Null target yields nothing, just like jQuery does
+			if (target === null) return;
+
+			var win = isWin(this),
+				elem = win ? this.contentWindow || window : this,
+				$elem = $(elem),
+				targ = target, 
+				attr = {},
+				toff;
+
+			switch (typeof targ) {
+				// A number will pass the regex
+				case 'number':
+				case 'string':
+					if (/^([+-]=?)?\d+(\.\d+)?(px|%)?$/.test(targ)) {
+						targ = both(targ);
+						// We are done
+						break;
+					}
+					// Relative/Absolute selector
+					targ = win ? $(targ) : $(targ, elem);
+					/* falls through */
+				case 'object':
+					if (targ.length === 0) return;
+					// DOMElement / jQuery
+					if (targ.is || targ.style) {
+						// Get the real position of the target
+						toff = (targ = $(targ)).offset();
+					}
+			}
+
+			var offset = $.isFunction(settings.offset) && settings.offset(elem, targ) || settings.offset;
+
+			$.each(settings.axis.split(''), function(i, axis) {
+				var Pos	= axis === 'x' ? 'Left' : 'Top',
+					pos = Pos.toLowerCase(),
+					key = 'scroll' + Pos,
+					prev = $elem[key](),
+					max = $scrollTo.max(elem, axis);
+
+				if (toff) {// jQuery / DOMElement
+					attr[key] = toff[pos] + (win ? 0 : prev - $elem.offset()[pos]);
+
+					// If it's a dom element, reduce the margin
+					if (settings.margin) {
+						attr[key] -= parseInt(targ.css('margin'+Pos), 10) || 0;
+						attr[key] -= parseInt(targ.css('border'+Pos+'Width'), 10) || 0;
+					}
+
+					attr[key] += offset[pos] || 0;
+
+					if (settings.over[pos]) {
+						// Scroll to a fraction of its width/height
+						attr[key] += targ[axis === 'x'?'width':'height']() * settings.over[pos];
+					}
+				} else {
+					var val = targ[pos];
+					// Handle percentage values
+					attr[key] = val.slice && val.slice(-1) === '%' ?
+						parseFloat(val) / 100 * max
+						: val;
+				}
+
+				// Number or 'number'
+				if (settings.limit && /^\d+$/.test(attr[key])) {
+					// Check the limits
+					attr[key] = attr[key] <= 0 ? 0 : Math.min(attr[key], max);
+				}
+
+				// Don't waste time animating, if there's no need.
+				if (!i && settings.axis.length > 1) {
+					if (prev === attr[key]) {
+						// No animation needed
+						attr = {};
+					} else if (queue) {
+						// Intermediate animation
+						animate(settings.onAfterFirst);
+						// Don't animate this axis again in the next iteration.
+						attr = {};
+					}
+				}
+			});
+
+			animate(settings.onAfter);
+
+			function animate(callback) {
+				var opts = $.extend({}, settings, {
+					// The queue setting conflicts with animate()
+					// Force it to always be true
+					queue: true,
+					duration: duration,
+					complete: callback && function() {
+						callback.call(elem, targ, settings);
+					}
+				});
+				$elem.animate(attr, opts);
+			}
+		});
+	};
+
+	// Max scrolling position, works on quirks mode
+	// It only fails (not too badly) on IE, quirks mode.
+	$scrollTo.max = function(elem, axis) {
+		var Dim = axis === 'x' ? 'Width' : 'Height',
+			scroll = 'scroll'+Dim;
+
+		if (!isWin(elem))
+			return elem[scroll] - $(elem)[Dim.toLowerCase()]();
+
+		var size = 'client' + Dim,
+			doc = elem.ownerDocument || elem.document,
+			html = doc.documentElement,
+			body = doc.body;
+
+		return Math.max(html[scroll], body[scroll]) - Math.min(html[size], body[size]);
+	};
+
+	function both(val) {
+		return $.isFunction(val) || $.isPlainObject(val) ? val : { top:val, left:val };
+	}
+
+	// Add special hooks so that window scroll properties can be animated
+	$.Tween.propHooks.scrollLeft = 
+	$.Tween.propHooks.scrollTop = {
+		get: function(t) {
+			return $(t.elem)[t.prop]();
+		},
+		set: function(t) {
+			var curr = this.get(t);
+			// If interrupt is true and user scrolled, stop animating
+			if (t.options.interrupt && t._last && t._last !== curr) {
+				return $(t.elem).stop();
+			}
+			var next = Math.round(t.now);
+			// Don't waste CPU
+			// Browsers don't render floating point scroll
+			if (curr !== next) {
+				$(t.elem)[t.prop](next);
+				t._last = this.get(t);
+			}
+		}
+	};
+
+	// AMD requirement
+	return $scrollTo;
+});
+
 /**
  * Swiper 3.4.2
  * Most modern mobile touch slider and framework with hardware accelerated transitions
@@ -5016,6 +5345,24 @@ $(function() {
     slidesOffsetAfter: 30,
     spaceBetween: 15,
     pagination: '.swiper-pagination'
-  })
+  });
+
+  // Scroll to
+  $('a[href^="#"]').click(function(e) {
+    e.preventDefault();
+    var duration = ($(this.hash).offset().top - $body.scrollTop()) * .75;
+    var offset = this.hash == "#client-work" ? $(this).height() * -2 : $(this).height() * -1;
+    $(window).stop(true).scrollTo(this.hash, {
+      duration: duration,
+      offset: offset,
+      interrupt: false
+    });
+  });
+
+  // Parallax
+  $('.hero').parallaxScroll({
+    friction: 0.5
+  });
+  $(window).trigger('resize');
 
 });

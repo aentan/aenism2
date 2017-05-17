@@ -76,6 +76,24 @@ $(function() {
     slidesOffsetAfter: 30,
     spaceBetween: 15,
     pagination: '.swiper-pagination'
-  })
+  });
+
+  // Scroll to
+  $('a[href^="#"]').click(function(e) {
+    e.preventDefault();
+    var duration = ($(this.hash).offset().top - $body.scrollTop()) * .75;
+    var offset = this.hash == "#client-work" ? $(this).height() * -2 : $(this).height() * -1;
+    $(window).stop(true).scrollTo(this.hash, {
+      duration: duration,
+      offset: offset,
+      interrupt: false
+    });
+  });
+
+  // Parallax
+  $('.hero').parallaxScroll({
+    friction: 0.5
+  });
+  $(window).trigger('resize');
 
 });

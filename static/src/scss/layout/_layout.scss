@@ -95,12 +95,14 @@ section {
     }
 
     a {
-      color:                $gray-dark;
+      color:                $gray-darker;
+      cursor:               default;
       display:              block;
       line-height:          56px;
       padding-left:         30px;
       padding-right:        30px;
       text-decoration:      none;
+      transition:           background-color .25s;
 
       @include media("<tablet", "landscape") {
         line-height:        44px;
@@ -112,6 +114,14 @@ section {
       bottom:               0;
       position:             fixed;
       top:                  auto;
+
+      a {
+        cursor:             pointer;
+
+        &:hover {
+          background-color:   lighten($gray-light, 2%);
+        }
+      }
 
       // @include media("<tablet", "landscape") {
       //   bottom:             auto;
@@ -159,7 +169,7 @@ section {
   padding-top:              0;
   z-index:                  500;
 
-  @include media(">=tablet") {
+  @include media(">=desktop") {
     background-image:       url($svg-data-hero-2x);
     height:                 calc(100% - 112px);
   }
@@ -245,6 +255,7 @@ section {
 
 .services {
   border-bottom:            $ui-seperator-width solid $ui-seperator-color;
+  padding-bottom:           116px;
   padding-top:              30px;
 
   @include media("<tablet", "landscape") {
@@ -283,8 +294,7 @@ section {
 // Section Accolades
 
 .accolades {
-  padding-bottom:           86px;
-  padding-top:              30px;
+  padding-top:              0;
 }
 
 .logos {
@@ -457,7 +467,7 @@ section {
         @include type-body();
 
         display:            inline-block;
-        margin:             0;
+        margin:             0 10px 0 0;
 
         @include media("<tablet", "landscape") {
           display:          block;
@@ -623,15 +633,19 @@ section {
 // Article
 
 main > article {
-  padding:                  90px 0 30px;
+  padding:                  0 0 30px;
 
   header {
     align-items:            center;
+    background-position:    center;
+    background-repeat:      no-repeat;
+    background-size:        contain;
     border-bottom:          $ui-seperator-width solid $ui-seperator-color;
     display:                flex;
+    flex-direction:         column;
     justify-content:        center;
     min-height:             200px;
-    padding:                0 30px 45px;
+    padding:                90px 30px 45px;
 
     @include media("<tablet", "landscape") {
       min-height:           90px;
@@ -643,17 +657,13 @@ main > article {
     }
   }
 
-  h1 {
-    @include type-displayl();
-  }
-
   .wrapper {
-    margin-left:              auto;
-    margin-right:             auto;
-    max-width:                600px;
-    padding:                  30px;
+    margin-left:            auto;
+    margin-right:           auto;
+    max-width:              768px;
+    padding:                30px;
     @include media("<tablet", "landscape") {
-      max-width:              100%;
+      max-width:            100%;
     }
   }
 
@@ -662,16 +672,17 @@ main > article {
     height:               auto;
     left:                 0;
     margin-bottom:        15px;
-    margin-left:          -30px;
+    margin-left:          0;
     margin-right:         -30px;
     position:             relative;
-    width:                100%;
+    width:                calc(100% + 30px);
 
     @include media(">=tablet") {
       margin-bottom:      30px;
-      margin-left:        auto;
-      margin-right:       auto;
+      margin-left:        60px;
+      margin-right:       60px;
       max-width:          768px;
+      width:              calc(100% - 120px);
 
       &:first-child {
         margin-top:       60px;
@@ -688,9 +699,15 @@ main > article {
     }
 
     figcaption {
-      @include type-note();
+      @include type-callout();
 
-      margin-top:         5px;
+      margin-top:         10px;
+      padding-right:      30px;
+
+      @include media(">=tablet") {
+        padding-right:    0;
+        text-align:       center;
+      }
     }
   }
 

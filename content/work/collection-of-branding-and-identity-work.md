@@ -2,9 +2,10 @@
 date = "2017-05-15"
 tags = ['branding', 'identity']
 title = "Collection of Branding and Identity Work"
-topic = "multiple"
+topic = "Branding"
 description = "Logos and other identity artifacts I have created over the years."
-image = "/img/work_preview_branding.png"
+preview_image = ""
+article_image = ""
 +++
 
 ## 6degrees
@@ -56,7 +57,7 @@ Cornflower blue and a cyan shade was chosen to convey modern pastelecent aesthet
 
 My initial train of thought first led me to the analog approach and look to well-designed hand-lettered logos for inspiration.
 
-{{%figure src="/img/work_content_sunday3.jpg" title="Steve Francia" title="I experimented with a variety of ways to write each letter and see how well they would fit together."%}}
+{{%figure src="/img/work_content_sunday3.png" title="Steve Francia" title="I experimented with a variety of ways to write each letter and see how well they would fit together."%}}
 
 {{%figure src="/img/work_content_sunday4.png" title="Other motifs such as sunrise and rectangles to see if they can better represent the sun than hand-lettering. Check out the middle finger too."%}}
 
@@ -98,7 +99,7 @@ The mark is designed based on sacred geometry and depicts two overlapping leaves
 
 I selected Brandon by HvD as the one single typeface for the identity – Brandon Grotesque for headings and Brandon Text for the body. It’s used on all elements including the wordmark and website text. The identity is deliberately pedestrian so as to come across as far away from pompous as possible.
 
-{{%figure src="/img/work_content_multiply4.jpg" title="Website mockups"%}}
+{{%figure src="/img/work_content_multiply4.png" title="Website mockups"%}}
 
 I don&rsquo;t know but I get a sense blue is overused in education-related brands. Since Multiply is teaching people to become coders. I chose Forest Green to represent growth. I hope the green gives people a sense of lively possibility.
 

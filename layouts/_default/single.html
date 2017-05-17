@@ -12,8 +12,9 @@
     {{ partial "header.html" . }}
     <main>
       <article>
-        <header>
+        <header style="background-image:url({{ .Params.Article_Image }});">
           <h1>{{ .Title }}</h1>
+          <p>{{ .Params.Topic }}</p>
         </header>
         <div class="wrapper">
           {{ .Content }}

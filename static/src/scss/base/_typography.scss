@@ -4,7 +4,11 @@ html {
 
 body {
   @include type-body();
-  color:                    $gray-dark;
+  color:                    $gray-darker;
+}
+
+h1 {
+  @include type-displayll();
 }
 
 h2 {
@@ -44,6 +48,16 @@ hr {
 }
 
 main > article {
+  text-rendering:           optimizeLegibility;
+
+  h1 {
+    margin:                 10px 0;
+     + p {
+      display:              block;
+      margin:               0;
+    }
+  }
+
   p {
     @include type-body2();
 

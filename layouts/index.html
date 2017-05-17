@@ -11,7 +11,7 @@
   <body>
     {{ partial "header.html" . }}
     <main>
-      <section class="hero">
+      <section class="hero" data-width="720" data-height="533">
         <h1>I reimagine experiences for ambitious software.</h1>
       </section>
       <section class="experience">
@@ -30,7 +30,7 @@
                     Mydoc
                     <div class="topic">Healthcare</div>
                   </div>
-                  <a href="#">Details</a>
+                  <a href="/mydoc/">Details</a>
                 </figcaption>
               </figure>
             </article>
@@ -42,7 +42,6 @@
                     Intersective
                     <div class="topic">Education</div>
                   </div>
-                  <a href="#">Details</a>
                 </figcaption>
               </figure>
             </article>
@@ -54,7 +53,6 @@
                     SingaporeBrides
                     <div class="topic">Weddings</div>
                   </div>
-                  <a href="#">Details</a>
                 </figcaption>
               </figure>
             </article>
@@ -77,7 +75,6 @@
                     Mozat
                     <div class="topic">Mobile</div>
                   </div>
-                  <a href="#">Details</a>
                 </figcaption>
               </figure>
             </article>
@@ -89,7 +86,7 @@
                     The Open Company
                     <div class="topic">Useful Goods</div>
                   </div>
-                  <a href="#">Details</a>
+                  <a href="/the-open-company/">Details</a>
                 </figcaption>
               </figure>
             </article>
@@ -150,6 +147,36 @@
           </div>
         </div>
       </section>
+      <section id="client-work" class="client-work">
+        <header>
+          <h2>
+            <a href="#client-work">Client Work</a>
+          </h2>
+        </header>
+        <div class="wrapper">
+          <p>You may be interested in these case studies.</p>
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            {{ range where .Data.Pages "Section" "work" }}
+            <article class="swiper-slide card">
+              <figure>
+                <div class="work-preview" style="background-image:url('{{ .Params.Preview_Image }}')"></div>
+                <figcaption>
+                  <div>
+                    <h3>{{ .Title }}</h3>
+                    <div class="topic">{{ .Params.Topic }}</div>
+                  </div>
+                  <p>{{ .Params.Description }}</p>
+                </figcaption>
+              </figure>
+              <a href="{{ .RelPermalink }}">Read More</a>
+            </article>
+            {{ end }}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
       <section class="accolades">
         <div class="wrapper">
           <p>These are some of the publications my work has been featured in.</p>
@@ -174,40 +201,10 @@
           {{ partial "svg/logo_barcamp.svg" . }}
         </div>
       </section>
-      <section class="client-work">
+      <section id="ideas" class="ideas">
         <header>
           <h2>
-            <a href="#">Client Work</a>
-          </h2>
-        </header>
-        <div class="wrapper">
-          <p>You may be interested in these case studies.</p>
-        </div>
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            {{ range where .Data.Pages "Section" "work" }}
-            <article class="swiper-slide card">
-              <figure>
-                <div class="work-preview" style="background-image:url('{{ .Params.Image }}')"></div>
-                <figcaption>
-                  <div>
-                    <h3>{{ .Title }}</h3>
-                    <div class="topic">{{ .Params.Topic }}</div>
-                  </div>
-                  <p>{{ .Params.Description }}</p>
-                </figcaption>
-              </figure>
-              <a href="{{ .RelPermalink }}">Read More</a>
-            </article>
-            {{ end }}
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </section>
-      <section class="ideas">
-        <header>
-          <h2>
-            <a href="#">Ideas</a>
+            <a href="#ideas">Ideas</a>
           </h2>
         </header>
         <div class="wrapper">
