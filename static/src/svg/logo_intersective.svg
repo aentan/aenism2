@@ -1,1 +1,20 @@
-<svg width="81" height="90" viewBox="0 0 81 90" xmlns="http://www.w3.org/2000/svg"><title>logo_intersective</title><g fill="none" fill-rule="evenodd"><path fill="#6BD2E3" d="M39.885.452L7.839 19.175l11.138 19.063 13.069-7.635 7.585 12.983 18.977-11.088z"/><path fill="#C5DC72" d="M0 49.326l18.723 32.046 18.8-10.984-7.372-12.62 13.245-7.739-3.765-6.444-13.069 7.636-7.585-12.983z"/><path fill="#9FCD72" d="M39.631 43.586l-7.585-12.983-13.07 7.635 7.586 12.983z"/><path fill="#D5E698" d="M43.396 50.03l7.373 12.619-13.245 7.738 11.35 19.427L80.92 71.091 62.197 39.045z"/><path fill="#B3D753" d="M43.396 50.03l-13.245 7.738 7.372 12.62 13.246-7.74z"/></g></svg>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="71px" viewBox="0 0 64 71" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>logo_intersective</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-284.000000, -832.000000)">
+            <g transform="translate(244.000000, 777.000000)">
+                <g transform="translate(40.000000, 55.000000)">
+                    <polygon fill="#BFC9DB" points="31.5140503 0.357127862 6.19384925 15.1507404 14.9944746 30.2130743 25.3202367 24.1800648 31.3135812 34.4379319 46.3076628 25.6773289"></polygon>
+                    <polygon fill="#BFC9DB" points="0 38.9735701 14.7936125 64.2937711 29.6483305 55.6149994 23.8229369 45.6440782 34.2884199 39.5292373 31.3135455 34.4378247 20.987426 40.4708342 14.9944389 30.2129671"></polygon>
+                    <polygon fill="#8F9EBC" points="31.3135455 34.4379319 25.320201 24.1800648 14.9940815 30.2130743 20.987426 40.4709414"></polygon>
+                    <polygon fill="#BFC9DB" points="34.2882412 39.5293088 40.1139922 49.50023 29.6485092 55.6147136 38.6163707 70.9643506 63.9365717 56.1707381 49.1429592 30.8505371"></polygon>
+                    <polygon fill="#8F9EBC" points="34.2882769 39.5294517 23.822794 45.6439352 29.6481876 55.6148565 40.1136706 49.500373"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

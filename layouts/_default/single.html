@@ -8,18 +8,21 @@
     <title>{{ .Title }}</title>
     <link rel="stylesheet" href="/css/{{ index .Site.Data.css.hash "main.css" }}" />
   </head>
-  <body>
+  <body class="single">
     {{ partial "header.html" . }}
     <main>
-      <article>
-        <header style="background-image:url({{ .Params.Article_Image }});">
-          <h1>{{ .Title }}</h1>
-          <p>{{ .Params.Topic }}</p>
-        </header>
-        <div class="wrapper">
-          {{ .Content }}
-        </div>
-      </article>
+      <header style="background-image:url({{ .Params.Article_Image }});">
+        <h1>{{ .Title }}</h1>
+        <p>{{ .Params.Topic }}</p>
+      </header>
+      <section>
+        <article>
+          <div class="wrapper">
+            {{ .Content }}
+          </div>
+        </article>
+        {{ partial "goto.html" . }}
+      </section>
     </main>
     {{ partial "footer.html" . }}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

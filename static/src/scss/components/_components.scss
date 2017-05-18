@@ -1,11 +1,11 @@
 // Pill
 
 .pill {
-  @include type-note();
+  @include type-callout();
 
-  border-radius:        15px;
+  border-radius:        17.5px;
   display:              inline-block;
-  padding:              6px 12px;
+  padding:              7px 15px;
   text-decoration:      none;
   transition:           background-color .25s;
 }
@@ -37,7 +37,8 @@
 
 .card {
   background-color:     $white;
-  border-radius:        10px;
+  border:               $ui-seperator-width solid rgba($gray, 0.5);
+  border-radius:        $ui-border-radius;
   color:                $gray-darker;
 }
 

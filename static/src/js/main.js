@@ -52,6 +52,11 @@ $(function() {
   adjustHeroHeader();
   adjustSectionHeaders();
 
+  // Sticky Goto
+  $(".goto nav").stick_in_parent({
+    offset_top: 122
+  });
+
 
   //initialize swiper
   var experienceSwiper = new Swiper ('.experience .swiper-container', {
@@ -78,10 +83,22 @@ $(function() {
     pagination: '.swiper-pagination'
   });
 
+  // Parallax
+  $('.hero').parallaxScroll({
+    friction: 0.5
+  });
+  $(window).trigger('resize');
+
+  // Goto nav builder
+  $('.single article').anchorific({
+    navigation: '.goto nav'
+  });
+
   // Scroll to
   $('a[href^="#"]').click(function(e) {
     e.preventDefault();
-    var duration = ($(this.hash).offset().top - $body.scrollTop()) * .75;
+    var duration = Math.abs($(this.hash).offset().top - $body.scrollTop()) * .75;
+    duration = (duration > 1000) ? 1000 : duration;
     var offset = this.hash == "#client-work" ? $(this).height() * -2 : $(this).height() * -1;
     $(window).stop(true).scrollTo(this.hash, {
       duration: duration,
@@ -89,11 +106,5 @@ $(function() {
       interrupt: false
     });
   });
-
-  // Parallax
-  $('.hero').parallaxScroll({
-    friction: 0.5
-  });
-  $(window).trigger('resize');
 
 });
