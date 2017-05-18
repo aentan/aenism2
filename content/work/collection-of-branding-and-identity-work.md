@@ -27,6 +27,8 @@ The hexagons and circles led me to the final concept. I decided the number 6 is 
 
 {{%figure src="/img/work_content_6degrees2.png" title="Instead of placing the degree symbol in an arbitrary position. I used the ascender of the 6 as the guide and placed it along the outer curve."%}}
 
+### Inspired by the LHC
+
 The counter of the 6 is also placed in the same continuum as the ascender in a configuration similar to the <em>Large Hadron Collider</em> which accelerates protons from the smaller circle into the large circle.
 
 {{%figure src="https://upload.wikimedia.org/wikipedia/commons/0/06/Location_Large_Hadron_Collider.PNG"%}}
@@ -61,9 +63,11 @@ My initial train of thought first led me to the analog approach and look to well
 
 {{%figure src="/img/work_content_sunday4.png" title="Other motifs such as sunrise and rectangles to see if they can better represent the sun than hand-lettering. Check out the middle finger too."%}}
 
-{{%figure src="/img/work_content_sunday5.png" title="Pagan sun symbols"%}}
+### Paganism
 
 Then I tried a more visual representation of the sun, drawing inspiration from pagan sun symbols like the one of <em>Cirque du Soleil</em>. I concluded with a more abstract approach and decided that instead of replicating a pagan sun face, I'd create coronas instead out of hand-drawn letters.
+
+{{%figure src="/img/work_content_sunday5.png" title="Pagan sun symbols"%}}
 
 {{%figure src="/img/work_content_sunday6.png"%}}
 
@@ -76,6 +80,8 @@ I set the wordmark in <em>Soleil Bold</em>, primarily for the name of the typefa
 {{%figure src="/img/work_content_sunday-type.png" title="Typography"%}}
 
 <em>Soleil Regular</em> is also used for headings while being paired with <em>Rooney Light</em> for body copy. I chose Rooney for its seriousness and also warmth. I would&rsquo;t want the sun to be surrounded by the cold of geometricals and grotesques!
+
+### Business Cards
 
 {{%figure src="/img/work_content_sunday-card.jpg"%}}
 
@@ -90,6 +96,8 @@ Rich Persian blue was chosen to be a deliberate deviation from the usual yellow 
 <p class="lead">A leafy motif designed for <a href="http://multiply.is/" target="_blank"><em>Multiply</em></a> &ndash; affordable, short term software development courses for those who want practical new skills for a technology-centric future.</p>
 
 Multiply offers affordable, short term software development courses. The courses which are meant for beginners will help those who want practical new skills for a technology-centric future. Courses are typically five days or less, conducted in 8-student batches and taught by real professional coders. Another highlight is post-course support which other coding courses don’t provide beyond the classroom.
+
+### Sacred Geometry
 
 {{%figure src="/img/work_content_multiply2.png"%}}
 
@@ -112,6 +120,8 @@ I don&rsquo;t know but I get a sense blue is overused in education-related brand
 Curioucity is an iPhone app made by O.N.E.R Inc based in Tokyo, which allows its users to quickly initiate chats with others within vicinity.
 
 {{%figure src="/img/work_content_curioucity1.png" title="Original logo"%}}
+
+### Building on the Original
 
 The original logo only had a wordmark. Made in-house by the client&rsquo;s own designer, I think while it&rsquo;s beautifully lettered and reminds me of Wes Anderson, it would have been awkward to fit the old logo into an iOS app icon.
 
@@ -138,6 +148,8 @@ LifeOpp wants to improve the lot of service industry professionals and odd job w
 The old logo suffered a variety of problems. It&rsquo;s triangular mark was not equilateral, the colors were unharmonious and the word mark was so heavy it got in the way.
 
 {{%figure src="/img/work_content_lifeopp1.png" title="The old logo."%}}
+
+### Reconstructive Surgery
 
 To fix the irregular triangle, I redrew it with mathematical precision so all sides are equal. The old mark was sort of based on a palette of fall colors and to me was a little depressing. I decided to ditch the dull colors and kept three of them to create something that more spring and summer. I did adjusted them so they are more balanced. From those three new colors I created an intermediate lighter shade for each.
 

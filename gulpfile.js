@@ -5,7 +5,10 @@ var gulp         = require("gulp"),
     hash         = require("gulp-hash"),
     del          = require("del"),
     svgmin       = require('gulp-svgmin'),
-    imagemin     = require('gulp-imagemin')
+    imagemin     = require('gulp-imagemin'),
+    uglify       = require('gulp-uglify'),
+    cssmin       = require('gulp-cssmin')
+    // gzip         = require('gulp-gzip')
 
 // Compile SCSS files to CSS
 gulp.task("scss", function () {
@@ -22,6 +25,8 @@ gulp.task("scss", function () {
             browsers : ["last 20 versions"]
         }))
         .pipe(concat('main.css'))
+        .pipe(cssmin())
+        // .pipe(gzip())
         .pipe(hash())
         .pipe(gulp.dest("static/css"))
         //Create a hash map
@@ -40,6 +45,7 @@ gulp.task("img", function () {
     del(["static/img/**/*"])
     gulp.src("static/src/img/**/*")
         // .pipe(imagemin())
+        // .pipe(gzip())
         // .pipe(hash())
         .pipe(gulp.dest("static/img"))
         // .pipe(hash.manifest("hash.json"))
@@ -62,6 +68,8 @@ gulp.task("js", function () {
     del(["static/js/**/*"])
     gulp.src(["static/vendor/js/**/*", "static/src/js/**/*"])
         .pipe(concat('main.js'))
+        .pipe(uglify())
+        // .pipe(gzip())
         .pipe(hash())
         .pipe(gulp.dest("static/js"))
         .pipe(hash.manifest("hash.json"))

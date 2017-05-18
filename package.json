@@ -14,12 +14,16 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^4.0.0",
     "gulp-concat": "^2.6.1",
+    "gulp-cssmin": "^0.2.0",
+    "gulp-gzip": "^1.4.0",
     "gulp-hash": "^4.1.1",
     "gulp-imagemin": "^3.2.0",
+    "gulp-minify": "^1.0.0",
     "gulp-sass": "^3.1.0",
     "gulp-sass-inline-svg": "^1.0.1",
     "gulp-sassvg": "^1.5.0",
-    "gulp-svgmin": "^1.2.3"
+    "gulp-svgmin": "^1.2.3",
+    "gulp-uglify": "^2.1.2"
   },
   "dependencies": {
     "throttle-debounce": "^1.0.1"
