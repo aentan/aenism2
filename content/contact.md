@@ -5,7 +5,7 @@ topic = ""
 description = ""
 preview_image = ""
 article_image = ""
-nogoto
+nogoto = ""
 +++
 
 I can be reached most effectively by [Email](mailto:hello@aentan.com) and [LinkedIn](https://www.linkedin.com/in/aentan). For bite-size design tidbits, [follow me on Twitter](https://twitter.com/aentan). Also feel free to use the contact form below.
