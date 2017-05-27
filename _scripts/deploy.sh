@@ -30,3 +30,6 @@ cd public
 echo aenism.com >> CNAME
 git add --all
 git commit -m "Publishing to gh-pages (deploy.sh)"
+
+git push origin gh-pages
+cd ..
