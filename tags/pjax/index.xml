@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Pjax on Aenism</title>
+    <link>https://aenism.com/tags/pjax/</link>
+    <description>Recent content in Pjax on Aenism</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 30 Jan 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://aenism.com/tags/pjax/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Teleportation is scary</title>
+      <link>https://aenism.com/teleportation-is-scary/</link>
+      <pubDate>Thu, 30 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://aenism.com/teleportation-is-scary/</guid>
+      <description>I first came across pjax (pushState + ajax) when I was working on a Rails 4 project which has Turbolinks. Turbolinks isn&amp;rsquo;t pjax per se. It&amp;rsquo;s similar and based on the same philosophy.
+How pjax works Instead of re-rendering a full page on every page request, pjax fetches only a fragment of the target page and uses that to replace its counterpart in the current DOM, thereby preserving the surrounding layout, scripts and style.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Taste on Aenism</title>
+    <link>https://aenism.com/tags/taste/</link>
+    <description>Recent content in Taste on Aenism</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 15 Mar 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://aenism.com/tags/taste/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Good taste</title>
+      <link>https://aenism.com/good-taste/</link>
+      <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://aenism.com/good-taste/</guid>
+      <description>The widely accepted notion of taste is of a sociological concept defined as a person&amp;rsquo;s personal and cultural patterns of preference. Of what looks good and what is cool. Is there an objective measure of beauty? How does taste work?
+Taste or more accurately aesthetic taste is emotional. It&amp;rsquo;s the ability to discern the pleasant and the polar opposite of the emotion of disgust. Like the other senses, we perceive pleasance, beauty and goodness as sensory signals.</description>
+    </item>
+    
+  </channel>
+</rss>

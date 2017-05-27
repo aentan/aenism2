@@ -1,0 +1,132 @@
+
+html {
+  font-size : 62.5%;
+}
+
+body {
+  @include type-body();
+  color : $gray-darker;
+}
+
+h1 {
+  @include type-displaylll();
+}
+
+h2 {
+  @include type-displayl();
+}
+
+h3 {
+  @include type-displaym();
+}
+
+h4 {
+  @include type-displays();
+}
+
+a {
+  color           : $blue;
+  text-decoration : none;
+}
+
+hr {
+  height           : 20px;
+  margin           : 30px 0;
+
+  background-color : transparent;
+  font-size        : 24px;
+  text-align       : center;
+  text-shadow      : 0px 2px 3px rgba(0, 0, 0, 0.45);
+  border           : 0;
+
+  &:before {
+    content : "🍪";
+  }
+  @include media(">=tablet") {
+    margin : 60px 0;
+  }
+}
+
+.single {
+  article {
+    text-rendering : optimizeLegibility;
+  }
+
+  h2, h3, h4, h5, h6 {
+    &:first-child {
+      margin-top : 0;
+    }
+  }
+
+  p {
+    @include type-body2();
+
+    margin  : 0;
+    padding : 0;
+
+    + p {
+      text-indent : 1.5rem;
+      @include media(">=tablet") {
+        text-indent : 3rem;
+      }
+    }
+    &.lead {
+      @include type-displaym();
+
+      margin-top    : 30px;
+      margin-bottom : 30px;
+
+      + p {
+        text-indent : 0;
+      }
+    }
+
+    sup,
+    sub {
+      font-weight: 400;
+      vertical-align: -.3rem;
+    }
+  }
+
+  p + figure,
+  p + .embed,
+  p + iframe,
+  p + ul,
+  p + ol {
+    margin-top: 30px;
+  }
+
+  figure + p,
+  .embed + p,
+  iframe + p,
+  ul + p,
+  ol + p {
+    margin-top: 30px;
+  }
+
+  @include media(">=tablet") {
+    p + figure,
+    p + iframe {
+      margin-top: 60px;
+    }
+
+    figure + p,
+    iframe + p {
+      margin-top: 60px;
+    }
+  }
+}
+
+// Syntax higlighting
+.highlight {
+  border-radius: 5px;
+  margin-top    : 30px;
+  margin-bottom : 30px;
+  padding       : 10px 15px;
+
+  pre {
+    margin : 0;
+    font-family: monospace;
+    line-height: 150%;
+  }
+}

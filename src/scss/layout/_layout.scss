@@ -1,0 +1,925 @@
+// Resets
+// Body
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: $gray-light;
+}
+
+// Header
+body > header {
+  position: fixed;
+  display: flex;
+  top: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+  height: 90px;
+  width: 100%;
+  padding-right: 30px;
+  padding-left: 30px;
+  transition: background-color .25s, border .25s;
+  align-items: center;
+  justify-content: space-between;
+
+  a:first-child {
+    font-size: 4.0rem;
+    font-style: italic;
+    font-weight: 900;
+
+    &:hover svg {
+      opacity: 0.7;
+    }
+  }
+
+  svg {
+    display: block;
+    width: 89px;
+    transition: width .3s, opacity .3s;
+  }
+
+  &.opaque {
+    // background-color:       $gray-light;
+    // border-bottom:          $ui-seperator-width solid $ui-seperator-color;
+
+    svg {
+      width: 70px;
+    }
+  }
+}
+
+.pill {
+  margin-right: -5px;
+}
+
+// Main
+main {
+  height: 100%;
+}
+
+// Sections
+section {
+  position: relative;
+  padding-top: 56px;
+  padding-bottom: 60px;
+  padding-right: 30px;
+  padding-left: 30px;
+  background-color: $gray-light;
+
+  @include media("<tablet", "landscape") {
+    padding-top: 44px;
+  }
+
+
+  > .wrapper {
+    @include media(">=tablet") {
+      max-width: 768px;
+    }
+  }
+
+  > header {
+    position: absolute;
+    display: flex;
+    top: 0;
+    height: 56px;
+    width: 100%;
+    margin-right: -30px;
+    margin-left: -30px;
+    background-color: $gray-light;
+    border-top: $ui-seperator-width solid $ui-seperator-color;
+    border-bottom: $ui-seperator-width solid $gray-light;
+    transition: border .25s, top .25s;
+    align-items: center;
+    justify-content: space-between;
+
+    @include media("<tablet", "landscape") {
+      height: 44px;
+    }
+
+
+    a {
+      display: block;
+      padding-right: 30px;
+      padding-left: 30px;
+      cursor: default;
+      color: $gray-darker;
+      line-height: 56px;
+      text-decoration: none;
+      transition: background-color .25s, color .25s;
+
+      @include media("<tablet", "landscape") {
+        line-height: 44px;
+      }
+    }
+
+    &.locked-bottom {
+      position: fixed;
+      top: auto;
+      bottom: 0;
+      background-color: $gray-light;
+
+      a {
+        cursor: pointer;
+        color: $blue;
+
+        &:hover {
+          background-color: lighten($gray-light, 2%);
+        }
+      }
+    }
+
+    // &.locked-top {
+    //   background-color:     $gray-light;
+    //   border-bottom:        1px solid $gray;
+    //   border-top:           1px solid $gray-light;
+    //   position:             fixed;
+    //   top:                  0;
+    // }
+
+    h2 {
+      @include type-body;
+
+      width: 100%;
+      margin: 0;
+
+      @include media(">tablet") {
+        @include type-displays;
+      }
+    }
+  }
+
+  p {
+    padding-right: 45px;
+  }
+}
+
+// Section Hero
+.hero {
+  display: flex;
+  z-index: 500;
+  box-sizing: border-box;
+  height: calc(100% - 112px);
+  background-image: url($svg-data-hero);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-bottom: $ui-seperator-width solid $ui-seperator-color;
+  align-items: center;
+
+  @include media(">=desktop") {
+    background-image: url($svg-data-hero-2x);
+  }
+
+
+  @include media("<tablet", "landscape") {
+    height: calc(100% - 88px);
+    background-position: 7vw;
+  }
+
+
+  h1 {
+    @include type-displayll;
+
+    @include media(">=tablet") {
+      @include type-displaylll;
+
+      max-width: 400px;
+      margin-left: 10%;
+    }
+
+
+    @include media("<tablet", "landscape") {
+      max-width: 375px;
+      margin-bottom: 0;
+      margin-left: 10%;
+    }
+  }
+}
+
+// Section Experience
+.experience {
+  padding-top: 30px;
+  border-bottom: $ui-seperator-width solid $ui-seperator-color;
+
+  .swiper-container {
+    margin-right: -30px;
+    margin-left: -30px;
+    padding: 30px 0;
+  }
+
+  .card {
+    width: 200px;
+
+    figure {
+      position: relative;
+      display: flex;
+      height: 200px;
+      width: 200px;
+      margin: 0;
+      padding-bottom: 60px;
+      align-items: center;
+      justify-content: center;
+    }
+
+    figcaption {
+      @include type-note;
+
+      position: absolute;
+      display: flex;
+      bottom: 0;
+      left: 0;
+      box-sizing: border-box;
+      height: 60px;
+      width: 100%;
+      padding: 10px 15px;
+      align-items: center;
+      justify-content: space-between;
+
+      .topic {
+        @include type-caption1;
+
+        display: block;
+      }
+
+      a {
+        @include scut-image-replace;
+
+        display: block;
+        height: 22px;
+        width: 22px;
+        background-image: url($svg-data-icon-info);
+      }
+    }
+  }
+}
+
+// Section Services
+.services {
+  padding-top: 30px;
+  padding-bottom: 56px;
+  border-bottom: $ui-seperator-width solid $ui-seperator-color;
+
+  @include media("<tablet", "landscape") {
+    padding-bottom: 44px;
+  }
+
+
+  @include media(">=tablet") {
+    display: flex;
+    align-items: flex-start;
+
+    .wrapper {
+      &:first-child {
+        width: 40%;
+        padding-right: 30px;
+      }
+
+      &:last-child {
+        width: 50%;
+      }
+    }
+  }
+
+
+  .pills {
+    margin: 30px -5px -5px;
+
+    @include media(">=tablet") {
+      margin: 15px -5px -5px;
+    }
+
+
+    .pill {
+      margin: 7.5px 5px;
+    }
+  }
+}
+
+// Section Accolades
+.accolades {
+  padding-top: 30px;
+  padding-bottom: 86px;
+}
+
+.logos {
+  display: flex;
+  margin: 30px -20px 15px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  @include media(">=tablet") {
+    margin: 30px -20px;
+  }
+
+
+  svg {
+    margin: 15px 20px;
+  }
+}
+
+// Section Client Work
+.client-work {
+  z-index: 600;
+  padding-top: .1px;
+  padding-bottom: 0;
+
+  > header {
+    transform: translateY(-56px);
+
+    @include media("<tablet", "landscape") {
+      transform: translateY(-44px);
+    }
+  }
+
+  .swiper-container {
+    margin-right: -30px;
+    margin-left: -30px;
+    padding: 30px 0;
+  }
+
+  .card {
+    position: relative;
+    width: 280px;
+
+    @include media("<tablet", "landscape") {
+      width: 450px;
+    }
+
+
+    @include media(">=tablet") {
+      width: 640px;
+    }
+
+
+    @include media(">=desktop") {
+      width: 720px;
+    }
+
+
+    figure {
+      position: relative;
+      display: flex;
+      height: 300px;
+      width: 280px;
+      margin: 0;
+      padding-bottom: 120px;
+      align-items: center;
+      justify-content: center;
+
+      @include media("<tablet", "landscape") {
+        height: 240px;
+        width: 250px;
+        padding-bottom: 0;
+      }
+
+
+      @include media(">=tablet") {
+        height: 400px;
+        width: 360px;
+        padding-bottom: 0;
+      }
+
+
+      @include media(">=desktop") {
+        height: 480px;
+        width: 440px;
+      }
+    }
+
+    .work-preview {
+      height: 300px;
+      width: 280px;
+      background-position: center center;
+      background-size: cover;
+      border-top-right-radius: 10px;
+      border-top-left-radius: 10px;
+
+      @include media("<tablet", "landscape") {
+        height: 240px;
+        border-top-right-radius: 0;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+
+      @include media(">=tablet") {
+        height: 400px;
+        width: 360px;
+        border-top-right-radius: 0;
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+      }
+
+
+      @include media(">=desktop") {
+        height: 480px;
+        width: 440px;
+      }
+    }
+
+    figcaption {
+      @include type-note;
+
+      position: absolute;
+      display: flex;
+      bottom: 0;
+      left: 0;
+      box-sizing: border-box;
+      height: 120px;
+      width: 100%;
+      padding: 10px 15px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      @include media("<tablet", "landscape") {
+        top: 0;
+        left: 250px;
+        height: 240px;
+        width: 200px;
+        padding: 15px;
+        align-items: flex-start;
+      }
+
+
+      @include media(">=tablet") {
+        @include type-callout;
+
+        top: 0;
+        left: 365px;
+        height: 400px;
+        width: 270px;
+        padding: 15px;
+        align-items: flex-end;
+        align-content: flex-end;
+      }
+
+
+      @include media(">=desktop") {
+        left: 445px;
+        height: 480px;
+        width: 270px;
+      }
+
+
+      > div {
+        display: flex;
+        width: 100%;
+        align-items: center;
+        justify-content: space-between;
+
+        @include media("<tablet", "landscape") {
+          display: block;
+        }
+
+
+        @include media(">=tablet") {
+          display: block;
+        }
+      }
+
+      h3 {
+        @include type-body;
+
+        display: inline-block;
+        margin: 0 10px 0 0;
+
+        @include media("<tablet", "landscape") {
+          display: block;
+        }
+
+
+        @include media(">=tablet") {
+          @include type-displays;
+
+          display: block;
+          margin-bottom: 5px;
+        }
+      }
+
+      .subtitle {
+        @include type-caption1;
+
+        display: inline-block;
+        text-transform: capitalize;
+
+        @include media(">=tablet") {
+          @include type-note;
+        }
+      }
+
+      a {
+        @include scut-image-replace;
+
+        display: block;
+        height: 22px;
+        width: 22px;
+        background-image: url("/img/icon_info.svg");
+      }
+
+      p {
+        padding: 0;
+
+        @include media("<tablet", "landscape") {
+          position: absolute;
+          bottom: 10px;
+          left: 0;
+          margin-right: 15px;
+          margin-left: 15px;
+        }
+
+
+        @include media(">tablet") {
+          // bottom:           10px;
+          // left:             0;
+          // margin-left:      15px;
+          // margin-right:     15px;
+          // position:         absolute;
+        }
+      }
+    }
+
+    a {
+      @include scut-image-replace;
+
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  .swiper-pagination {
+    position: relative;
+    margin-top: 30px;
+  }
+}
+
+// Section Ideas
+.ideas {
+  z-index: 700;
+
+  .deck {
+    display: flex;
+    margin: 30px -7.5px;
+    flex-wrap: wrap;
+
+    @include media("<415px") {
+      margin-right: -37.5px;
+      margin-left: -37.5px;
+
+      .card {
+        padding-left: 30px;
+        border-radius: 0;
+      }
+    }
+  }
+
+  .card {
+    position: relative;
+    box-sizing: border-box;
+    min-height: 95px;
+    width: 100%;
+    margin: 7.5px;
+    padding: 15px 65px 15px 15px;
+    cursor: pointer;
+
+    @include media(">=tablet") {
+      width: calc(50% - 15px);
+    }
+
+
+    h3 {
+      @include type-body;
+
+      margin: 0;
+    }
+
+    .hot {
+      @include type-subhead;
+
+      vertical-align: 4px;
+      margin-left: 2px;
+      font-weight: 500;
+      color: $blue;
+      text-transform: uppercase;
+    }
+
+    .topic-label {
+      @include type-caption1;
+
+      position: absolute;
+      bottom: 15px;
+      text-transform: capitalize;
+    }
+
+    .topic-icon {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      width: 65px;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &.topic-design {
+        background-image: url($svg-data-topic-design);
+      }
+
+      &.topic-psychology {
+        background-image: url($svg-data-topic-psychology);
+      }
+
+      &.topic-philosophy {
+        background-image: url($svg-data-topic-philosophy);
+      }
+
+      &.topic-tech {
+        background-image: url($svg-data-topic-tech);
+      }
+
+      &.topic-news {
+        background-image: url($svg-data-topic-news);
+      }
+
+      &.topic-cooking {
+        background-image: url($svg-data-topic-cooking);
+      }
+    }
+
+    a {
+      @include scut-image-replace;
+
+      position: absolute;
+      display: block;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      text-indent: 999em;
+    }
+  }
+}
+
+// Article
+.single {
+  main > header {
+    display: flex;
+    min-height: 200px;
+    padding: 90px 30px 45px;
+    background-color: $white;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    text-align: center;
+    border-bottom: $ui-seperator-width solid rgba($gray, 0.5);
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    @include media("<tablet", "landscape") {
+      min-height: 90px;
+      padding-bottom: 45px;
+    }
+
+
+    @include media(">=tablet") {
+      padding-bottom: 60px;
+    }
+
+
+    h1 {
+      margin: 10px 0;
+
+      + p {
+        display: block;
+        margin: 0;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  main > section {
+    padding: 60px 30px;
+
+    @include media(">=tablet") {
+      display: flex;
+      justify-content: center;
+    }
+
+
+    > article {
+      @include media(">=tablet") {
+        width: 70%;
+      }
+
+
+      .wrapper {
+        max-width: 768px;
+        margin-right: auto;
+        margin-left: auto;
+
+        @include media("<tablet", "landscape") {
+          max-width: 100%;
+        }
+      }
+
+      figure {
+        position: relative;
+        display: block;
+        left: 0;
+        height: auto;
+        width: calc(100% + 30px);
+        margin-right: -30px;
+        margin-bottom: 15px;
+        margin-left: 0;
+
+        @include media(">=tablet") {
+          width: calc(100% - 60px);
+          max-width: 768px;
+          margin-right: 30px;
+          margin-bottom: 30px;
+          margin-left: 30px;
+
+          &:first-child {
+            margin-top: 60px;
+          }
+
+          &:last-child {
+            margin-bottom: 60px;
+          }
+        }
+
+
+        @include media(">=desktop") {
+          width: calc(100% - 120px);
+          max-width: 768px;
+          margin-right: 60px;
+          margin-bottom: 30px;
+          margin-left: 60px;
+        }
+
+
+        img {
+          display: block;
+          width: 100%;
+        }
+
+        figcaption {
+          @include type-callout;
+
+          margin-top: 10px;
+          padding-right: 30px;
+
+          @include media(">=tablet") {
+            padding-right: 0;
+            text-align: center;
+          }
+        }
+      }
+
+      .embed {
+        border: $ui-seperator-width solid $ui-seperator-color;
+        position: relative;
+        padding-bottom: 56.25%;
+        height: 0;
+        overflow: hidden;
+        max-width: 100%;
+
+        iframe,
+        object,
+        embed {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+
+    > aside {
+      display: none;
+      margin-left: 30px;
+
+      @include media(">=tablet") {
+        display: flex;
+        width: 240px;
+        max-width: 320px;
+        align-content: center;
+        align-items: flex-start;
+
+        nav {
+          margin-top: -96px;
+        }
+      }
+
+
+      @include media(">=desktop") {
+        width: 30%;
+      }
+
+
+      nav {
+        width: 100%;
+        max-width: 320px;
+        margin-right: auto;
+        margin-bottom: 30px;
+        margin-left: auto;
+        background-color: $white;
+        color: $gray-darker;
+        border: $ui-seperator-width solid rgba($gray, 0.5);
+        border-radius: $ui-border-radius;
+
+        header {
+          padding: 8px 15px;
+          border-bottom: $ui-seperator-width solid rgba($gray, 0.5);
+
+          h3 {
+            @include type-note;
+
+            margin: 0;
+            font-weight: 500;
+            text-transform: uppercase;
+          }
+        }
+
+        a {
+          display: block;
+          padding: 5px 15px;
+          color: $gray-darker;
+
+          &:hover {
+            color: lighten($gray-darker, 25%);
+          }
+        }
+
+        .top {
+          padding: 5px 15px;
+          margin-top: 10px;
+        }
+
+        > ul {
+          padding: 0 0 10px;
+        }
+
+        ul {
+          margin: 0;
+          padding-left: 0;
+          list-style: none;
+
+          li {
+            @include type-body;
+
+            // border-bottom:    $ui-seperator-width solid rgba($gray, 0.5);
+
+            &:first-child {
+              // border-top:     $ui-seperator-width solid rgba($gray, 0.5);
+           
+            }
+
+            &:last-child {
+              border-bottom: 0;
+            }
+          }
+
+          // Nesting
+          > li > ul {
+            margin-bottom: 5px;
+
+            a {
+              @include type-subhead;
+
+              padding: 1px 30px;
+            }
+
+            > li > ul {
+              a {
+                padding-left: 45px;
+              }
+
+              > li > ul {
+                a {
+                  padding-left: 60px;
+                }
+
+                > li > ul {
+                  a {
+                    padding-left: 75px;
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

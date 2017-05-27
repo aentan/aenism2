@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Aenism</title>
+    <link>https://aenism.com/tags/aenism/</link>
+    <description>Recent content on Aenism</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 25 Jan 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://aenism.com/tags/aenism/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Init</title>
+      <link>https://aenism.com/init/</link>
+      <pubDate>Sat, 25 Jan 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://aenism.com/init/</guid>
+      <description>It&amp;rsquo;s still January, not too late to add having a new blog to my resolutions. My last decently successful blog aentan.com lasted just under three years. I made it to the Hacker News front page a couple of times, reposted an article to Lifehacker and landed various job opportunities. Problem was… maintaining a WordPress site in a shared hosting environment is annoying. Dreamhost was a hundred bucks a year. Didn&amp;rsquo;t make sense anymore.</description>
+    </item>
+    
+  </channel>
+</rss>

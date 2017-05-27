@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="32px" viewBox="0 0 64 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 43.2 (39069) - http://www.bohemiancoding.com/sketch -->
+    <title>logo_techcrunch</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g transform="translate(-79.000000, -852.000000)" fill="#8F9EBC">
+            <g transform="translate(29.000000, 777.000000)">
+                <g transform="translate(50.000000, 75.000000)">
+                    <polygon points="0 0 0 10.6666667 10.6666667 10.6666667 10.6666667 32 21.3333333 32 21.3333333 10.6666667 32 10.6666667 32 0"></polygon>
+                    <polygon points="42.6666667 10.6666667 64 10.6666667 64 0 42.6666667 0"></polygon>
+                    <polygon points="32 10.6668 32 32.0001333 64 32.0001333 64 21.3330222 42.6666667 21.3330222 42.6666667 10.6668"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

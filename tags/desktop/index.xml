@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Desktop on Aenism</title>
+    <link>https://aenism.com/tags/desktop/</link>
+    <description>Recent content in Desktop on Aenism</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 22 Mar 2014 00:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="https://aenism.com/tags/desktop/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Font files off Typekit</title>
+      <link>https://aenism.com/font-files-off-typekit/</link>
+      <pubDate>Sat, 22 Mar 2014 00:00:00 +0000</pubDate>
+      
+      <guid>https://aenism.com/font-files-off-typekit/</guid>
+      <description>Update: I received a complaint from Adobe stating this article is violating the DMCA and is requiring the entire article be taken down. It&amp;rsquo;s absurd. I&amp;rsquo;m not even sure if this workaround works anymore. In good faith I have edited some of the text.
+I have a Typekit subscription and have full access to all their fonts. Adobe also recently introduced the ability to sync fonts to the desktop via Creative Cloud for use in mockups, print design and word processing.</description>
+    </item>
+    
+  </channel>
+</rss>
