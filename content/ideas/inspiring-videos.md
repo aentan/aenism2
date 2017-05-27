@@ -4,17 +4,18 @@ description: That made me a better designer.
 date: 2014-01-31
 tags: ['design', 'videos', 'inspiration']
 topic: design
+hot: true
 ---
 
 If you do creative work like me you would find the following videos helpful. I've grouped them to make it easier for you to choose what you want to watch but I recommend you watch all of them.
 
-###Personal growth
+## Personal growth
 
 Growing as a designer is like growing up as a person. To become better at something is to take heed from those who have done it. One of the most important advice I had came from this video interview of Ira Glass. He talks about how we who do creative work get into the game because we have taste but there is a _gap_ between our taste and the quality of the work we do. We've all experienced this and I think Glass' advice is especially  important to those who are starting out.
 
 <iframe width="420" height="315" src="//www.youtube.com/embed/BI23U7U2aUY" frameborder="0" allowfullscreen></iframe>
 
-###Masters at work
+## Masters at work
 
 Watching masters going about their craft and sharing their insights helped me better understand their thought processes and develop my own mental faculties. Becoming better at something requires the right mental skills and habits, and those who came before us are great sources.
 
@@ -30,7 +31,7 @@ When Steve Jobs contracted Paul Rand to design the logo for NeXT Computer, he wa
 
 <iframe width="420" height="315" src="//www.youtube.com/embed/xb8idEf-Iak" frameborder="0" allowfullscreen></iframe>
 
-###Aesthetics
+## Aesthetics
 
 Japanese aesthetics have a great influence on me. I'm a fan of Kenya Hara and Naoto Fukasawa, the design masterminds behind MUJI. Here's him giving Googlers a lecture on how Shinto sensibilities have shaped the Japanese aesthetic sense.
 
@@ -40,13 +41,13 @@ Edward Tufte on the iPhone interface and how exccessive interface chrome which h
 
 <iframe width="560" height="315" src="//www.youtube.com/embed/YslQ2625TR4" frameborder="0" allowfullscreen></iframe>
 
-###Product
+## Product
 
 Steve Jobs read a study on the locomotive efficiency of animals per unit of kilocalories. Condors are at the top of the list and humans at the bottom. Put the human on a bicycle and he blows the condor away. Products should empower people. Kathy Sierra talks about the mistake we make when we try to create badass products when we should be creating _badass users_.
 
 <iframe src="//player.vimeo.com/video/54469442" width="500" height="281" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
-###Marketing
+## Marketing
 
 Simon Sinek's _Golden Circle_ lecture was my main inspiration when designing Foound's pitch for the 2010 Echelon LaunchPad which we won and led to tremendous investor interest. I learned from Simon how inpsiring people meant showing people what you believe in is more important than what you have and how a dream is more powerful than a plan.
 
@@ -56,7 +57,7 @@ First introduced to me by a friend, Seth Godin's book _Purple Cow_ was a great i
 
 <iframe src="http://embed.ted.com/talks/lang/en/seth_godin_on_sliced_bread.html" width="640" height="360" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
-###Special mentions
+## Special mentions
 
 I want to mention _Jiro Dreams of Sushi_ because it had a powerful effect on me when I watched it the first time in the theatre and several times on video after. The film shows his dedication to his craft. He's like the Steve Jobs and Anna Wintour of sushi. You can't watch it legally for free so I'm just posting the trailer.
 

@@ -8,7 +8,7 @@ topic: philosophy
 
 Human communication progresses in three primary dimensions – _relation_, _distance_ and _fidelity_. Relation is about how we are connected. The simplest network is a direct line between two nodes. A face-to-face (_one-to-one_) dialog for example. A speech is _one-to-many_. A campfire is _many-to-many_. With the Morse code, we conquered distance. The telephone allowed us to converse with somebody far away as if he was near. The internet grew similarly. Email started as one-to-one. Then came the web and people used websites to distribute information. Then came social networks and multi-player online games. Technology created the screen. First it was moving pictures, then came color. Next came touch interfaces. The fidelity of our media is the most observable dimension for it touches our senses directly.
 
-![Dimensions](http://farm4.staticflickr.com/3827/12200097803_236bd5b2d1_o.png)
+{{%figure src="http://farm4.staticflickr.com/3827/12200097803_236bd5b2d1_o.png"%}}
 
 Despite new media's advances, it is still pretty much passive. Most online media consumption are either passive like watching a YouTube video or boringly low fidelity like commenting on or liking one that a friend had posted. Most people are lazy and boring but most are social. Media is entertaining but mostly passive. Social media is our current attempt at marrying the two – social people sharing entertaining things. But that's not real integration.
 
@@ -18,11 +18,11 @@ How would truly connected rich entertainment look like? Perhaps it is like an MM
 
 Books are on the rich but passive end of the spectrum. Multiplayer games are on the other end of being interactive but haphazard. How can we make use of technology to deliberately design a truly interactive system that connects many people's consciousness in a plot that flows like a book with some sense of a story?
 
-### Tree Multireader Book
+## Tree Multireader Book
 
 &hellip;as opposed to Massive Multiplayer Game. To visualize what I mean by _tree_:
 
-![Massive vs Tree](http://farm4.staticflickr.com/3774/12200713904_72a4db2214_o.png)
+{{%figure src="http://farm4.staticflickr.com/3774/12200713904_72a4db2214_o.png"%}}
 
 In a "massive" multiplayer network, the interactions between nodes in such an unstructured graph can only be primitive. One either engage the AI or other players in simple power play – dressing and leveling up, forming groups, killing monsters and each other. One can only affect another player this much.
 
@@ -32,11 +32,11 @@ What if we take some of that control away from the author and allow the reader t
 
 A typical choose-your-own-adventure book works like a decision tree. With each decision you choose to make along the way the story branches until you reach one of the endings. The scale of the tree is obviously by limited how thick the paper book can be. Each branch contributes more exponentially to the complexity of the tree the earlier it occurs. This is not feasible with a book made of paper. It'll have to be online.
 
-### Living characters
+## Living characters
 
 Now imagine that a reader can choose to be any character in the story. At any point in the book, the events are premeditated by the prior decisions of an instance of a character played by another reader and your actions is going to determine how another reader's story will play out. With each juncture, your story is matched with someone else's so your fates intertwines. With a tree like this, there will be multiple endings and not every branch will lead to an ending. Some unfortunately lead to the demise of a character. Perhaps only a few branches for each character will lead it to one of its favorable endings. Like how you may still be fatally struck by lightning in real life despite living healthily, your encounters are out of your control so you will never have ultimate control of your fate.
 
-![Weaving the tree](http://farm6.staticflickr.com/5494/12203935463_aac755fe48_o.png)
+{{%figure src="http://farm6.staticflickr.com/5494/12203935463_aac755fe48_o.png" title="Weaving the Tree"%}}
 
 Weaving the consciousness of many people like this opens up endless possibilities for interaction. Since every character in the book is “alive” with the exception of those not controlled by readers, you can communicate with the character to influence its decision, for example.
 

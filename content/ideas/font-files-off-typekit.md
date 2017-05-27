@@ -14,11 +14,11 @@ Often people who use Typekit already have desktop licenses for fonts they want t
 
 Unfortunately not all fonts on Typekit are available as desktop fonts. Yet or ever I don't know. I chose [_Rooney Sans Web_](https://typekit.com/fonts/rooney-sans) from Jan Fromm for a web project to match its rounded sprightly identity. I realized there is no desktop version I can sync to in Photoshop. I could have just designed the site in code but I didn't want to concede to the sense of defeat.
 
-### Workaround
+## Workaround
 
 Typekit's implements `@font-face` with the [Data URI scheme](https://en.wikipedia.org/wiki/Data_URI_scheme) and fonts represented as `base64` with the mime type of `font/opentype`, as revealed by the web inspector in Safari.
 
-![Inspector](https://farm8.staticflickr.com/7010/13324188373_1bab757dee_b.jpg)
+{{%figure src="https://farm8.staticflickr.com/7010/13324188373_1bab757dee_b.jpg"%}}
 
 The full base64 string contains all the information required to reconstruct the font file. Just feed the base64 into an online decoder that will output a binary file which you can then convert to your preferred font format.
 

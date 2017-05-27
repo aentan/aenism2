@@ -7,3 +7,6 @@ permalinks:
 taxonomies:
   category: "categories"
   tag: "tags"
+pygmentsUseClasses: false
+PygmentsCodeFences: true
+pygmentsStyle: "paraiso-dark"

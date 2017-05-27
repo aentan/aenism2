@@ -14,11 +14,7 @@ I needed something with the buzz between coffee and tea, which would taste good 
 
 Cold coffee is coffee that is brewed with room temperature or cold water for extended time to a similar strength as coffee brewed with hot water. Hot water causes coffee to release undesirable acidic oils. This is why conventional wisdom is to brew coffee with water not hotter than 90 degrees celsius. Even then some acidity is to be expected as long as there's heat. The heat also draws out the caffeine molecules much faster. The result is really a cup of heartburn-inducing bad-tasting caffeine soup. Face it. Most people don't like the taste of coffee the first time. It's an acquired taste and it's probably the addictive stimulant effects you have acquired, not the taste. Better coffee would be something that's less like caffeine-junkie dope and tastes better. Cold coffee is exactly that. Plus because cold coffee doesn't have to deal with the compound [_2-furfurylthiiol_](http://pubs.acs.org/email/cen/html/092007130322.html) which degrades as heated coffee cools off, it actually stays fresh longer. You can just make two weeks worth in a big jug without it going stale.
 
----
-
-### How to make
-
-### #What you need
+## What you need
 
 * Coffee beans (coarse ground)
 * Nut milk bag bag or cheese cloth

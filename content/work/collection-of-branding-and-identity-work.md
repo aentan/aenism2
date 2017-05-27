@@ -1,10 +1,11 @@
 +++
-date = "2017-05-15"
+date = "2017-05-10"
 tags = ['branding', 'identity']
 title = "Collection of Branding and Identity Work"
+client = "Various Clients"
 topic = "Branding"
-description = "Logos and other identity artifacts I have created over the years."
-preview_image = ""
+description = "A selection of logos and other identity artifacts for the companies I have worked with, created over the years."
+preview_image = "/img/work_preview_branding.png"
 article_image = ""
 +++
 

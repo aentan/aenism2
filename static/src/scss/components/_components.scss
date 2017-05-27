@@ -1,55 +1,55 @@
 // Pill
-
 .pill {
   @include type-callout();
 
-  border-radius:        17.5px;
-  display:              inline-block;
-  padding:              7px 15px;
-  text-decoration:      none;
-  transition:           background-color .25s;
+  display         : inline-block;
+
+  padding         : 7px 15px;
+
+  text-decoration : none;
+  border-radius   : 17.5px;
+
+  transition      : background-color .25s;
 }
 
 .pill-red {
-  background-color:     $red;
-  color:                $white;
+  background-color : $red;
+  color            : $white;
 
   &:hover {
-    background-color:   darken($red, 15%);
+    background-color : darken($red, 15%);
   }
 }
 
 .pill-blue {
-  background-color:     $blue;
-  color:                $white;
+  background-color : $blue;
+  color            : $white;
 
   &:hover {
-    background-color:   darken($blue, 15%);
+    background-color : darken($blue, 15%);
   }
 }
 
 .pill-white {
-  background-color:     $white;
-  color:                $gray-darker;
+  background-color : $white;
+  color            : $gray-darker;
 }
 
 // Card
-
 .card {
-  background-color:     $white;
-  border:               $ui-seperator-width solid rgba($gray, 0.5);
-  border-radius:        $ui-border-radius;
-  color:                $gray-darker;
+  background-color : $white;
+  color            : $gray-darker;
+  border           : $ui-seperator-width solid rgba($gray, 0.5);
+  border-radius    : $ui-border-radius;
 }
 
 // Swiper
-
 .swiper-pagination-bullet {
-  background-color:     $gray-darker;
-  opacity:              .25;
+  opacity          : .25;
+  background-color : $gray-darker;
 }
 
 .swiper-pagination-bullet-active {
-  background-color:     $blue;
-  opacity:              1;
+  opacity          : 1;
+  background-color : $blue;
 }

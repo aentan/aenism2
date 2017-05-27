@@ -8,12 +8,18 @@
     <title>{{ .Title }}</title>
     <link rel="stylesheet" href="/css/{{ index .Site.Data.css.hash "main.css" }}" />
   </head>
-  <body class="single">
+  <body id="top" class="single">
     {{ partial "header.html" . }}
     <main>
       <header style="background-image:url({{ .Params.Article_Image }});">
         <h1>{{ .Title }}</h1>
-        <p>{{ .Params.Topic }}</p>
+        <p>
+          {{ if not (isset .Params "client") }}
+            {{ .Params.Topic }}
+          {{ else }}
+            {{ .Params.Client }}
+          {{ end }}
+        </p>
       </header>
       <section>
         <article>
@@ -21,7 +27,9 @@
             {{ .Content }}
           </div>
         </article>
-        {{ partial "goto.html" . }}
+        {{ if not (isset .Params "nogoto") }}
+          {{ partial "goto.html" . }}
+        {{ end }}
       </section>
     </main>
     {{ partial "footer.html" . }}

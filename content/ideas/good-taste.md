@@ -14,7 +14,7 @@ We would all agree taste is subjective. I wouldn't be able to get everyone to ag
 
 How can we blame them? It's an evolutionary impulse that we seek agreement. [Groupthink](https://en.wikipedia.org/wiki/Groupthink) is so wired into us that it is better to lose in togetherness than to upset the pecking order or worse, risk winning.
 
-### The illusion of objectivity
+## The illusion of objectivity
 
 To avoid disagreement, we often turn to standards. We seek objectivity. Ancient Greek philosophy had the most influence on the western sense of what's beautiful. Plato and Aristotle both agreed there exists a divine form of aesthetics that beautiful objects partake in, in order to be beautiful.
 
@@ -27,7 +27,7 @@ The only problem with Kant's statement is the word _everyone_. We need to recogn
 
 I propose defining good taste as the perceptivity to an object's compatibility with a group. The group is the key here. The difficulty in getting a group to agree on something is inversely correlated with size and diversity of a group. We see that it's harder for the general population (a larger more diverse group) to like Acid Rock than for hippies (a niche group).
 
-### Sensitivity
+## Sensitivity
 
 Taste evolves. Our tastes change as life circumstances change our health, temperament and moods. It's evident taste is grounded in the tenets of biology. Taste is a sensory capacity. It includes the capacity to pick up stimuli signals and the range of these signals. Much like hearing.
 
@@ -42,7 +42,7 @@ The attributes of HSPs can be remembered as *DOES*:
 
 Empathy is the capacity to recognize emotions that are being experienced by another sentient or fictional being. Sensitivity, emotional reactivity and empathy are mutually reinforcing. Each grows the other. HSPs are known to have higher empathy. Several studies have found HSPs to have more mirror neuron activity (associated with empathy) and stronger emotional arousal than others when looking at pictures that are emotionally arousing, including happy and distressed faces.
 
-![Sensory pathways](http://farm8.staticflickr.com/7144/13234645384_e5c41bd8b0_o.gif)
+{{%figure src="http://farm8.staticflickr.com/7144/13234645384_e5c41bd8b0_o.gif" title="Sensory Pathways"%}}
 
 Sensory signals enter our sense organs and pass through the limbic system before reaching the neocortex for higher processing. In HSPs the amygdala which is located in the limbic system and responsible for emotional regulation, fear response and consolidation of memory, is hyper-responsive. Sounds sound louder, lights appear brighter. HSPs generally experience their environment more intensely. This neurological basis of high sensitivity suggests some of us are genetically and physically built to better pick up and process emotions. The amygdala also underlies empathy and allows for emotional attunement and creates the pathway for emotional contagion. The basal areas including the brain stem form a tight loop of biological connectedness, re-creating in one person the physiological state of the other. Psychologist Howard Friedman thinks this is why some people can move and inspire others.
 
@@ -50,11 +50,11 @@ From the sense organs to the limbic system to the neocortex, the entire neural p
 
 Another way of looking at it is to imagine the range of stimuli one can experience like the color gamut (how big the range of colors an output device can display) of a computer display.
 
-![Gamut](http://farm8.staticflickr.com/7320/13233802934_dfec2b48f2_o.jpg)
+{{%figure src="http://farm8.staticflickr.com/7320/13233802934_dfec2b48f2_o.jpg" title="Gamut"%}}
 
 A more sensitive person is like a display with a higher gamut. The higher the gamut of a person, the more his gamut overlaps those of others and the more he can relate to the colors experienced by others.
 
-### Taste as aesthetic empathy
+## Taste as aesthetic empathy
 
 While not exactly mind-reading, empathy is the ability to feel and think what other people feel and think and relate to others. Since having good taste is very much the ability to make aesthetic judgements that others are likely to share, it's not unreasonable to say good taste is aesthetic empathy.
 

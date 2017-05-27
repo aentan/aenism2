@@ -4,64 +4,35 @@ description: Overcoming grown-up banality.
 date: 2014-01-26
 tags: ['creativity']
 topic: philosophy
+hot: true
 ---
+
+## The Riddle
 
 Consider this riddle I found spread­ing on Face­book some while ago.
 
 >_This problem can be solved by children in five to ten minutes, programmers in an hour and people with higher education…_
 
-<table class="table table-bordered text-center">
-  <tr>
-    <td>8809 &rarr; 6</td>
-    <td>5555 &rarr; 0 </td>
-  </tr>
-  <tr>
-    <td>7111 &rarr; 0</td>
-    <td>8193 &rarr; 3</td>
-  </tr>
-  <tr>
-    <td>2172 &rarr; 0</td>
-    <td>8096 &rarr; 5</td>
-  </tr>
-  <tr>
-    <td>6666 &rarr; 4</td>
-    <td>1111 &rarr; 0</td>
-  </tr>
-  <tr>
-    <td>3213 &rarr; 0</td>
-    <td>9999 &rarr; 4</td>
-  </tr>
-  <tr>
-    <td>7662 &rarr; 2</td>
-    <td>7756 &rarr; 1</td>
-  </tr>
-  <tr>
-    <td>9313 &rarr; 1</td>
-    <td>6855 &rarr; 3</td>
-  </tr>
-  <tr>
-    <td>0000 &rarr; 4</td>
-    <td>9881 &rarr; 5</td>
-  </tr>
-  <tr>
-    <td>2222 &rarr; 0</td>
-    <td>5531 &rarr; 0</td>
-  </tr>
-  <tr>
-    <td>3333 &rarr; 0</td>
-    <td><strong>2581 &rarr; ?</strong></td>
-  </tr>
-</table>
+``` bash
+8809 → 6  5555 → 0
+7111 → 0  8193 → 3
+2172 → 0  8096 → 5
+6666 → 4  1111 → 0
+3213 → 0  9999 → 4
+7662 → 2  7756 → 1
+9313 → 1  6855 → 3
+0000 → 4  9881 → 5
+2222 → 0  5531 → 0
+3333 → 0  2581 → ?
+```
 
 I solved it pretty quickly. Why don't you try?
 
----
-
 Have you seen the Bollywood film [_3 Idiots_](http://en.wikipedia.org/wiki/3_Idiots)? Here's the funny space pen scene from it.
 
-![space pen](http://farm8.staticflickr.com/7305/12143613986_30f18aeeee_o.jpg)
-![space pen](http://farm6.staticflickr.com/5527/12142958075_fc1907eebc_o.jpg)
-![pencil](http://farm8.staticflickr.com/7378/12143203883_3699707dbc_o.jpg)
+{{%figure src="http://farm8.staticflickr.com/7305/12143613986_30f18aeeee_o.jpg"%}}
+{{%figure src="http://farm6.staticflickr.com/5527/12142958075_fc1907eebc_o.jpg"%}}
+{{%figure src="http://farm8.staticflickr.com/7378/12143203883_3699707dbc_o.jpg"%}}
 
 ---
 
@@ -77,14 +48,14 @@ The pop­u­lar answers to the ques­tion involved cal­cu­la­tions with com­
 
 The simple string solution involves first cir­cling then cutting a string around the pizza's cir­cum­fer­ence. The string is then wrapped eleven times around one's thumb and index finger until one gets eleven equal divisions by trial and error. The divisions are then marked. Cir­cle the string around the pizza again and cut from center to the markings. What simplicity! The answer soon became a rated as _best source_.
 
-![Solution](http://farm3.staticflickr.com/2890/12143753226_66a141e5eb_z.jpg)
+{{%figure src="http://farm3.staticflickr.com/2890/12143753226_66a141e5eb_z.jpg"%}}
 
 Con­jur­ing math­e­mat­i­cal mumbo jumbo may make one look smart. To be truly cre­ative one needs to be able to lib­er­ate the mind from accumulated grown-up banality. Only then the child mind re-emerges.
 
-### Answer to the numbers question
+## Answer to the numbers question
 
 The ques­tion has noth­ing to do with math­e­mat­ics. Look for the closed loops or shapes in each num­ber and count them. In 0, 6, 8 and 9. 8 has two of them. 2581 has two. The answer is 2.
 
 ---
 
-_First published in my old website and reposted on [Lifehacker](http://lifehacker.com/5899592/overthinking-and-your-child+like-mind)._
+_First published in my old website and featured on [Lifehacker](http://lifehacker.com/5899592/overthinking-and-your-child+like-mind)._

@@ -54,7 +54,7 @@ $(function() {
 
   // Sticky Goto
   $(".goto nav").stick_in_parent({
-    offset_top: 122
+    offset_top: 167
   });
 
 

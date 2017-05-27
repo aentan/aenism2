@@ -12,7 +12,7 @@
     {{ partial "header.html" . }}
     <main>
       <section class="hero" data-width="720" data-height="533">
-        <h1>I reimagine experiences for ambitious software.</h1>
+        <h1>I reimagine experiences for ambitious products.</h1>
       </section>
       <section class="experience">
         <div class="wrapper">
@@ -92,6 +92,39 @@
             </article>
             <article class="swiper-slide card">
               <figure>
+                {{ partial "svg/logo_experience_viki.svg" . }}
+                <figcaption>
+                  <div>
+                    Viki
+                    <div class="topic">Entertainment</div>
+                  </div>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="swiper-slide card">
+              <figure>
+                {{ partial "svg/logo_experience_anideo.svg" . }}
+                <figcaption>
+                  <div>
+                    Anideo
+                    <div class="topic">Mobile</div>
+                  </div>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="swiper-slide card">
+              <figure>
+                {{ partial "svg/logo_experience_relayroom.svg" . }}
+                <figcaption>
+                  <div>
+                    Relay Room
+                    <div class="topic">Design</div>
+                  </div>
+                </figcaption>
+              </figure>
+            </article>
+            <article class="swiper-slide card">
+              <figure>
                 {{ partial "svg/logo_experience_hungrygowhere.svg" . }}
                 <figcaption>
                   <div>
@@ -147,36 +180,6 @@
           </div>
         </div>
       </section>
-      <section id="client-work" class="client-work">
-        <header>
-          <h2>
-            <a href="#client-work">Client Work</a>
-          </h2>
-        </header>
-        <div class="wrapper">
-          <p>You may be interested in these case studies.</p>
-        </div>
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            {{ range where .Data.Pages "Section" "work" }}
-            <article class="swiper-slide card">
-              <figure>
-                <div class="work-preview" style="background-image:url('{{ .Params.Preview_Image }}')"></div>
-                <figcaption>
-                  <div>
-                    <h3>{{ .Title }}</h3>
-                    <div class="topic">{{ .Params.Topic }}</div>
-                  </div>
-                  <p>{{ .Params.Description }}</p>
-                </figcaption>
-              </figure>
-              <a href="{{ .RelPermalink }}">Read More</a>
-            </article>
-            {{ end }}
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
-      </section>
       <section class="accolades">
         <div class="wrapper">
           <p>These are some of the publications my work has been featured in.</p>
@@ -201,6 +204,36 @@
           {{ partial "svg/logo_barcamp.svg" . }}
         </div>
       </section>
+      <section id="client-work" class="client-work">
+        <header>
+          <h2>
+            <a href="#client-work">Client Work</a>
+          </h2>
+        </header>
+        <div class="wrapper">
+          <p>You may be interested in these case studies.</p>
+        </div>
+        <div class="swiper-container">
+          <div class="swiper-wrapper">
+            {{ range where .Data.Pages "Section" "work" }}
+            <article class="swiper-slide card">
+              <figure>
+                <div class="work-preview" style="background-image:url('{{ .Params.Preview_Image }}')"></div>
+                <figcaption>
+                  <div>
+                    <h3>{{ .Title }}</h3>
+                    <div class="subtitle">{{ .Params.Client }}</div>
+                  </div>
+                  <p>{{ .Params.Description }}</p>
+                </figcaption>
+              </figure>
+              <a href="{{ .RelPermalink }}">Read More</a>
+            </article>
+            {{ end }}
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
       <section id="ideas" class="ideas">
         <header>
           <h2>
@@ -213,7 +246,7 @@
         <div class="deck">
           {{ range where .Data.Pages "Section" "ideas" }}
           <article class="card">
-            <h3>{{ .Title }}</h3>
+            <h3>{{ .Title }}{{ if (isset .Params "hot") }} <span class="hot">Hot</span>{{ end }}</h3>
             <div class="topic-label">{{ .Params.Topic }}</div>
             <div class="topic-icon topic-{{ .Params.Topic }}"></div>
             <a href="{{ .RelPermalink }}">Read More</a>

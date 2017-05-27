@@ -12,13 +12,13 @@ I tried to develop my own blog engine [*Pure*](http://writeonpure.com) and wrote
 
 So here I am with a new setup. It's much better and it's free.
 
-### Plumbing
+## Plumbing
 
 I experimented with [*Jekyll*](http://jekyllrb.com) and it wasn't flexible enough for me. Then I discovered [*Middleman*](http://middlemanapp.com). Like Jekyll it's a Ruby gem but much more flexible. It's based on [Sinatra](http://www.sinatrarb.com), like a mini framework. I also get an asset pipeline which means I can serve minified and concatenated assets for better front-end performance. And since it's a static site, there's no server-side processing nor database and thus blazing fast.
 
 I'm putting the entire blog and it's content in a public [repository](https://github.com/aentan/aenism) on Github. It makes sense because the content is public anyway. It also opens up the possibly of contributing articles by pull-request. Most important of all, Github is free. Github pages are served by Github's CDN which wouldn't have been trivial nor free to set up on my own hosting. Using a decentralized source-control system like Git means I'll always have my blog and content backed up locally. Even if Github dies tomorrow (pretty unlikely) I can easily redeploy the site somewhere else like Heroku.
 
-### Frontend
+## Frontend
 
 Underneath the hood is [*Bootstrap*](http://getbootstrap.com) which makes the site adaptable to various devices and screen sizes. Blogs should be responsive. Reading Wordpress blogs isn't so nice on mobile devices. Using plugins to make it work was so ugly I didn't even bother to do it with my old blog. Bootstrap is a better way.
 
@@ -26,7 +26,7 @@ Besides jQuery which is pretty much a standard for interactivity on most sites, 
 
 If you've noticed the really fast loading of articles from the homepage, I'm using [*pjax*](http://pjax.heroku.com) – a portmanteau of _pushState_ + _ajax_. Makes the site real snappy. I also added a fade transition between pages for elegance.
 
-### Design
+## Design
 
 Though I didn't continue using Pure I liked its simple content-centric design. Blogs are not marketing websites. The content should take center stage. Typography and whitespace are the chief elements of a good blog design. [*Medium*](https://medium.com) and [*ALA*](http://alistapart.com) embody this functional aesthetic well.
 
@@ -36,7 +36,7 @@ The animated masthead at the top of the homepage represents my consciousness. It
 
 Article pages are inspired by the simplicity of [*Medium*](http://medium.com) and simpler.
 
-### Third-party services
+## Third-party services
 
 Instead of rolling my own commenting system, I rely on [*Disqus*](http://disqus.com) which has just the right features and looks good. Saves me time.
 
