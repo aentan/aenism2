@@ -6,6 +6,9 @@
     <description>Recent content in Metaballs on Aenism</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>hello@aentan.com (AenTan)</managingEditor>
+    <webMaster>hello@aentan.com (AenTan)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
     <lastBuildDate>Mon, 03 Feb 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://aenism.com/tags/metaballs/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +18,7 @@
       <title>Make metaballs</title>
       <link>https://aenism.com/make-metaballs/</link>
       <pubDate>Mon, 03 Feb 2014 00:00:00 +0000</pubDate>
-      
+      <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/make-metaballs/</guid>
       <description>The blobby shapes you see in the 37signals logo. They are called metaballs. It&amp;rsquo;s not a typo. You can&amp;rsquo;t eat them.
 37signals logo It&amp;rsquo;s a common pattern in logos. The metaball shape is actually very easy to create in any vector software. Here&amp;rsquo;s how to do it in Illustrator using basic shapes and the Pathfinder tool.</description>

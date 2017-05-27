@@ -6,6 +6,9 @@
     <description>Recent content in Coffee on Aenism</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>hello@aentan.com (AenTan)</managingEditor>
+    <webMaster>hello@aentan.com (AenTan)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
     <lastBuildDate>Mon, 17 Feb 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://aenism.com/tags/coffee/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +18,7 @@
       <title>Cold brew coffee</title>
       <link>https://aenism.com/cold-brew-coffee/</link>
       <pubDate>Mon, 17 Feb 2014 00:00:00 +0000</pubDate>
-      
+      <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/cold-brew-coffee/</guid>
       <description>Regular coffee messes with my brain. I only drink coffee as a last resort. When I have to turn in code which I already know how to write and I only have to stay awake and type like a zombie on auto-pilot. Coffee rarely helps when I need to also be creative because I always end up making crap because zombies aren&amp;rsquo;t very creative.
 It&amp;rsquo;s mostly the caffeine overload. Perhaps I&amp;rsquo;m just too sensitive.</description>

@@ -6,6 +6,9 @@
     <description>Recent content in Ios on Aenism</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>hello@aentan.com (AenTan)</managingEditor>
+    <webMaster>hello@aentan.com (AenTan)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
     <lastBuildDate>Sat, 02 Jul 2016 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://aenism.com/tags/ios/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +18,7 @@
       <title>Multi-type navigation bar symbols in Sketch</title>
       <link>https://aenism.com/multi-type-navigation-bar-symbols-in-sketch/</link>
       <pubDate>Sat, 02 Jul 2016 00:00:00 +0000</pubDate>
-      
+      <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/multi-type-navigation-bar-symbols-in-sketch/</guid>
       <description>Here&amp;rsquo;s a way to multiple types of navigation bars using a single symbol in Sketch app. It saves me lots of time and should do the same for you.
  I have three symbols. The back button and status bar symbols are standard. The important one is the navigation bar symbol. Look at the layer list and you will see I have included various labels for left and right items, done item and two types of titles/subtitle.</description>

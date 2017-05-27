@@ -6,6 +6,9 @@
     <description>Recent content in Photoshop on Aenism</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>hello@aentan.com (AenTan)</managingEditor>
+    <webMaster>hello@aentan.com (AenTan)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
     <lastBuildDate>Sat, 08 Mar 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://aenism.com/tags/photoshop/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +18,7 @@
       <title>Photoshop text swap trick</title>
       <link>https://aenism.com/photoshop-text-swap-trick/</link>
       <pubDate>Sat, 08 Mar 2014 00:00:00 +0000</pubDate>
-      
+      <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/photoshop-text-swap-trick/</guid>
       <description>How can you swap the top textbox with the bottom textbox so you ensure the space between the two textboxes remain the same like this?
  Here&amp;rsquo;s the layer structure:

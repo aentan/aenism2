@@ -6,6 +6,9 @@
     <description>Recent content in Bootstrap on Aenism</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>hello@aentan.com (AenTan)</managingEditor>
+    <webMaster>hello@aentan.com (AenTan)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
     <lastBuildDate>Wed, 29 Jan 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://aenism.com/tags/bootstrap/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +18,7 @@
       <title>First contribution to Bootstrap</title>
       <link>https://aenism.com/first-contribution-to-bootstrap/</link>
       <pubDate>Wed, 29 Jan 2014 00:00:00 +0000</pubDate>
-      
+      <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/first-contribution-to-bootstrap/</guid>
       <description>Mark Otto merged my first pull request into Bootstrap. Just some additional CSS to add previously unsupported button dropdowns to justified button groups. Here&amp;rsquo;s a demo.
  If you are using Bootstrap &amp;gt; v3.0.3 it has five lines of my code in it!</description>

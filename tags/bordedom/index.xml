@@ -6,6 +6,9 @@
     <description>Recent content in Bordedom on Aenism</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <managingEditor>hello@aentan.com (AenTan)</managingEditor>
+    <webMaster>hello@aentan.com (AenTan)</webMaster>
+    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
     <lastBuildDate>Sun, 09 Mar 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://aenism.com/tags/bordedom/index.xml" rel="self" type="application/rss+xml" />
@@ -15,7 +18,7 @@
       <title>White room</title>
       <link>https://aenism.com/white-room/</link>
       <pubDate>Sun, 09 Mar 2014 00:00:00 +0000</pubDate>
-      
+      <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/white-room/</guid>
       <description>Imagine.
 You are in an empty white room. Just you in a stark, small empty space. With nothing to do, nothing to entertain yourself with. You fall asleep eventually only to wake up to the same bleakness as before.
