@@ -343,6 +343,11 @@ section {
     padding: 30px 0;
   }
 
+  .swiper-button-prev,
+  .swiper-button-next {
+    margin-top: -50px;
+  }
+
   .card {
     position: relative;
     width: 280px;
