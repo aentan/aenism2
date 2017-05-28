@@ -69,7 +69,9 @@ $(function() {
     slidesOffsetBefore: 30,
     slidesOffsetAfter: 30,
     spaceBetween: 15,
-    grabCursor: true
+    grabCursor: true,
+    prevButton: '.swiper-button-prev',
+    nextButton: '.swiper-button-next'
   });
   var clientWorkSwiper = new Swiper ('.client-work .swiper-container', {
     freeMode: true,
@@ -82,7 +84,9 @@ $(function() {
     slidesOffsetAfter: 30,
     spaceBetween: 15,
     pagination: '.swiper-pagination',
-    grabCursor: true
+    grabCursor: true,
+    prevButton: '.swiper-button-prev',
+    nextButton: '.swiper-button-next'
   });
 
   // Parallax
