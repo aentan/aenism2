@@ -9,14 +9,17 @@ preview_image = "/img/work_preview_toc.jpg"
 article_image = ""
 +++
 
-<p class="lead">The map was inspired by a passage in Walter Benjamin’s _Arcades Project_ where he describes a 19<sup>th</sup> century map of Paris known as the Plan Taride, which unlike the flimsy paper maps of the day, was a miniature fully-bound book.</p>
-
 {{%figure src="/img/work_content_tocsfmap2.png"%}}
-{{%figure src="/img/work_content_tocsfmap1.png"%}}
+
+<p class="lead">The map was inspired by a passage in Walter Benjamin’s _Arcades Project_ where he describes a 19<sup>th</sup> century map of Paris known as the Plan Taride, which unlike the flimsy paper maps of the day, was a miniature fully-bound book.</p>
 
 ## Content
 
 Highlights 38 spots around the city, including the best tea shop in Chinatown, a mini-park 11 stories in the air, a private library, and a bunch of amazing restaurants.
+
+{{%figure src="/img/work_content_tocsfmap_info.jpg"%}}
+
+{{%figure src="/img/work_content_tocsfmap_info2.jpg"%}}
 
 ## Construction
 
@@ -39,6 +42,8 @@ The map is printed by [Yushin-Plus](http://www.yushin-p.com), an art printing co
 In order to accomodate quick consultation without fumbling or squinting, the map expands to full size at the pull of a flap. When folded, it's small enough to fit in the credit-card pocket of most wallets. The folding method is known as the _Miura fold (ミウラ折り? Miura-ori)_ and was invented by Japanese astrophysicist Koryo Miura, to fold large solar panel arrays for space satellites in the Japanese space program which can then be unpacked in one motion by pulling on its opposite ends, and likewise folded by pushing the two ends together. This property reduces the number of motors required to unfold this shape, reducing weight and complexity.
 
 {{%figure src="/img/work_content_tocsfmap3.gif"%}}
+
+{{%figure src="/img/work_content_tocsfmap1.png"%}}
 
 ## Stringent selection
 
