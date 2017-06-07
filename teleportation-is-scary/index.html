@@ -47,28 +47,26 @@
 <p>Click around this site to see its cross fade transition.</p>
 
 <p>This is the function for loading content via pjax. I used the <code>fragment</code> option to tell jquery-pjax to grab the <code>#main</code> element from the target DOM. If you are serving dynamic i.e. PHP or Ruby pages and can output layout-less content then you can don&rsquo;t need to use <code>fragment</code>.</p>
-<div class="highlight" style="background: #2f1e2e"><pre style="line-height: 125%"><span></span><span style="color: #815ba4">function</span> <span style="color: #06b6ef">pjaxLoad</span><span style="color: #e7e9db">(</span><span style="color: #06b6ef">url</span><span style="color: #e7e9db">)</span> <span style="color: #e7e9db">{</span>
-  <span style="color: #06b6ef">$</span><span style="color: #e7e9db">.</span><span style="color: #06b6ef">pjax</span><span style="color: #e7e9db">({</span>
-    <span style="color: #06b6ef">url</span><span style="color: #5bc4bf">:</span> <span style="color: #06b6ef">url</span><span style="color: #e7e9db">,</span>
-    <span style="color: #06b6ef">container</span><span style="color: #5bc4bf">:</span> <span style="color: #48b685">&#39;#main&#39;</span><span style="color: #e7e9db">,</span>
-    <span style="color: #06b6ef">fragment</span><span style="color: #5bc4bf">:</span> <span style="color: #48b685">&#39;#main&#39;</span>
-  <span style="color: #e7e9db">});</span>
-<span style="color: #e7e9db">}</span>
-</pre></div>
+function pjaxLoad(url) {
+  $.pjax({
+    url: url,
+    container: '#main',
+    fragment: '#main'
+  });
+}
 
 <h3 id="handling-clicks">Handling clicks</h3>
 
 <p>I then handle clicks on links I want to be pjaxified. It&rsquo;s also important to ensure the browser supports pjax with <code>$.support.pjax</code>. Otherwise the links will not be handled and will not be pjaxified.</p>
-<div class="highlight" style="background: #2f1e2e"><pre style="line-height: 125%"><span></span><span style="color: #815ba4">if</span> <span style="color: #e7e9db">(</span><span style="color: #06b6ef">$</span><span style="color: #e7e9db">.</span><span style="color: #06b6ef">support</span><span style="color: #e7e9db">.</span><span style="color: #06b6ef">pjax</span><span style="color: #e7e9db">)</span> <span style="color: #e7e9db">{</span>
-  <span style="color: #06b6ef">$</span><span style="color: #e7e9db">(document).</span><span style="color: #06b6ef">on</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;click&#39;</span><span style="color: #e7e9db">,</span> <span style="color: #48b685">&#39;#articles article&#39;</span><span style="color: #e7e9db">,</span> <span style="color: #815ba4">function</span><span style="color: #e7e9db">(</span><span style="color: #06b6ef">e</span><span style="color: #e7e9db">)</span> <span style="color: #e7e9db">{</span>
-    <span style="color: #06b6ef">pjaxLoad</span><span style="color: #e7e9db">(</span><span style="color: #06b6ef">$</span><span style="color: #e7e9db">(</span><span style="color: #815ba4">this</span><span style="color: #e7e9db">).</span><span style="color: #06b6ef">find</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;a&#39;</span><span style="color: #e7e9db">).</span><span style="color: #06b6ef">attr</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;href&#39;</span><span style="color: #e7e9db">));</span>
-  <span style="color: #e7e9db">});</span>
-  <span style="color: #06b6ef">$</span><span style="color: #e7e9db">(document).</span><span style="color: #06b6ef">on</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;click&#39;</span><span style="color: #e7e9db">,</span> <span style="color: #48b685">&#39;#articles article h2 a&#39;</span><span style="color: #e7e9db">,</span> <span style="color: #815ba4">function</span><span style="color: #e7e9db">(</span><span style="color: #06b6ef">e</span><span style="color: #e7e9db">)</span> <span style="color: #e7e9db">{</span>
-    <span style="color: #06b6ef">e</span><span style="color: #e7e9db">.</span><span style="color: #06b6ef">preventDefault</span><span style="color: #e7e9db">();</span>
-    <span style="color: #06b6ef">pjaxLoad</span><span style="color: #e7e9db">(</span><span style="color: #06b6ef">$</span><span style="color: #e7e9db">(</span><span style="color: #815ba4">this</span><span style="color: #e7e9db">).</span><span style="color: #06b6ef">attr</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;href&#39;</span><span style="color: #e7e9db">));</span>
-  <span style="color: #e7e9db">});</span>
-<span style="color: #e7e9db">}</span>
-</pre></div>
+if ($.support.pjax) {
+  $(document).on('click', '#articles article', function(e) {
+    pjaxLoad($(this).find('a').attr('href'));
+  });
+  $(document).on('click', '#articles article h2 a', function(e) {
+    e.preventDefault();
+    pjaxLoad($(this).attr('href'));
+  });
+}
 
 <h3 id="cross-fade">Cross-fade</h3>
 
@@ -88,25 +86,23 @@
 </ol>
 
 <p>At <code>pjax:start</code>, clone <code>#main</code> and then stack <code>#clone</code> above and prevent scrolling.</p>
-<div class="highlight" style="background: #2f1e2e"><pre style="line-height: 125%"><span></span><span style="color: #06b6ef">$</span><span style="color: #e7e9db">(document).</span><span style="color: #06b6ef">on</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;pjax:start&#39;</span><span style="color: #e7e9db">,</span> <span style="color: #815ba4">function</span><span style="color: #e7e9db">(</span><span style="color: #06b6ef">e</span><span style="color: #e7e9db">)</span> <span style="color: #e7e9db">{</span>
-  <span style="color: #06b6ef">$main</span><span style="color: #e7e9db">.</span><span style="color: #06b6ef">after</span><span style="color: #e7e9db">(</span><span style="color: #06b6ef">$main</span><span style="color: #e7e9db">.</span><span style="color: #06b6ef">clone</span><span style="color: #e7e9db">().</span><span style="color: #06b6ef">attr</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;id&#39;</span><span style="color: #e7e9db">,</span> <span style="color: #48b685">&#39;clone&#39;</span><span style="color: #e7e9db">));</span>
-  <span style="color: #06b6ef">$</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;#clone&#39;</span><span style="color: #e7e9db">).</span><span style="color: #06b6ef">css</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;z-index&#39;</span><span style="color: #e7e9db">,</span> <span style="color: #f99b15">600</span><span style="color: #e7e9db">);</span>
-  <span style="color: #06b6ef">$body</span><span style="color: #e7e9db">.</span><span style="color: #06b6ef">css</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;overflow&#39;</span><span style="color: #e7e9db">,</span> <span style="color: #48b685">&#39;hidden&#39;</span><span style="color: #e7e9db">);</span>
-<span style="color: #e7e9db">});</span>
-</pre></div>
+$(document).on('pjax:start', function(e) {
+  $main.after($main.clone().attr('id', 'clone'));
+  $('#clone').css('z-index', 600);
+  $body.css('overflow', 'hidden');
+});
 
 <p>At <code>pjax:end</code>, fade out <code>#clone</code> and restore scrolling. If you have elements in the loaded DOM that has to be processed by JavaScript, be sure to reinitialize them here. I&rsquo;m using <a href="http://www.greensock.com/gsap-js/">GSAP</a> instead of jQuery for more performant animations but jQuery will work fine.</p>
-<div class="highlight" style="background: #2f1e2e"><pre style="line-height: 125%"><span></span><span style="color: #06b6ef">$</span><span style="color: #e7e9db">(document).</span><span style="color: #06b6ef">on</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;pjax:end&#39;</span><span style="color: #e7e9db">,</span> <span style="color: #815ba4">function</span><span style="color: #e7e9db">(</span><span style="color: #06b6ef">e</span><span style="color: #e7e9db">)</span> <span style="color: #e7e9db">{</span>
-  <span style="color: #776e71">// Reinitialize JS here if necessary</span>
-  <span style="color: #06b6ef">TweenLite</span><span style="color: #e7e9db">.</span><span style="color: #06b6ef">to</span><span style="color: #e7e9db">(</span><span style="color: #06b6ef">$</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;#clone&#39;</span><span style="color: #e7e9db">),</span> <span style="color: #f99b15">0.8</span><span style="color: #e7e9db">,</span> <span style="color: #e7e9db">{</span>
-    <span style="color: #06b6ef">opacity</span><span style="color: #5bc4bf">:</span> <span style="color: #f99b15">0</span><span style="color: #e7e9db">,</span>
-    <span style="color: #06b6ef">onComplete</span><span style="color: #5bc4bf">:</span> <span style="color: #815ba4">function</span><span style="color: #e7e9db">()</span> <span style="color: #e7e9db">{</span>
-      <span style="color: #06b6ef">$</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;#clone&#39;</span><span style="color: #e7e9db">).</span><span style="color: #06b6ef">remove</span><span style="color: #e7e9db">();</span>
-      <span style="color: #06b6ef">$</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;body&#39;</span><span style="color: #e7e9db">).</span><span style="color: #06b6ef">css</span><span style="color: #e7e9db">(</span><span style="color: #48b685">&#39;overflow&#39;</span><span style="color: #e7e9db">,</span> <span style="color: #48b685">&#39;auto&#39;</span><span style="color: #e7e9db">);</span>
-    <span style="color: #e7e9db">}</span>
-  <span style="color: #e7e9db">});</span>
-<span style="color: #e7e9db">});</span>
-</pre></div>
+$(document).on('pjax:end', function(e) {
+  // Reinitialize JS here if necessary
+  TweenLite.to($('#clone'), 0.8, {
+    opacity: 0,
+    onComplete: function() {
+      $('#clone').remove();
+      $('body').css('overflow', 'auto');
+    }
+  });
+});
 
 <hr />
 
