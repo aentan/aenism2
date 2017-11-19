@@ -1,3 +1,11 @@
+@mixin type-striphead() {
+  font-family    : $type-base-family;
+  font-size      : $type-striphead-size;
+  font-weight    : $type-striphead-weight;
+  letter-spacing : $type-striphead-letter-spacing;
+  line-height    : $type-striphead-line-height;
+}
+
 @mixin type-displaylll() {
   font-family    : $type-base-family;
   font-size      : $type-displaylll-size;

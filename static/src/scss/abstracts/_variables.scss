@@ -8,21 +8,36 @@ $yellow                         : #fbfb7e;
 
 $pink                           : #f48fb1;
 
-$gray-light                     : #f5f8fa;
-$gray                           : #bfc9db;
-$gray-dark                      : #8f9ebc;
-$gray-darker                    : #5c719a;
+$gray-light                     : rgba(0, 0, 0, 0.12);
+$gray                           : rgba(0, 0, 0, 0.24);
+$gray-dark                      : rgba(0, 0, 0, 0.48);
+$gray-darker                    : rgba(0, 0, 0, 0.72);
 
 // UI
-$ui-seperator-width             : 1px;
-$ui-seperator-color             : $gray;
-$ui-border-radius               : 10px;
+$ui-border-width                : 1px;
+$ui-border-color                : $gray;
+$ui-border-radius               : 4px;
 
 // Typography
 $type-base-family               : -apple-system, BlinkMacSystemFont,
 "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
 "Fira Sans", "Droid Sans", "Helvetica Neue",
 sans-serif;
+
+$type-weight-black              : 900;
+$type-weight-heavy              : 800;
+$type-weight-bold               : 700;
+$type-weight-semibold           : 600;
+$type-weight-medium             : 500;
+$type-weight-regular            : 400;
+$type-weight-thin               : 300;
+$type-weight-light              : 200;
+$type-weight-ultralight         : 100;
+
+$type-striphead-size            : 1.3rem;
+$type-striphead-weight          : $type-weight-semibold;
+$type-striphead-line-height     : 1.6rem;
+$type-striphead-letter-spacing  : tracking-to-ems(-6);
 
 $type-displaylll-size           : 4.8rem;
 $type-displaylll-weight         : 200;

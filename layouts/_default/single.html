@@ -13,7 +13,6 @@
     {{ end }}
   </head>
   <body id="top" class="single">
-    {{ partial "header.html" . }}
     <main>
       <header style="background-image:url({{ .Params.Article_Image }});">
         <h1>{{ .Title }}</h1>
@@ -36,7 +35,6 @@
         {{ end }}
       </section>
     </main>
-    {{ partial "footer.html" . }}
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="/js/{{ index .Site.Data.js.hash "main.js" }}"></script>
   </body>
