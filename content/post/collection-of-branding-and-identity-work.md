@@ -3,10 +3,9 @@ date = "2017-05-10"
 tags = ['branding', 'identity']
 title = "Collection of Branding and Identity Work"
 client = "Various Clients"
-topic = "Branding"
+topic = "work"
 description = "A selection of logos and other identity artifacts for the companies I have worked with, created over the years."
-preview_image = "/img/work_preview_branding.png"
-article_image = ""
+preview_image = "work_preview_branding.png"
 +++
 
 ## 6degrees

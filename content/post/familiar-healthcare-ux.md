@@ -3,9 +3,9 @@ date = "2017-05-16"
 tags = ['mydoc', 'healthcare']
 title = "Familiar Healthcare UX"
 client = "MyDoc"
-topic = "healthcare"
+topic = "work"
 description = "A healthcare platform with a familiar user experience to connect patients and healthcare professionals."
-preview_image = "/img/work_preview_mydoc.png"
+preview_image = "work_preview_mydoc.png"
 article_image = ""
 +++
 

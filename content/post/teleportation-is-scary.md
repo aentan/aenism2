@@ -25,7 +25,7 @@ Click around this site to see its cross fade transition.
 
 This is the function for loading content via pjax. I used the `fragment` option to tell jquery-pjax to grab the `#main` element from the target DOM. If you are serving dynamic i.e. PHP or Ruby pages and can output layout-less content then you can don't need to use `fragment`.
 
-``` js
+```js
 function pjaxLoad(url) {
   $.pjax({
     url: url,
@@ -39,7 +39,7 @@ function pjaxLoad(url) {
 
 I then handle clicks on links I want to be pjaxified. It's also important to ensure the browser supports pjax with `$.support.pjax`. Otherwise the links will not be handled and will not be pjaxified.
 
-``` js
+```js
 if ($.support.pjax) {
   $(document).on('click', '#articles article', function(e) {
     pjaxLoad($(this).find('a').attr('href'));
@@ -65,7 +65,7 @@ At this point, pjax works. But it feels like teleportation. We need to add trans
 
 At `pjax:start`, clone `#main` and then stack `#clone` above and prevent scrolling.
 
-``` js
+```js
 $(document).on('pjax:start', function(e) {
   $main.after($main.clone().attr('id', 'clone'));
   $('#clone').css('z-index', 600);
@@ -75,7 +75,7 @@ $(document).on('pjax:start', function(e) {
 
 At `pjax:end`, fade out `#clone` and restore scrolling. If you have elements in the loaded DOM that has to be processed by JavaScript, be sure to reinitialize them here. I'm using [GSAP](http://www.greensock.com/gsap-js/) instead of jQuery for more performant animations but jQuery will work fine.
 
-``` js
+```js
 $(document).on('pjax:end', function(e) {
   // Reinitialize JS here if necessary
   TweenLite.to($('#clone'), 0.8, {

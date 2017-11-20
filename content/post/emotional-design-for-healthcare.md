@@ -2,10 +2,10 @@
 date = "2017-05-27"
 tags = ['mydoc', 'healthcare']
 title = "Emotional Design for Healthcare"
+topic = "work"
 client = "MyDoc"
 description = "An emotional, non-sterile approach to designing user experience in healthcare apps."
-preview_image = "/img/work_preview_mydoc2.png"
-article_image = ""
+preview_image = "work_preview_mydoc2.png"
 +++
 
 Search for _health app ui_ on pinterest and you will find 9 of 10 examples use a white/cyan color scheme, have minimalistic graphs and beautifully type-set numbers, but not a lot of human.
