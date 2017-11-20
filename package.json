@@ -18,6 +18,7 @@
     "gulp-cssmin": "^0.2.0",
     "gulp-gzip": "^1.4.0",
     "gulp-hash": "^4.1.1",
+    "gulp-image-resize": "^0.13.0",
     "gulp-imagemin": "^3.2.0",
     "gulp-minify": "^1.0.0",
     "gulp-sass": "^3.1.0",
