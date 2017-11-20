@@ -4,6 +4,7 @@ description: Reimagining the book.
 date: 2014-01-29
 tags: ['vision']
 topic: philosophy
+preview_image: "weaving.png"
 ---
 
 Human communication progresses in three primary dimensions – _relation_, _distance_ and _fidelity_. Relation is about how we are connected. The simplest network is a direct line between two nodes. A face-to-face (_one-to-one_) dialog for example. A speech is _one-to-many_. A campfire is _many-to-many_. With the Morse code, we conquered distance. The telephone allowed us to converse with somebody far away as if he was near. The internet grew similarly. Email started as one-to-one. Then came the web and people used websites to distribute information. Then came social networks and multi-player online games. Technology created the screen. First it was moving pictures, then came color. Next came touch interfaces. The fidelity of our media is the most observable dimension for it touches our senses directly.

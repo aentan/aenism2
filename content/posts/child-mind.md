@@ -4,7 +4,7 @@ description: Overcoming grown-up banality.
 date: 2014-01-26
 tags: ['creativity']
 topic: philosophy
-hot: true
+preview_image: "pencil.jpg"
 ---
 
 ## The Riddle

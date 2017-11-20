@@ -4,6 +4,7 @@ description: How to create the 37signals logo mark.
 date: 2014-02-03
 tags: ['metaballs', 'logo', 'illustrator']
 topic: design
+preview_image: "metaball.png"
 ---
 
 The blobby shapes you see in the [37signals](http://37signals.com) logo. They are called [metaballs](http://en.wikipedia.org/wiki/Metaballs). It's not a typo. You can't eat them.

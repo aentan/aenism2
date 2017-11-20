@@ -4,7 +4,7 @@ description: Adaptive and visual product layout.
 date: 2014-02-07
 tags: ['uniqlo']
 topic: design
-hot: true
+preview_image: "uniqlo.png"
 ---
 
 In this article I'll discuss an experimental redesign of a fashion product page from Uniqlo Japan's online shopping website. I imagined how the site would be like a couple of years from now. [View the demo](/uniqlo-next-demo)

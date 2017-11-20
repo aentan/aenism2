@@ -4,6 +4,7 @@ description: On aesthetic empathy.
 date: 2014-03-15
 tags: ['taste', 'aesthetic', 'philosophy', 'emotions']
 topic: philosophy
+preview_image: "immanuel-kant.jpg"
 ---
 
 The widely accepted notion of taste is of a sociological concept defined as a person's personal and cultural patterns of preference. Of what looks good and what is cool. Is there an objective measure of beauty? How does taste work?

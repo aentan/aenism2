@@ -1,9 +1,10 @@
 ---
 title: Fear, regression and creativity
-description: 
+description:
 date: 2014-06-30
 tags: ['fear', 'regression', 'childhood', 'creativity', 'psychology']
 topic: psychology
+preview_image: "levi.png"
 ---
 
 It's scary to be a child. We start off as helpless infants totally dependent on our caretakers. As soon as we leave the safety of our mothers' wombs, we had to start getting used to fears and anxieties as the world unfolds itself in ever increasing complexity.

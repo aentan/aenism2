@@ -4,7 +4,7 @@ description: For adults around children.
 date: 2014-02-04
 tags: ['curiosity', 'children']
 topic: philosophy
-preview_image: "test"
+preview_image: "cat-1373879_1280.jpg"
 ---
 
 Nuon is a curious boy. He got it from me. I remember on the day he was born, I was carrying tiny Nuon in my arms as I showed him around the room my wife was staying in. I pointed at various objects and his already keen eyes followed my finger around. There was a glow in his eyes. “Wow” I thought, “he’s going to be an explorer!”

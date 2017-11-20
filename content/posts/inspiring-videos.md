@@ -4,7 +4,7 @@ description: That made me a better designer.
 date: 2014-01-31
 tags: ['design', 'videos', 'inspiration']
 topic: design
-hot: true
+preview_image: "goldencircle.png"
 ---
 
 If you do creative work like me you would find the following videos helpful. I've grouped them to make it easier for you to choose what you want to watch but I recommend you watch all of them.

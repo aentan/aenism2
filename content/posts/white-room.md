@@ -4,6 +4,7 @@ description: Your boredom is over-inflated.
 date: 2014-03-09
 tags: ['white room', 'bordedom']
 topic: philosophy
+preview_image: "thx.png"
 ---
 
 Imagine.

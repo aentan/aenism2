@@ -4,6 +4,7 @@ description: Calmer pjax with transitions.
 date: 2014-01-30
 tags: ['pjax', 'ux']
 topic: tech
+preview_image: "warp.jpg"
 ---
 
 I first came across _pjax_ (pushState + ajax) when I was working on a Rails 4 project which has [_Turbolinks_](https://github.com/rails/turbolinks). Turbolinks isn't pjax per se. It's similar and based on the same philosophy.
