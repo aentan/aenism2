@@ -6,6 +6,7 @@ var gulp         = require("gulp"),
     del          = require("del"),
     svgmin       = require('gulp-svgmin'),
     imagemin     = require('gulp-imagemin'),
+    imageResize  = require('gulp-image-resize'),
     uglify       = require('gulp-uglify'),
     cssmin       = require('gulp-cssmin'),
     changed      = require('gulp-changed')
@@ -57,6 +58,14 @@ gulp.task("scss", function () {
 })
 
 gulp.task("img", function () {
+    gulp.src("static/src/img/previews/**/*")
+        .pipe(imageResize({
+          width   : 128,
+          height  : 128,
+          cover   : true
+        }))
+        .pipe(gulp.dest("static/img/previews"))
+
     gulp.src("static/src/img/**/*")
         .pipe(changed("static/img"))
         .pipe(imagemin())
