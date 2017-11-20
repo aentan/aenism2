@@ -15,12 +15,13 @@ var Engine    = Matter.Engine,
     World     = Matter.World,
     Bodies    = Matter.Bodies,
     Events    = Matter.Events,
+    Query     = Matter.Query,
     MouseConstraint = Matter.MouseConstraint,
     Mouse     = Matter.Mouse;
 
 // create engine
-var engine = Engine.create(),
-    world = engine.world;
+var engine    = Engine.create(),
+    world     = engine.world;
 
 // create renderer
 var render = Render.create({
@@ -56,20 +57,20 @@ Runner.run(runner, engine);
 
 // add walls
 var wallopts = {
-    isStatic: true,
-    restitution: 0.2,
-    friction: 1
+    isStatic:     true,
+    restitution:  0.2,
+    friction:     1
 };
 var groundopts = {
-    isStatic: true,
-    restitution: 0,
-    friction: 1
+    isStatic:     true,
+    restitution:  0,
+    friction:     1
 };
 World.add(world, [
   // ground
-  Bodies.rectangle(window.innerWidth/2, window.innerHeight+50, window.innerWidth, 100, groundopts),
+  Bodies.rectangle(window.innerWidth/2-100, window.innerHeight+50, window.innerWidth+200, 100, groundopts),
   // walls
-  Bodies.rectangle(window.innerWidth/2, -50, window.innerWidth, 100, wallopts), // top
+  Bodies.rectangle(window.innerWidth/2-100, -50, window.innerWidth+200, 100, wallopts), // top
   Bodies.rectangle(window.innerWidth+50, window.innerHeight/2, 100, window.innerHeight, wallopts), // right
   Bodies.rectangle(-50, window.innerHeight/2, 100, window.innerHeight, wallopts) // left
 ]);
@@ -86,13 +87,33 @@ for (var i = 0, l = bodiesDom.length; i < l; i++) {
       friction:         1,
       frictionStatic:   1,
       density:          1,
-      angle:            (Math.random() * 2.000) - 1.000,
+      chamfer:          { radius: 4 },
+      angle:            (Math.random() * 2.000) - 1.000
     }
   );
   bodiesDom[i].id = body.id;
   bodies.push(body);
 }
 World.add(engine.world, bodies);
+
+var navsDom = document.querySelectorAll('.page-nav');
+var navs = [];
+for (var i = 0, l = navsDom.length; i < l; i++) {
+  var nav = Bodies.circle(
+    VIEW.centerX + Math.floor(Math.random() * VIEW.width/2) - VIEW.width/4,
+    0,
+    24, {
+      restitution:      0.2,
+      friction:         1,
+      frictionStatic:   1,
+      density:          1,
+      angle:            (Math.random() * 2.000) - 1.000
+    }
+  );
+  navsDom[i].id = nav.id;
+  navs.push(nav);
+}
+World.add(engine.world, navs);
 
 // add mouse control
 var mouse = Mouse.create(render.canvas),
@@ -113,13 +134,25 @@ render.mouse = mouse;
 
 // clicking to post
 document.body.addEventListener('click', function(e) {
-  var clickedBodyId = Matter.Query.point(bodies, { x: e.clientX, y: e.clientY })[0].id;
-  window.location.href = document.getElementById(clickedBodyId).getAttribute("data-url");
+  if (Query.point(bodies, { x: e.clientX, y: e.clientY }).length) {
+    var underMouse = Query.point(bodies, { x: e.clientX, y: e.clientY })[0].id;
+    window.location.href = document.getElementById(underMouse).getAttribute("data-url");
+  }
+  if (Query.point(navs, { x: e.clientX, y: e.clientY }).length) {
+    var underMouse = Query.point(navs, { x: e.clientX, y: e.clientY })[0].id;
+    if (document.getElementById(underMouse).getAttribute("data-url")) {
+      window.location.href = document.getElementById(underMouse).getAttribute("data-url");
+    } else {
+      // show help
+    }
+  }
 });
 
 window.requestAnimationFrame(update);
 
 function update() {
+
+  // strips
   for (var i = 0, l = bodiesDom.length; i < l; i++) {
     var bodyDom = bodiesDom[i];
     var body = null;
@@ -138,7 +171,27 @@ function update() {
       (body.position.y - bodyDom.offsetHeight / 2) +
       "px )";
     bodyDom.style.transform += "rotate( " + body.angle + "rad )";
+  }
 
+  // navs
+  for (var i = 0, l = navsDom.length; i < l; i++) {
+    var navDom = navsDom[i];
+    var nav = null;
+    for (var j = 0, k = navs.length; j < k; j++) {
+      if (navs[j].id == navDom.id) {
+        nav = navs[j];
+        break;
+      }
+    }
+
+    if (nav === null) continue;
+
+    navDom.style.transform = "translate( " +
+      (nav.position.x - navDom.offsetWidth / 2) +
+      "px, " +
+      (nav.position.y - navDom.offsetHeight / 2) +
+      "px )";
+    navDom.style.transform += "rotate( " + nav.angle + "rad )";
   }
   window.requestAnimationFrame(update);
 }

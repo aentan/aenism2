@@ -14,7 +14,7 @@
   </head>
   <body id="top" class="single">
     <main>
-      <header style="background-image:url({{ .Params.Article_Image }});">
+      <header>
         <h1>{{ .Title }}</h1>
         <p>
           {{ if not (isset .Params "client") }}
@@ -30,12 +30,7 @@
             {{ .Content }}
           </div>
         </article>
-        {{ if not (isset .Params "nogoto") }}
-          {{ partial "goto.html" . }}
-        {{ end }}
       </section>
     </main>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/{{ index .Site.Data.js.hash "main.js" }}"></script>
   </body>
 </html>

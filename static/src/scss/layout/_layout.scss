@@ -9,6 +9,10 @@ body {
 body {
   margin:                     0;
   background-color:           $white;
+
+  &.home {
+    overflow:                 hidden;
+  }
 }
 
 // Main
@@ -21,6 +25,7 @@ main {
 .strip {
   width:                      208px;
   height:                     64px;
+  background-color:           $white;
   border-radius:              $ui-border-radius;
   box-sizing:                 border-box;
   padding-left:               72px;
@@ -69,6 +74,10 @@ main {
     overflow:                 hidden;
 
     img {
+      display:                block;
+      position:               absolute;
+      top:                    0;
+      left:                   0;
       width:                  64px;
       height:                 64px;
     }
@@ -79,4 +88,54 @@ main {
 #debug {
   position:                   absolute;
   z-index:                    1;
+}
+
+// pagination
+
+.page-nav {
+  position:                   absolute;
+  display:                    block;
+  width:                      48px;
+  height:                     48px;
+  box-sizing:                 border-box;
+  border-radius:              24px;
+  border:                     $ui-border-width solid $ui-border-color;
+  background-position:        center center;
+  background-repeat:          no-repeat;
+}
+
+.page-plus {
+  background-image:           url($svg-date-page-plus);
+}
+
+.page-minus {
+  background-image:           url($svg-date-page-minus);
+}
+
+.page-help {
+  background-image:           url($svg-date-page-help);
+}
+
+// single pages
+
+.single {
+
+  main {
+    max-width:                640px;
+    margin:                   0 auto;
+    padding-bottom:           128px;
+    height:                   auto;
+  }
+
+  header {
+    margin-bottom:            64px;
+  }
+
+  figure {
+    img {
+      width:                  100%;
+      height:                 auto;
+    }
+  }
+
 }

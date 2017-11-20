@@ -12,11 +12,21 @@
     <link href="{{ .RSSLink }}" rel="feed" type="application/rss+xml" title="{{ .Site.Title }}" />
     {{ end }}
   </head>
-  <body>
+  <body class="home">
 
     <main>
 
-        {{ range where .Data.Pages "Section" "posts" }}
+        {{ $pag := .Paginate (where .Data.Pages "Section" "post") }}
+
+        {{ if $pag.HasPrev }}
+        <div data-url="{{ $pag.Prev.URL }}" class="page-nav page-minus"></div>
+        {{ end }}
+        {{ if $pag.HasNext }}
+        <div data-url="{{ $pag.Next.URL }}" class="page-nav page-plus"></div>
+        {{ end }}
+        <div class="page-nav page-help"></div>
+
+        {{ range $pag.Pages }}
         <article class="strip" data-url="{{ .RelPermalink }}">
           <h3>{{ .Title }}</h3>
           <div class="topic">{{ .Params.Topic }}</div>

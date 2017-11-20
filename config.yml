@@ -2,13 +2,16 @@ baseURL: "https://aenism.com/"
 languageCode: "en-us"
 title: "Aenism"
 permalinks:
-  ideas: /:title/
-  work: /:title/
+  post: /:title/
 taxonomies:
   category: "categories"
   tag: "tags"
+paginate: 9
+pygmentsOptions:
+  noclasses: true
 pygmentsUseClasses: false
 PygmentsCodeFences: true
+pygmentsCodefencesGuessSyntax: true
 pygmentsStyle: "paraiso-dark"
 copyright: "This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License."
 author:
