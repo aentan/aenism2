@@ -62,7 +62,8 @@ gulp.task("img", function () {
         .pipe(imageResize({
           width   : 128,
           height  : 128,
-          cover   : true
+          cover   : true,
+          crop    : true
         }))
         .pipe(gulp.dest("static/img/previews"))
 
