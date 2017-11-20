@@ -22,7 +22,7 @@
           <div class="topic">{{ .Params.Topic }}</div>
           <div class="preview">
             {{ if isset .Params "preview_image" }}
-              <img src="{{ .Params.preview_image }}" alt="Image">
+              <img src="/img/previews/{{ .Params.preview_image }}" alt="Image">
             {{ end }}
           </div>
         </article>

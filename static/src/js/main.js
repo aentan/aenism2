@@ -1,21 +1,22 @@
 /** Set up relative positions and scales **/
 var VIEW = {};
-VIEW.width = window.innerWidth;
-VIEW.height = window.innerHeight;
-VIEW.centerX = VIEW.width / 2;
-VIEW.centerY = VIEW.height / 2;
-VIEW.offsetX = VIEW.width / 2;
-VIEW.offsetY = VIEW.height / 2;
+VIEW.width    = window.innerWidth;
+VIEW.height   = window.innerHeight;
+VIEW.centerX  = VIEW.width / 2;
+VIEW.centerY  = VIEW.height / 2;
+VIEW.offsetX  = VIEW.width / 2;
+VIEW.offsetY  = VIEW.height / 2;
 
 // Matter.js module aliases
-var Engine = Matter.Engine,
-    Render = Matter.Render,
-    Runner = Matter.Runner,
-    Common = Matter.Common,
-    World = Matter.World,
-    Bodies = Matter.Bodies,
+var Engine    = Matter.Engine,
+    Render    = Matter.Render,
+    Runner    = Matter.Runner,
+    Common    = Matter.Common,
+    World     = Matter.World,
+    Bodies    = Matter.Bodies,
+    Events    = Matter.Events,
     MouseConstraint = Matter.MouseConstraint,
-    Mouse = Matter.Mouse;
+    Mouse     = Matter.Mouse;
 
 // create engine
 var engine = Engine.create(),
@@ -81,8 +82,11 @@ for (var i = 0, l = bodiesDom.length; i < l; i++) {
     0,
     VIEW.width * bodiesDom[i].offsetWidth / window.innerWidth,
     VIEW.height * bodiesDom[i].offsetHeight / window.innerHeight, {
-      restitution: 0.2,
-      friction: 1
+      restitution:      0.2,
+      friction:         1,
+      frictionStatic:   1,
+      density:          1,
+      angle:            (Math.random() * 2.000) - 1.000,
     }
   );
   bodiesDom[i].id = body.id;
@@ -107,6 +111,11 @@ World.add(engine.world, mouseConstraint);
 // keep the mouse in sync with rendering
 render.mouse = mouse;
 
+// clicking to post
+document.body.addEventListener('click', function(e) {
+  var clickedBodyId = Matter.Query.point(bodies, { x: e.clientX, y: e.clientY })[0].id;
+  window.location.href = document.getElementById(clickedBodyId).getAttribute("data-url");
+});
 
 window.requestAnimationFrame(update);
 
