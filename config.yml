@@ -6,7 +6,7 @@ permalinks:
 taxonomies:
   category: "categories"
   tag: "tags"
-paginate: 9
+paginate: 6
 pygmentsOptions:
   noclasses: true
 pygmentsUseClasses: false
