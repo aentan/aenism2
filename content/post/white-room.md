@@ -1,5 +1,5 @@
 ---
-title: White room
+title: White Room
 description: Your boredom is over-inflated.
 date: 2014-03-09
 tags: ['white room', 'bordedom']

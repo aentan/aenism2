@@ -1,5 +1,5 @@
 ---
-title: Inspiring videos
+title: Inspiring Videos
 description: That made me a better designer.
 date: 2014-01-31
 tags: ['design', 'videos', 'inspiration']

@@ -1,5 +1,5 @@
 ---
-title: Good taste
+title: Good Taste
 description: On aesthetic empathy.
 date: 2014-03-15
 tags: ['taste', 'aesthetic', 'philosophy', 'emotions']

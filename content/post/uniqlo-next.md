@@ -1,5 +1,5 @@
 ---
-title: UNIQLO next
+title: UNIQLO Next
 description: Adaptive and visual product layout.
 date: 2014-02-07
 tags: ['uniqlo']

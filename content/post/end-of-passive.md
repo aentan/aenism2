@@ -1,5 +1,5 @@
 ---
-title: End of passive
+title: End of Passive
 description: Reimagining the book.
 date: 2014-01-29
 tags: ['vision']
