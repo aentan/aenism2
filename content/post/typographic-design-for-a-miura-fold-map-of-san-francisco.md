@@ -1,7 +1,7 @@
 +++
 date = "2017-05-14"
 tags = ['the open company', 'toc']
-title = "Typographic Design for a Miura Fold Map of Sans Francisco"
+title = "Typographic Design for a Miura Fold Map of San Francisco"
 client = "The Open Company"
 topic = "work"
 description = "Collaborated on waterproof map of San Francisco with friends in San Francisco, Reykjavik and Tokyo, on Kickstarter."

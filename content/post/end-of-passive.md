@@ -3,7 +3,7 @@ title: End of passive
 description: Reimagining the book.
 date: 2014-01-29
 tags: ['vision']
-topic: philosophy
+topic: ideas
 preview_image: "weaving.png"
 ---
 

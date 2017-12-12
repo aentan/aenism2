@@ -3,7 +3,7 @@ title: Child mind
 description: Overcoming grown-up banality.
 date: 2014-01-26
 tags: ['creativity']
-topic: philosophy
+topic: ideas
 preview_image: "pencil.jpg"
 ---
 

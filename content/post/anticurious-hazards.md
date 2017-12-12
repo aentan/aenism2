@@ -3,7 +3,7 @@ title: Anticurious hazards
 description: For adults around children.
 date: 2014-02-04
 tags: ['curiosity', 'children']
-topic: philosophy
+topic: ideas
 preview_image: "cat-1373879_1280.jpg"
 ---
 

@@ -3,7 +3,7 @@ title: White room
 description: Your boredom is over-inflated.
 date: 2014-03-09
 tags: ['white room', 'bordedom']
-topic: philosophy
+topic: ideas
 preview_image: "thx.png"
 ---
 
