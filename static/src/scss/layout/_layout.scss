@@ -99,7 +99,7 @@ main {
 // pagination
 
 .page-nav {
-  @include type-subhead();
+  @include type-striphead();
   position:                   absolute;
   display:                    block;
   width:                      48px;

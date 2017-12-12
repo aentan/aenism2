@@ -24,6 +24,11 @@ $type-base-family               : -apple-system, BlinkMacSystemFont,
 "Fira Sans", "Droid Sans", "Helvetica Neue",
 sans-serif;
 
+$type-heading-family            : "GT-Walsheim", -apple-system, BlinkMacSystemFont,
+"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+"Fira Sans", "Droid Sans", "Helvetica Neue",
+sans-serif;
+
 $type-weight-black              : 900;
 $type-weight-heavy              : 800;
 $type-weight-bold               : 700;
@@ -35,7 +40,7 @@ $type-weight-light              : 200;
 $type-weight-ultralight         : 100;
 
 $type-striphead-size            : 1.3rem;
-$type-striphead-weight          : $type-weight-semibold;
+$type-striphead-weight          : bold;
 $type-striphead-line-height     : 1.6rem;
 $type-striphead-letter-spacing  : tracking-to-ems(-6);
 
