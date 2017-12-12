@@ -9,10 +9,18 @@ body {
 body {
   margin:                     0;
   background-color:           $white;
-  -webkit-overflow-scrolling: touch;
 
   &.home {
     overflow:                 hidden;
+  }
+}
+
+.home h1 {
+  position:                   absolute;
+  margin:                     16px 32px;
+
+  @include media(">=desktop") {
+    margin-left:              48px;
   }
 }
 
@@ -117,21 +125,77 @@ main {
 
 .single {
 
+  height: auto;
+
+  @include media(">=desktop") {
+    display:                 flex;
+    overflow:                hidden;
+    height:                  100%;
+  }
+
   main {
-    max-width:                640px;
-    margin:                   0 auto;
-    padding:                  0 16px 128px;
-    height:                   auto;
+    padding:                  16px;
+
+    @include media(">=desktop") {
+      padding:                32px;
+      height:                 100%;
+      overflow-y:             auto;
+      display:                flex;
+      flex-direction:         column;
+      flex-grow:              1;
+    }
+
+    section {
+      max-width:              720px;
+      margin:                 0 auto;
+      padding-top:            32px;
+    }
   }
 
   header {
-    margin-bottom:            64px;
+    margin-bottom:            48px;
+  }
+
+  article {
+    @include media(">=desktop") {
+      padding-bottom:         128px;
+    }
   }
 
   figure {
     img {
       width:                  100%;
       height:                 auto;
+    }
+  }
+
+  .embed {
+    position:                 relative;
+    padding-bottom:           56.25%;
+    height:                   0;
+    overflow:                 hidden;
+    max-width:                100%;
+
+    iframe {
+      position:               absolute;
+      top:                    0;
+      left:                   0;
+      width:                  100%;
+      height:                 100%;
+    }
+  }
+
+  aside {
+    padding:                  48px 16px 16px;
+
+    @include media(">=desktop") {
+      padding:                64px 32px 32px;
+      width:                  240px;
+      height:                 100%;
+      overflow-y:             auto;
+      display:                flex;
+      flex-direction:         column;
+      flex-grow:              1;
     }
   }
 

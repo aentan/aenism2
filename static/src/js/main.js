@@ -35,7 +35,7 @@ function makeWorld() {
     element: document.getElementById("debug"),
     options: {
       width: window.innerWidth,
-      height: window.innerWidth,
+      height: window.innerHeight,
       background: 'transparent', // transparent to hide
       wireframeBackground: 'transparent', // transparent to hide
       hasBounds: false,
@@ -144,14 +144,16 @@ function makeWorld() {
   // keep the mouse in sync with rendering
   render.mouse = mouse;
 
-  ////// TODO drag-friendly click event
   // clicking to post
-  document.body.addEventListener('mousedown', function(e) {
+
+  function prepareToHandleEvent(e) {
+    e.preventDefault();;
     mouseXO = e.clientX;
     mouseYO = e.clientY;
-  });
+  }
 
-  document.body.addEventListener('mouseup', function(e) {
+  function handleEvent(e) {
+    e.preventDefault();
     if ((mouseXO == e.clientX) && (mouseYO == e.clientY)) {
       if (Query.point(bodies, { x: e.clientX, y: e.clientY }).length) {
         var underMouse = Query.point(bodies, { x: e.clientX, y: e.clientY })[0].id;
@@ -164,7 +166,21 @@ function makeWorld() {
         }
       }
     }
+  }
+
+  document.body.addEventListener('mousedown', function(e) {
+    prepareToHandleEvent(e);
   });
+  // document.body.addEventListener('touchstart', function(e) {
+  //   prepareToHandleEvent(e);
+  // });
+
+  document.body.addEventListener('mouseup', function(e) {
+    handleEvent(e);
+  });
+  // document.body.addEventListener('touchend', function(e) {
+  //   handleEvent(e);
+  // });
 
   window.requestAnimationFrame(update);
 

@@ -4,6 +4,7 @@
   font-weight    : $type-striphead-weight;
   letter-spacing : $type-striphead-letter-spacing;
   line-height    : $type-striphead-line-height;
+  color          : $black;
 }
 
 @mixin type-displaylll() {
@@ -12,6 +13,7 @@
   font-weight    : $type-displaylll-weight;
   letter-spacing : $type-displaylll-letter-spacing;
   line-height    : $type-displaylll-line-height;
+  color          : $black;
 }
 
 @mixin type-displayll() {
@@ -20,6 +22,7 @@
   font-weight    : $type-displayll-weight;
   letter-spacing : $type-displayll-letter-spacing;
   line-height    : $type-displayll-line-height;
+  color          : $black;
 }
 
 @mixin type-displayl() {
@@ -28,6 +31,7 @@
   font-weight    : $type-displayl-weight;
   letter-spacing : $type-displayl-letter-spacing;
   line-height    : $type-displayl-line-height;
+  color          : $black;
 }
 
 @mixin type-displaym() {
@@ -36,6 +40,7 @@
   font-weight    : $type-displaym-weight;
   letter-spacing : $type-displaym-letter-spacing;
   line-height    : $type-displaym-line-height;
+  color          : $black;
 }
 
 @mixin type-displays() {
@@ -44,6 +49,7 @@
   font-weight    : $type-displays-weight;
   letter-spacing : $type-displays-letter-spacing;
   line-height    : $type-displays-line-height;
+  color          : $black;
 }
 
 @mixin type-headline() {
