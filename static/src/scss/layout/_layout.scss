@@ -99,6 +99,7 @@ main {
 // pagination
 
 .page-nav {
+  @include type-subhead();
   position:                   absolute;
   display:                    block;
   width:                      48px;
@@ -106,20 +107,10 @@ main {
   box-sizing:                 border-box;
   border-radius:              24px;
   border:                     $ui-border-width solid $ui-border-color;
-  background-position:        center center;
-  background-repeat:          no-repeat;
-}
-
-.page-plus {
-  background-image:           url($svg-date-page-plus);
-}
-
-.page-minus {
-  background-image:           url($svg-date-page-minus);
-}
-
-.page-help {
-  background-image:           url($svg-date-page-help);
+  // background-position:        center center;
+  // background-repeat:          no-repeat;
+  text-align:                 center;
+  line-height:                48px;
 }
 
 // single pages

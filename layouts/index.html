@@ -19,12 +19,11 @@
         {{ $pag := .Paginate (where .Data.Pages "Section" "post") }}
 
         {{ if $pag.HasPrev }}
-        <div data-url="{{ $pag.Prev.URL }}" class="page-nav page-minus"></div>
+        <div data-url="{{ $pag.Prev.URL }}" class="page-nav page-minus">p.{{ sub $pag.PageNumber 1 }}</div>
         {{ end }}
         {{ if $pag.HasNext }}
-        <div data-url="{{ $pag.Next.URL }}" class="page-nav page-plus"></div>
+        <div data-url="{{ $pag.Next.URL }}" class="page-nav page-plus">p.{{ add $pag.PageNumber 1 }}</div>
         {{ end }}
-        <div class="page-nav page-help"></div>
 
         {{ range $pag.Pages }}
         <article class="strip" data-url="{{ .RelPermalink }}">

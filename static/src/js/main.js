@@ -161,8 +161,6 @@ function makeWorld() {
         var underMouse = Query.point(navs, { x: e.clientX, y: e.clientY })[0].id;
         if (document.getElementById(underMouse).getAttribute("data-url")) {
           window.location.href = document.getElementById(underMouse).getAttribute("data-url");
-        } else {
-          // show help
         }
       }
     }
