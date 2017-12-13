@@ -135,14 +135,17 @@ hr {
 
 // Syntax higlighting
 .highlight {
-  border-radius: 5px;
   margin-top    : 30px;
   margin-bottom : 30px;
-  padding       : 10px 15px;
 
   pre {
+    border-radius: 5px;
     margin : 0;
+    padding : 10px 15px;
     font-family: monospace;
+    font-size: 1.4rem;
     line-height: 150%;
+    line-height: 1.429;
+    overflow: auto;
   }
 }
