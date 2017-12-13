@@ -9,19 +9,10 @@
     <managingEditor>hello@aentan.com (AenTan)</managingEditor>
     <webMaster>hello@aentan.com (AenTan)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 25 Jan 2014 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 15 Mar 2014 00:00:00 +0000</lastBuildDate>
     
 	<atom:link href="https://aenism.com/tags/index.xml" rel="self" type="application/rss+xml" />
     
-    
-    <item>
-      <title>Aenism</title>
-      <link>https://aenism.com/tags/aenism/</link>
-      <pubDate>Sat, 25 Jan 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/aenism/</guid>
-      <description></description>
-    </item>
     
     <item>
       <title>Aesthetic</title>
@@ -29,15 +20,6 @@
       <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/tags/aesthetic/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Bootstrap</title>
-      <link>https://aenism.com/tags/bootstrap/</link>
-      <pubDate>Wed, 29 Jan 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/bootstrap/</guid>
       <description></description>
     </item>
     
@@ -60,15 +42,6 @@
     </item>
     
     <item>
-      <title>Brandon Text</title>
-      <link>https://aenism.com/tags/brandon-text/</link>
-      <pubDate>Sun, 29 Jun 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/brandon-text/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Childhood</title>
       <link>https://aenism.com/tags/childhood/</link>
       <pubDate>Mon, 30 Jun 2014 00:00:00 +0000</pubDate>
@@ -83,24 +56,6 @@
       <pubDate>Tue, 04 Feb 2014 00:00:00 +0000</pubDate>
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/tags/children/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Coffee</title>
-      <link>https://aenism.com/tags/coffee/</link>
-      <pubDate>Mon, 17 Feb 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/coffee/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Contest</title>
-      <link>https://aenism.com/tags/contest/</link>
-      <pubDate>Tue, 08 Apr 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/contest/</guid>
       <description></description>
     </item>
     
@@ -132,24 +87,6 @@
     </item>
     
     <item>
-      <title>Designer News</title>
-      <link>https://aenism.com/tags/designer-news/</link>
-      <pubDate>Tue, 08 Apr 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/designer-news/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Desktop</title>
-      <link>https://aenism.com/tags/desktop/</link>
-      <pubDate>Sat, 22 Mar 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/desktop/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Emotions</title>
       <link>https://aenism.com/tags/emotions/</link>
       <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
@@ -164,24 +101,6 @@
       <pubDate>Mon, 30 Jun 2014 00:00:00 +0000</pubDate>
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/tags/fear/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Font</title>
-      <link>https://aenism.com/tags/font/</link>
-      <pubDate>Sun, 29 Jun 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/font/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Fonts</title>
-      <link>https://aenism.com/tags/fonts/</link>
-      <pubDate>Sat, 22 Mar 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/fonts/</guid>
       <description></description>
     </item>
     
@@ -222,33 +141,6 @@
     </item>
     
     <item>
-      <title>Ios</title>
-      <link>https://aenism.com/tags/ios/</link>
-      <pubDate>Sat, 02 Jul 2016 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/ios/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Iphone</title>
-      <link>https://aenism.com/tags/iphone/</link>
-      <pubDate>Tue, 08 Apr 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/iphone/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Lavi Head</title>
-      <link>https://aenism.com/tags/lavi-head/</link>
-      <pubDate>Sat, 08 Mar 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/lavi-head/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Logo</title>
       <link>https://aenism.com/tags/logo/</link>
       <pubDate>Mon, 03 Feb 2014 00:00:00 +0000</pubDate>
@@ -267,15 +159,6 @@
     </item>
     
     <item>
-      <title>Mobile</title>
-      <link>https://aenism.com/tags/mobile/</link>
-      <pubDate>Tue, 08 Apr 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/mobile/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Mydoc</title>
       <link>https://aenism.com/tags/mydoc/</link>
       <pubDate>Sat, 27 May 2017 00:00:00 +0000</pubDate>
@@ -285,47 +168,11 @@
     </item>
     
     <item>
-      <title>Navigation Bar</title>
-      <link>https://aenism.com/tags/navigation-bar/</link>
-      <pubDate>Sat, 02 Jul 2016 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/navigation-bar/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Nuon</title>
-      <link>https://aenism.com/tags/nuon/</link>
-      <pubDate>Sat, 08 Mar 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/nuon/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Open Source</title>
-      <link>https://aenism.com/tags/open-source/</link>
-      <pubDate>Wed, 29 Jan 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/open-source/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Philosophy</title>
       <link>https://aenism.com/tags/philosophy/</link>
       <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/tags/philosophy/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Photoshop</title>
-      <link>https://aenism.com/tags/photoshop/</link>
-      <pubDate>Sat, 08 Mar 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/photoshop/</guid>
       <description></description>
     </item>
     
@@ -348,15 +195,6 @@
     </item>
     
     <item>
-      <title>Redesign</title>
-      <link>https://aenism.com/tags/redesign/</link>
-      <pubDate>Sun, 29 Jun 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/redesign/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Regression</title>
       <link>https://aenism.com/tags/regression/</link>
       <pubDate>Mon, 30 Jun 2014 00:00:00 +0000</pubDate>
@@ -366,47 +204,11 @@
     </item>
     
     <item>
-      <title>Sketch App</title>
-      <link>https://aenism.com/tags/sketch-app/</link>
-      <pubDate>Sat, 02 Jul 2016 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/sketch-app/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Swap</title>
-      <link>https://aenism.com/tags/swap/</link>
-      <pubDate>Sat, 08 Mar 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/swap/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Symbols</title>
-      <link>https://aenism.com/tags/symbols/</link>
-      <pubDate>Sat, 02 Jul 2016 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/symbols/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Taste</title>
       <link>https://aenism.com/tags/taste/</link>
       <pubDate>Sat, 15 Mar 2014 00:00:00 +0000</pubDate>
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/tags/taste/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Text</title>
-      <link>https://aenism.com/tags/text/</link>
-      <pubDate>Sat, 08 Mar 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/text/</guid>
       <description></description>
     </item>
     
@@ -429,65 +231,11 @@
     </item>
     
     <item>
-      <title>Trick</title>
-      <link>https://aenism.com/tags/trick/</link>
-      <pubDate>Sat, 08 Mar 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/trick/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Typeface</title>
-      <link>https://aenism.com/tags/typeface/</link>
-      <pubDate>Sun, 29 Jun 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/typeface/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Typekit</title>
-      <link>https://aenism.com/tags/typekit/</link>
-      <pubDate>Sat, 22 Mar 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/typekit/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Typography</title>
-      <link>https://aenism.com/tags/typography/</link>
-      <pubDate>Sun, 29 Jun 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/typography/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Ui</title>
-      <link>https://aenism.com/tags/ui/</link>
-      <pubDate>Tue, 08 Apr 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/ui/</guid>
-      <description></description>
-    </item>
-    
-    <item>
       <title>Uniqlo</title>
       <link>https://aenism.com/tags/uniqlo/</link>
       <pubDate>Fri, 07 Feb 2014 00:00:00 +0000</pubDate>
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/tags/uniqlo/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>User Interface</title>
-      <link>https://aenism.com/tags/user-interface/</link>
-      <pubDate>Sat, 02 Jul 2016 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/user-interface/</guid>
       <description></description>
     </item>
     
@@ -524,15 +272,6 @@
       <pubDate>Sun, 09 Mar 2014 00:00:00 +0000</pubDate>
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/tags/white-room/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>Whitney</title>
-      <link>https://aenism.com/tags/whitney/</link>
-      <pubDate>Sun, 29 Jun 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/tags/whitney/</guid>
       <description></description>
     </item>
     

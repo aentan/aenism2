@@ -1,30 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Designer News on Aenism</title>
-    <link>https://aenism.com/tags/designer-news/</link>
-    <description>Recent content in Designer News on Aenism</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>hello@aentan.com (AenTan)</managingEditor>
-    <webMaster>hello@aentan.com (AenTan)</webMaster>
-    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Tue, 08 Apr 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://aenism.com/tags/designer-news/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>DN × iPhone</title>
-      <link>https://aenism.com/dn--iphone/</link>
-      <pubDate>Tue, 08 Apr 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/dn--iphone/</guid>
-      <description>Introducing Designer News for the iPhone. Nothing more, nothing less but the full DN experience.
- Scroll, tap and swipe. Gimmick-free interface not just for designers, and that&amp;rsquo;s a good thing.
- Content that fits. One of the few entries that feature landscape orientation.
-  PS: This isn&amp;rsquo;t the official DN app. It&amp;rsquo;s my entry for the Design+Code Giveaway contest organized by LayerVault. I started using LayerVault because of this contest and I have to say it&amp;rsquo;s much better suited for a design workflow than Dropbox.</description>
-    </item>
-    
-  </channel>
-</rss>

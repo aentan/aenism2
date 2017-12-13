@@ -1,41 +1,55 @@
+@mixin type-striphead() {
+  font-family    : $type-heading-family;
+  font-size      : $type-striphead-size;
+  font-weight    : $type-striphead-weight;
+  letter-spacing : $type-striphead-letter-spacing;
+  line-height    : $type-striphead-line-height;
+  color          : $black;
+}
+
 @mixin type-displaylll() {
-  font-family    : $type-base-family;
+  font-family    : $type-heading-family;
   font-size      : $type-displaylll-size;
   font-weight    : $type-displaylll-weight;
   letter-spacing : $type-displaylll-letter-spacing;
   line-height    : $type-displaylll-line-height;
+  color          : $black;
 }
 
 @mixin type-displayll() {
-  font-family    : $type-base-family;
+  font-family    : $type-heading-family;
   font-size      : $type-displayll-size;
   font-weight    : $type-displayll-weight;
   letter-spacing : $type-displayll-letter-spacing;
   line-height    : $type-displayll-line-height;
+  color          : $black;
 }
 
 @mixin type-displayl() {
-  font-family    : $type-base-family;
+  font-family    : $type-heading-family;
   font-size      : $type-displayl-size;
   font-weight    : $type-displayl-weight;
   letter-spacing : $type-displayl-letter-spacing;
   line-height    : $type-displayl-line-height;
+  color          : $black;
 }
 
 @mixin type-displaym() {
-  font-family    : $type-base-family;
+  font-family    : $type-heading-family;
   font-size      : $type-displaym-size;
   font-weight    : $type-displaym-weight;
   letter-spacing : $type-displaym-letter-spacing;
   line-height    : $type-displaym-line-height;
+  color          : $black;
 }
 
 @mixin type-displays() {
-  font-family    : $type-base-family;
+  font-family    : $type-heading-family;
   font-size      : $type-displays-size;
   font-weight    : $type-displays-weight;
   letter-spacing : $type-displays-letter-spacing;
   line-height    : $type-displays-line-height;
+  color          : $black;
 }
 
 @mixin type-headline() {

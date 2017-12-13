@@ -1,29 +1,0 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Typography on Aenism</title>
-    <link>https://aenism.com/tags/typography/</link>
-    <description>Recent content in Typography on Aenism</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <managingEditor>hello@aentan.com (AenTan)</managingEditor>
-    <webMaster>hello@aentan.com (AenTan)</webMaster>
-    <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Sun, 29 Jun 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://aenism.com/tags/typography/index.xml" rel="self" type="application/rss+xml" />
-    
-    
-    <item>
-      <title>Brandon vs Whitney</title>
-      <link>https://aenism.com/brandon-vs-whitney/</link>
-      <pubDate>Sun, 29 Jun 2014 00:00:00 +0000</pubDate>
-      <author>hello@aentan.com (AenTan)</author>
-      <guid>https://aenism.com/brandon-vs-whitney/</guid>
-      <description>After being busy with client work for a while I&amp;rsquo;m back writing and at the same time I wanted to renew the site with a simpler and more fluid design, and a new font to go with the format.
-I narrowed down to Brandon Text by HvD and Whitney by Hoefler &amp;amp; Co. and decidedly chose the former.
-Brandon Text and Whitney Comparison Originally developed for New York’s Whitney Museum, Whitney is utilitarian, safe and solemn.</description>
-    </item>
-    
-  </channel>
-</rss>
