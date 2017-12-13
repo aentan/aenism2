@@ -14,30 +14,35 @@
   </head>
   <body class="home">
 
-    <h1>{{ .Title }}</h1>
+    {{ $pag := .Paginate (where .Data.Pages "Section" "post") }}
+
+    <h1>
+      {{ .Title }}
+      {{ if gt $pag.PageNumber 1 }}
+      page {{ $pag.PageNumber }}
+      {{ end }}
+    </h1>
 
     <main>
 
-        {{ $pag := .Paginate (where .Data.Pages "Section" "post") }}
+      {{ if $pag.HasPrev }}
+      <div data-url="{{ $pag.Prev.URL }}" class="page-nav page-minus">p.{{ sub $pag.PageNumber 1 }}</div>
+      {{ end }}
+      {{ if $pag.HasNext }}
+      <div data-url="{{ $pag.Next.URL }}" class="page-nav page-plus">p.{{ add $pag.PageNumber 1 }}</div>
+      {{ end }}
 
-        {{ if $pag.HasPrev }}
-        <div data-url="{{ $pag.Prev.URL }}" class="page-nav page-minus">p.{{ sub $pag.PageNumber 1 }}</div>
-        {{ end }}
-        {{ if $pag.HasNext }}
-        <div data-url="{{ $pag.Next.URL }}" class="page-nav page-plus">p.{{ add $pag.PageNumber 1 }}</div>
-        {{ end }}
-
-        {{ range $pag.Pages }}
-        <article class="strip" data-url="{{ .RelPermalink }}">
-          <h3>{{ .Title }}</h3>
-          <div class="topic">{{ .Params.Topic }}</div>
-          <div class="preview">
-            {{ if isset .Params "preview_image" }}
-              <img src="/img/previews/{{ .Params.preview_image }}" alt="Image">
-            {{ end }}
-          </div>
-        </article>
-        {{ end }}
+      {{ range $pag.Pages }}
+      <article class="strip" data-url="{{ .RelPermalink }}">
+        <h3>{{ .Title }}</h3>
+        <div class="topic">{{ .Params.Topic }}</div>
+        <div class="preview">
+          {{ if isset .Params "preview_image" }}
+            <img src="/img/previews/{{ .Params.preview_image }}" alt="Image">
+          {{ end }}
+        </div>
+      </article>
+      {{ end }}
 
     </main>
 

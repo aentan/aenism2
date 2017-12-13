@@ -146,14 +146,19 @@ function makeWorld() {
 
   // clicking to post
 
+  var mouseXO,
+      mouseYO,
+      mouseXN,
+      mouseYN;
+
   function prepareToHandleEvent(e) {
-    e.preventDefault();;
     mouseXO = e.clientX;
     mouseYO = e.clientY;
   }
 
   function handleEvent(e) {
-    e.preventDefault();
+    mouseXN = e.clientX;
+    mouseYN = e.clientY;
     if ((mouseXO == e.clientX) && (mouseYO == e.clientY)) {
       if (Query.point(bodies, { x: e.clientX, y: e.clientY }).length) {
         var underMouse = Query.point(bodies, { x: e.clientX, y: e.clientY })[0].id;
@@ -168,19 +173,41 @@ function makeWorld() {
     }
   }
 
-  document.body.addEventListener('mousedown', function(e) {
+  function prepareToHandleTouchEvent(e) {
+    mouseXO = e.touches[0].clientX;
+    mouseYO = e.touches[0].clientY;
+  }
+
+  function handleTouchEvent(e) {
+    mouseXN = e.changedTouches[0].clientX;
+    mouseYN = e.changedTouches[0].clientY;
+    if ((mouseXO == mouseXN) && (mouseYO == mouseYN)) {
+      if (Query.point(bodies, { x: mouseXN, y: mouseYN }).length) {
+        var underMouse = Query.point(bodies, { x: mouseXN, y: mouseYN })[0].id;
+        window.location.href = document.getElementById(underMouse).getAttribute("data-url");
+      }
+      if (Query.point(navs, { x: mouseXN, y: mouseYN }).length) {
+        var underMouse = Query.point(navs, { x: mouseXN, y: mouseYN })[0].id;
+        if (document.getElementById(underMouse).getAttribute("data-url")) {
+          window.location.href = document.getElementById(underMouse).getAttribute("data-url");
+        }
+      }
+    }
+  }
+
+  document.getElementById("debug").addEventListener('mousedown', function(e) {
     prepareToHandleEvent(e);
   });
-  // document.body.addEventListener('touchstart', function(e) {
-  //   prepareToHandleEvent(e);
-  // });
-
-  document.body.addEventListener('mouseup', function(e) {
+  document.getElementById("debug").addEventListener('mouseup', function(e) {
     handleEvent(e);
   });
-  // document.body.addEventListener('touchend', function(e) {
-  //   handleEvent(e);
-  // });
+
+   document.getElementById("debug").addEventListener('touchstart', function(e) {
+    prepareToHandleTouchEvent(e);
+  });
+  document.getElementById("debug").addEventListener('touchend', function(e) {
+    handleTouchEvent(e);
+  });
 
   window.requestAnimationFrame(update);
 

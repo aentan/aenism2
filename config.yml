@@ -1,6 +1,6 @@
 baseURL: "https://aenism.com/"
 languageCode: "en-us"
-title: "aenism"
+title: "Aenism"
 permalinks:
   post: /:title/
 taxonomies:
