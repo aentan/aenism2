@@ -14,7 +14,7 @@ It's hard to overcome the uncanny valley. I'm glad realistic human locomotion is
 
 ## 1. NOVA
 
->[Creoqode Nova](https://www.kickstarter.com/projects/creoqode/nova-diy-artificial-intelligence-robot#) is an Arduino-based artificial intelligence robot. Nova comes as an all-inclusive do-it-yourself kit allowing users to build their own artificial intelligence robot and to practice their coding and engineering skills by controlling it in various ways.
+[Creoqode Nova](https://www.kickstarter.com/projects/creoqode/nova-diy-artificial-intelligence-robot#) is an Arduino-based artificial intelligence robot. Nova comes as an all-inclusive do-it-yourself kit allowing users to build their own artificial intelligence robot and to practice their coding and engineering skills by controlling it in various ways.
 
 {{%figure src="https://j.gifs.com/8690Pm.gif" title="Creoqode NOVA"%}}
 
