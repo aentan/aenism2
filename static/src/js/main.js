@@ -127,6 +127,28 @@ function makeWorld() {
   }
   World.add(engine.world, navs);
 
+  // add gyro control
+  var updateGravity = function(event) {
+      var orientation = typeof window.orientation !== 'undefined' ? window.orientation : 0,
+          gravity = engine.world.gravity;
+
+      if (orientation === 0) {
+          gravity.x = Common.clamp(event.gamma, -90, 90) / 90;
+          gravity.y = Common.clamp(event.beta, -90, 90) / 90;
+      } else if (orientation === 180) {
+          gravity.x = Common.clamp(event.gamma, -90, 90) / 90;
+          gravity.y = Common.clamp(-event.beta, -90, 90) / 90;
+      } else if (orientation === 90) {
+          gravity.x = Common.clamp(event.beta, -90, 90) / 90;
+          gravity.y = Common.clamp(-event.gamma, -90, 90) / 90;
+      } else if (orientation === -90) {
+          gravity.x = Common.clamp(-event.beta, -90, 90) / 90;
+          gravity.y = Common.clamp(event.gamma, -90, 90) / 90;
+      }
+  };
+
+  window.addEventListener('deviceorientation', updateGravity);
+
   // Add mouse control
 
   var mouse = Mouse.create(render.canvas),
