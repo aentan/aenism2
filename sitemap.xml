@@ -3,6 +3,11 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
+    <loc>https://aenism.com/5-robots-im-excited-about/</loc>
+    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
     <loc>https://aenism.com/emotional-design-for-healthcare/</loc>
     <lastmod>2017-05-27T00:00:00+00:00</lastmod>
   </url>
@@ -84,13 +89,25 @@
   
   <url>
     <loc>https://aenism.com/</loc>
-    <lastmod>2017-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://aenism.com/tags/aesthetic/</loc>
     <lastmod>2014-03-15T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aenism.com/tags/ai/</loc>
+    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aenism.com/tags/artificial-intelligence/</loc>
+    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -143,7 +160,7 @@
   
   <url>
     <loc>https://aenism.com/tags/emotions/</loc>
-    <lastmod>2014-03-15T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -156,6 +173,12 @@
   <url>
     <loc>https://aenism.com/tags/healthcare/</loc>
     <lastmod>2017-05-27T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aenism.com/tags/humans/</loc>
+    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -209,7 +232,7 @@
   
   <url>
     <loc>https://aenism.com/post/</loc>
-    <lastmod>2017-05-27T00:00:00+00:00</lastmod>
+    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
@@ -222,6 +245,18 @@
   <url>
     <loc>https://aenism.com/tags/regression/</loc>
     <lastmod>2014-06-30T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aenism.com/tags/robotics/</loc>
+    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://aenism.com/tags/robots/</loc>
+    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
     <priority>0</priority>
   </url>
   
