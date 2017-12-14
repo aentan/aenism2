@@ -59,6 +59,10 @@ main {
                               inset 1px 1px 0px 0px $ui-border-color;
   }
 
+  &.hover {
+    background-color: red;
+  }
+
   h3 {
     @include type-striphead();
     margin-top:               0;
