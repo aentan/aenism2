@@ -127,9 +127,10 @@ function makeWorld() {
   }
   World.add(engine.world, navs);
 
-  // add mouse control
+  // Add mouse control
+
   var mouse = Mouse.create(render.canvas),
-    mouseConstraint = MouseConstraint.create(engine, {
+      mouseConstraint = MouseConstraint.create(engine, {
       mouse: mouse,
       constraint: {
         stiffness: 1,
@@ -144,43 +145,53 @@ function makeWorld() {
   // keep the mouse in sync with rendering
   render.mouse = mouse;
 
-  // clicking to post
-
-  var mouseXO,
+  var mouseX,
+      mouseY,
+      mouseXO,
       mouseYO,
       mouseXN,
       mouseYN;
 
-  function prepareToHandleEvent(e) {
-    mouseXO = e.clientX;
-    mouseYO = e.clientY;
-  }
-
-  function handleEvent(e) {
-    mouseXN = e.clientX;
-    mouseYN = e.clientY;
-    if ((mouseXO == e.clientX) && (mouseYO == e.clientY)) {
-      if (Query.point(bodies, { x: e.clientX, y: e.clientY }).length) {
-        var underMouse = Query.point(bodies, { x: e.clientX, y: e.clientY })[0].id;
-        window.location.href = document.getElementById(underMouse).getAttribute("data-url");
-      }
-      if (Query.point(navs, { x: e.clientX, y: e.clientY }).length) {
-        var underMouse = Query.point(navs, { x: e.clientX, y: e.clientY })[0].id;
-        if (document.getElementById(underMouse).getAttribute("data-url")) {
-          window.location.href = document.getElementById(underMouse).getAttribute("data-url");
-        }
-      }
+  // Hover
+  Events.on(mouseConstraint, "mousemove", function(e) {
+    mouseX = e.mouse.absolute.x;
+    mouseY = e.mouse.absolute.y;
+    if (Query.point(bodies, { x: mouseX, y: mouseY }).length) {
+      // remove exitsing hovers
+      removeHovers();
+      // apply new hover
+      var underMouse = Query.point(bodies, { x: mouseX, y: mouseY })[0].id;
+      document.getElementById(underMouse).className += " hover";
+      document.body.style.cursor = "pointer";
+    } else if (Query.point(navs, { x: mouseX, y: mouseY }).length) {
+      // remove exitsing hovers
+      removeHovers();
+      // apply new hover
+      var underMouse = Query.point(navs, { x: mouseX, y: mouseY })[0].id;
+      document.getElementById(underMouse).className += " hover";
+      document.body.style.cursor = "pointer";
+    } else {
+      removeHovers();
     }
+  });
+
+  function removeHovers() {
+    var hovered = document.getElementsByClassName("hover");
+    for (var i = 0; i < hovered.length; i++) {
+      hovered[i].classList.remove("hover");
+    }
+    document.body.style.cursor = "auto";
   }
 
-  function prepareToHandleTouchEvent(e) {
-    mouseXO = e.touches[0].clientX;
-    mouseYO = e.touches[0].clientY;
-  }
-
-  function handleTouchEvent(e) {
-    mouseXN = e.changedTouches[0].clientX;
-    mouseYN = e.changedTouches[0].clientY;
+  // Press (1)
+  Events.on(mouseConstraint, "mousedown", function(e) {
+    mouseXO = e.mouse.absolute.x;
+    mouseYO = e.mouse.absolute.y;
+  });
+  // Press (2), Ppart 1 and 2 checks is not end of drag
+  Events.on(mouseConstraint, "mouseup", function(e) {
+    mouseXN = e.mouse.absolute.x;
+    mouseYN = e.mouse.absolute.y;
     if ((mouseXO == mouseXN) && (mouseYO == mouseYN)) {
       if (Query.point(bodies, { x: mouseXN, y: mouseYN }).length) {
         var underMouse = Query.point(bodies, { x: mouseXN, y: mouseYN })[0].id;
@@ -193,20 +204,7 @@ function makeWorld() {
         }
       }
     }
-  }
-
-  document.getElementById("debug").addEventListener('mousedown', function(e) {
-    prepareToHandleEvent(e);
-  });
-  document.getElementById("debug").addEventListener('mouseup', function(e) {
-    handleEvent(e);
-  });
-
-   document.getElementById("debug").addEventListener('touchstart', function(e) {
-    prepareToHandleTouchEvent(e);
-  });
-  document.getElementById("debug").addEventListener('touchend', function(e) {
-    handleTouchEvent(e);
+    removeHovers();
   });
 
   window.requestAnimationFrame(update);

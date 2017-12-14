@@ -59,6 +59,10 @@ main {
                               inset 1px 1px 0px 0px $ui-border-color;
   }
 
+  &.hover {
+    // hover effects
+  }
+
   h3 {
     @include type-striphead();
     margin-top:               0;
@@ -121,6 +125,10 @@ main {
   // background-repeat:          no-repeat;
   text-align:                 center;
   line-height:                48px;
+
+  &.hover {
+    // hover effects
+  }
 }
 
 // single pages
