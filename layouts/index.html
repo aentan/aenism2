@@ -34,7 +34,7 @@
       {{ end }}
 
       {{ range $pag.Pages }}
-      <article class="strip" data-url="{{ .RelPermalink }}">
+      <article class="strip{{ if .Params.Hot }} hot{{ end }}" data-url="{{ .RelPermalink }}">
         <h3>{{ .Title }}</h3>
         <div class="topic">{{ .Params.Topic }}</div>
         <div class="preview">
