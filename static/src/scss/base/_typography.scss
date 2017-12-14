@@ -47,8 +47,8 @@ a {
 }
 
 hr {
-  height           : 20px;
-  margin           : 30px 0;
+  height           : 24px;
+  margin           : 32px 0;
 
   background-color : transparent;
   font-size        : 24px;
@@ -58,8 +58,8 @@ hr {
   &:before {
     content : "🎈";
   }
-  @include media(">=tablet") {
-    margin : 60px 0;
+  @include media(">=desktop") {
+    margin : 64px 0;
   }
 }
 
@@ -81,16 +81,16 @@ hr {
     padding : 0;
 
     + p {
-      text-indent : 1.5rem;
-      @include media(">=tablet") {
-        text-indent : 3rem;
+      text-indent : 1.6rem;
+      @include media(">=desktop") {
+        text-indent : 3.2rem;
       }
     }
     &.lead {
       @include type-displaym();
 
-      margin-top    : 30px;
-      margin-bottom : 30px;
+      margin-top    : 32px;
+      margin-bottom : 32px;
 
       + p {
         text-indent : 0;
@@ -108,28 +108,28 @@ hr {
   p + .embed,
   p + iframe,
   p + ul,
-  p + ol {
-    margin-top: 30px;
+  p + ol,
+  p + blockquote {
+    margin-top: 32px;
   }
 
   figure + p,
   .embed + p,
   iframe + p,
   ul + p,
-  ol + p {
-    margin-top: 30px;
+  ol + p,
+  blockquote + p {
+    margin-top: 32px;
   }
 
-  @include media(">=tablet") {
-    p + figure,
-    p + iframe {
-      margin-top: 60px;
+  blockquote {
+    margin: 0 1.6rem;
+
+    @include media(">=desktop") {
+      margin: 0 3.2rem;
     }
 
-    figure + p,
-    iframe + p {
-      margin-top: 60px;
-    }
+
   }
 }
 
@@ -145,7 +145,7 @@ hr {
     font-family: monospace;
     font-size: 1.4rem;
     line-height: 150%;
-    line-height: 1.429;
+    line-height: 1.429; 
     overflow: auto;
   }
 }

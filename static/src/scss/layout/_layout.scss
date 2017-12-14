@@ -130,13 +130,14 @@ main {
   height: auto;
 
   @include media(">=desktop") {
-    display:                 flex;
-    overflow:                hidden;
-    height:                  100%;
+    display:                  flex;
+    overflow:                 hidden;
+    height:                   100%;
   }
 
   main {
     padding:                  16px;
+    box-sizing:               border-box;
 
     @include media(">=desktop") {
       padding:                32px;
@@ -165,9 +166,23 @@ main {
   }
 
   figure {
+    margin-left:              1.6rem;
+    margin-right:             1.6rem;
+
+    @include media(">=desktop") {
+      margin-left:            3.2rem;
+      margin-right:           3.2rem;
+    }
+
     img {
       width:                  100%;
       height:                 auto;
+    }
+
+    figcaption {
+      margin-top:             8px;
+
+      @include type-note();
     }
   }
 
