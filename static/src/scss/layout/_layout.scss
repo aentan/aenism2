@@ -60,7 +60,7 @@ main {
   }
 
   &.hover {
-    background-color: red;
+    // hover effects
   }
 
   h3 {
@@ -125,6 +125,10 @@ main {
   // background-repeat:          no-repeat;
   text-align:                 center;
   line-height:                48px;
+
+  &.hover {
+    // hover effects
+  }
 }
 
 // single pages

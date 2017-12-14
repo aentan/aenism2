@@ -145,10 +145,43 @@ function makeWorld() {
   // keep the mouse in sync with rendering
   render.mouse = mouse;
 
-  var mouseXO,
+  var mouseX,
+      mouseY,
+      mouseXO,
       mouseYO,
       mouseXN,
       mouseYN;
+
+  // Hover
+  Events.on(mouseConstraint, "mousemove", function(e) {
+    mouseX = e.mouse.absolute.x;
+    mouseY = e.mouse.absolute.y;
+    if (Query.point(bodies, { x: mouseX, y: mouseY }).length) {
+      // remove exitsing hovers
+      removeHovers();
+      // apply new hover
+      var underMouse = Query.point(bodies, { x: mouseX, y: mouseY })[0].id;
+      document.getElementById(underMouse).className += " hover";
+      document.body.style.cursor = "pointer";
+    } else if (Query.point(navs, { x: mouseX, y: mouseY }).length) {
+      // remove exitsing hovers
+      removeHovers();
+      // apply new hover
+      var underMouse = Query.point(navs, { x: mouseX, y: mouseY })[0].id;
+      document.getElementById(underMouse).className += " hover";
+      document.body.style.cursor = "pointer";
+    } else {
+      removeHovers();
+    }
+  });
+
+  function removeHovers() {
+    var hovered = document.getElementsByClassName("hover");
+    for (var i = 0; i < hovered.length; i++) {
+      hovered[i].classList.remove("hover");
+    }
+    document.body.style.cursor = "auto";
+  }
 
   // Press (1)
   Events.on(mouseConstraint, "mousedown", function(e) {
@@ -171,6 +204,7 @@ function makeWorld() {
         }
       }
     }
+    removeHovers();
   });
 
   window.requestAnimationFrame(update);
