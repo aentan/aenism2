@@ -10,7 +10,7 @@ preview_image = "nova_preview.jpg"
 
 We are seeing increasingly advanced AI and robotics coming out of labs all around the world. I first saw ASIMO in the late 1990s and QRIO in the early 2000s, I was amazed by robotic bipedalism. Twenty years forward, though we are seeing much better locomotion and facial expressions are starting to look a little less creepy and we are definitely in a robotic age, I believe we are still at its dawn.
 
-It's hard to overcome the uncanny valley. I'm glad realistic human locomotion is being solved by robots like Cassie and Atlas but I'm more interested in the emotivity of robots and AI. After all, humans relate to each other through words, body language, and facial expression. So it is not completely a technical problem but perhaps also artistic and philosophical. Projects confronting these dimensions excite me most.
+It's hard to overcome the uncanny valley. I'm glad realistic human locomotion is being solved by robots like [Cassie](http://www.agilityrobotics.com/) and [Atlas](https://www.bostondynamics.com/atlas) but I'm more interested in the emotivity of robots and AI. After all, humans relate to each other through words, body language, and facial expression. So it is not completely a technical problem but perhaps also artistic and philosophical. Projects confronting these dimensions excite me most.
 
 ## 1. NOVA
 
