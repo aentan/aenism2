@@ -90,15 +90,21 @@ function makeWorld() {
   var bodiesDom = document.querySelectorAll('.strip');
   var bodies = [];
   for (var i = 0, l = bodiesDom.length; i < l; i++) {
+    if (bodiesDom[i].classList.contains('hot')) {
+      frA = 0.5;
+    } else {
+      frA = 0;
+    }
     var body = Bodies.rectangle(
       VIEW.centerX + Math.floor(Math.random() * VIEW.width/2) - VIEW.width/4,
       0,
       VIEW.width * bodiesDom[i].offsetWidth / window.innerWidth,
       VIEW.height * bodiesDom[i].offsetHeight / window.innerHeight, {
-        restitution:      0.2,
-        friction:         1,
-        frictionStatic:   1,
-        density:          1,
+        restitution:      0.1,
+        friction:         3,
+        frictionAir:      frA,
+        frictionStatic:   2,
+        density:          3,
         chamfer:          { radius: 4 },
         angle:            (Math.random() * 2.000) - 1.000
       }
@@ -106,6 +112,7 @@ function makeWorld() {
     bodiesDom[i].id = body.id;
     bodies.push(body);
   }
+
   World.add(engine.world, bodies);
 
   var navsDom = document.querySelectorAll('.page-nav');
@@ -115,10 +122,11 @@ function makeWorld() {
       VIEW.centerX + Math.floor(Math.random() * VIEW.width/2) - VIEW.width/4,
       0,
       24, {
-        restitution:      0.2,
-        friction:         1,
-        frictionStatic:   1,
-        density:          1,
+        restitution:      0.5,
+        friction:         3,
+        frictionAir:      0,
+        frictionStatic:   2,
+        density:          5,
         angle:            (Math.random() * 2.000) - 1.000
       }
     );
