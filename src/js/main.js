@@ -76,7 +76,7 @@ function makeWorld() {
   var groundopts = {
       isStatic:     true,
       restitution:  0,
-      friction:     1
+      friction:     2
   };
   World.add(world, [
     // ground
@@ -87,53 +87,52 @@ function makeWorld() {
     wallLeft  = Bodies.rectangle(-50, window.innerHeight/2, 100, window.innerHeight, wallopts) // left
   ]);
 
-  var bodiesDom = document.querySelectorAll('.strip');
+  var bodiesDom = document.querySelectorAll('.matter-body');
   var bodies = [];
   for (var i = 0, l = bodiesDom.length; i < l; i++) {
     if (bodiesDom[i].classList.contains('hot')) {
-      frA = 0.5;
+      frA = 0.1;
+      oY = -40;
     } else {
       frA = 0;
+      oY = 0;
     }
-    var body = Bodies.rectangle(
-      VIEW.centerX + Math.floor(Math.random() * VIEW.width/2) - VIEW.width/4,
-      0,
-      VIEW.width * bodiesDom[i].offsetWidth / window.innerWidth,
-      VIEW.height * bodiesDom[i].offsetHeight / window.innerHeight, {
-        restitution:      0.1,
-        friction:         3,
-        frictionAir:      frA,
-        frictionStatic:   2,
-        density:          3,
-        chamfer:          { radius: 4 },
-        angle:            (Math.random() * 2.000) - 1.000
-      }
-    );
+    if (bodiesDom[i].classList.contains('strip')) {
+      // Strip
+      var body = Bodies.rectangle(
+        VIEW.centerX + Math.floor(Math.random() * VIEW.width/2) - VIEW.width/4,
+        oY,
+        VIEW.width * bodiesDom[i].offsetWidth / window.innerWidth,
+        VIEW.height * bodiesDom[i].offsetHeight / window.innerHeight, {
+          restitution:      0.05,
+          friction:         2,
+          frictionAir:      frA,
+          frictionStatic:   20,
+          density:          100,
+          chamfer:          { radius: 4 },
+          angle:            (Math.random() * 2.000) - 1.000
+        }
+      );
+    } else if (bodiesDom[i].classList.contains('page-nav')) {
+      // Nav
+      var body = Bodies.circle(
+        VIEW.centerX + Math.floor(Math.random() * VIEW.width/2) - VIEW.width/4,
+        0,
+        24, {
+          restitution:      0.3,
+          friction:         2,
+          frictionAir:      0,
+          frictionStatic:   2,
+          density:          100,
+          angle:            (Math.random() * 2.000) - 1.000
+        }
+      );
+    }
     bodiesDom[i].id = body.id;
     bodies.push(body);
   }
 
   World.add(engine.world, bodies);
-
-  var navsDom = document.querySelectorAll('.page-nav');
-  var navs = [];
-  for (var i = 0, l = navsDom.length; i < l; i++) {
-    var nav = Bodies.circle(
-      VIEW.centerX + Math.floor(Math.random() * VIEW.width/2) - VIEW.width/4,
-      0,
-      24, {
-        restitution:      0.5,
-        friction:         3,
-        frictionAir:      0,
-        frictionStatic:   2,
-        density:          5,
-        angle:            (Math.random() * 2.000) - 1.000
-      }
-    );
-    navsDom[i].id = nav.id;
-    navs.push(nav);
-  }
-  World.add(engine.world, navs);
 
   // add gyro control
   var updateGravity = function(event) {
@@ -193,13 +192,6 @@ function makeWorld() {
       var underMouse = Query.point(bodies, { x: mouseX, y: mouseY })[0].id;
       document.getElementById(underMouse).className += " hover";
       document.body.style.cursor = "pointer";
-    } else if (Query.point(navs, { x: mouseX, y: mouseY }).length) {
-      // remove exitsing hovers
-      removeHovers();
-      // apply new hover
-      var underMouse = Query.point(navs, { x: mouseX, y: mouseY })[0].id;
-      document.getElementById(underMouse).className += " hover";
-      document.body.style.cursor = "pointer";
     } else {
       removeHovers();
     }
@@ -225,13 +217,13 @@ function makeWorld() {
     if ((mouseXO == mouseXN) && (mouseYO == mouseYN)) {
       if (Query.point(bodies, { x: mouseXN, y: mouseYN }).length) {
         var underMouse = Query.point(bodies, { x: mouseXN, y: mouseYN })[0].id;
-        window.location.href = document.getElementById(underMouse).getAttribute("data-url");
       }
       if (Query.point(navs, { x: mouseXN, y: mouseYN }).length) {
         var underMouse = Query.point(navs, { x: mouseXN, y: mouseYN })[0].id;
-        if (document.getElementById(underMouse).getAttribute("data-url")) {
-          window.location.href = document.getElementById(underMouse).getAttribute("data-url");
-        }
+      }
+      if (underMouse) {
+        // go to URL
+        window.location.href = document.getElementById(underMouse).getAttribute("data-url");
       }
     }
     removeHovers();
@@ -262,26 +254,6 @@ function makeWorld() {
       bodyDom.style.transform += "rotate( " + body.angle + "rad )";
     }
 
-    // navs
-    for (var i = 0, l = navsDom.length; i < l; i++) {
-      var navDom = navsDom[i];
-      var nav = null;
-      for (var j = 0, k = navs.length; j < k; j++) {
-        if (navs[j].id == navDom.id) {
-          nav = navs[j];
-          break;
-        }
-      }
-
-      if (nav === null) continue;
-
-      navDom.style.transform = "translate( " +
-        (nav.position.x - navDom.offsetWidth / 2) +
-        "px, " +
-        (nav.position.y - navDom.offsetHeight / 2) +
-        "px )";
-      navDom.style.transform += "rotate( " + nav.angle + "rad )";
-    }
     window.requestAnimationFrame(update);
   }
 
