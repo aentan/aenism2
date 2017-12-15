@@ -159,8 +159,6 @@ main {
 
   @include media(">=desktop") {
     display:                    flex;
-    overflow:                   hidden;
-    height:                     100%;
   }
 
   main {
@@ -236,18 +234,19 @@ main {
     }
   }
 
-  aside {
-    padding:                    48px 16px 16px;
+  // aside {
+  //   padding:                    48px 16px 16px;
 
-    @include media(">=desktop") {
-      padding:                  64px 32px 32px;
-      width:                    240px;
-      height:                   100%;
-      overflow-y:               auto;
-      display:                  flex;
-      flex-direction:           column;
-      flex-grow:                1;
-    }
-  }
+  //   @include media(">=desktop") {
+  //     padding:                  64px 32px 32px;
+  //     width:                    240px;
+  //     height:                   100%;
+  //     overflow-y:               auto;
+  //     display:                  flex;
+  //     flex-direction:           column;
+  //     flex-grow:                1;
+  //     position:                 fixed;
+  //   }
+  // }
 
 }
