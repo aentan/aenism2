@@ -194,7 +194,7 @@ main {
   }
 
   figure {
-    margin-left:                0;
+    margin-left:                -1.6rem;
     margin-right:               -1.6rem;
 
     @include media(">=desktop") {
@@ -226,14 +226,12 @@ main {
     padding-bottom:             56.25%;
     height:                     0;
     overflow-x:                 visible;
-    max-width:                  100%;
-    margin: 0;
 
     iframe {
       position:                 absolute;
       top:                      0;
       left:                     0;
-      width:                    calc(100% + 16px);
+      width:                    100%;
       height:                   100%;
     }
   }
