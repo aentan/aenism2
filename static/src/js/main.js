@@ -210,16 +210,13 @@ function makeWorld() {
     mouseXO = e.mouse.absolute.x;
     mouseYO = e.mouse.absolute.y;
   });
-  // Press (2), Ppart 1 and 2 checks is not end of drag
+  // Press (2), part 1 and 2 checks is not end of drag
   Events.on(mouseConstraint, "mouseup", function(e) {
     mouseXN = e.mouse.absolute.x;
     mouseYN = e.mouse.absolute.y;
     if ((mouseXO == mouseXN) && (mouseYO == mouseYN)) {
       if (Query.point(bodies, { x: mouseXN, y: mouseYN }).length) {
         var underMouse = Query.point(bodies, { x: mouseXN, y: mouseYN })[0].id;
-      }
-      if (Query.point(navs, { x: mouseXN, y: mouseYN }).length) {
-        var underMouse = Query.point(navs, { x: mouseXN, y: mouseYN })[0].id;
       }
       if (underMouse) {
         // go to URL
