@@ -27,14 +27,14 @@
     <main>
 
       {{ if $pag.HasPrev }}
-      <div data-url="{{ $pag.Prev.URL }}" class="page-nav page-minus">p.{{ sub $pag.PageNumber 1 }}</div>
+      <div data-url="{{ $pag.Prev.URL }}" class="matter-body page-nav page-minus">p.{{ sub $pag.PageNumber 1 }}</div>
       {{ end }}
       {{ if $pag.HasNext }}
-      <div data-url="{{ $pag.Next.URL }}" class="page-nav page-plus">p.{{ add $pag.PageNumber 1 }}</div>
+      <div data-url="{{ $pag.Next.URL }}" class="matter-body page-nav page-plus">p.{{ add $pag.PageNumber 1 }}</div>
       {{ end }}
 
       {{ range $pag.Pages }}
-      <article class="strip{{ if .Params.Hot }} hot{{ end }}" data-url="{{ .RelPermalink }}">
+      <article class="matter-body strip{{ if .Params.Hot }} hot{{ end }}" data-url="{{ .RelPermalink }}">
         <h3>{{ .Title }}</h3>
         <div class="topic">{{ .Params.Topic }}</div>
         <div class="preview">
