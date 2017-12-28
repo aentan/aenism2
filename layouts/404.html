@@ -17,9 +17,6 @@
 
     <h1>
       {{ .Title }}
-      {{ if gt $pag.PageNumber 1 }}
-      page {{ $pag.PageNumber }}
-      {{ end }}
     </h1>
 
     {{ partial "footer.html" . }}
