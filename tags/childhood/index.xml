@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Childhood on Aenism</title>
+    <title>childhood on Aenism</title>
     <link>https://aenism.com/tags/childhood/</link>
-    <description>Recent content in Childhood on Aenism</description>
+    <description>Recent content in childhood on Aenism</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>hello@aentan.com (AenTan)</managingEditor>
     <webMaster>hello@aentan.com (AenTan)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 30 Jun 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://aenism.com/tags/childhood/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 30 Jun 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://aenism.com/tags/childhood/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fear, Regression and Creativity</title>
       <link>https://aenism.com/fear-regression-and-creativity/</link>

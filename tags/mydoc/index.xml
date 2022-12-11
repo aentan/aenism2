@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Mydoc on Aenism</title>
+    <title>mydoc on Aenism</title>
     <link>https://aenism.com/tags/mydoc/</link>
-    <description>Recent content in Mydoc on Aenism</description>
+    <description>Recent content in mydoc on Aenism</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>hello@aentan.com (AenTan)</managingEditor>
     <webMaster>hello@aentan.com (AenTan)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Sat, 27 May 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://aenism.com/tags/mydoc/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 27 May 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://aenism.com/tags/mydoc/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Emotional Design for Healthcare</title>
       <link>https://aenism.com/emotional-design-for-healthcare/</link>
@@ -21,7 +17,7 @@
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/emotional-design-for-healthcare/</guid>
       <description>Search for health app ui on pinterest and you will find 9 of 10 examples use a white/cyan color scheme, have minimalistic graphs and beautifully type-set numbers, but not a lot of human.
-Sterile sci-fi fantasy is not what healthcare looks like nor should aspire to be. I refuse to accept the sterile sci-fi fantasy aesthetic. It is dehumanizing. I remember walking around in Tokyo and seeing their marketing, ads and graphic design on trains, the street and publications, they are so full of positivity.</description>
+I refuse to accept the sterile sci-fi fantasy aesthetic. It is dehumanizing. I remember walking around in Tokyo and seeing their marketing, ads and graphic design on trains, the street and publications, they are so full of positivity.</description>
     </item>
     
     <item>

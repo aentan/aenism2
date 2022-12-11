@@ -9,29 +9,6 @@
     <link rel="stylesheet" href="/css/main-e3d33d82.css" />
     
     
-<script>
-!function() {
-  var t;
-  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
-  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
-  t.factory = function(e) {
-    return function() {
-      var n;
-      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
-    };
-  }, t.methods.forEach(function(e) {
-    t[e] = t.factory(e);
-  }), t.load = function(t) {
-    var e, n, o, i;
-    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
-    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
-    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
-  });
-}();
-drift.SNIPPET_VERSION = '0.3.1';
-drift.load('u36da3x2zw42');
-</script>
-
   </head>
   <body id="top" class="single">
     <main>
@@ -45,49 +22,27 @@ drift.load('u36da3x2zw42');
         </header>
         <article>
           <div class="wrapper">
-            
-
-<p>In this article I&rsquo;ll discuss an experimental redesign of a fashion product page from Uniqlo Japan&rsquo;s online shopping website. I imagined how the site would be like a couple of years from now. <a href="/uniqlo-next-demo">View the demo</a></p>
-
-<figure>
-  <img src="http://farm4.staticflickr.com/3691/12542507943_4da1c679fc_h.jpg">
-  
-</figure>
-
+            <p>In this article I&rsquo;ll discuss an experimental redesign of a fashion product page from Uniqlo Japan&rsquo;s online shopping website. I imagined how the site would be like a couple of years from now. <a href="/uniqlo-next-demo">View the demo</a></p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>I’ve been wearing American Apparel T-shirts for years and recently switched to Uniqlo when I was finally able to fit into a Japanese size L after losing weight. Uniqlo is much cheaper than AA and I can just buy them in town than pay shipping fees. Uniqlo also seems to be a more innovative company. My wife and I wore their ultra-thin but surprisingly warm <a href="http://www.uniqlo.com/jp/global/L3/us/men.html">Heattech</a> range when we were in Seoul in winter December last year.</p>
-
 <p>Unfortunately they don&rsquo;t offer online shopping in Singapore. I looked at its Japanese shopping site and then had the idea of imagining how e-commerce would look like a few years from now. Today’s typical e-commerce product page is simply a brochure with an add-to-cart button. This is understandably optimal for sundries but I want to try to make shops like Uniqlo&rsquo;s more emotionally engaging. At the same time improving the user experience across devices.</p>
-
 <p>This article documents my attempt at designing the next Uniqlo product page based on the following industry trends and reasonable assumptions about the future.</p>
-
 <ul>
 <li>Online shopping is increasingly being done on mobile devices</li>
 <li>Internet connection speeds are increasing</li>
 <li>Screens are going to get bigger and will have higher pixel density</li>
 </ul>
-
 <p>I&rsquo;ve kept the existing information architecture because I don&rsquo;t think I&rsquo;m in a position to add or change features being an outsider. This would be a purely user interfacial exercise.</p>
-
 <p>Here&rsquo;s what the current product page looks like:</p>
-
-<figure>
-  <img src="http://farm8.staticflickr.com/7331/12535149745_a3ed3de17b_o.jpg">
-  
-</figure>
-
-<p>I took this screenshot on a 15-inch MacBook Pro with 1440&times;900 resolution, a fairly typical laptop spec. The fixed width layout causes considerable waste of space which becomes more apparent as you scroll down the page.</p>
-
-<figure>
-  <img src="http://farm4.staticflickr.com/3730/12535795703_d63f7edc01_h.jpg">
-  
-</figure>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<p>I took this screenshot on a 15-inch MacBook Pro with 1440×900 resolution, a fairly typical laptop spec. The fixed width layout causes considerable waste of space which becomes more apparent as you scroll down the page.</p>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>While usable on tablets albeit with smaller than optimal tap targets, it&rsquo;s not optimized for smaller mobile devices.</p>
-
 <p>It&rsquo;s also surprising that they aren&rsquo;t using web fonts but old-school image replacement for text in their corporate typeface. The US site is the only one that uses web fonts. The result is blurry text, especially in high pixel density screens like the Retina display.</p>
-
 <h2 id="redesign-strategy">Redesign strategy</h2>
-
 <ul>
 <li>Fluid layout to make efficient use of available screen real estate and increase the quantity and fidelity of information above the fold</li>
 <li>Responsive CSS to adapt a single markup to all screen sizes from the phone to large desktop displays</li>
@@ -97,106 +52,53 @@ drift.load('u36da3x2zw42');
 <li>Bigger touch screen friendly tap targets</li>
 <li>General usability improvements</li>
 </ul>
-
-<h2 id="adaptive-fluid-responsive-layout">Adaptive (fluid + responsive) layout</h2>
-
+<h2 id="adaptive-fluid--responsive-layout">Adaptive (fluid + responsive) layout</h2>
 <p>I&rsquo;m extending Bootstrap&rsquo;s responsive utilities and grid system. Bootstrap handles screen sizes from <em>XS</em> (phone) to <em>L</em> (desktop monitors). I added an <em>XL</em> size to accomodate very big screens like the Thunderbolt display.</p>
-
 <p>The convention when it comes to designing responsive sites is the <em>mobile-first</em> approach. This is how Bootstrap does responsive. The base styles are for small devices and media queries are added to vary the styling for bigger screens.</p>
-
-<figure>
-  <img src="http://farm8.staticflickr.com/7318/12543063813_d8d9a9e4a5_h.jpg">
-  
-</figure>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>At phone size, the interface is compact and simplified. The lengthy product description is hidden behind a toggle so the product image is visible. The text and UI elements are smaller. The shopping cart is simplified into an icon. At portrait view the add-to-cart button is visible to ensure conversion is optimal. The product options (visible in later screenshots) wraps below the main column.</p>
-
-<figure>
-  <img src="http://farm8.staticflickr.com/7423/12542684865_3b3cfdbbab_h.jpg">
-  
-</figure>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>A tablet size, more information surfaces. With the tablet at landscape orientation, the product description is expanded, social sharing buttons are exposed and product configuration are shown as a sidebar. The shopping cart also shows number of items in the cart and the total value. The UI elements and text also grows.</p>
-
-<figure>
-  <img src="http://farm4.staticflickr.com/3691/12542507943_4da1c679fc_h.jpg">
-  
-</figure>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>At laptop size, related items become visible. UI elements and text grows even bigger. The product is displayed in its full glory.</p>
-
-<figure>
-  <img src="http://farm8.staticflickr.com/7348/12542812604_950f6c71e1_h.jpg">
-  
-</figure>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>At the biggest size, I decided to not cram in more information but instead just make the text and elements bigger. It&rsquo;s more like a zoomed-in laptop size.</p>
-
 <h2 id="fullscreen-product-photos">Fullscreen product photos</h2>
-
-<p><figure>
-  <img src="http://farm6.staticflickr.com/5505/12544810364_9c02dc0e0f_h.jpg">
-  
-</figure>
-<figure>
-  <img src="http://farm4.staticflickr.com/3712/12544809894_c93d0c47a5_h.jpg">
-  
-</figure></p>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Instead of a pannable image viewer opened from thumbnails, in the original design, my design has little <em>zoom here</em> buttons. For example the user can click on the zoom button at the collar to examine the collar. A fullscreen image viewer pops up. It feels like you took the clothing off the rack and you are looking closely at it.</p>
-
 <h2 id="clothing-tag">Clothing tag</h2>
-
-<figure>
-  <img src="http://farm4.staticflickr.com/3766/12549702213_b69e525f01_o.jpg">
-  
-</figure>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>I&rsquo;ve grouped all product configuration options in the sidebar which I named <code>.clothing-tag</code> because I want to feel like the real life counterpart. What do you do after you check out the clothing design? You would usually reach for the tag to look at the price and other information about the item.</p>
-
 <h2 id="general-usability-improvements">General usability improvements</h2>
-
 <ul>
 <li>The quantity selection dropdown has been replaced by an <code>.input-group</code> from Bootstrap. It takes lesser clicks if you are just want to add a couple of pieces. On mobile, dropdown boxes are a pain to operate. It&rsquo;s much easier to just tap a button a few times.</li>
 <li>Add-to-cart button that&rsquo;s bigger and not hidden further down the page.</li>
 <li>Transitions when <em>zoom here</em> buttons appear and when looking at larger photos so it&rsquo;s less jarring.</li>
 </ul>
-
 <h2 id="where-are-the-breadcrumbs">Where are the breadcrumbs?</h2>
-
 <p>Imagine yourself shopping at Uniqlo. If you&rsquo;ve never seen a Uniqlo store, they all look similar and feel a lot like IKEA.</p>
-
-<figure>
-  <img src="http://farm6.staticflickr.com/5232/7077557677_6d31a01895_b.jpg">
-  
-</figure>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Physical stores have no concept of breadcrumbs, only racks after racks of laterally arranged merchandise. You know you are in the sweater section because that&rsquo;s what you see around you. You know you&rsquo;d find other women&rsquo;s stuff because the women&rsquo;s stuff are all grouped and separated from men and children areas. You subconsciously wander the shop and visually look for what you need. Shopping is visual, not navigational.</p>
-
-<figure>
-  <img src="http://farm8.staticflickr.com/7388/12551974875_4abe48aacc_h.jpg">
-  
-</figure>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Right beneath the product are adjacent items in the same category. At the end of that list is a <em>view all knit wear and sweaters</em> option. If you don&rsquo;t like a product and you&rsquo;ve scrolled past the product, you don&rsquo;t have to scroll back up to access the breadcrumbs. The adjacent items are right there and if something catches your fancy, click it else you may look at all the products in that category by going to the category page. If you decide to buy a different kind of clothing, only then you scroll up and go back to the women&rsquo;s section.</p>
-
-<figure>
-  <img src="http://farm4.staticflickr.com/3811/12552612204_419f6c9079_b.jpg">
-  
-</figure>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <p>Uniqlo&rsquo;s main navigation which I have not redesigned is a giant column-based hierarchical menu system. It&rsquo;s an effective way to browse to other parts of the store. By designing the core interface well, generic components like breadcrumbs can be avoided to make room for a visually richer shopping experience.</p>
-
 <p>It&rsquo;s important for a brand like Uniqlo with a distinct image to reflect its brand aesthetic to its online store.</p>
-
-<hr />
-
+<hr>
 <blockquote>
 <p>I want to mention that Photoshop was not used in the redesign. Bootstrap&rsquo;s grid system is itself a great design tool and I composed directly in code. The basis of responsive and adaptive layouts are relative dimensions and the spatial relationship between UI elements. Photoshop forces you into one-dimensional thinking with pixels. Making multiple mockups also feels like a waste of time. I&rsquo;d prefer to design in code as rapidly as I can and a framework like Bootstrap, along with tools like LESS and Sass allow just that.</p>
 </blockquote>
-
 <p>The source code is available in my <a href="https://github.com/aentan/aenism">public Github repo</a>. You should look at the <a href="https://github.com/aentan/aenism/blob/master/source/assets/stylesheets/uniqlo.scss">base stylesheet</a>, <a href="https://github.com/aentan/aenism/blob/master/source/uniqlo-next-demo.html.erb">the markup</a> and <a href="https://github.com/aentan/aenism/blob/master/source/layouts/uniqlo.erb">the layout</a>. If you&rsquo;d like, here&rsquo;s the <a href="/uniqlo-next-demo">demo page</a> again.</p>
-
 <p>What are the best online shopping experiences you&rsquo;ve seen?</p>
 
           </div>

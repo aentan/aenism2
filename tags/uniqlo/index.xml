@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Uniqlo on Aenism</title>
+    <title>uniqlo on Aenism</title>
     <link>https://aenism.com/tags/uniqlo/</link>
-    <description>Recent content in Uniqlo on Aenism</description>
+    <description>Recent content in uniqlo on Aenism</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>hello@aentan.com (AenTan)</managingEditor>
     <webMaster>hello@aentan.com (AenTan)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Fri, 07 Feb 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://aenism.com/tags/uniqlo/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Fri, 07 Feb 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://aenism.com/tags/uniqlo/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>UNIQLO Next</title>
       <link>https://aenism.com/uniqlo-next/</link>
@@ -21,7 +17,7 @@
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/uniqlo-next/</guid>
       <description>In this article I&amp;rsquo;ll discuss an experimental redesign of a fashion product page from Uniqlo Japan&amp;rsquo;s online shopping website. I imagined how the site would be like a couple of years from now. View the demo
- I’ve been wearing American Apparel T-shirts for years and recently switched to Uniqlo when I was finally able to fit into a Japanese size L after losing weight. Uniqlo is much cheaper than AA and I can just buy them in town than pay shipping fees.</description>
+I’ve been wearing American Apparel T-shirts for years and recently switched to Uniqlo when I was finally able to fit into a Japanese size L after losing weight. Uniqlo is much cheaper than AA and I can just buy them in town than pay shipping fees.</description>
     </item>
     
   </channel>

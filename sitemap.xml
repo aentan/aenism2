@@ -1,317 +1,169 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>https://aenism.com/5-robots-im-excited-about/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/emotional-design-for-healthcare/</loc>
-    <lastmod>2017-05-27T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/contact/</loc>
-    <lastmod>2017-05-23T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/familiar-healthcare-ux/</loc>
-    <lastmod>2017-05-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/uniqlo-next-demo/</loc>
-    <lastmod>2017-05-16T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/typographic-design-for-a-miura-fold-map-of-san-francisco/</loc>
-    <lastmod>2017-05-14T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/collection-of-branding-and-identity-work/</loc>
-    <lastmod>2017-05-10T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/fear-regression-and-creativity/</loc>
-    <lastmod>2014-06-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/good-taste/</loc>
-    <lastmod>2014-03-15T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/white-room/</loc>
-    <lastmod>2014-03-09T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/uniqlo-next/</loc>
-    <lastmod>2014-02-07T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/anticurious-hazards/</loc>
-    <lastmod>2014-02-04T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/make-metaballs/</loc>
-    <lastmod>2014-02-03T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/inspiring-videos/</loc>
-    <lastmod>2014-01-31T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/teleportation-is-scary/</loc>
-    <lastmod>2014-01-30T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/end-of-passive/</loc>
-    <lastmod>2014-01-29T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/child-mind/</loc>
-    <lastmod>2014-01-26T00:00:00+00:00</lastmod>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aenism.com/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/aesthetic/</loc>
-    <lastmod>2014-03-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aenism.com/tags/ai/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aenism.com/tags/artificial-intelligence/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/bordedom/</loc>
-    <lastmod>2014-03-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/branding/</loc>
-    <lastmod>2017-05-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/childhood/</loc>
-    <lastmod>2014-06-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/children/</loc>
-    <lastmod>2014-02-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/creativity/</loc>
-    <lastmod>2014-06-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/curiosity/</loc>
-    <lastmod>2014-02-04T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/design/</loc>
-    <lastmod>2014-01-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aenism.com/tags/emotions/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/fear/</loc>
-    <lastmod>2014-06-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/healthcare/</loc>
-    <lastmod>2017-05-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aenism.com/tags/humans/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/identity/</loc>
-    <lastmod>2017-05-10T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/illustrator/</loc>
-    <lastmod>2014-02-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/inspiration/</loc>
-    <lastmod>2014-01-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/logo/</loc>
-    <lastmod>2014-02-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/metaballs/</loc>
-    <lastmod>2014-02-03T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/mydoc/</loc>
-    <lastmod>2017-05-27T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/philosophy/</loc>
-    <lastmod>2014-03-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/pjax/</loc>
-    <lastmod>2014-01-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aenism.com/post/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/psychology/</loc>
-    <lastmod>2014-06-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/regression/</loc>
-    <lastmod>2014-06-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aenism.com/tags/robotics/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aenism.com/tags/robots/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aenism.com/tags/</loc>
-    <lastmod>2014-03-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/taste/</loc>
-    <lastmod>2014-03-15T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/emotional-design-for-healthcare/</loc>
+    <lastmod>2017-05-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/healthcare/</loc>
+    <lastmod>2017-05-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/mydoc/</loc>
+    <lastmod>2017-05-27T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/contact/</loc>
+    <lastmod>2017-05-23T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/familiar-healthcare-ux/</loc>
+    <lastmod>2017-05-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/uniqlo-next-demo/</loc>
+    <lastmod>2017-05-16T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://aenism.com/tags/the-open-company/</loc>
     <lastmod>2017-05-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
     <loc>https://aenism.com/tags/toc/</loc>
     <lastmod>2017-05-14T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/uniqlo/</loc>
-    <lastmod>2014-02-07T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/ux/</loc>
-    <lastmod>2014-01-30T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/videos/</loc>
-    <lastmod>2014-01-31T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://aenism.com/tags/vision/</loc>
-    <lastmod>2014-01-29T00:00:00+00:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+  </url><url>
+    <loc>https://aenism.com/typographic-design-for-a-miura-fold-map-of-san-francisco/</loc>
+    <lastmod>2017-05-14T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/branding/</loc>
+    <lastmod>2017-05-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/collection-of-branding-and-identity-work/</loc>
+    <lastmod>2017-05-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/identity/</loc>
+    <lastmod>2017-05-10T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/childhood/</loc>
+    <lastmod>2014-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/creativity/</loc>
+    <lastmod>2014-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/fear/</loc>
+    <lastmod>2014-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/fear-regression-and-creativity/</loc>
+    <lastmod>2014-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/psychology/</loc>
+    <lastmod>2014-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/regression/</loc>
+    <lastmod>2014-06-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/aesthetic/</loc>
+    <lastmod>2014-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/good-taste/</loc>
+    <lastmod>2014-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/philosophy/</loc>
+    <lastmod>2014-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/taste/</loc>
+    <lastmod>2014-03-15T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/bordedom/</loc>
+    <lastmod>2014-03-09T00:00:00+00:00</lastmod>
+  </url><url>
     <loc>https://aenism.com/tags/white-room/</loc>
     <lastmod>2014-03-09T00:00:00+00:00</lastmod>
-    <priority>0</priority>
+  </url><url>
+    <loc>https://aenism.com/white-room/</loc>
+    <lastmod>2014-03-09T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/uniqlo/</loc>
+    <lastmod>2014-02-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/uniqlo-next/</loc>
+    <lastmod>2014-02-07T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/anticurious-hazards/</loc>
+    <lastmod>2014-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/children/</loc>
+    <lastmod>2014-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/curiosity/</loc>
+    <lastmod>2014-02-04T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/illustrator/</loc>
+    <lastmod>2014-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/logo/</loc>
+    <lastmod>2014-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/make-metaballs/</loc>
+    <lastmod>2014-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/metaballs/</loc>
+    <lastmod>2014-02-03T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/design/</loc>
+    <lastmod>2014-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/inspiration/</loc>
+    <lastmod>2014-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/inspiring-videos/</loc>
+    <lastmod>2014-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/videos/</loc>
+    <lastmod>2014-01-31T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/pjax/</loc>
+    <lastmod>2014-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/teleportation-is-scary/</loc>
+    <lastmod>2014-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/ux/</loc>
+    <lastmod>2014-01-30T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/end-of-passive/</loc>
+    <lastmod>2014-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/tags/vision/</loc>
+    <lastmod>2014-01-29T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/child-mind/</loc>
+    <lastmod>2014-01-26T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/categories/</loc>
   </url>
-  
 </urlset>

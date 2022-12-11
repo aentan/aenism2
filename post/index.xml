@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Aenism</title>
@@ -9,11 +9,7 @@
     <managingEditor>hello@aentan.com (AenTan)</managingEditor>
     <webMaster>hello@aentan.com (AenTan)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 13 Dec 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://aenism.com/post/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 13 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://aenism.com/post/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>5 Robots I’m Excited About</title>
       <link>https://aenism.com/5-robots-im-excited-about/</link>
@@ -30,7 +26,7 @@
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/emotional-design-for-healthcare/</guid>
       <description>Search for health app ui on pinterest and you will find 9 of 10 examples use a white/cyan color scheme, have minimalistic graphs and beautifully type-set numbers, but not a lot of human.
-Sterile sci-fi fantasy is not what healthcare looks like nor should aspire to be. I refuse to accept the sterile sci-fi fantasy aesthetic. It is dehumanizing. I remember walking around in Tokyo and seeing their marketing, ads and graphic design on trains, the street and publications, they are so full of positivity.</description>
+I refuse to accept the sterile sci-fi fantasy aesthetic. It is dehumanizing. I remember walking around in Tokyo and seeing their marketing, ads and graphic design on trains, the street and publications, they are so full of positivity.</description>
     </item>
     
     <item>
@@ -49,8 +45,9 @@ Dr Snehal Patel, CEO and Co-Founder of MyDoc was introduced to me by an investor
       <pubDate>Sun, 14 May 2017 00:00:00 +0000</pubDate>
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/typographic-design-for-a-miura-fold-map-of-san-francisco/</guid>
-      <description>The map was inspired by a passage in Walter Benjamin’s _Arcades Project_ where he describes a 19th century map of Paris known as the Plan Taride, which unlike the flimsy paper maps of the day, was a miniature fully-bound book.
-Content Highlights 38 spots around the city, including the best tea shop in Chinatown, a mini-park 11 stories in the air, a private library, and a bunch of amazing restaurants.</description>
+      <description>Content Highlights 38 spots around the city, including the best tea shop in Chinatown, a mini-park 11 stories in the air, a private library, and a bunch of amazing restaurants.
+Construction The map is printed on waterproof tear-resistant Tyvek. It&amp;rsquo;s then folded up using an origami technique that allows it to smoothly open and close in one motion, and makes it impossible to misfold.
+Manufacturing Info The map is printed by Yushin-Plus, an art printing company in Tokyo, and folded by the Miura-Ori Lab, also in Tokyo.</description>
     </item>
     
     <item>
@@ -59,9 +56,8 @@ Content Highlights 38 spots around the city, including the best tea shop in Chin
       <pubDate>Wed, 10 May 2017 00:00:00 +0000</pubDate>
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/collection-of-branding-and-identity-work/</guid>
-      <description>6degrees Tailored to its essence, a geometrical fit cut for 6degrees &amp;ndash; a self-cleaning and self-updating digital phonebook.
-Initially available on Android and now on iOS, 6degrees is a self-updating phonebook that automatically cleans duplicates and backs itself up. One of the first things I did for 6degrees was to refresh their identity.
-The old logo although full of homemade goodness was too much like a geek hobby project.</description>
+      <description>6degrees Initially available on Android and now on iOS, 6degrees is a self-updating phonebook that automatically cleans duplicates and backs itself up. One of the first things I did for 6degrees was to refresh their identity.
+6degrees is named after the popular theory originally set out by Frigyes Karinthy and popularized by a play written by John Guare – that everyone and everything is six or fewer steps away, by way of introduction, from any other person in the world.</description>
     </item>
     
     <item>
@@ -104,7 +100,7 @@ You now have something to do. You are not bored anymore. Having some writing/dra
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/uniqlo-next/</guid>
       <description>In this article I&amp;rsquo;ll discuss an experimental redesign of a fashion product page from Uniqlo Japan&amp;rsquo;s online shopping website. I imagined how the site would be like a couple of years from now. View the demo
- I’ve been wearing American Apparel T-shirts for years and recently switched to Uniqlo when I was finally able to fit into a Japanese size L after losing weight. Uniqlo is much cheaper than AA and I can just buy them in town than pay shipping fees.</description>
+I’ve been wearing American Apparel T-shirts for years and recently switched to Uniqlo when I was finally able to fit into a Japanese size L after losing weight. Uniqlo is much cheaper than AA and I can just buy them in town than pay shipping fees.</description>
     </item>
     
     <item>
@@ -124,7 +120,7 @@ And he is.</description>
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/make-metaballs/</guid>
       <description>The blobby shapes you see in the 37signals logo. They are called metaballs. It&amp;rsquo;s not a typo. You can&amp;rsquo;t eat them.
-37signals logo It&amp;rsquo;s a common pattern in logos. The metaball shape is actually very easy to create in any vector software. Here&amp;rsquo;s how to do it in Illustrator using basic shapes and the Pathfinder tool.</description>
+It&amp;rsquo;s a common pattern in logos. The metaball shape is actually very easy to create in any vector software. Here&amp;rsquo;s how to do it in Illustrator using basic shapes and the Pathfinder tool.</description>
     </item>
     
     <item>
@@ -163,8 +159,8 @@ How pjax works Instead of re-rendering a full page on every page request, pjax f
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/child-mind/</guid>
       <description>The Riddle Consider this riddle I found spread­ing on Face­book some while ago.
- This problem can be solved by children in five to ten minutes, programmers in an hour and people with higher education…
- 8809 → 6 5555 → 0 7111 → 0 8193 → 3 2172 → 0 8096 → 5 6666 → 4 1111 → 0 3213 → 0 9999 → 4 7662 → 2 7756 → 1 9313 → 1 6855 → 3 0000 → 4 9881 → 5 2222 → 0 5531 → 0 3333 → 0 2581 → ?</description>
+This problem can be solved by children in five to ten minutes, programmers in an hour and people with higher education…
+8809 → 6 5555 → 0 7111 → 0 8193 → 3 2172 → 0 8096 → 5 6666 → 4 1111 → 0 3213 → 0 9999 → 4 7662 → 2 7756 → 1 9313 → 1 6855 → 3 0000 → 4 9881 → 5 2222 → 0 5531 → 0 3333 → 0 2581 → ?</description>
     </item>
     
   </channel>

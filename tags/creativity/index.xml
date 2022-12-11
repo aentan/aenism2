@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Creativity on Aenism</title>
+    <title>creativity on Aenism</title>
     <link>https://aenism.com/tags/creativity/</link>
-    <description>Recent content in Creativity on Aenism</description>
+    <description>Recent content in creativity on Aenism</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>hello@aentan.com (AenTan)</managingEditor>
     <webMaster>hello@aentan.com (AenTan)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Mon, 30 Jun 2014 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://aenism.com/tags/creativity/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Mon, 30 Jun 2014 00:00:00 +0000</lastBuildDate><atom:link href="https://aenism.com/tags/creativity/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Fear, Regression and Creativity</title>
       <link>https://aenism.com/fear-regression-and-creativity/</link>
@@ -31,8 +27,8 @@ I remember a nightmare when i was three, the frightening image of a top hat-wear
       <author>hello@aentan.com (AenTan)</author>
       <guid>https://aenism.com/child-mind/</guid>
       <description>The Riddle Consider this riddle I found spread­ing on Face­book some while ago.
- This problem can be solved by children in five to ten minutes, programmers in an hour and people with higher education…
- 8809 → 6 5555 → 0 7111 → 0 8193 → 3 2172 → 0 8096 → 5 6666 → 4 1111 → 0 3213 → 0 9999 → 4 7662 → 2 7756 → 1 9313 → 1 6855 → 3 0000 → 4 9881 → 5 2222 → 0 5531 → 0 3333 → 0 2581 → ?</description>
+This problem can be solved by children in five to ten minutes, programmers in an hour and people with higher education…
+8809 → 6 5555 → 0 7111 → 0 8193 → 3 2172 → 0 8096 → 5 6666 → 4 1111 → 0 3213 → 0 9999 → 4 7662 → 2 7756 → 1 9313 → 1 6855 → 3 0000 → 4 9881 → 5 2222 → 0 5531 → 0 3333 → 0 2581 → ?</description>
     </item>
     
   </channel>

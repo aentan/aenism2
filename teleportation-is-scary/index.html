@@ -9,29 +9,6 @@
     <link rel="stylesheet" href="/css/main-e3d33d82.css" />
     
     
-<script>
-!function() {
-  var t;
-  if (t = window.driftt = window.drift = window.driftt || [], !t.init) return t.invoked ? void (window.console && console.error && console.error("Drift snippet included twice.")) : (t.invoked = !0, 
-  t.methods = [ "identify", "config", "track", "reset", "debug", "show", "ping", "page", "hide", "off", "on" ], 
-  t.factory = function(e) {
-    return function() {
-      var n;
-      return n = Array.prototype.slice.call(arguments), n.unshift(e), t.push(n), t;
-    };
-  }, t.methods.forEach(function(e) {
-    t[e] = t.factory(e);
-  }), t.load = function(t) {
-    var e, n, o, i;
-    e = 3e5, i = Math.ceil(new Date() / e) * e, o = document.createElement("script"), 
-    o.type = "text/javascript", o.async = !0, o.crossorigin = "anonymous", o.src = "https://js.driftt.com/include/" + i + "/" + t + ".js", 
-    n = document.getElementsByTagName("script")[0], n.parentNode.insertBefore(o, n);
-  });
-}();
-drift.SNIPPET_VERSION = '0.3.1';
-drift.load('u36da3x2zw42');
-</script>
-
   </head>
   <body id="top" class="single">
     <main>
@@ -45,53 +22,37 @@ drift.load('u36da3x2zw42');
         </header>
         <article>
           <div class="wrapper">
-            
-
-<p>I first came across <em>pjax</em> (pushState + ajax) when I was working on a Rails 4 project which has <a href="https://github.com/rails/turbolinks"><em>Turbolinks</em></a>. Turbolinks isn&rsquo;t pjax per se. It&rsquo;s similar and based on the same philosophy.</p>
-
+            <p>I first came across <em>pjax</em> (pushState + ajax) when I was working on a Rails 4 project which has <a href="https://github.com/rails/turbolinks"><em>Turbolinks</em></a>. Turbolinks isn&rsquo;t pjax per se. It&rsquo;s similar and based on the same philosophy.</p>
 <h2 id="how-pjax-works">How pjax works</h2>
-
 <p>Instead of re-rendering a full page on every page request, pjax fetches only a fragment of the target page and uses that to replace its counterpart in the current DOM, thereby preserving the surrounding layout, scripts and style. Because the browser doesn&rsquo;t have to compute the scripts and styles, rendering time is next to nothing. New pages can also be strategically prefetched to make page changes as fast as DOM replacement. The address bar is also updated instantaneously with HTML5 History API.</p>
-
 <p>Imagine a train which upon leaving the current station, instantly vanishes and reappears at the next station, jumping space and time. It would be an unsettling mode of transportation because you wouldn&rsquo;t have a sense of how you got there. <em>pjax feels like teleportation</em>. The abrupt change makes one feel disoriented. Transitions are necessary to make the change smoother.</p>
-
 <h2 id="transitions">Transitions</h2>
-
 <h3 id="jquery-pjax">jquery-pjax</h3>
-
 <p>I&rsquo;m using the <a href="https://github.com/defunkt/jquery-pjax">jquery-pjax</a> plugin on this site. The plugin provides some handy APIs for we can make use of to add transitions between page loads.</p>
-
 <p>Click around this site to see its cross fade transition.</p>
-
 <p>This is the function for loading content via pjax. I used the <code>fragment</code> option to tell jquery-pjax to grab the <code>#main</code> element from the target DOM. If you are serving dynamic i.e. PHP or Ruby pages and can output layout-less content then you can don&rsquo;t need to use <code>fragment</code>.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">function</span> pjaxLoad(url) {
-  $.pjax({
-    url<span style="color:#555">:</span> url,
-    container<span style="color:#555">:</span> <span style="color:#c30">&#39;#main&#39;</span>,
-    fragment<span style="color:#555">:</span> <span style="color:#c30">&#39;#main&#39;</span>
-  });
-}</code></pre></div>
-<h3 id="handling-clicks">Handling clicks</h3>
-
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">function</span> pjaxLoad(url) {
+</span></span><span style="display:flex;"><span>  $.pjax({
+</span></span><span style="display:flex;"><span>    url<span style="color:#555">:</span> url,
+</span></span><span style="display:flex;"><span>    container<span style="color:#555">:</span> <span style="color:#c30">&#39;#main&#39;</span>,
+</span></span><span style="display:flex;"><span>    fragment<span style="color:#555">:</span> <span style="color:#c30">&#39;#main&#39;</span>
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="handling-clicks">Handling clicks</h3>
 <p>I then handle clicks on links I want to be pjaxified. It&rsquo;s also important to ensure the browser supports pjax with <code>$.support.pjax</code>. Otherwise the links will not be handled and will not be pjaxified.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#069;font-weight:bold">if</span> ($.support.pjax) {
-  $(<span style="color:#366">document</span>).on(<span style="color:#c30">&#39;click&#39;</span>, <span style="color:#c30">&#39;#articles article&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(e) {
-    pjaxLoad($(<span style="color:#069;font-weight:bold">this</span>).find(<span style="color:#c30">&#39;a&#39;</span>).attr(<span style="color:#c30">&#39;href&#39;</span>));
-  });
-  $(<span style="color:#366">document</span>).on(<span style="color:#c30">&#39;click&#39;</span>, <span style="color:#c30">&#39;#articles article h2 a&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(e) {
-    e.preventDefault();
-    pjaxLoad($(<span style="color:#069;font-weight:bold">this</span>).attr(<span style="color:#c30">&#39;href&#39;</span>));
-  });
-}</code></pre></div>
-<h3 id="cross-fade">Cross-fade</h3>
-
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span><span style="color:#069;font-weight:bold">if</span> ($.support.pjax) {
+</span></span><span style="display:flex;"><span>  $(<span style="color:#366">document</span>).on(<span style="color:#c30">&#39;click&#39;</span>, <span style="color:#c30">&#39;#articles article&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(e) {
+</span></span><span style="display:flex;"><span>    pjaxLoad($(<span style="color:#069;font-weight:bold">this</span>).find(<span style="color:#c30">&#39;a&#39;</span>).attr(<span style="color:#c30">&#39;href&#39;</span>));
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>  $(<span style="color:#366">document</span>).on(<span style="color:#c30">&#39;click&#39;</span>, <span style="color:#c30">&#39;#articles article h2 a&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(e) {
+</span></span><span style="display:flex;"><span>    e.preventDefault();
+</span></span><span style="display:flex;"><span>    pjaxLoad($(<span style="color:#069;font-weight:bold">this</span>).attr(<span style="color:#c30">&#39;href&#39;</span>));
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div><h3 id="cross-fade">Cross-fade</h3>
 <p>At this point, pjax works. But it feels like teleportation. We need to add transitions and this is how they will work.</p>
-
-<figure>
-  <img src="http://farm8.staticflickr.com/7351/12233353976_be0f0b31b8_o.jpg">
-  
-</figure>
-
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
 <ol>
 <li>Clone the element to be replaced.</li>
 <li>Stack it on top of the original.</li>
@@ -99,30 +60,26 @@ drift.load('u36da3x2zw42');
 <li>Fade out the clone.</li>
 <li>Remove the clone.</li>
 </ol>
-
 <p>At <code>pjax:start</code>, clone <code>#main</code> and then stack <code>#clone</code> above and prevent scrolling.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">$(<span style="color:#366">document</span>).on(<span style="color:#c30">&#39;pjax:start&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(e) {
-  $main.after($main.clone().attr(<span style="color:#c30">&#39;id&#39;</span>, <span style="color:#c30">&#39;clone&#39;</span>));
-  $(<span style="color:#c30">&#39;#clone&#39;</span>).css(<span style="color:#c30">&#39;z-index&#39;</span>, <span style="color:#f60">600</span>);
-  $body.css(<span style="color:#c30">&#39;overflow&#39;</span>, <span style="color:#c30">&#39;hidden&#39;</span>);
-});</code></pre></div>
-<p>At <code>pjax:end</code>, fade out <code>#clone</code> and restore scrolling. If you have elements in the loaded DOM that has to be processed by JavaScript, be sure to reinitialize them here. I&rsquo;m using <a href="http://www.greensock.com/gsap-js/">GSAP</a> instead of jQuery for more performant animations but jQuery will work fine.</p>
-<div class="highlight"><pre style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">$(<span style="color:#366">document</span>).on(<span style="color:#c30">&#39;pjax:end&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(e) {
-  <span style="color:#09f;font-style:italic">// Reinitialize JS here if necessary
-</span><span style="color:#09f;font-style:italic"></span>  TweenLite.to($(<span style="color:#c30">&#39;#clone&#39;</span>), <span style="color:#f60">0.8</span>, {
-    opacity<span style="color:#555">:</span> <span style="color:#f60">0</span>,
-    onComplete<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">function</span>() {
-      $(<span style="color:#c30">&#39;#clone&#39;</span>).remove();
-      $(<span style="color:#c30">&#39;body&#39;</span>).css(<span style="color:#c30">&#39;overflow&#39;</span>, <span style="color:#c30">&#39;auto&#39;</span>);
-    }
-  });
-});</code></pre></div>
-<hr />
-
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>$(<span style="color:#366">document</span>).on(<span style="color:#c30">&#39;pjax:start&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(e) {
+</span></span><span style="display:flex;"><span>  $main.after($main.clone().attr(<span style="color:#c30">&#39;id&#39;</span>, <span style="color:#c30">&#39;clone&#39;</span>));
+</span></span><span style="display:flex;"><span>  $(<span style="color:#c30">&#39;#clone&#39;</span>).css(<span style="color:#c30">&#39;z-index&#39;</span>, <span style="color:#f60">600</span>);
+</span></span><span style="display:flex;"><span>  $body.css(<span style="color:#c30">&#39;overflow&#39;</span>, <span style="color:#c30">&#39;hidden&#39;</span>);
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><p>At <code>pjax:end</code>, fade out <code>#clone</code> and restore scrolling. If you have elements in the loaded DOM that has to be processed by JavaScript, be sure to reinitialize them here. I&rsquo;m using <a href="http://www.greensock.com/gsap-js/">GSAP</a> instead of jQuery for more performant animations but jQuery will work fine.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f0f3f3;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-js" data-lang="js"><span style="display:flex;"><span>$(<span style="color:#366">document</span>).on(<span style="color:#c30">&#39;pjax:end&#39;</span>, <span style="color:#069;font-weight:bold">function</span>(e) {
+</span></span><span style="display:flex;"><span>  <span style="color:#09f;font-style:italic">// Reinitialize JS here if necessary
+</span></span></span><span style="display:flex;"><span><span style="color:#09f;font-style:italic"></span>  TweenLite.to($(<span style="color:#c30">&#39;#clone&#39;</span>), <span style="color:#f60">0.8</span>, {
+</span></span><span style="display:flex;"><span>    opacity<span style="color:#555">:</span> <span style="color:#f60">0</span>,
+</span></span><span style="display:flex;"><span>    onComplete<span style="color:#555">:</span> <span style="color:#069;font-weight:bold">function</span>() {
+</span></span><span style="display:flex;"><span>      $(<span style="color:#c30">&#39;#clone&#39;</span>).remove();
+</span></span><span style="display:flex;"><span>      $(<span style="color:#c30">&#39;body&#39;</span>).css(<span style="color:#c30">&#39;overflow&#39;</span>, <span style="color:#c30">&#39;auto&#39;</span>);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  });
+</span></span><span style="display:flex;"><span>});
+</span></span></code></pre></div><hr>
 <p>By manipulating <code>#main</code> and <code>#clone</code> at <code>pjax:start</code> and <code>pjax:end</code> you can easily create other kinds of transitions.</p>
-
 <h2 id="further-reading">Further Reading</h2>
-
 <ul>
 <li><a href="http://tympanus.net/codrops/2013/10/30/medium-style-page-transition/">Medium-style page transitions | Codrops</a></li>
 <li><a href="http://geekmonkey.org/articles/28-introducing-turbolinks-for-rails-4-0">Introducing Turbolinks for Rails 4.0 – GeekMonkey</a></li>

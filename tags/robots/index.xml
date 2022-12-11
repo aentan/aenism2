@@ -1,19 +1,15 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Robots on Aenism</title>
+    <title>robots on Aenism</title>
     <link>https://aenism.com/tags/robots/</link>
-    <description>Recent content in Robots on Aenism</description>
+    <description>Recent content in robots on Aenism</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <managingEditor>hello@aentan.com (AenTan)</managingEditor>
     <webMaster>hello@aentan.com (AenTan)</webMaster>
     <copyright>This work is licensed under a Creative Commons Attribution-ShareAlike 4.0 International License.</copyright>
-    <lastBuildDate>Wed, 13 Dec 2017 00:00:00 +0000</lastBuildDate>
-    
-	<atom:link href="https://aenism.com/tags/robots/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Wed, 13 Dec 2017 00:00:00 +0000</lastBuildDate><atom:link href="https://aenism.com/tags/robots/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>5 Robots I’m Excited About</title>
       <link>https://aenism.com/5-robots-im-excited-about/</link>
