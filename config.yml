@@ -3,6 +3,8 @@ languageCode: "en-us"
 title: "Aenism"
 permalinks:
   post: /:title/
+mainSections:
+  - post
 taxonomies:
   category: "categories"
   tag: "tags"
