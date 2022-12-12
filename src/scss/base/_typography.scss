@@ -1,19 +1,9 @@
 @font-face {
-  font-family: 'GT-Walsheim';
-  src: url('../fonts/GT-Walsheim-Bold.woff2') format('woff2'),
-       url('../fonts/GT-Walsheim-Bold.woff') format('woff'),
-       url('../fonts/GT-Walsheim-Bold.ttf')  format('truetype');
-  font-weight: bold;
+  font-family: 'avenue-mono-regular';
+  src: url('../fonts/avenue-mono-regular-webfont.woff2') format('woff2'),
+    url('../fonts/avenue-mono-regular-webfont.woff') format('woff');
+  font-weight: normal;
   font-style: normal;
-}
-
-@font-face {
-  font-family: 'GT-Walsheim';
-  src: url('../fonts/GT-Walsheim-Bold-Oblique.woff2') format('woff2'),
-       url('../fonts/GT-Walsheim-Bold-Oblique.woff') format('woff'),
-       url('../fonts/GT-Walsheim-Bold-Oblique.ttf')  format('truetype');
-  font-weight: bold;
-  font-style: italic;
 }
 
 html {
