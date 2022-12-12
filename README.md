@@ -1,7 +1,5 @@
 # Aenism website
 
-## Development
-
 ### Running it locally
 
 ```
