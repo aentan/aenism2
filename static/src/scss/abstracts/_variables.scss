@@ -20,12 +20,12 @@ $ui-border-color                : $gray;
 $ui-border-radius               : 4px;
 
 // Typography
-$type-base-family               : -apple-system, BlinkMacSystemFont,
+$type-base-family               : "avenue-mono-regular", -apple-system, BlinkMacSystemFont,
 "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
 "Fira Sans", "Droid Sans", "Helvetica Neue",
 sans-serif;
 
-$type-heading-family            : "GT-Walsheim", -apple-system, BlinkMacSystemFont,
+$type-heading-family            : "avenue-mono-regular", -apple-system, BlinkMacSystemFont,
 "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
 "Fira Sans", "Droid Sans", "Helvetica Neue",
 sans-serif;
@@ -41,37 +41,37 @@ $type-weight-light              : 200;
 $type-weight-ultralight         : 100;
 
 $type-striphead-size            : 1.3rem;
-$type-striphead-weight          : bold;
+$type-striphead-weight          : normal;
 $type-striphead-line-height     : 1.6rem;
 $type-striphead-letter-spacing  : tracking-to-ems(-6);
 
 $type-displaylll-size           : 4.8rem;
-$type-displaylll-weight         : 200;
+$type-displaylll-weight         : normal;
 $type-displaylll-line-height    : 6.4rem;
 $type-displaylll-letter-spacing : tracking-to-ems(7);
 
 $type-displayll-size            : 3.2rem;
-$type-displayll-weight          : 300;
+$type-displayll-weight          : normal;
 $type-displayll-line-height     : 4.8rem;
 $type-displayll-letter-spacing  : tracking-to-ems(10);
 
 $type-displayl-size             : 2.8rem;
-$type-displayl-weight           : 300;
+$type-displayl-weight           : normal;
 $type-displayl-line-height      : 3.4rem;
 $type-displayl-letter-spacing   : tracking-to-ems(13);
 
 $type-displaym-size             : 2.2rem;
-$type-displaym-weight           : 300;
+$type-displaym-weight           : normal;
 $type-displaym-line-height      : 2.8rem;
 $type-displaym-letter-spacing   : tracking-to-ems(16);
 
 $type-displays-size             : 2.0rem;
-$type-displays-weight           : 300;
+$type-displays-weight           : normal;
 $type-displays-line-height      : 2.4rem;
 $type-displays-letter-spacing   : tracking-to-ems(19);
 
 $type-headline-size             : 1.7rem;
-$type-headline-weight           : 500;
+$type-headline-weight           : normal;
 $type-headline-line-height      : 2.2rem;
 // $type-headline-letter-spacing: tracking-to-ems(-24);
 $type-headline-letter-spacing   : 0;

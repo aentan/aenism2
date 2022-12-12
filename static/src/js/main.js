@@ -134,27 +134,30 @@ function makeWorld() {
 
   World.add(engine.world, bodies);
 
-  // add gyro control
-  var updateGravity = function(event) {
-      var orientation = typeof window.orientation !== 'undefined' ? window.orientation : 0,
-          gravity = engine.world.gravity;
+  // // add gyro control
+  // var updateGravity = function(event) {
+  //     var orientation = typeof window.orientation !== 'undefined' ? window.orientation : 0,
+  //         gravity = engine.world.gravity;
+  //     gravity.y = 0;
 
-      if (orientation === 0) {
-          gravity.x = Common.clamp(event.gamma, -90, 90) / 90;
-          gravity.y = Common.clamp(event.beta, -90, 90) / 90;
-      } else if (orientation === 180) {
-          gravity.x = Common.clamp(event.gamma, -90, 90) / 90;
-          gravity.y = Common.clamp(-event.beta, -90, 90) / 90;
-      } else if (orientation === 90) {
-          gravity.x = Common.clamp(event.beta, -90, 90) / 90;
-          gravity.y = Common.clamp(-event.gamma, -90, 90) / 90;
-      } else if (orientation === -90) {
-          gravity.x = Common.clamp(-event.beta, -90, 90) / 90;
-          gravity.y = Common.clamp(event.gamma, -90, 90) / 90;
-      }
-  };
+  //     if (orientation === 0) {
+  //         gravity.x = Common.clamp(event.gamma, -90, 90) / 90;
+  //         // gravity.y = Common.clamp(event.beta, -90, 90) / 90;
+  //     } else if (orientation === 180) {
+  //         gravity.x = Common.clamp(event.gamma, -90, 90) / 90;
+  //         // gravity.y = Common.clamp(-event.beta, -90, 90) / 90;
+  //     } else if (orientation === 90) {
+  //         gravity.x = Common.clamp(event.beta, -90, 90) / 90;
+  //         // gravity.y = Common.clamp(-event.gamma, -90, 90) / 90;
+  //     } else if (orientation === -90) {
+  //         gravity.x = Common.clamp(-event.beta, -90, 90) / 90;
+  //         // gravity.y = Common.clamp(event.gamma, -90, 90) / 90;
+  //     }
+  // };
 
-  window.addEventListener('deviceorientation', updateGravity);
+  // window.addEventListener('deviceorientation', updateGravity);
+
+  engine.world.gravity.y = 0;
 
   // Add mouse control
 
