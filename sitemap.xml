@@ -2,9 +2,6 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://aenism.com/5-robots-im-excited-about/</loc>
-    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://aenism.com/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
   </url><url>
@@ -15,6 +12,9 @@
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aenism.com/tags/emotions/</loc>
+    <lastmod>2017-12-13T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/exciting-robotics/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aenism.com/tags/humans/</loc>
@@ -32,7 +32,7 @@
     <loc>https://aenism.com/tags/</loc>
     <lastmod>2017-12-13T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aenism.com/emotional-design-for-healthcare/</loc>
+    <loc>https://aenism.com/emotional-design-for-telehealth/</loc>
     <lastmod>2017-05-27T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aenism.com/tags/healthcare/</loc>
@@ -44,11 +44,14 @@
     <loc>https://aenism.com/contact/</loc>
     <lastmod>2017-05-23T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aenism.com/familiar-healthcare-ux/</loc>
+    <loc>https://aenism.com/familiarity-in-healthcare-ux/</loc>
     <lastmod>2017-05-16T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aenism.com/uniqlo-next-demo/</loc>
     <lastmod>2017-05-16T00:00:00+00:00</lastmod>
+  </url><url>
+    <loc>https://aenism.com/miura-fold-map-of-san-francisco/</loc>
+    <lastmod>2017-05-14T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aenism.com/tags/the-open-company/</loc>
     <lastmod>2017-05-14T00:00:00+00:00</lastmod>
@@ -56,13 +59,10 @@
     <loc>https://aenism.com/tags/toc/</loc>
     <lastmod>2017-05-14T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aenism.com/typographic-design-for-a-miura-fold-map-of-san-francisco/</loc>
-    <lastmod>2017-05-14T00:00:00+00:00</lastmod>
-  </url><url>
     <loc>https://aenism.com/tags/branding/</loc>
     <lastmod>2017-05-10T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aenism.com/collection-of-branding-and-identity-work/</loc>
+    <loc>https://aenism.com/collection-of-brand-and-id-work/</loc>
     <lastmod>2017-05-10T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aenism.com/tags/identity/</loc>
@@ -161,7 +161,7 @@
     <loc>https://aenism.com/tags/vision/</loc>
     <lastmod>2014-01-29T00:00:00+00:00</lastmod>
   </url><url>
-    <loc>https://aenism.com/child-mind/</loc>
+    <loc>https://aenism.com/a-child-mind/</loc>
     <lastmod>2014-01-26T00:00:00+00:00</lastmod>
   </url><url>
     <loc>https://aenism.com/categories/</loc>

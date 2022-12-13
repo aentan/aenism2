@@ -65,18 +65,19 @@ function makeWorld() {
   var ceiling,
       wallLeft,
       wallRight,
-      ground;
+      ground,
+      disturber;
 
   // add walls
   var wallopts = {
       isStatic:     true,
-      restitution:  0.2,
+      restitution:  0.8,
       friction:     1
   };
   var groundopts = {
       isStatic:     true,
-      restitution:  0,
-      friction:     2
+      restitution:  0.8,
+      friction:     1
   };
   World.add(world, [
     // ground
@@ -89,44 +90,55 @@ function makeWorld() {
 
   var bodiesDom = document.querySelectorAll('.matter-body');
   var bodies = [];
+  var disturbers = [];
   for (var i = 0, l = bodiesDom.length; i < l; i++) {
-    if (bodiesDom[i].classList.contains('hot')) {
-      frA = 0.1;
-      oY = -40;
-    } else {
-      frA = 0;
-      oY = 0;
-    }
     if (bodiesDom[i].classList.contains('strip')) {
       // Strip
       var body = Bodies.rectangle(
         VIEW.centerX + Math.floor(Math.random() * VIEW.width/2) - VIEW.width/4,
-        oY,
+        VIEW.centerY + Math.floor(Math.random() * VIEW.height / 2) - VIEW.height / 4,
         VIEW.width * bodiesDom[i].offsetWidth / window.innerWidth,
         VIEW.height * bodiesDom[i].offsetHeight / window.innerHeight, {
-          restitution:      0.05,
-          friction:         2,
-          frictionAir:      frA,
-          frictionStatic:   20,
-          density:          100,
-          chamfer:          { radius: 4 },
+          restitution:      0.5,
+          friction:         0,
+          frictionAir:      0.001,
+          frictionStatic:   0,
+          density:          1,
+          chamfer:          { radius: 24 },
           angle:            (Math.random() * 2.000) - 1.000
         }
       );
     } else if (bodiesDom[i].classList.contains('page-nav')) {
       // Nav
-      var body = Bodies.circle(
+      var body = Bodies.rectangle(
         VIEW.centerX + Math.floor(Math.random() * VIEW.width/2) - VIEW.width/4,
-        0,
-        24, {
-          restitution:      0.3,
-          friction:         2,
-          frictionAir:      0,
-          frictionStatic:   2,
-          density:          100,
+        VIEW.centerY + Math.floor(Math.random() * VIEW.height / 2) - VIEW.height / 4,
+        64,
+        64, {
+          restitution:      0.5,
+          friction:         0,
+          frictionAir:      0.001,
+          frictionStatic:   0,
+          density:          1,
+          chamfer:          { radius: 24 },
           angle:            (Math.random() * 2.000) - 1.000
         }
       );
+    } else if (bodiesDom[i].classList.contains('disturber')) {
+      // Disturber
+      var body = Bodies.circle(
+        VIEW.centerX + Math.floor(Math.random() * VIEW.width / 2) - VIEW.width / 4,
+        VIEW.centerY + Math.floor(Math.random() * VIEW.width / 2) - VIEW.width / 4,
+        16, {
+          restitution: 0.5,
+          friction: 0,
+          frictionAir: 0,
+          frictionStatic: 0,
+          density: 1,
+          angle: 0
+        }
+      );
+      disturbers.push(body);
     }
     bodiesDom[i].id = body.id;
     bodies.push(body);
@@ -232,6 +244,11 @@ function makeWorld() {
   window.requestAnimationFrame(update);
 
   function update() {
+
+    for (var i = 0, l = disturbers.length; i < l; i++) {
+      disturbers[i].force.y += (Math.round(Math.random()) * 2 - 1) * 1;
+      disturbers[i].force.x += (Math.round(Math.random()) * 2 - 1) * 1;
+    }
 
     // strips
     for (var i = 0, l = bodiesDom.length; i < l; i++) {
