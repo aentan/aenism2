@@ -1,5 +1,5 @@
 ---
-title: Teleportation is Scary
+title: Teleportation is scary
 description: Calmer pjax with transitions.
 date: 2014-01-30
 tags: ['pjax', 'ux']

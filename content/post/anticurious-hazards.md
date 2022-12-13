@@ -1,5 +1,5 @@
 ---
-title: Anticurious Hazards
+title: Anticurious hazards
 description: For adults around children.
 date: 2014-02-04
 tags: ['curiosity', 'children']

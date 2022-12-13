@@ -1,7 +1,7 @@
 +++
 date = "2017-05-10"
 tags = ['branding', 'identity']
-title = "Collection of Branding and Identity Work"
+title = "Collection of brand and ID work"
 client = "Various Clients"
 topic = "work"
 description = "A selection of logos and other identity artifacts for the companies I have worked with, created over the years."

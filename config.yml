@@ -8,7 +8,11 @@ mainSections:
 taxonomies:
   category: "categories"
   tag: "tags"
-paginate: 6
+paginate: 10
+markup:
+  goldmark:
+    renderer:
+      unsafe: true
 pygmentsOptions:
   noclasses: true
 pygmentsUseClasses: false

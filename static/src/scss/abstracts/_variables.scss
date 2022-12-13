@@ -16,8 +16,8 @@ $gray-darker                    : rgba(0, 0, 0, 0.72);
 
 // UI
 $ui-border-width                : 1px;
-$ui-border-color                : $gray;
-$ui-border-radius               : 4px;
+$ui-border-color                : $black;
+$ui-border-radius               : 24px;
 
 // Typography
 $type-base-family               : "avenue-mono-regular", -apple-system, BlinkMacSystemFont,
@@ -40,10 +40,10 @@ $type-weight-thin               : 300;
 $type-weight-light              : 200;
 $type-weight-ultralight         : 100;
 
-$type-striphead-size            : 1.3rem;
+$type-striphead-size            : 1.8rem;
 $type-striphead-weight          : normal;
-$type-striphead-line-height     : 1.6rem;
-$type-striphead-letter-spacing  : tracking-to-ems(-6);
+$type-striphead-line-height     : 1.8rem;
+$type-striphead-letter-spacing  : tracking-to-ems(-1);
 
 $type-displaylll-size           : 4.8rem;
 $type-displaylll-weight         : normal;

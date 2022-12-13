@@ -1,5 +1,5 @@
 ---
-title: Make Metaballs
+title: Make metaballs
 description: How to create the 37signals logo mark.
 date: 2014-02-03
 tags: ['metaballs', 'logo', 'illustrator']

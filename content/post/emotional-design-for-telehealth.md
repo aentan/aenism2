@@ -1,7 +1,7 @@
 +++
 date = "2017-05-27"
 tags = ['mydoc', 'healthcare']
-title = "Emotional Design for Healthcare"
+title = "Emotional design for telehealth"
 topic = "work"
 client = "MyDoc"
 description = "An emotional, non-sterile approach to designing user experience in healthcare apps."

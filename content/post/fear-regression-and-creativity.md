@@ -1,5 +1,5 @@
 ---
-title: Fear, Regression and Creativity
+title: Fear, regression and creativity
 description:
 date: 2014-06-30
 tags: ['fear', 'regression', 'childhood', 'creativity', 'psychology']

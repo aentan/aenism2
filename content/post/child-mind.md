@@ -1,5 +1,5 @@
 ---
-title: Child Mind
+title: A child mind
 description: Overcoming grown-up banality.
 date: 2014-01-26
 tags: ['creativity']

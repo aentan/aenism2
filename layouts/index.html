@@ -15,7 +15,7 @@
   </head>
   <body class="home">
 
-    {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
+    {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) 10 }}
 
     <h1>
       {{ .Title }}
@@ -27,23 +27,27 @@
     <main>
 
       {{ if $pag.HasPrev }}
-      <div data-url="{{ $pag.Prev.URL }}" class="matter-body page-nav page-minus">p.{{ sub $pag.PageNumber 1 }}</div>
+      <div data-url="{{ $pag.Prev.URL }}" class="matter-body page-nav page-minus">{{ sub $pag.PageNumber 1 }}←</div>
       {{ end }}
       {{ if $pag.HasNext }}
-      <div data-url="{{ $pag.Next.URL }}" class="matter-body page-nav page-plus">p.{{ add $pag.PageNumber 1 }}</div>
+      <div data-url="{{ $pag.Next.URL }}" class="matter-body page-nav page-plus">→{{ add $pag.PageNumber 1 }}</div>
       {{ end }}
 
       {{ range $pag.Pages }}
       <article class="matter-body strip{{ if .Params.Hot }} hot{{ end }}" data-url="{{ .RelPermalink }}">
         <h3>{{ .Title }}</h3>
         <div class="topic">{{ .Params.Topic }}</div>
-        <div class="preview">
+        <!-- <div class="preview">
           {{ if isset .Params "preview_image" }}
             <img src="/img/previews/{{ .Params.preview_image }}" alt="Image">
           {{ end }}
-        </div>
+        </div> -->
       </article>
       {{ end }}
+
+      <div class="disturber matter-body"></div>
+      <div class="disturber matter-body"></div>
+      <div class="disturber matter-body"></div>
 
     </main>
 

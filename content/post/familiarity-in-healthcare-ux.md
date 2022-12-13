@@ -1,7 +1,7 @@
 +++
 date = "2017-05-16"
 tags = ['mydoc', 'healthcare']
-title = "Familiar Healthcare UX"
+title = "Familiarity in healthcare UX"
 client = "MyDoc"
 topic = "work"
 description = "A healthcare platform with a familiar user experience to connect patients and healthcare professionals."

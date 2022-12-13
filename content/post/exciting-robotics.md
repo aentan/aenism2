@@ -1,7 +1,7 @@
 +++
 date = "2017-12-13"
 tags = ['robots', 'artificial intelligence', 'ai', 'robotics', 'emotions', 'humans']
-title = "5 Robots I’m Excited About"
+title = "Exciting robotics"
 client = ""
 topic = "inspiration"
 description = ""
