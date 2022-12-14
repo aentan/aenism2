@@ -181,6 +181,64 @@ main {
   background-color: $white;
   border-radius: $ui-border-radius;
   border: 1px solid $ui-border-color;
+
+  .svg {
+    width: 24px;
+    height: 24px;
+    margin: 19px;
+    background-image: url('../img/eye.svg');
+    background-position: -96px 0;
+    background-size: 120px 24px;
+    animation: none;
+  }
+
+  &.on {
+    .svg {
+      animation: closeeyes 6s 1;
+    }
+  }
+
+  @keyframes closeeyes {
+    0% {
+      background-position: 0 0;
+    }
+
+    42.84% {
+      background-position: 0 0;
+    }
+
+    42.85% {
+      background-position: -24px 0;
+    }
+
+    57.13% {
+      background-position: -24px 0;
+    }
+
+    57.14% {
+      background-position: -48px 0;
+    }
+
+    71.42% {
+      background-position: -48px 0;
+    }
+
+    71.43% {
+      background-position: -72px 0;
+    }
+
+    85.70% {
+      background-position: -72px 0;
+    }
+
+    85.71% {
+      background-position: -96px 0;
+    }
+
+    100% {
+      background-position: -96px 0;
+    }
+  }
 }
 
 // pagination
