@@ -38,19 +38,19 @@ function makeWorld() {
       height: window.innerHeight,
       background: 'transparent', // transparent to hide
       wireframeBackground: 'transparent', // transparent to hide
-      hasBounds: false,
+      hasBounds: true,
       enabled: true,
-      wireframes: false,
+      wireframes: true,
       showSleeping: true,
-      showDebug: false,
-      showBroadphase: false,
-      showBounds: false,
-      showVelocity: false,
-      showCollisions: false,
+      showDebug: true,
+      showBroadphase: true,
+      showBounds: true,
+      showVelocity: true,
+      showCollisions: true,
       showAxes: false,
-      showPositions: false,
-      showAngleIndicator: false,
-      showIds: false,
+      showPositions: true,
+      showAngleIndicator: true,
+      showIds: true,
       showShadows: false
     }
   });
@@ -272,6 +272,18 @@ function makeWorld() {
     }
 
     window.requestAnimationFrame(update);
+  }
+
+  var debugToggle = document.querySelector("#toggle-debug");
+  debugToggle.onclick = function () {
+    if (debugToggle.classList.contains("on")) {
+      document.getElementById("debug").style.opacity = 0;
+      debugToggle.className = "off";
+    } else {
+      document.getElementById("debug").style.opacity = 1;
+      debugToggle.className = "on";
+    }
+    
   }
 
 }

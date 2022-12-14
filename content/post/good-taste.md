@@ -3,7 +3,7 @@ title: Good taste
 description: On aesthetic empathy.
 date: 2014-03-15
 tags: ['taste', 'aesthetic', 'philosophy', 'emotions']
-topic: ideas
+topic: idea
 preview_image: "immanuel-kant.jpg"
 ---
 

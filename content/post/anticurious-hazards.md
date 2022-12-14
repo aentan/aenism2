@@ -3,7 +3,7 @@ title: Anticurious hazards
 description: For adults around children.
 date: 2014-02-04
 tags: ['curiosity', 'children']
-topic: ideas
+topic: idea
 preview_image: "cat-1373879_1280.jpg"
 ---
 
@@ -32,7 +32,7 @@ Don’t be a passive search engine for your kid. In goes a question and out come
 
 ## There is no right way to play
 
-If your child isn’t putting together his Lego pieces to look like what’s on the box that’s OK. If he’s smearing drool on the soccer ball instead of kicking it, that’s OK. If the toy car ends up as a parent-hunting projectile, that’s OK. Kids play to explore and experiment. The toys are just an excuse, a starting point. They don’t play to impress people by how well they play by the rules. Let them do what they want. Provide guidance in the form of wilder and bigger ideas, like enhancing the toy car projectile with a slingshot. Make play crazy and exciting.
+If your child isn’t putting together his Lego pieces to look like what’s on the box that’s OK. If he’s smearing drool on the soccer ball instead of kicking it, that’s OK. If the toy car ends up as a parent-hunting projectile, that’s OK. Kids play to explore and experiment. The toys are just an excuse, a starting point. They don’t play to impress people by how well they play by the rules. Let them do what they want. Provide guidance in the form of wilder and bigger idea, like enhancing the toy car projectile with a slingshot. Make play crazy and exciting.
 
 ## Freedom to pleasure and pain
 

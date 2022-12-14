@@ -3,7 +3,7 @@ title: Fear, regression and creativity
 description:
 date: 2014-06-30
 tags: ['fear', 'regression', 'childhood', 'creativity', 'psychology']
-topic: ideas
+topic: idea
 preview_image: "levi.png"
 ---
 
