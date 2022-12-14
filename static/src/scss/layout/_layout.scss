@@ -2,76 +2,83 @@
 // Body
 html,
 body {
-  height:                       100%;
-  width:                        100%;
+  height: 100%;
+  width: 100%;
 }
 
 body {
-  margin:                       0;
-  background-color:             $white;
+  margin: 0;
+  background-color: $white;
+  background-image: linear-gradient(rgba(0, 0, 0, .4) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 0, 0, .4) 1px, transparent 1px),
+    linear-gradient(rgba(0, 0, 0, .2) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, rgba(0, 0, 0, .2) 0.5px, transparent 0.5px);
+  background-size: 192px 192px, 192px 192px, 48px 48px, 48px 48px;
+  background-position: -1px -1px, -1px -1px, -0.5px -0.5px, -0.5px -0.5px;
 
   &.home {
-    overflow:                   hidden;
+    overflow: hidden;
   }
 }
 
 .home h1 {
-  position:                     absolute;
-  margin:                       16px 32px;
+  position: absolute;
+  margin: 32px 32px;
+  text-transform: uppercase;
 
   @include media(">=desktop") {
-    margin-left:                48px;
-    margin-top:                 32px;
+    margin-left: 48px;
+    margin-top: 48px;
   }
 }
 
 // Main
 main {
-  height:                       100%;
-  min-height:                   100%;
+  height: 100%;
+  min-height: 100%;
 }
 
 // Strips
 .strip {
   width: 260px;
   height: 80px;
-  background-color:             $white;
-  border-radius:                $ui-border-radius;
-  box-sizing:                   border-box;
-  padding-left:                 16px;
-  padding-top:                  12px;
-  padding-bottom:               12px;
-  padding-right:                16px;
-  position:                     absolute;
-  z-index:                      0;
-  overflow:                     hidden;
-  cursor:                       pointer;
+  background-color: $white;
+  border-radius: $ui-border-radius;
+  box-sizing: border-box;
+  padding-left: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  padding-right: 16px;
+  position: absolute;
+  z-index: 0;
+  overflow: hidden;
+  cursor: pointer;
 
   &:before {
-    content:                    "";
-    width:                      260px;
-    height:                     80px;
-    position:                   absolute;
-    left:                       0;
-    top:                        0;
-    z-index:                    10;
-    box-sizing:                 border-box;
-    border-radius:              $ui-border-radius;
-    border:                     1px solid $ui-border-color;
+    content: "";
+    width: 260px;
+    height: 80px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 10;
+    box-sizing: border-box;
+    border-radius: $ui-border-radius;
+    border: 1px solid $ui-border-color;
   }
 
   h3 {
     @include type-striphead();
-    margin-top:                 0;
-    margin-bottom:              0;
-    height:                     36px;
-    overflow:                   hidden;
-    text-overflow:              ellipsis;
+    margin-top: 0;
+    margin-bottom: 0;
+    height: 36px;
+    overflow: hidden;
+    text-overflow: ellipsis;
   }
 
   .topic {
     @include type-body2();
-    color:                      $black;
+    color: $black;
   }
 
   // .preview {
@@ -109,31 +116,32 @@ main {
 
 // Debug
 #debug {
-  position:                     absolute;
-  top:                          0;
-  left:                         0;
-  z-index:                      1;
-  width:                        100%;
-  height:                       100%;
-  opacity:                      0;
-  display:                      block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  display: block;
 }
 
 // pagination
 
 .page-nav {
   @include type-striphead();
-  position:                     absolute;
-  display:                      block;
-  width:                        64px;
-  height:                       64px;
-  box-sizing:                   border-box;
-  border-radius:                24px;
-  border:                       $ui-border-width solid $ui-border-color;
+  position: absolute;
+  display: block;
+  width: 64px;
+  height: 64px;
+  box-sizing: border-box;
+  border-radius: 24px;
+  border: $ui-border-width solid $ui-border-color;
+  background-color: $white;
   // background-position:        center center;
   // background-repeat:          no-repeat;
-  text-align:                   center;
-  line-height:                  64px;
+  text-align: center;
+  line-height: 64px;
 }
 
 // Disturber
@@ -144,7 +152,6 @@ main {
   height: 32px;
   box-sizing: border-box;
   border-radius: 16px;
-  background-color: #fdfdfd;
 }
 
 // single pages
@@ -154,85 +161,85 @@ main {
   height: auto;
 
   @include media(">=desktop") {
-    display:                    flex;
+    display: flex;
   }
 
   main {
-    padding:                    16px;
-    box-sizing:                 border-box;
+    padding: 16px;
+    box-sizing: border-box;
 
     @include media(">=desktop") {
-      padding:                  32px;
-      height:                   100%;
-      overflow-y:               auto;
-      display:                  flex;
-      flex-direction:           column;
-      flex-grow:                1;
+      padding: 32px;
+      height: 100%;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
     }
 
     section {
-      max-width:                720px;
-      margin:                   16px auto;
+      max-width: 720px;
+      margin: 16px auto;
     }
   }
 
   header {
-    margin-bottom:              32px;
+    margin-bottom: 32px;
 
     h1 {
-      margin-top:               48px;
+      margin-top: 48px;
     }
   }
 
   article {
-    padding-bottom:           64px;
+    padding-bottom: 64px;
 
     @include media(">=desktop") {
-      padding-bottom:           128px;
+      padding-bottom: 128px;
     }
   }
 
   figure {
-    margin-left:                -1.6rem;
-    margin-right:               -1.6rem;
+    margin-left: -1.6rem;
+    margin-right: -1.6rem;
 
     @include media(">=desktop") {
-      margin-left:              3.2rem;
-      margin-right:             3.2rem;
+      margin-left: 3.2rem;
+      margin-right: 3.2rem;
     }
 
     img {
-      width:                    100%;
-      height:                   auto;
+      width: 100%;
+      height: auto;
     }
 
     figcaption {
-      margin-top:               4px;
-      padding-left:             1.6rem;
-      padding-right:            1.6rem;
+      margin-top: 4px;
+      padding-left: 1.6rem;
+      padding-right: 1.6rem;
 
       @include type-note();
 
       @include media(">=desktop") {
-        padding-left:           0;
-        padding-right:          0;
+        padding-left: 0;
+        padding-right: 0;
       }
     }
   }
 
   .embed {
-    position:                   relative;
+    position: relative;
     box-sizing: border-box;
-    padding-bottom:             56.25%;
-    height:                     0;
-    overflow-x:                 visible;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow-x: visible;
 
     iframe {
-      position:                 absolute;
-      top:                      0;
-      left:                     0;
-      width:                    100%;
-      height:                   100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
     }
   }
 
