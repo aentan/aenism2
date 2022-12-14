@@ -77,9 +77,9 @@ main {
     text-overflow: ellipsis;
   }
 
-  &.topic-ideas {
+  &.topic-idea {
     h3 {
-      font-family: $type-ideas-family;
+      font-family: $type-idea-family;
     }
   }
 
@@ -152,6 +152,19 @@ main {
   display: block;
 }
 
+#toggle-debug {
+  position: absolute;
+  z-index: 100;
+  bottom: 32px;
+  right: 32px;
+  width: 64px;
+  height: 64px;
+  box-sizing: border-box;
+  background-color: $white;
+  border-radius: $ui-border-radius;
+  border: 1px solid $ui-border-color;
+}
+
 // pagination
 
 .page-nav {
@@ -183,13 +196,13 @@ main {
 // single pages
 
 body {
-  &.topic-ideas {
+  &.topic-idea {
 
     h1,
     h2,
     h3,
     h4 {
-      font-family: $type-ideas-family;
+      font-family: $type-idea-family;
     }
   }
 
