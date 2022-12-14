@@ -302,8 +302,12 @@ function makeWorld() {
     } else {
       document.getElementById("debug").style.opacity = 1;
       debugToggle.className = "on";
+      waitOff = setTimeout(function() {
+        document.getElementById("debug").style.opacity = 0;
+        debugToggle.className = "off";
+        clearTimeout(waitDiff);
+      }, 5000);
     }
-    
   }
 
 }
