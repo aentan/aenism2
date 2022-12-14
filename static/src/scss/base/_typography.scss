@@ -64,8 +64,8 @@ h4 {
 }
 
 a {
-  color           : $blue;
-  text-decoration : none;
+  color           : $black;
+  text-decoration : underline;
 }
 
 hr {
@@ -104,7 +104,7 @@ hr {
   }
 
   p {
-    @include type-body2();
+    @include type-body();
 
     margin  : 0;
     padding : 0;

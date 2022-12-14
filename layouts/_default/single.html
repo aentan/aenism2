@@ -13,12 +13,12 @@
     {{ end }}
     {{ partial "header.html" . }}
   </head>
-  <body id="top" class="single">
+  <body id="top" class="single topic-{{ .Params.Topic }}">
     <main>
       <section>
         <header>
           <p>
-            <a href="/">Back Home</a>
+            <a href="/">←back</a>
             <!-- {{ if not (isset .Params "client") }}
               Topic: {{ .Params.Topic }}
             {{ else }}

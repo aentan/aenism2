@@ -9,16 +9,16 @@ body {
 body {
   margin: 0;
   background-color: $white;
-  background-image: linear-gradient(rgba(0, 0, 0, .4) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 0, 0, .4) 1px, transparent 1px),
-    linear-gradient(rgba(0, 0, 0, .2) 0.5px, transparent 0.5px),
-    linear-gradient(90deg, rgba(0, 0, 0, .2) 0.5px, transparent 0.5px);
-  background-size: 192px 192px, 192px 192px, 48px 48px, 48px 48px;
-  background-position: -1px -1px, -1px -1px, -0.5px -0.5px, -0.5px -0.5px;
-  // https: //projects.verou.me/css3patterns/#blueprint-grid
 
   &.home {
     overflow: hidden;
+    background-image: linear-gradient(rgba(0, 0, 0, .4) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(0, 0, 0, .4) 1px, transparent 1px),
+      linear-gradient(rgba(0, 0, 0, .2) 0.5px, transparent 0.5px),
+      linear-gradient(90deg, rgba(0, 0, 0, .2) 0.5px, transparent 0.5px);
+    background-size: 192px 192px, 192px 192px, 48px 48px, 48px 48px;
+    background-position: -1px -1px, -1px -1px, -0.5px -0.5px, -0.5px -0.5px;
+    // https: //projects.verou.me/css3patterns/#blueprint-grid
   }
 }
 
@@ -182,6 +182,49 @@ main {
 
 // single pages
 
+body {
+  &.topic-ideas {
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: $type-ideas-family;
+    }
+  }
+
+  &.topic-work {
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: $type-work-family;
+      text-transform: uppercase;
+    }
+  }
+
+  &.topic-design {
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: $type-design-family;
+    }
+  }
+
+  &.topic-inspiration {
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: $type-inspiration-family;
+    }
+  }
+}
+
 .single {
 
   height: auto;
@@ -204,7 +247,7 @@ main {
     }
 
     section {
-      max-width: 720px;
+      max-width: 1120px;
       margin: 16px auto;
     }
   }
