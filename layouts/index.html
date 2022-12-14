@@ -15,7 +15,7 @@
   </head>
   <body class="home">
 
-    {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) 10 }}
+    {{ $pag := .Paginate (where site.RegularPages "Type" "in" site.Params.mainSections) }}
 
     <h1>
       {{ .Title }}

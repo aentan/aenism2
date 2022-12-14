@@ -8,7 +8,7 @@ mainSections:
 taxonomies:
   category: "categories"
   tag: "tags"
-paginate: 10
+paginate: 8
 markup:
   goldmark:
     renderer:
