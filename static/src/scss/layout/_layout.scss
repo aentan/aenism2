@@ -15,6 +15,7 @@ body {
     linear-gradient(90deg, rgba(0, 0, 0, .2) 0.5px, transparent 0.5px);
   background-size: 192px 192px, 192px 192px, 48px 48px, 48px 48px;
   background-position: -1px -1px, -1px -1px, -0.5px -0.5px, -0.5px -0.5px;
+  // https: //projects.verou.me/css3patterns/#blueprint-grid
 
   &.home {
     overflow: hidden;
@@ -74,6 +75,31 @@ main {
     height: 36px;
     overflow: hidden;
     text-overflow: ellipsis;
+  }
+
+  &.topic-ideas {
+    h3 {
+      font-family: $type-ideas-family;
+    }
+  }
+
+  &.topic-work {
+    h3 {
+      font-family: $type-work-family;
+      text-transform: uppercase;
+    }
+  }
+
+  &.topic-design {
+    h3 {
+      font-family: $type-design-family;
+    }
+  }
+
+  &.topic-inspiration {
+    h3 {
+      font-family: $type-inspiration-family;
+    }
   }
 
   .topic {

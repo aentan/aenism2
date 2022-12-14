@@ -6,6 +6,38 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'ArgentPixelCF';
+  src: url('../fonts/ArgentPixelCF-Italic.woff2') format('woff2'),
+    url('../fonts/ArgentPixelCF-Italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Kawingan';
+  src: url('../fonts/KawinganDEMO-Bold.woff2') format('woff2'),
+    url('../fonts/KawinganDEMO-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'VarentGrotesk';
+  src: url('../fonts/VarentGrotesk-Bold.woff2') format('woff2'),
+    url('../fonts/VarentGrotesk-Bold.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'OffBit';
+  src: url('../fonts/OffBitTrial-DotBold.woff2') format('woff2'),
+    url('../fonts/OffBitTrial-DotBold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
 html {
   font-size : 62.5%;
 }
