@@ -241,6 +241,26 @@ function makeWorld() {
     removeHovers();
   });
 
+  // Collision detection
+  // Events.on(engine, 'collisionStart', function (event) {
+  //   var pairs = event.pairs;
+  //   // change object colours to show those starting a collision
+  //   for (var i = 0; i < pairs.length; i++) {
+  //     var pair = pairs[i];
+  //     bodiesDom[pair.bodyA.id].classList.add("collided");
+  //     bodiesDom[pair.bodyB.id].classList.add("collided");
+  //   }
+  // });
+  // Events.on(engine, 'collisionEnd', function (event) {
+  //   var pairs = event.pairs;
+  //   // change object colours to show those ending a collision
+  //   for (var i = 0; i < pairs.length; i++) {
+  //     var pair = pairs[i];
+  //     bodiesDom[pair.bodyA.id].classList.remove("collided");
+  //     bodiesDom[pair.bodyB.id].classList.remove("collided");
+  //   }
+  // });
+
   window.requestAnimationFrame(update);
 
   function update() {

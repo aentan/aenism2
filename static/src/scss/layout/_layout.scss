@@ -68,6 +68,24 @@ main {
     border: 1px solid $ui-border-color;
   }
 
+  // &.collided {
+  //   &:before {
+  //     animation: glitch 0.3s 1;
+  //   }
+  // }
+
+  // @keyframes glitch {
+  //   0% {
+  //     filter: none;
+  //   }
+  //   50% {
+  //     filter: url(#kill);
+  //   }
+  //   100% {
+  //     filter: none;
+  //   }
+  // }
+
   h3 {
     @include type-striphead();
     margin-top: 0;

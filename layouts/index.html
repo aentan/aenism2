@@ -51,6 +51,28 @@
 
     </main>
 
+    <!-- <svg width="0" height="0">
+      <filter id="kill">
+        <feColorMatrix type="matrix" 
+          result="red_"             
+          values="1 1 0 0 0
+                  0 0 0 0 0 
+                  0 0 1 0 0 
+                  0 0 0 1 0"/>
+        <feOffset in="red_" dx="0.5" dy="-0.5" result="red"/>
+        <feColorMatrix type="matrix" 
+          in="SourceGraphic"             
+          result="blue_"             
+          values="0 0 0 0 0
+                  0 2 0 0 0 
+                  0 0 2 0 0 
+                  0 0 0 1 0"/>
+        <feOffset in="blue_" dx="-0.5" dy="0.5" result="blue"/>    
+        <feBlend mode="screen" in="red" in2="blue"/>
+
+      </filter>
+    </svg> -->
+
     <div id="debug"></div>
     <div id="toggle-debug"></div>
 
