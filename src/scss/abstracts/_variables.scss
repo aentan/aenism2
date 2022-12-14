@@ -1,128 +1,146 @@
-
 // Colors
-$white                          : white;
-$black                          : black;
-$red                            : #fb6b75;
-$blue                           : #6977fd;
-$green                          : #7be87a;
-$yellow                         : #fbfb7e;
+$white : white;
+$black : black;
+$red : #fb6b75;
+$blue : #6977fd;
+$green : #7be87a;
+$yellow : #fbfb7e;
 
-$pink                           : #f48fb1;
+$pink : #f48fb1;
 
-$gray-light                     : rgba(0, 0, 0, 0.12);
-$gray                           : rgba(0, 0, 0, 0.24);
-$gray-dark                      : rgba(0, 0, 0, 0.48);
-$gray-darker                    : rgba(0, 0, 0, 0.72);
+$gray-light : rgba(0, 0, 0, 0.12);
+$gray : rgba(0, 0, 0, 0.24);
+$gray-dark : rgba(0, 0, 0, 0.48);
+$gray-darker : rgba(0, 0, 0, 0.72);
 
 // UI
-$ui-border-width                : 1px;
-$ui-border-color                : $black;
-$ui-border-radius               : 24px;
+$ui-border-width : 1px;
+$ui-border-color : $black;
+$ui-border-radius : 24px;
 
 // Typography
-$type-base-family               : "avenue-mono-regular", -apple-system, BlinkMacSystemFont,
-"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-"Fira Sans", "Droid Sans", "Helvetica Neue",
-sans-serif;
+$font-stack-base: -apple-system,
+  BlinkMacSystemFont,
+  "Segoe UI",
+  "Roboto",
+  "Oxygen",
+  "Ubuntu",
+  "Cantarell",
+  "Fira Sans",
+  "Droid Sans",
+  "Helvetica Neue",
+  sans-serif;
 
-$type-heading-family            : "avenue-mono-regular", -apple-system, BlinkMacSystemFont,
-"Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
-"Fira Sans", "Droid Sans", "Helvetica Neue",
-sans-serif;
+$type-base-family : "avenue-mono-regular",
+$font-stack-base;
 
-$type-weight-black              : 900;
-$type-weight-heavy              : 800;
-$type-weight-bold               : 700;
-$type-weight-semibold           : 600;
-$type-weight-medium             : 500;
-$type-weight-regular            : 400;
-$type-weight-thin               : 300;
-$type-weight-light              : 200;
-$type-weight-ultralight         : 100;
+$type-heading-family : "avenue-mono-regular",
+$font-stack-base;
 
-$type-striphead-size            : 1.8rem;
-$type-striphead-weight          : normal;
-$type-striphead-line-height     : 1.8rem;
-$type-striphead-letter-spacing  : tracking-to-ems(-1);
+$type-ideas-family : "Kawingan",
+$font-stack-base;
 
-$type-displaylll-size           : 4.8rem;
-$type-displaylll-weight         : normal;
-$type-displaylll-line-height    : 6.4rem;
+$type-work-family : "OffBit",
+$font-stack-base;
+
+$type-design-family : "ArgentPixelCF",
+$font-stack-base;
+
+$type-inspiration-family : "VarentGrotesk",
+$font-stack-base;
+
+$type-weight-black : 900;
+$type-weight-heavy : 800;
+$type-weight-bold : 700;
+$type-weight-semibold : 600;
+$type-weight-medium : 500;
+$type-weight-regular : 400;
+$type-weight-thin : 300;
+$type-weight-light : 200;
+$type-weight-ultralight : 100;
+
+$type-striphead-size : 1.8rem;
+$type-striphead-weight : normal;
+$type-striphead-line-height : 1.8rem;
+$type-striphead-letter-spacing : tracking-to-ems(-1);
+
+$type-displaylll-size : 4.8rem;
+$type-displaylll-weight : normal;
+$type-displaylll-line-height : 6.4rem;
 $type-displaylll-letter-spacing : tracking-to-ems(7);
 
-$type-displayll-size            : 3.2rem;
-$type-displayll-weight          : normal;
-$type-displayll-line-height     : 4.8rem;
-$type-displayll-letter-spacing  : tracking-to-ems(10);
+$type-displayll-size : 3.2rem;
+$type-displayll-weight : normal;
+$type-displayll-line-height : 4.8rem;
+$type-displayll-letter-spacing : tracking-to-ems(10);
 
-$type-displayl-size             : 2.8rem;
-$type-displayl-weight           : normal;
-$type-displayl-line-height      : 3.4rem;
-$type-displayl-letter-spacing   : tracking-to-ems(13);
+$type-displayl-size : 2.8rem;
+$type-displayl-weight : normal;
+$type-displayl-line-height : 3.4rem;
+$type-displayl-letter-spacing : tracking-to-ems(13);
 
-$type-displaym-size             : 2.2rem;
-$type-displaym-weight           : normal;
-$type-displaym-line-height      : 2.8rem;
-$type-displaym-letter-spacing   : tracking-to-ems(16);
+$type-displaym-size : 2.2rem;
+$type-displaym-weight : normal;
+$type-displaym-line-height : 2.8rem;
+$type-displaym-letter-spacing : tracking-to-ems(16);
 
-$type-displays-size             : 2.0rem;
-$type-displays-weight           : normal;
-$type-displays-line-height      : 2.4rem;
-$type-displays-letter-spacing   : tracking-to-ems(19);
+$type-displays-size : 2.0rem;
+$type-displays-weight : normal;
+$type-displays-line-height : 2.4rem;
+$type-displays-letter-spacing : tracking-to-ems(19);
 
-$type-headline-size             : 1.7rem;
-$type-headline-weight           : normal;
-$type-headline-line-height      : 2.2rem;
+$type-headline-size : 1.7rem;
+$type-headline-weight : normal;
+$type-headline-line-height : 2.2rem;
 // $type-headline-letter-spacing: tracking-to-ems(-24);
-$type-headline-letter-spacing   : 0;
+$type-headline-letter-spacing : 0;
 
-$type-body2-size                : 1.7rem;
-$type-body2-weight              : normal;
-$type-body2-line-height         : 2.8rem;
+$type-body2-size : 1.7rem;
+$type-body2-weight : normal;
+$type-body2-line-height : 2.8rem;
 // $type-body2-letter-spacing   : tracking-to-ems(-24);
-$type-body2-letter-spacing      : 0;
+$type-body2-letter-spacing : 0;
 
-$type-body-size                 : 1.7rem;
-$type-body-weight               : normal;
-$type-body-line-height          : 2.2rem;
+$type-body-size : 1.7rem;
+$type-body-weight : normal;
+$type-body-line-height : 2.2rem;
 // $type-body-letter-spacing    : tracking-to-ems(-24);
-$type-body-letter-spacing       : 0;
+$type-body-letter-spacing : 0;
 
-$type-callout-size              : 1.6rem;
-$type-callout-weight            : normal;
-$type-callout-line-height       : 2.1rem;
-$type-callout-letter-spacing    : tracking-to-ems(-20);
+$type-callout-size : 1.6rem;
+$type-callout-weight : normal;
+$type-callout-line-height : 2.1rem;
+$type-callout-letter-spacing : tracking-to-ems(-20);
 
-$type-subhead-size              : 1.5rem;
-$type-subhead-weight            : normal;
-$type-subhead-line-height       : 2.0rem;
-$type-subhead-letter-spacing    : tracking-to-ems(-16);
+$type-subhead-size : 1.5rem;
+$type-subhead-weight : normal;
+$type-subhead-line-height : 2.0rem;
+$type-subhead-letter-spacing : tracking-to-ems(-16);
 
-$type-note-size                 : 1.3rem;
-$type-note-weight               : normal;
-$type-note-line-height          : 1.8rem;
-$type-note-letter-spacing       : tracking-to-ems(-6);
+$type-note-size : 1.3rem;
+$type-note-weight : normal;
+$type-note-line-height : 1.8rem;
+$type-note-letter-spacing : tracking-to-ems(-6);
 
-$type-caption1-size             : 1.2rem;
-$type-caption1-weight           : normal;
-$type-caption1-line-height      : 1.6rem;
-$type-caption1-letter-spacing   : 0;
+$type-caption1-size : 1.2rem;
+$type-caption1-weight : normal;
+$type-caption1-line-height : 1.6rem;
+$type-caption1-letter-spacing : 0;
 
-$type-caption2-size             : 1.1rem;
-$type-caption2-weight           : normal;
-$type-caption2-line-height      : 1.3rem;
-$type-caption2-letter-spacing   : tracking-to-ems(6);
+$type-caption2-size : 1.1rem;
+$type-caption2-weight : normal;
+$type-caption2-line-height : 1.3rem;
+$type-caption2-letter-spacing : tracking-to-ems(6);
 
 // Media Query
 
-$breakpoints                    : (phone: 374px, tablet: 767px, desktop: 1023px);
+$breakpoints : (phone: 374px, tablet: 767px, desktop: 1023px);
 
-$media-expressions              : (
-                                    'screen': 'screen',
-                                    'print': 'print',
-                                    'handheld': 'handheld',
-                                    'landscape': '(orientation: landscape)',
-                                    'portrait': '(orientation: portrait)',
-                                    'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
-                                    'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
-                                  );
+$media-expressions : ('screen': 'screen',
+  'print': 'print',
+  'handheld': 'handheld',
+  'landscape': '(orientation: landscape)',
+  'portrait': '(orientation: portrait)',
+  'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
+  'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
+);
