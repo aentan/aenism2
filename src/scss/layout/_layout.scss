@@ -26,11 +26,10 @@ body {
   position: absolute;
   margin: 32px 32px;
   text-transform: uppercase;
-
-  @include media(">=desktop") {
-    margin-left: 48px;
-    margin-top: 48px;
-  }
+  background-color: $white;
+  border: 1px solid $ui-border-color;
+  border-radius: 32px;
+  padding: 8px 16px;
 }
 
 // Main
