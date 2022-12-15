@@ -297,15 +297,29 @@ function makeWorld() {
   var debugToggle = document.querySelector("#toggle-debug");
   debugToggle.onclick = function () {
     if (debugToggle.classList.contains("on")) {
-      document.getElementById("debug").style.opacity = 0;
+      // On to Offn
       debugToggle.className = "off";
-    } else {
-      document.getElementById("debug").style.opacity = 1;
-      debugToggle.className = "on";
-      waitOff = setTimeout(function() {
+      clearTimeout(waitAniOff);
+      clearTimeout(waitOff);
+      aniOff = setTimeout(function () {
         document.getElementById("debug").style.opacity = 0;
+        clearTimeout(aniOff);
+      }, 1200);
+    } else {
+      // Off to On, then auto Off
+      debugToggle.className = "on";
+      aniOn = setTimeout(function () {
+        document.getElementById("debug").style.opacity = 1;
+        clearTimeout(aniOn);
+      }, 800);
+      // Auto-off after delay
+      waitAniOff = setTimeout(function() {
         debugToggle.className = "off";
-        clearTimeout(waitDiff);
+        clearTimeout(waitAniOff);
+      }, 3800);
+      waitOff = setTimeout(function () {
+        document.getElementById("debug").style.opacity = 0;
+        clearTimeout(waitOff);
       }, 5000);
     }
   }

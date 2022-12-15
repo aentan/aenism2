@@ -19,13 +19,15 @@
         <header>
           <p>
             <a href="/">←back</a>
-            <!-- {{ if not (isset .Params "client") }}
-              Topic: {{ .Params.Topic }}
-            {{ else }}
-              Client: {{ .Params.Client }}
-            {{ end }} -->
           </p>
           <h1>{{ .Title }}</h1>
+          <p class="topic">
+            {{ if not (isset .Params "client") }}
+              in {{ .Params.Topic }}
+            {{ else }}
+              for {{ .Params.Client }}
+            {{ end }}
+          </p>
         </header>
         <article>
           <div class="wrapper">

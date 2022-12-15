@@ -1,13 +1,11 @@
-+++
-date = "2017-12-13"
-tags = ['robots', 'artificial intelligence', 'ai', 'robotics', 'emotions', 'humans']
-title = "Exciting robotics"
-client = ""
-topic = "inspiration"
-description = ""
-preview_image = "nova_preview.jpg"
-hot = false
-+++
+---
+title: Exciting robotics
+description: ""
+date: 2017-12-13
+tags: ['robots', 'artificial intelligence', 'ai', 'robotics', 'emotions', 'humans']
+topic: inspiration
+preview_image: "nova_preview.jpg"
+---
 
 We are seeing increasingly advanced AI and robotics coming out of labs all around the world. I first saw ASIMO in the late 1990s and QRIO in the early 2000s, I was amazed by robotic bipedalism. Twenty years forward, though we are seeing much better locomotion and facial expressions are starting to look a little less creepy and we are definitely in a robotic age, I believe we are still at its dawn.
 

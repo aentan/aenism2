@@ -190,55 +190,99 @@ main {
     background-image: url('../img/eye.svg');
     background-position: -96px 0;
     background-size: 120px 24px;
-    animation: none;
   }
 
-  $eye-timeout: 5;
-  $eye-close: 2;
+  $eye-open: 0.8;
+  $eye-open-step: math.div($eye-open, 4);
+  $eye-close: 1.2;
   $eye-close-step: math.div($eye-close, 3);
-  $eye-close-start: $eye-timeout - $eye-close;
 
-  $eye-f0: math.div($eye-close-start, $eye-timeout) * 100;
-  $eye-f1: math.div($eye-close-start + $eye-close-step, $eye-timeout) * 100;
-  $eye-f2: math.div($eye-close-start + $eye-close-step * 2, $eye-timeout) * 100;
+  $eye-o0: math.div($eye-open-step, $eye-open) * 100;
+  $eye-o1: math.div($eye-open-step * 2, $eye-open) * 100;
+  $eye-o2: math.div($eye-open-step * 3, $eye-open) * 100;
+  $eye-o3: math.div($eye-open-step * 4, $eye-open) * 100;
+
+  $eye-c0: math.div($eye-close-step, $eye-close) * 100;
+  $eye-c1: math.div($eye-close-step * 2, $eye-close) * 100;
+  $eye-c2: math.div($eye-close-step * 3, $eye-close) * 100;
 
   &.on {
     .svg {
-      animation: closeeyes #{$eye-timeout}s 1;
+      animation: openeyes #{$eye-open}s linear 0s 1 normal;
+      animation-fill-mode: forwards;
     }
   }
 
-  @keyframes closeeyes {
+  &.off {
+    .svg {
+      animation: closeeyes #{$eye-close}s linear 0s 1 normal;
+      animation-fill-mode: forwards;
+    }
+  }
+
+  @keyframes openeyes {
     0% {
-      background-position: 0 0;
-    }
-
-    #{$eye-f0 - 0.1}% {
-      background-position: 0 0;
-    }
-
-    #{$eye-f0}% {
-      background-position: -24px 0;
-    }
-
-    #{$eye-f1 - 0.1}% {
-      background-position: -24px 0;
-    }
-
-    #{$eye-f1}% {
-      background-position: -48px 0;
-    }
-
-    #{$eye-f2 - 0.1}% {
-      background-position: -48px 0;
-    }
-
-    #{$eye-f2}% {
       background-position: -72px 0;
     }
 
-    99.9% {
+    #{$eye-o1 - 0.1}% {
       background-position: -72px 0;
+    }
+
+    #{$eye-o1}% {
+      background-position: -48px 0;
+    }
+
+    #{$eye-o2 - 0.1}% {
+      background-position: -48px 0;
+    }
+
+    #{$eye-o2}% {
+      background-position: -24px 0;
+    }
+
+    #{$eye-o3 - 0.1}% {
+      background-position: -24px 0;
+    }
+
+    #{$eye-o3}% {
+      background-position: 0 0;
+    }
+
+    100% {
+      background-position: 0 0;
+    }
+
+  }
+
+  @keyframes closeeyes {
+
+    0% {
+      background-position: -24px 0;
+    }
+
+    #{$eye-c0 - 0.1}% {
+      background-position: -24px 0;
+    }
+
+    #{$eye-c0}% {
+      background-position: -48px 0;
+    }
+
+    #{$eye-c1 - 0.1}% {
+      background-position: -48px 0;
+    }
+
+    #{$eye-c1}% {
+      background-position: -72px 0;
+    }
+
+    #{$eye-c2 - 0.1}% {
+      background-position: -72px 0;
+    }
+
+    #{$eye-c2}% {
+      background-position: -96px 0;
     }
 
     100% {
@@ -283,7 +327,8 @@ body {
     h1,
     h2,
     h3,
-    h4 {
+    h4,
+    .topic {
       font-family: $type-idea-family;
     }
   }
@@ -293,18 +338,21 @@ body {
     h1,
     h2,
     h3,
-    h4 {
+    h4,
+    .topic {
       font-family: $type-work-family;
       text-transform: uppercase;
     }
   }
 
-  &.topic-design {
+  &.topic-design,
+  &.topic-tech {
 
     h1,
     h2,
     h3,
-    h4 {
+    h4,
+    .topic {
       font-family: $type-design-family;
     }
   }
@@ -314,7 +362,8 @@ body {
     h1,
     h2,
     h3,
-    h4 {
+    h4,
+    .topic {
       font-family: $type-inspiration-family;
     }
   }
