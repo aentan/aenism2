@@ -1,3 +1,5 @@
+@use "sass:math";
+
 // Resets
 // Body
 html,
@@ -191,9 +193,18 @@ main {
     animation: none;
   }
 
+  $eye-timeout: 5;
+  $eye-close: 2;
+  $eye-close-step: math.div($eye-close, 3);
+  $eye-close-start: $eye-timeout - $eye-close;
+
+  $eye-f0: math.div($eye-close-start, $eye-timeout) * 100;
+  $eye-f1: math.div($eye-close-start + $eye-close-step, $eye-timeout) * 100;
+  $eye-f2: math.div($eye-close-start + $eye-close-step * 2, $eye-timeout) * 100;
+
   &.on {
     .svg {
-      animation: closeeyes 6s 1;
+      animation: closeeyes #{$eye-timeout}s 1;
     }
   }
 
@@ -202,36 +213,32 @@ main {
       background-position: 0 0;
     }
 
-    42.84% {
+    #{$eye-f0 - 0.1}% {
       background-position: 0 0;
     }
 
-    42.85% {
+    #{$eye-f0}% {
       background-position: -24px 0;
     }
 
-    57.13% {
+    #{$eye-f1 - 0.1}% {
       background-position: -24px 0;
     }
 
-    57.14% {
+    #{$eye-f1}% {
       background-position: -48px 0;
     }
 
-    71.42% {
+    #{$eye-f2 - 0.1}% {
       background-position: -48px 0;
     }
 
-    71.43% {
+    #{$eye-f2}% {
       background-position: -72px 0;
     }
 
-    85.70% {
+    99.9% {
       background-position: -72px 0;
-    }
-
-    85.71% {
-      background-position: -96px 0;
     }
 
     100% {
