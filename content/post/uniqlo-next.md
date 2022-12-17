@@ -9,7 +9,7 @@ preview_image: "uniqlo.png"
 
 In this article I'll discuss an experimental redesign of a fashion product page from Uniqlo Japan's online shopping website. I imagined how the site would be like a couple of years from now. [View the demo](/uniqlo-next-demo)
 
-{{%figure src="http://farm4.staticflickr.com/3691/12542507943_4da1c679fc_h.jpg" title=""%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/macbook_pro_12542507943_o.jpg" title=""%}}
 
 I’ve been wearing American Apparel T-shirts for years and recently switched to Uniqlo when I was finally able to fit into a Japanese size L after losing weight. Uniqlo is much cheaper than AA and I can just buy them in town than pay shipping fees. Uniqlo also seems to be a more innovative company. My wife and I wore their ultra-thin but surprisingly warm [Heattech](http://www.uniqlo.com/jp/global/L3/us/men.html) range when we were in Seoul in winter December last year.
 
@@ -25,11 +25,11 @@ I've kept the existing information architecture because I don't think I'm in a p
 
 Here's what the current product page looks like:
 
-{{%figure src="http://farm8.staticflickr.com/7331/12535149745_a3ed3de17b_o.jpg" title=""%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/----uniqlo--20140215_12535149745_o.jpg" title=""%}}
 
 I took this screenshot on a 15-inch MacBook Pro with 1440&times;900 resolution, a fairly typical laptop spec. The fixed width layout causes considerable waste of space which becomes more apparent as you scroll down the page.
 
-{{%figure src="http://farm4.staticflickr.com/3730/12535795703_d63f7edc01_h.jpg" title=""%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/iphone_12535795703_o.jpg" title=""%}}
 
 While usable on tablets albeit with smaller than optimal tap targets, it's not optimized for smaller mobile devices.
 
@@ -51,32 +51,32 @@ I'm extending Bootstrap's responsive utilities and grid system. Bootstrap handle
 
 The convention when it comes to designing responsive sites is the _mobile-first_ approach. This is how Bootstrap does responsive. The base styles are for small devices and media queries are added to vary the styling for bigger screens.
 
-{{%figure src="http://farm8.staticflickr.com/7318/12543063813_d8d9a9e4a5_h.jpg" title=""%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/iphone_12543063813_o.jpg" title=""%}}
 
 At phone size, the interface is compact and simplified. The lengthy product description is hidden behind a toggle so the product image is visible. The text and UI elements are smaller. The shopping cart is simplified into an icon. At portrait view the add-to-cart button is visible to ensure conversion is optimal. The product options (visible in later screenshots) wraps below the main column.
 
-{{%figure src="http://farm8.staticflickr.com/7423/12542684865_3b3cfdbbab_h.jpg" title=""%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/ipad_12542645845_o.jpg" title=""%}}
 
 A tablet size, more information surfaces. With the tablet at landscape orientation, the product description is expanded, social sharing buttons are exposed and product configuration are shown as a sidebar. The shopping cart also shows number of items in the cart and the total value. The UI elements and text also grows.
 
-{{%figure src="http://farm4.staticflickr.com/3691/12542507943_4da1c679fc_h.jpg" title=""%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/macbook_pro_12542507943_o.jpg" title=""%}}
 
 At laptop size, related items become visible. UI elements and text grows even bigger. The product is displayed in its full glory.
 
-{{%figure src="http://farm8.staticflickr.com/7348/12542812604_950f6c71e1_h.jpg" title=""%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/thunderbolt_display_12542812604_o.jpg" title=""%}}
 
 At the biggest size, I decided to not cram in more information but instead just make the text and elements bigger. It's more like a zoomed-in laptop size.
 
 ## Fullscreen product photos
 
-{{%figure src="http://farm6.staticflickr.com/5505/12544810364_9c02dc0e0f_h.jpg" title=""%}}
-{{%figure src="http://farm4.staticflickr.com/3712/12544809894_c93d0c47a5_h.jpg" title=""%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/closeup1_12544810364_o.jpg" title=""%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/closeup2_12544809894_o.jpg" title=""%}}
 
 Instead of a pannable image viewer opened from thumbnails, in the original design, my design has little _zoom here_ buttons. For example the user can click on the zoom button at the collar to examine the collar. A fullscreen image viewer pops up. It feels like you took the clothing off the rack and you are looking closely at it.
 
 ## Clothing tag
 
-{{%figure src="http://farm4.staticflickr.com/3766/12549702213_b69e525f01_o.jpg" title=""%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/clothing_tag_12549702213_o.jpg" title=""%}}
 
 I've grouped all product configuration options in the sidebar which I named `.clothing-tag` because I want to feel like the real life counterpart. What do you do after you check out the clothing design? You would usually reach for the tag to look at the price and other information about the item.
 
@@ -90,15 +90,15 @@ I've grouped all product configuration options in the sidebar which I named `.cl
 
 Imagine yourself shopping at Uniqlo. If you've never seen a Uniqlo store, they all look similar and feel a lot like IKEA.
 
-{{%figure src="http://farm6.staticflickr.com/5232/7077557677_6d31a01895_b.jpg" title=""%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/7077557677_6d31a01895_b.jpg" title=""%}}
 
 Physical stores have no concept of breadcrumbs, only racks after racks of laterally arranged merchandise. You know you are in the sweater section because that's what you see around you. You know you'd find other women's stuff because the women's stuff are all grouped and separated from men and children areas. You subconsciously wander the shop and visually look for what you need. Shopping is visual, not navigational.
 
-{{%figure src="http://farm8.staticflickr.com/7388/12551974875_4abe48aacc_h.jpg" title=""%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/related_12551974875_o.jpg" title=""%}}
 
 Right beneath the product are adjacent items in the same category. At the end of that list is a _view all knit wear and sweaters_ option. If you don't like a product and you've scrolled past the product, you don't have to scroll back up to access the breadcrumbs. The adjacent items are right there and if something catches your fancy, click it else you may look at all the products in that category by going to the category page. If you decide to buy a different kind of clothing, only then you scroll up and go back to the women's section.
 
-{{%figure src="http://farm4.staticflickr.com/3811/12552612204_419f6c9079_b.jpg" title=""%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/menu_12552612204_o.png" title=""%}}
 
 Uniqlo's main navigation which I have not redesigned is a giant column-based hierarchical menu system. It's an effective way to browse to other parts of the store. By designing the core interface well, generic components like breadcrumbs can be avoided to make room for a visually richer shopping experience.
 

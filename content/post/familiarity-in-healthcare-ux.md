@@ -23,27 +23,27 @@ Healthcare software wrestle with many of the same challenges as other software b
 
 One of the key evolutions of the MyDoc patient app is the use of chat as the primary interaction. With the prevalence of chat and instant messaging apps, the average user spends of the time on their device messaging. It's easy to assume and fall into the trap that we should just replace everything with chat. Fortunately with MyDoc, we are already having patients chat with their doctors for consultations and reviews, it's a natural progression that we enhance that experience to encompass more facets of total healthcare.
 
-{{%figure src="/img/work_content_mydoc_chat.png" title="Chatting with a doctor and Guardian Pharmacy."%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_mydoc_chat.png" title="Chatting with a doctor and Guardian Pharmacy."%}}
 
 #### Enhanced Chat Bubbles
 
 I expanded on common enhanced chat bubbles found in other chat apps with healthcare-centric one to help patient quickly and accurately respond to doctor questions.
 
-{{%figure src="/img/work_content_mydoc_selection.png" title="Questionnaire bubbles work well in personal health assessment."%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_mydoc_selection.png" title="Questionnaire bubbles work well in personal health assessment."%}}
 
-{{%figure src="/img/work_content_mydoc_drug_select.png" title="Option selection bubbles with information disclosure to help user decide which drug they prefer."%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_mydoc_drug_select.png" title="Option selection bubbles with information disclosure to help user decide which drug they prefer."%}}
 
-{{%figure src="/img/work_content_mydoc_slider.png" title="Range slider bubbles are great for collecting information like weight, height and mood."%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_mydoc_slider.png" title="Range slider bubbles are great for collecting information like weight, height and mood."%}}
 
 More structured bubbles are used to convey more complex information, such as scheduled events, and link previews.
 
-{{%figure src="/img/work_content_mydoc_event.png" title="Joining a face-to-face consult from an event bubble."%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_mydoc_event.png" title="Joining a face-to-face consult from an event bubble."%}}
 
 #### Reply Suggestion
 
 Preset replies are suggested to users as a quick way to respond to questions with predictable and expected answers, and to save typing.
 
-{{%figure src="/img/work_content_mydoc_suggestions.png" title="Suggested bot commands (left), replies (right)."%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_mydoc_suggestions.png" title="Suggested bot commands (left), replies (right)."%}}
 
 ### Custom Scheduler
 
@@ -62,7 +62,7 @@ The problem with this approach is the lack of flexibility. Being able to pick a 
 
 {{%embed src="https://player.vimeo.com/video/218298059"%}}
 
-{{%figure src="/img/work_content_mydoc_picker.png" title="Once a user selects a time slot (left), the overlapping time slots will not be selectable for the next user (right)."%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_mydoc_picker.png" title="Once a user selects a time slot (left), the overlapping time slots will not be selectable for the next user (right)."%}}
 
 ## Design Compliance
 
@@ -72,19 +72,19 @@ The best intentions of product and design are going to fall short if those build
 
 I created the MyDoc design styleguide as the bible for all things design, as the page for the product and engineering teams to _be on the same page_ on. The styleguide details important topics like design language, visual design, user flows, specifications for views and components, and personas.
 
-{{%figure src="/img/work_content_mydoc_styleguide.png"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_mydoc_styleguide.png"%}}
 
-{{%figure src="/img/work_content_mydoc_styleguide1.png" title="Specs for various classes of icons."%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_mydoc_styleguide1.png" title="Specs for various classes of icons."%}}
 
-{{%figure src="/img/work_content_mydoc_styleguide2.png" title="Specs for the message input bar."%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_mydoc_styleguide2.png" title="Specs for the message input bar."%}}
 
-{{%figure src="/img/work_content_mydoc_styleguide3.png" title="Specs for bubble carousel."%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_mydoc_styleguide3.png" title="Specs for bubble carousel."%}}
 
 ### Communicating Specifications
 
 The stylguide governs product design at a broad level. When it comes to the nitty gritty, we rely on a tool like Zeplin and good'ol design audits.
 
-{{%figure src="/img/work_content_mydoc_zeplin.png" title="Communicating UI specs with Zeplin."%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_mydoc_zeplin.png" title="Communicating UI specs with Zeplin."%}}
 
 ---
 

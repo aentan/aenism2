@@ -37,7 +37,7 @@ A typical choose-your-own-adventure book works like a decision tree. With each d
 
 Now imagine that a reader can choose to be any character in the story. At any point in the book, the events are premeditated by the prior decisions of an instance of a character played by another reader and your actions is going to determine how another reader's story will play out. With each juncture, your story is matched with someone else's so your fates intertwines. With a tree like this, there will be multiple endings and not every branch will lead to an ending. Some unfortunately lead to the demise of a character. Perhaps only a few branches for each character will lead it to one of its favorable endings. Like how you may still be fatally struck by lightning in real life despite living healthily, your encounters are out of your control so you will never have ultimate control of your fate.
 
-{{%figure src="http://farm6.staticflickr.com/5494/12203935463_aac755fe48_o.png" title="Weaving the Tree"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/rdf_12200097803_o.png" title="Weaving the Tree"%}}
 
 Weaving the consciousness of many people like this opens up endless possibilities for interaction. Since every character in the book is “alive” with the exception of those not controlled by readers, you can communicate with the character to influence its decision, for example.
 

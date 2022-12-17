@@ -55,7 +55,7 @@ if ($.support.pjax) {
 
 At this point, pjax works. But it feels like teleportation. We need to add transitions and this is how they will work.
 
-{{%figure src="http://farm8.staticflickr.com/7351/12233353976_be0f0b31b8_o.jpg"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/transition_12233353976_o.jpg"%}}
 
 1. Clone the element to be replaced.
 2. Stack it on top of the original.

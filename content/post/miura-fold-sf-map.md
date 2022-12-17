@@ -8,7 +8,7 @@ description = "Collaborated on waterproof map of San Francisco with friends in S
 preview_image = "work_preview_toc.jpg"
 +++
 
-{{%figure src="/img/work_content_tocsfmap2.png"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_tocsfmap2.png"%}}
 
 <p class="lead">The map was inspired by a passage in Walter Benjamin’s _Arcades Project_ where he describes a 19<sup>th</sup> century map of Paris known as the Plan Taride, which unlike the flimsy paper maps of the day, was a miniature fully-bound book.</p>
 
@@ -16,9 +16,9 @@ preview_image = "work_preview_toc.jpg"
 
 Highlights 38 spots around the city, including the best tea shop in Chinatown, a mini-park 11 stories in the air, a private library, and a bunch of amazing restaurants.
 
-{{%figure src="/img/work_content_tocsfmap_info.jpg"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_tocsfmap_info.jpg"%}}
 
-{{%figure src="/img/work_content_tocsfmap_info2.jpg"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_tocsfmap_info2.jpg"%}}
 
 ## Construction
 
@@ -40,21 +40,21 @@ The map is printed by [Yushin-Plus](http://www.yushin-p.com), an art printing co
 
 In order to accomodate quick consultation without fumbling or squinting, the map expands to full size at the pull of a flap. When folded, it's small enough to fit in the credit-card pocket of most wallets. The folding method is known as the _Miura fold (ミウラ折り? Miura-ori)_ and was invented by Japanese astrophysicist Koryo Miura, to fold large solar panel arrays for space satellites in the Japanese space program which can then be unpacked in one motion by pulling on its opposite ends, and likewise folded by pushing the two ends together. This property reduces the number of motors required to unfold this shape, reducing weight and complexity.
 
-{{%figure src="/img/work_content_tocsfmap3.gif"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_tocsfmap3.gif"%}}
 
-{{%figure src="/img/work_content_tocsfmap1.png"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_tocsfmap1.png"%}}
 
 ## Stringent selection
 
 The map spots are chosen in order to provide a set of starting points to explore the city. Trends are ignored in order to provide a list of truly wonderful and underappreciated spots.
 
-{{%figure src="/img/work_content_tocsfmap6.jpg" title="Close showing Chinatown and the Transamerica Pyramid among other sights."%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_tocsfmap6.jpg" title="Close showing Chinatown and the Transamerica Pyramid among other sights."%}}
 
 ## Careful craftsmanship
 
 The map illustration was hand drawn at large scale, and then scaled down 20× in order to create a densely detailed image. Our art-house printer in Tokyo then uses a high quality lithographic process to print each map.
 
-{{%figure src="/img/work_content_tocsfmap5.jpg"%}}
-{{%figure src="/img/work_content_tocsfmap4.jpg"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_tocsfmap5.jpg"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/work_content_tocsfmap4.jpg"%}}
 
 ---

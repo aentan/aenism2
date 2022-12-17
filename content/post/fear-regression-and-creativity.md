@@ -21,7 +21,7 @@ The return to innocence starts with controlled regression. _ARISE_, or _Adaptive
 
 When you play a game the first time, you have no idea what comes next. You can only react to situations. You build up tools and strategies which you apply systematically to later challenges and hopefully you would have enough competence to defeat the final boss by the end. Most people are content with playing on as long as they do not die. I prefer more control over my game. Regression allows you to start over at an earlier level with the acquired tools and strategies. The game gets easier and most importantly you get to experience it more deeply than the first go. You would have the creativity of a child and the coping ability of an adult.
 
-{{%figure src="https://farm3.staticflickr.com/2901/14547626894_ceb7d775e5_o.jpg" title="Levi Ackerman"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/attack_on_titan_levi_-_nendoroid_hyperionz_1_1024x1024_14547626894_o.jpg" title="Levi Ackerman"%}}
 
 This is the Nendoroid figure of _Levi Ackerman_, a 34 year old elite soldier who fights man-eating humanoid giants in the _Attack on Titans_ anime and manga series. Nendoroids are plastic figures of neotenized anime, manga and video game characters. It is what I see when I imagine an arisen adult.
 

@@ -43,7 +43,7 @@ The attributes of HSPs can be remembered as *DOES*:
 
 Empathy is the capacity to recognize emotions that are being experienced by another sentient or fictional being. Sensitivity, emotional reactivity and empathy are mutually reinforcing. Each grows the other. HSPs are known to have higher empathy. Several studies have found HSPs to have more mirror neuron activity (associated with empathy) and stronger emotional arousal than others when looking at pictures that are emotionally arousing, including happy and distressed faces.
 
-{{%figure src="http://farm8.staticflickr.com/7144/13234645384_e5c41bd8b0_o.gif" title="Sensory Pathways"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/pathways_13234645384_o.gif" title="Sensory Pathways"%}}
 
 Sensory signals enter our sense organs and pass through the limbic system before reaching the neocortex for higher processing. In HSPs the amygdala which is located in the limbic system and responsible for emotional regulation, fear response and consolidation of memory, is hyper-responsive. Sounds sound louder, lights appear brighter. HSPs generally experience their environment more intensely. This neurological basis of high sensitivity suggests some of us are genetically and physically built to better pick up and process emotions. The amygdala also underlies empathy and allows for emotional attunement and creates the pathway for emotional contagion. The basal areas including the brain stem form a tight loop of biological connectedness, re-creating in one person the physiological state of the other. Psychologist Howard Friedman thinks this is why some people can move and inspire others.
 
@@ -51,7 +51,7 @@ From the sense organs to the limbic system to the neocortex, the entire neural p
 
 Another way of looking at it is to imagine the range of stimuli one can experience like the color gamut (how big the range of colors an output device can display) of a computer display.
 
-{{%figure src="http://farm8.staticflickr.com/7320/13233802934_dfec2b48f2_o.jpg" title="Gamut"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/gamut_13233802934_o.jpg" title="Gamut"%}}
 
 A more sensitive person is like a display with a higher gamut. The higher the gamut of a person, the more his gamut overlaps those of others and the more he can relate to the colors experienced by others.
 

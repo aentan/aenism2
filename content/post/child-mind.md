@@ -30,9 +30,9 @@ I solved it pretty quickly. Why don't you try?
 
 Have you seen the Bollywood film [_3 Idiots_](http://en.wikipedia.org/wiki/3_Idiots)? Here's the funny space pen scene from it.
 
-{{%figure src="http://farm8.staticflickr.com/7305/12143613986_30f18aeeee_o.jpg"%}}
-{{%figure src="http://farm6.staticflickr.com/5527/12142958075_fc1907eebc_o.jpg"%}}
-{{%figure src="http://farm8.staticflickr.com/7378/12143203883_3699707dbc_o.jpg"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/ku-xlarge-2_12143613986_o.jpg"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/ku-xlarge-3_12142958075_o.jpg"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/ku-xlarge-4_12143203883_o.jpg"%}}
 
 ---
 
@@ -48,7 +48,7 @@ The pop­u­lar answers to the ques­tion involved cal­cu­la­tions with com­
 
 The simple string solution involves first cir­cling then cutting a string around the pizza's cir­cum­fer­ence. The string is then wrapped eleven times around one's thumb and index finger until one gets eleven equal divisions by trial and error. The divisions are then marked. Cir­cle the string around the pizza again and cut from center to the markings. What simplicity! The answer soon became a rated as _best source_.
 
-{{%figure src="http://farm3.staticflickr.com/2890/12143753226_66a141e5eb_z.jpg"%}}
+{{%figure src="https://s3.amazonaws.com/media.aenism.com/original_12143753226_o.jpg"%}}
 
 Con­jur­ing math­e­mat­i­cal mumbo jumbo may make one look smart. To be truly cre­ative one needs to be able to lib­er­ate the mind from accumulated grown-up banality. Only then the child mind re-emerges.
 
