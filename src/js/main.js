@@ -232,10 +232,11 @@ function makeWorld() {
     if ((mouseXO == mouseXN) && (mouseYO == mouseYN)) {
       if (Query.point(bodies, { x: mouseXN, y: mouseYN }).length) {
         var underMouse = Query.point(bodies, { x: mouseXN, y: mouseYN })[0].id;
+        var targetURL = document.getElementById(underMouse).getAttribute("data-url");
       }
-      if (underMouse) {
+      if (underMouse && targetURL != undefined) {
         // go to URL
-        window.location.href = document.getElementById(underMouse).getAttribute("data-url");
+        window.location.href = targetURL;
       }
     }
     removeHovers();
