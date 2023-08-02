@@ -28,10 +28,12 @@ body {
   position: absolute;
   margin: 32px 32px;
   text-transform: uppercase;
-  background-color: $white;
-  border: 1px solid $ui-border-color;
-  border-radius: 32px;
-  padding: 8px 16px;
+  width: 200px;
+  height: 64px;
+  background-image: url('../img/logo.svg');
+  background-position: center;
+  background-repeat: no-repeat;
+  text-indent: -999em;
 }
 
 // Main
