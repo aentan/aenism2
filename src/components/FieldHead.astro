@@ -1,0 +1,22 @@
+---
+/**
+ * Runs before first paint so the cards are never shown at their grid
+ * positions and then yanked into the field. The failsafe matters more than
+ * the flash: if the physics bundle never boots, the class comes off and the
+ * static grid is revealed instead of an empty page.
+ */
+---
+<script is:inline>
+  (function () {
+    var html = document.documentElement;
+    if (matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    html.classList.add("js-field");
+    addEventListener("load", function () {
+      setTimeout(function () {
+        if (!document.querySelector(".field.is-live")) {
+          html.classList.remove("js-field");
+        }
+      }, 2000);
+    });
+  })();
+</script>

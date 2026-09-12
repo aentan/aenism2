@@ -1,0 +1,29 @@
+---
+import Base from "../../layouts/Base.astro";
+import Field from "../../components/Field.astro";
+import FieldHead from "../../components/FieldHead.astro";
+import { getPosts, pageCount, pageSlice } from "../../lib/posts";
+
+export async function getStaticPaths() {
+  const posts = await getPosts();
+  const total = pageCount(posts.length);
+  // Page 1 is `/`; astro.config redirects /page/1/ there, as Hugo's alias did.
+  return Array.from({ length: total - 1 }, (_, i) => ({
+    params: { page: String(i + 2) },
+  }));
+}
+
+const page = Number(Astro.params.page);
+const posts = await getPosts();
+const totalPages = pageCount(posts.length);
+---
+
+<Base
+  title={`Aenism page ${page}`}
+  bareTitle
+  description={`Page ${page} of posts by Aen Tan.`}
+  bodyClass="home"
+>
+  <FieldHead slot="head" />
+  <Field posts={pageSlice(posts, page)} page={page} totalPages={totalPages} />
+</Base>

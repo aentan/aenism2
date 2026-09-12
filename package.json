@@ -1,40 +1,33 @@
 {
-  "name": "aenism2",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "name": "aenism",
+  "version": "4.0.0",
+  "private": true,
+  "type": "module",
+  "description": "aenism.com \u2014 a physics field of posts",
+  "author": "Aen Tan <hello@aentan.com>",
+  "license": "CC-BY-SA-4.0",
+  "engines": {
+    "node": ">=20"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "del": "^7.0.0",
-    "gulp": "^4.0.2",
-    "gulp-autoprefixer": "^8.0.0",
-    "gulp-changed": "^4.0.3",
-    "gulp-cli": "^2.3.0",
-    "gulp-concat": "^2.6.1",
-    "gulp-cssmin": "^0.2.0",
-    "gulp-gzip": "^1.4.2",
-    "gulp-hash": "^4.2.2",
-    "gulp-image-resize": "^0.13.1",
-    "gulp-imagemin": "^8.0.0",
-    "gulp-minify": "^3.1.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-sass-inline-svg": "^1.0.3",
-    "gulp-sassvg": "^5.0.0",
-    "gulp-svgmin": "^4.1.0",
-    "gulp-uglify": "^3.0.2",
-    "sass": "^1.56.2"
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "sync": "astro sync",
+    "test": "node --test --experimental-strip-types test/*.test.ts"
   },
   "dependencies": {
-    "npm-check-updates": "^16.5.6",
-    "throttle-debounce": "^5.0.0"
+    "astro": "^5.14.1",
+    "matter-js": "^0.20.0"
   },
-  "browserslist": [
-    "defaults and supports es6-module",
-    "maintained node versions"
-  ]
+  "devDependencies": {
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/rss": "^4.0.12",
+    "@astrojs/sitemap": "^3.6.0",
+    "@types/matter-js": "^0.20.0",
+    "typescript": "^5.9.3",
+    "unist-util-visit": "^5.0.0"
+  }
 }

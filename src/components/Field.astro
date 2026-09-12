@@ -1,0 +1,95 @@
+---
+/**
+ * The homepage field.
+ *
+ * Renders as a plain grid of links. PhysicsField then takes over positioning
+ * and adds `.is-live`. If the bundle never arrives, or the visitor prefers
+ * reduced motion, the grid is what they get — readable, navigable, done.
+ */
+import "../styles/field.css";
+import { attribution, pageHref, type Post } from "../lib/posts";
+
+interface Props {
+  posts: Post[];
+  page: number;
+  totalPages: number;
+}
+
+const { posts, page, totalPages } = Astro.props;
+const hasPrev = page > 1;
+const hasNext = page < totalPages;
+---
+
+<a class="skip" href="#field">Skip to posts</a>
+
+<h1 class="logo">Aenism</h1>
+
+<main id="field" class="field">
+  {hasPrev && (
+    <a class="card card--nav" href={pageHref(page - 1)} rel="prev" draggable="false">
+      <span aria-hidden="true">{page - 1}&#8592;</span>
+      <span class="visually-hidden">Previous page</span>
+    </a>
+  )}
+
+  {hasNext && (
+    <a class="card card--nav" href={pageHref(page + 1)} rel="next" draggable="false">
+      <span aria-hidden="true">&#8594;{page + 1}</span>
+      <span class="visually-hidden">Next page</span>
+    </a>
+  )}
+
+  {posts.map((post) => (
+    <a
+      class={`card topic-${post.data.topic}`}
+      href={`/${post.id}/`}
+      draggable="false"
+    >
+      <h2>{post.data.title}</h2>
+      <div class="topic">{attribution(post.data)}</div>
+    </a>
+  ))}
+</main>
+
+<button class="eye" type="button" aria-pressed="false">
+  <i aria-hidden="true"></i>
+  <span class="visually-hidden">Reveal the physics wireframe</span>
+</button>
+
+<script>
+  import { FIELD } from "../scripts/physics.config.ts";
+
+  const root = document.querySelector<HTMLElement>(".field");
+  const eye = document.querySelector<HTMLElement>(".eye");
+  const cards = [...document.querySelectorAll<HTMLElement>(".field .card")];
+
+  const wantsStillness = matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (root && cards.length && !wantsStillness) {
+    const boot = async () => {
+      try {
+        const { PhysicsField } = await import("../scripts/PhysicsField");
+        const field = new PhysicsField({ root, cards, eye });
+        field.start();
+        // Nothing else on the page owns the field, but leave a handle for the
+        // console and for Astro's dev-time hot reloads.
+        (window as unknown as { field?: unknown }).field = field;
+      } catch (error) {
+        // A blocked bundle must not leave the page blank: fall back to the
+        // static grid the markup already is.
+        console.error("[field] physics unavailable, staying static", error);
+        document.documentElement.classList.remove("js-field");
+      }
+    };
+
+    if ("requestIdleCallback" in window) {
+      requestIdleCallback(boot, { timeout: 600 });
+    } else {
+      setTimeout(boot, 1);
+    }
+
+    void FIELD;
+  } else {
+    document.documentElement.classList.remove("js-field");
+  }
+</script>

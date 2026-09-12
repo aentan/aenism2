@@ -1,0 +1,224 @@
+/*
+ * Fonts, reset and typography.
+ *
+ * Replaces normalize.css (427 lines), scut (1,534) and include-media (569)
+ * with what this site actually used out of them.
+ */
+
+@font-face {
+  font-family: "avenue-mono";
+  src: url("/fonts/avenue-mono-regular-webfont.woff2") format("woff2"),
+       url("/fonts/avenue-mono-regular-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "ArgentPixelCF";
+  src: url("/fonts/ArgentPixelCF-Italic.woff2") format("woff2"),
+       url("/fonts/ArgentPixelCF-Italic.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Kawingan";
+  src: url("/fonts/KawinganDEMO-Bold.woff2") format("woff2"),
+       url("/fonts/KawinganDEMO-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "VarentGrotesk";
+  src: url("/fonts/VarentGrotesk-Bold.woff2") format("woff2"),
+       url("/fonts/VarentGrotesk-Bold.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OffBit";
+  src: url("/fonts/OffBitTrial-DotBold.woff2") format("woff2"),
+       url("/fonts/OffBitTrial-DotBold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ── reset ─────────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+/* 1rem === 10px. The whole scale in tokens.css depends on this. */
+html {
+  font-size: 62.5%;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  background-color: var(--ground);
+  font: var(--t-body) var(--font-base);
+  color: var(--body-ink);
+}
+
+:where(img, svg, iframe, video) {
+  max-width: 100%;
+}
+
+:where(h1, h2, h3, h4, h5, h6) {
+  color: var(--ink);
+  font-family: var(--font-heading);
+  font-weight: normal;
+  text-wrap: balance;
+}
+
+h1,
+h2 {
+  font: var(--t-display-l) var(--font-heading);
+  letter-spacing: var(--t-display-l-ls);
+}
+
+h3 {
+  font: var(--t-display-m) var(--font-heading);
+  letter-spacing: var(--t-display-m-ls);
+}
+
+h4 {
+  font: var(--t-display-s) var(--font-heading);
+  letter-spacing: var(--t-display-s-ls);
+}
+
+a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+hr {
+  height: 24px;
+  margin: 32px 0;
+  background-color: transparent;
+  font-size: 24px;
+  text-align: center;
+  border: 0;
+}
+
+hr::before {
+  content: "🎈";
+}
+
+@media (width >= 1024px) {
+  hr {
+    margin: 64px 0;
+  }
+}
+
+/* ── the eye ───────────────────────────────────────────────────────────── */
+
+/*
+ * A five-frame sprite driven by mask-position, so the lid snaps rather than
+ * smears. Drawn with `background-color`, which means it inherits the ink
+ * colour instead of being hardcoded black the way the original <img> was.
+ *
+ * Open: four steps over 800ms. Close: three over 1200ms. The asymmetry is
+ * deliberate — a blink opens faster than it closes.
+ */
+.eye {
+  position: fixed;
+  z-index: 100;
+  bottom: 32px;
+  right: 32px;
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  background-color: var(--surface);
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+
+.eye > i {
+  display: block;
+  width: 24px;
+  height: 24px;
+  background-color: var(--ink);
+  -webkit-mask: url("/img/eye.svg") no-repeat -96px 0 / 120px 24px;
+  mask: url("/img/eye.svg") no-repeat -96px 0 / 120px 24px;
+}
+
+.eye.is-opening > i {
+  animation: eye-open 0.8s linear 1 normal forwards;
+}
+
+.eye.is-closing > i {
+  animation: eye-close 1.2s linear 1 normal forwards;
+}
+
+@keyframes eye-open {
+  0%, 49.9%   { mask-position: -72px 0; -webkit-mask-position: -72px 0; }
+  50%, 74.9%  { mask-position: -48px 0; -webkit-mask-position: -48px 0; }
+  75%, 99.9%  { mask-position: -24px 0; -webkit-mask-position: -24px 0; }
+  100%        { mask-position: 0 0;     -webkit-mask-position: 0 0; }
+}
+
+@keyframes eye-close {
+  0%, 33.2%     { mask-position: -24px 0; -webkit-mask-position: -24px 0; }
+  33.3%, 66.5%  { mask-position: -48px 0; -webkit-mask-position: -48px 0; }
+  66.6%, 99.9%  { mask-position: -72px 0; -webkit-mask-position: -72px 0; }
+  100%          { mask-position: -96px 0; -webkit-mask-position: -96px 0; }
+}
+
+/* ── skip link ─────────────────────────────────────────────────────────── */
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  padding: 12px 20px;
+  background: var(--surface);
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius-sm);
+  font: var(--t-body-2) var(--font-base);
+  text-decoration: none;
+}
+
+.skip:focus {
+  left: 16px;
+  top: 16px;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+}

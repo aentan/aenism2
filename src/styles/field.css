@@ -1,0 +1,227 @@
+/*
+ * The field.
+ *
+ * Two layouts live here. The default is a plain, readable grid of links that
+ * needs no JavaScript at all — so a blocked bundle, a parse error or a
+ * reduced-motion preference degrades to something usable instead of a pile of
+ * cards at 0,0. `.is-live` is added by PhysicsField once the simulation owns
+ * the positioning.
+ */
+
+body.home {
+  background-image:
+    linear-gradient(var(--grid-major) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-major) 1px, transparent 1px),
+    linear-gradient(var(--grid-minor) 0.5px, transparent 0.5px),
+    linear-gradient(90deg, var(--grid-minor) 0.5px, transparent 0.5px);
+  background-size: 192px 192px, 192px 192px, 48px 48px, 48px 48px;
+  background-position: -1px -1px, -1px -1px, -0.5px -0.5px, -0.5px -0.5px;
+}
+
+.logo {
+  position: absolute;
+  z-index: 10;
+  margin: 32px;
+  width: 200px;
+  height: 64px;
+  background: url("/img/logo.svg") center / contain no-repeat;
+  text-indent: -999em;
+  overflow: hidden;
+  text-transform: uppercase;
+}
+
+/* ── static layout (no JS, or reduced motion) ──────────────────────────── */
+
+.field {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 16px;
+  padding: 128px 32px 64px;
+  min-height: 100%;
+}
+
+/* ── live layout (physics owns position) ───────────────────────────────── */
+
+.field.is-live {
+  display: block;
+  position: fixed;
+  inset: 0;
+  padding: 0;
+  /* The origin of the world. Everything inside is in viewport coordinates. */
+  touch-action: none;
+  overscroll-behavior: none;
+}
+
+body.home:has(.field.is-live) {
+  overflow: hidden;
+}
+
+.field.is-live .card {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 0;
+  will-change: transform;
+  cursor: grab;
+}
+
+.field.is-live.is-pointing {
+  cursor: pointer;
+}
+
+/* ── cards ─────────────────────────────────────────────────────────────── */
+
+.card {
+  position: relative;
+  z-index: 0;
+  flex: none;
+  width: 260px;
+  height: 80px;
+  padding: 12px 16px;
+  background-color: var(--surface);
+  border: var(--border-width) solid var(--line);
+  border-radius: var(--radius);
+  overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.card h2 {
+  margin: 0;
+  height: 36px;
+  overflow: hidden;
+  font: var(--t-striphead) var(--font-heading);
+  letter-spacing: var(--t-striphead-ls);
+  color: var(--ink);
+}
+
+.card .topic {
+  font: var(--t-body-2) var(--font-base);
+  color: var(--ink);
+}
+
+/* One face per topic — on the card, as on the page. */
+.card.topic-idea h2 { font-family: var(--font-idea); }
+.card.topic-inspiration h2 { font-family: var(--font-inspiration); }
+.card.topic-design h2,
+.card.topic-tech h2 { font-family: var(--font-design); }
+.card.topic-work h2 {
+  font-family: var(--font-work);
+  text-transform: uppercase;
+}
+
+/*
+ * The original applied a `hover` class that matched no rule, so the only
+ * feedback was the cursor. Give it something to say.
+ */
+.card.is-hover,
+.card:focus-visible {
+  box-shadow: 0 0 0 3px var(--blue);
+}
+
+.card:focus-visible {
+  outline: none;
+}
+
+/* ── pagination pills ──────────────────────────────────────────────────── */
+
+.card--nav {
+  width: 64px;
+  height: 64px;
+  padding: 0;
+  display: grid;
+  place-items: center;
+  font: var(--t-striphead) var(--font-heading);
+  letter-spacing: var(--t-striphead-ls);
+  color: var(--ink);
+}
+
+/* ── wireframe overlay ─────────────────────────────────────────────────── */
+
+.field-wireframe {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* ── small screens ─────────────────────────────────────────────────────── */
+
+/*
+ * Cards shrink rather than disappear — the toy is the point. Because body
+ * geometry is read from the rendered element, the simulation picks this up
+ * with no JavaScript change at all.
+ */
+@media (width < 640px) {
+  .card {
+    width: 200px;
+    height: 70px;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+  }
+
+  .card h2 {
+    height: 32px;
+    font: 1.4rem/1.6rem var(--font-heading);
+  }
+
+  .card .topic {
+    font: 1.2rem/1.6rem var(--font-base);
+  }
+
+  .card--nav {
+    width: 56px;
+    height: 56px;
+    font-size: 1.6rem;
+  }
+
+  .logo {
+    margin: 20px;
+    width: 150px;
+    height: 48px;
+  }
+
+  .eye {
+    bottom: 20px;
+    right: 20px;
+    width: 56px;
+    height: 56px;
+    border-radius: var(--radius-sm);
+  }
+
+  .field {
+    padding: 96px 20px 48px;
+  }
+}
+
+/* ── reduced motion ────────────────────────────────────────────────────── */
+
+/*
+ * No simulation, no canvas, no eye. Just the cards, laid out and readable.
+ * PhysicsField is never started, so `.is-live` never lands.
+ */
+@media (prefers-reduced-motion: reduce) {
+  .eye {
+    display: none;
+  }
+}
+
+/* ── boot guard ────────────────────────────────────────────────────────── */
+
+/*
+ * `js-field` is set by an inline head script before first paint and removed
+ * again if the physics never starts. Between those two moments the cards are
+ * reserved for the simulation, so nobody sees them laid out in a grid and
+ * then snatched into the field.
+ */
+html.js-field .field .card {
+  visibility: hidden;
+}
+
+html.js-field .field.is-live .card {
+  visibility: visible;
+}

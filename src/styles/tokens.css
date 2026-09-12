@@ -1,0 +1,65 @@
+/*
+ * Design tokens.
+ *
+ * Ported from scss/abstracts/_variables.scss. The type scale assumes the
+ * 62.5% root size below, so 1rem === 10px and every size here reads as the
+ * original did (1.8rem === 18px).
+ */
+
+:root {
+  /* ── colour ─────────────────────────────────────────────────────────── */
+  --white: #fff;
+  --black: #000;
+  --blue: #6977fd;
+
+  --gray-light: rgba(0, 0, 0, 0.12);
+  --gray: rgba(0, 0, 0, 0.24);
+  --gray-dark: rgba(0, 0, 0, 0.48);
+  --gray-darker: rgba(0, 0, 0, 0.72);
+
+  --ink: var(--black);
+  --body-ink: var(--gray-darker);
+  --ground: var(--white);
+  --surface: var(--white);
+  --line: var(--black);
+
+  /* The blueprint grid behind the field. */
+  --grid-major: rgba(0, 0, 0, 0.4);
+  --grid-minor: rgba(0, 0, 0, 0.2);
+
+  /* ── ui ─────────────────────────────────────────────────────────────── */
+  --border-width: 1px;
+  --radius: 24px;
+  --radius-sm: 20px;
+
+  /* ── type ───────────────────────────────────────────────────────────── */
+  --font-system: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+
+  --font-base: "avenue-mono", var(--font-system);
+  --font-heading: "avenue-mono", var(--font-system);
+
+  /* One face per topic. This mapping is the site's signature. */
+  --font-idea: "Kawingan", var(--font-system);
+  --font-work: "OffBit", var(--font-system);
+  --font-design: "ArgentPixelCF", var(--font-system);
+  --font-inspiration: "VarentGrotesk", var(--font-system);
+
+  /* Scale: size / line-height / letter-spacing. */
+  --t-striphead: 1.8rem/1.8rem;
+  --t-striphead-ls: -0.001em;
+
+  --t-display-lll: 4.8rem/6.4rem;
+  --t-display-lll-ls: 0.007em;
+  --t-display-l: 2.8rem/3.4rem;
+  --t-display-l-ls: 0.013em;
+  --t-display-m: 2.2rem/2.8rem;
+  --t-display-m-ls: 0.016em;
+  --t-display-s: 2rem/2.4rem;
+  --t-display-s-ls: 0.019em;
+
+  --t-body: 2rem/3.6rem;
+  --t-body-2: 1.7rem/2.8rem;
+  --t-note: 1.3rem/1.8rem;
+  --t-note-ls: -0.006em;
+}

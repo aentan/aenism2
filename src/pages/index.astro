@@ -1,0 +1,14 @@
+---
+import Base from "../layouts/Base.astro";
+import Field from "../components/Field.astro";
+import FieldHead from "../components/FieldHead.astro";
+import { getPosts, pageCount, pageSlice } from "../lib/posts";
+
+const posts = await getPosts();
+const totalPages = pageCount(posts.length);
+---
+
+<Base title="Aenism" bareTitle description="Aen Tan — design, ideas and work." bodyClass="home">
+  <FieldHead slot="head" />
+  <Field posts={pageSlice(posts, 1)} page={1} totalPages={totalPages} />
+</Base>
