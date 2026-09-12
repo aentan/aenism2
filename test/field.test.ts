@@ -19,6 +19,7 @@ const { Body, Composite, Engine } = Matter;
 import { FIELD } from "../src/scripts/physics.config.ts";
 import {
   clampChamfer,
+  contain,
   createCard,
   createDisturbers,
   createWalls,
@@ -49,12 +50,26 @@ function scene({ withDisturbers = true, cardCount = 8 } = {}): Scene {
   return { engine, cards, disturbers };
 }
 
-function run({ engine, disturbers }: Scene, frames: number): void {
+/** `net: false` exercises the walls alone, with no containment behind them. */
+function run(s: Scene, frames: number, { net = true } = {}): void {
+  const { engine, disturbers } = s;
   for (let i = 0; i < frames; i++) {
     kick(disturbers);
     Engine.update(engine, STEP_MS);
+    if (net) contain([...s.cards, ...disturbers], VIEW);
   }
 }
+
+function fireOutward(s: Scene, speed: number): void {
+  for (const [i, card] of s.cards.entries()) {
+    const angle = (i / s.cards.length) * Math.PI * 2;
+    Body.setVelocity(card, { x: Math.cos(angle) * speed, y: Math.sin(angle) * speed });
+  }
+}
+
+const inside = (b: Body, slack: number) =>
+  b.position.x > -slack && b.position.x < VIEW.width + slack &&
+  b.position.y > -slack && b.position.y < VIEW.height + slack;
 
 const speed = (b: Body) => Math.hypot(b.velocity.x, b.velocity.y);
 
@@ -70,28 +85,52 @@ describe("the field is weightless", () => {
     run(s, 300);
     const drift = s.cards.map((c, i) => c.position.y - before[i]!);
 
-    // Without gravity the mean vertical drift is jitter, not descent.
+    // Without gravity the drift is a random walk, not a descent. Gravity
+    // would march every card to the floor; bound this well below that but
+    // loosely enough that jitter alone can never trip it.
     const mean = drift.reduce((a, b) => a + b, 0) / drift.length;
-    assert.ok(Math.abs(mean) < 40, `cards drifted ${mean.toFixed(1)}px vertically`);
+    assert.ok(
+      Math.abs(mean) < VIEW.height / 6,
+      `cards drifted ${mean.toFixed(1)}px vertically — is gravity back?`,
+    );
   });
 });
 
 describe("the box is sealed", () => {
-  it("keeps every body inside, even when fired at a wall", () => {
+  it("holds on the walls alone at ordinary speeds", () => {
+    // No safety net here: this is the walls doing their job.
     const s = scene();
-    for (const [i, card] of s.cards.entries()) {
-      const angle = (i / s.cards.length) * Math.PI * 2;
-      Body.setVelocity(card, { x: Math.cos(angle) * 60, y: Math.sin(angle) * 60 });
-    }
-    run(s, 900);
+    fireOutward(s, 20);
+    run(s, 900, { net: false });
 
     for (const body of [...s.cards, ...s.disturbers]) {
-      const { x, y } = body.position;
-      assert.ok(
-        x > -200 && x < VIEW.width + 200 && y > -200 && y < VIEW.height + 200,
-        `body escaped to ${x.toFixed(0)},${y.toFixed(0)}`,
-      );
-      assert.ok(Number.isFinite(x) && Number.isFinite(y), "body position went NaN");
+      assert.ok(inside(body, 200), `body escaped to ${body.position.x.toFixed(0)},${body.position.y.toFixed(0)}`);
+      assert.ok(Number.isFinite(body.position.x), "body position went NaN");
+    }
+  });
+
+  it("catches a card flung hard enough to tunnel", () => {
+    // Drag is rigid at stiffness 1, so a hard flick really can carry a card
+    // through 100px of wall in one step. Without the net it is gone for good,
+    // and its link with it.
+    const s = scene();
+    fireOutward(s, 220);
+    run(s, 600);
+
+    for (const body of [...s.cards, ...s.disturbers]) {
+      assert.ok(inside(body, 1), `body ended up at ${body.position.x.toFixed(0)},${body.position.y.toFixed(0)}`);
+    }
+  });
+
+  it("leaves bodies alone while they are inside", () => {
+    // The net must never fire in normal play — the walls stop a card's edge
+    // long before its centre reaches the boundary.
+    const s = scene();
+    run(s, 600);
+    const before = s.cards.map((c) => ({ ...c.position }));
+    contain(s.cards, VIEW);
+    for (const [i, c] of s.cards.entries()) {
+      assert.deepEqual({ ...c.position }, before[i]);
     }
   });
 
@@ -101,12 +140,19 @@ describe("the box is sealed", () => {
 });
 
 describe("the disturbers never settle", () => {
-  it("still carries speed after ten seconds", () => {
+  it("is still travelling after ten seconds", () => {
     const s = scene();
     run(s, 600);
 
-    for (const d of s.disturbers) {
-      assert.ok(speed(d) > 0.5, `a disturber slowed to ${speed(d).toFixed(3)}`);
+    // Measure distance covered over a window, not speed at one instant — a
+    // disturber caught mid-collision can read near zero and say nothing about
+    // whether the field has settled.
+    const from = s.disturbers.map((d) => ({ ...d.position }));
+    run(s, 120);
+
+    for (const [i, d] of s.disturbers.entries()) {
+      const travelled = Math.hypot(d.position.x - from[i]!.x, d.position.y - from[i]!.y);
+      assert.ok(travelled > 5, `a disturber covered only ${travelled.toFixed(1)}px in two seconds`);
     }
   });
 

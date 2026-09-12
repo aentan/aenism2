@@ -26,6 +26,7 @@ import {
 
 import { FIELD } from "./physics.config.ts";
 import {
+  contain,
   createCard,
   createDisturbers,
   createWalls,
@@ -212,6 +213,8 @@ export class PhysicsField {
   };
 
   private readonly paint = (): void => {
+    contain([...this.interactive, ...this.disturbers], this.size);
+
     for (const [body, el] of this.elementOf) {
       const x = body.position.x - el.offsetWidth / 2;
       const y = body.position.y - el.offsetHeight / 2;

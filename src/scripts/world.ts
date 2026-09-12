@@ -97,3 +97,29 @@ export function kick(disturbers: Body[]): void {
     d.force.y += sign() * force;
   }
 }
+
+/**
+ * Safety net against tunnelling.
+ *
+ * The walls stop anything moving at a sane speed, but drag is rigid at
+ * stiffness 1 — so a hard enough flick can carry a card through 100px of wall
+ * in a single step, and once it is out there is nothing to bring it back. A
+ * lost card takes its link with it.
+ *
+ * In normal play a body's centre never reaches the field edge (the walls stop
+ * its *edge* first), so this only ever fires on an escape.
+ */
+export function contain(bodies: Body[], { width, height }: Size): void {
+  for (const body of bodies) {
+    const { x, y } = body.position;
+    const clampedX = Math.min(Math.max(x, 0), width);
+    const clampedY = Math.min(Math.max(y, 0), height);
+    if (clampedX === x && clampedY === y) continue;
+
+    Matter.Body.setPosition(body, { x: clampedX, y: clampedY });
+    Matter.Body.setVelocity(body, {
+      x: clampedX === x ? body.velocity.x : 0,
+      y: clampedY === y ? body.velocity.y : 0,
+    });
+  }
+}
