@@ -131,6 +131,27 @@ describe("the disturbers never settle", () => {
   });
 });
 
+describe("the field does not run away", () => {
+  it("stays in equilibrium over a long session", () => {
+    // The disturbers take on energy every frame and never shed it to air
+    // friction, so the only thing holding the field together is collision
+    // damping. Three simulated minutes is enough to catch a runaway.
+    const s = scene();
+    run(s, 60 * 60 * 3);
+
+    const fastest = Math.max(...s.disturbers.map(speed));
+    assert.ok(fastest < 60, `disturbers accelerated to ${fastest.toFixed(1)}`);
+
+    for (const body of [...s.cards, ...s.disturbers]) {
+      const { x, y } = body.position;
+      assert.ok(
+        x > -50 && x < VIEW.width + 50 && y > -50 && y < VIEW.height + 50,
+        `body drifted out to ${x.toFixed(0)},${y.toFixed(0)} after three minutes`,
+      );
+    }
+  });
+});
+
 describe("the cards themselves do damp", () => {
   it("comes to rest when nothing is kicking them", () => {
     const s = scene({ withDisturbers: false });

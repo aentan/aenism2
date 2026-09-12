@@ -338,8 +338,15 @@ export class PhysicsField {
     if (this.render || this.destroyed) return;
     const mount = this.debugMount ?? this.root;
 
+    // `engine` is deliberately NOT passed in here. Render.create runs its
+    // options through Common.extend, which deep-clones any plain object — and
+    // a running engine's pair table holds bodies whose `parent` points at
+    // themselves, so the clone recurses until the stack blows. matter gets
+    // away with it because it expects Render.create before the world is
+    // populated; this one is built 800ms in, on the eye. Render.create assigns
+    // `render.engine = options.engine` right after the extend anyway, so
+    // setting it afterwards is equivalent and cheap.
     this.render = Render.create({
-      engine: this.engine,
       element: mount,
       options: {
         width: this.width,
@@ -361,6 +368,7 @@ export class PhysicsField {
         hasBounds: true,
       },
     });
+    this.render.engine = this.engine;
     this.render.canvas.classList.add("field-wireframe");
     this.render.mouse = this.mouse;
     Render.run(this.render);
