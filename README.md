@@ -27,8 +27,17 @@ npm run dev          # http://localhost:4321
 | `npm run audit`  | Lighthouse across every template; fails under 100  |
 | `npm run images:measure` | Record intrinsic sizes of remote images    |
 
-Deploy with `./_scripts/deploy.sh`, which verifies, builds and pushes `dist/`
-to the `gh-pages` branch.
+Deploy with `./_scripts/deploy.sh`, which verifies, builds, pushes `dist/` to
+the `gh-pages` branch, and purges the Cloudflare edge so the release is not
+stranded behind a cached copy.
+
+The purge is optional. Set these in your shell profile to enable it — they are
+read from the environment and never stored in the repo:
+
+```sh
+export CLOUDFLARE_ZONE_ID=...     # zone Overview in the Cloudflare dashboard
+export CLOUDFLARE_API_TOKEN=...   # a token scoped to "Cache Purge" only
+```
 
 ## Writing
 

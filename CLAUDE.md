@@ -195,6 +195,26 @@ New posts start as `draft: true`: visible in `npm run dev` (dashed border, a
 page, no card, no feed entry, no sitemap line. `getPosts()` filters on
 `import.meta.env.PROD`, so nothing downstream has to remember to.
 
+## Hosting
+
+aenism.com is proxied through Cloudflare (orange cloud) in front of GitHub
+Pages — the DNS answers with Cloudflare IPs, not `185.199.x`. That means
+Cloudflare can rewrite responses, and for a while it was: Web Analytics
+injecting a 10 KB beacon and Rocket Loader rewriting every
+`<script type="module">` into a placeholder type. Both are off now, and the
+served HTML is byte-identical to `dist/`. If a third-party request ever
+reappears on a page, check the Cloudflare dashboard before the code.
+
+Two Cache Rules make the edge serve HTML, which Cloudflare does not do by
+default — its built-in cache only covers known static extensions, so pages were
+`cf-cache-status: DYNAMIC` and every view paid 250–800ms of GitHub Pages TTFB.
+The rules are mutually exclusive so their order does not matter.
+
+`_scripts/deploy.sh` purges the edge after a successful push, because cached
+HTML would otherwise strand a release behind a stale copy. It reads
+`CLOUDFLARE_ZONE_ID` and `CLOUDFLARE_API_TOKEN` from the environment and skips
+with a note when they are absent — never store them in the repo.
+
 ## URLs are a contract
 
 This site replaced a Hugo build, and every public URL was preserved. Hugo slugged
