@@ -146,6 +146,44 @@ body.home:has(.field.is-live) {
   }
 }
 
+/* ── impact ────────────────────────────────────────────────────────────── */
+
+/*
+ * The glitch the 2017 SCSS described but never shipped: `.collided` driving a
+ * `glitch` keyframe through an SVG feColorMatrix that split the red and blue
+ * channels.
+ *
+ * Same read, without the filter. An SVG filter forces a repaint of the whole
+ * card through the filter graph, on a page where something is colliding most
+ * frames; two offset box-shadows in the site's own red and blue give the same
+ * channel-split impression for a fraction of the cost. The physics side only
+ * fires this on a real knock — see FIELD.collision.
+ */
+@keyframes card-hit {
+  0% {
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+  }
+  18% {
+    box-shadow: -3px 2px 0 0 var(--red), 3px -2px 0 0 var(--blue);
+  }
+  55% {
+    box-shadow: -1px 1px 0 0 var(--red), 1px -1px 0 0 var(--blue);
+  }
+  100% {
+    box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
+  }
+}
+
+.card.is-hit {
+  animation: card-hit 260ms steps(4, end) 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card.is-hit {
+    animation: none;
+  }
+}
+
 /* ── pagination pills ──────────────────────────────────────────────────── */
 
 .card--nav {
@@ -243,4 +281,21 @@ html.js-field .field .card {
 
 html.js-field .field.is-live .card {
   visibility: visible;
+}
+
+/* ── drafts (dev only — they never reach a production build) ───────────── */
+
+.card[data-draft] {
+  border-style: dashed;
+}
+
+.card[data-draft]::after {
+  content: "draft";
+  position: absolute;
+  top: 6px;
+  right: 10px;
+  font: 1rem/1 var(--font-base);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--gray-dark);
 }

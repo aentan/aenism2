@@ -65,6 +65,8 @@ export class PhysicsField {
   private height = 0;
 
   private hovered: HTMLElement | null = null;
+  /** Simulation timestamp of each card's last glitch, for the cooldown. */
+  private readonly lastHit = new Map<HTMLElement, number>();
   private pressedAt: { x: number; y: number; t: number } | null = null;
   private wasDrag = false;
   private navigating = false;
@@ -96,6 +98,7 @@ export class PhysicsField {
     this.buildMouse();
 
     Events.on(this.engine, "beforeUpdate", this.kickDisturbers);
+    Events.on(this.engine, "collisionStart", this.onCollision);
     Events.on(this.engine, "afterUpdate", this.paint);
 
     // Paint once before the first step so nothing is ever shown at 0,0.
@@ -116,6 +119,7 @@ export class PhysicsField {
 
     Runner.stop(this.runner);
     Events.off(this.engine, "beforeUpdate", this.kickDisturbers);
+    Events.off(this.engine, "collisionStart", this.onCollision);
     Events.off(this.engine, "afterUpdate", this.paint);
 
     this.teardownRender();
@@ -135,7 +139,9 @@ export class PhysicsField {
     Engine.clear(this.engine);
 
     this.root.classList.remove("is-live");
+    this.lastHit.clear();
     for (const el of this.elementOf.values()) {
+      el.classList.remove("is-hit");
       el.style.translate = "";
       el.style.rotate = "";
     }
@@ -214,6 +220,38 @@ export class PhysicsField {
    */
   private readonly kickDisturbers = (): void => {
     kick(this.disturbers);
+  };
+
+  /**
+   * Flash a card that just took a real knock.
+   *
+   * Reviving the author's abandoned `.collided` idea — see FIELD.collision for
+   * why it needed a threshold and a cooldown to be usable.
+   */
+  private readonly onCollision = (event: { pairs: { bodyA: MatterBody; bodyB: MatterBody }[] }): void => {
+    const { minImpactSpeed, cooldownMs, flashMs } = FIELD.collision;
+    const now = this.engine.timing.timestamp;
+
+    for (const { bodyA, bodyB } of event.pairs) {
+      const impact = Math.hypot(
+        bodyA.velocity.x - bodyB.velocity.x,
+        bodyA.velocity.y - bodyB.velocity.y,
+      );
+      if (impact < minImpactSpeed) continue;
+
+      for (const body of [bodyA, bodyB]) {
+        const el = this.elementOf.get(body);
+        if (!el) continue;
+        if (now - (this.lastHit.get(el) ?? -Infinity) < cooldownMs) continue;
+        this.lastHit.set(el, now);
+
+        // Restart the animation even if one is already mid-flight.
+        el.classList.remove("is-hit");
+        void el.offsetWidth;
+        el.classList.add("is-hit");
+        window.setTimeout(() => el.classList.remove("is-hit"), flashMs);
+      }
+    }
   };
 
   private readonly paint = (): void => {
@@ -381,6 +419,10 @@ export class PhysicsField {
     // populated; this one is built 800ms in, on the eye. Render.create assigns
     // `render.engine = options.engine` right after the extend anyway, so
     // setting it afterwards is equivalent and cheap.
+    //
+    // The cast is the price: @types/matter-js marks `engine` required on
+    // IRenderDefinition and does not declare it on Render at all, because the
+    // types describe the documented usage rather than this one.
     this.render = Render.create({
       element: mount,
       options: {
@@ -402,8 +444,8 @@ export class PhysicsField {
         showAxes: false,
         hasBounds: true,
       },
-    });
-    this.render.engine = this.engine;
+    } as unknown as Parameters<typeof Render.create>[0]);
+    (this.render as MatterRender & { engine: MatterEngine }).engine = this.engine;
     this.render.canvas.classList.add("field-wireframe");
     this.render.mouse = this.mouse;
     Render.run(this.render);

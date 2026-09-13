@@ -12,7 +12,7 @@ import assert from "node:assert/strict";
 import { describe, it } from "node:test";
 
 import Matter from "matter-js";
-import type { Body, Engine as MatterEngine } from "matter-js";
+import type { Body as MatterBody, Engine as MatterEngine } from "matter-js";
 
 const { Body, Composite, Engine } = Matter;
 
@@ -32,8 +32,8 @@ const STEP_MS = 1000 / 60;
 
 interface Scene {
   engine: MatterEngine;
-  cards: Body[];
-  disturbers: Body[];
+  cards: MatterBody[];
+  disturbers: MatterBody[];
 }
 
 function scene({ withDisturbers = true, cardCount = 8 } = {}): Scene {
@@ -67,11 +67,11 @@ function fireOutward(s: Scene, speed: number): void {
   }
 }
 
-const inside = (b: Body, slack: number) =>
+const inside = (b: MatterBody, slack: number) =>
   b.position.x > -slack && b.position.x < VIEW.width + slack &&
   b.position.y > -slack && b.position.y < VIEW.height + slack;
 
-const speed = (b: Body) => Math.hypot(b.velocity.x, b.velocity.y);
+const speed = (b: MatterBody) => Math.hypot(b.velocity.x, b.velocity.y);
 
 describe("the field is weightless", () => {
   it("has zero gravity on both axes", () => {

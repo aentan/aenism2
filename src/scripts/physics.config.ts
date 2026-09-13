@@ -59,6 +59,27 @@ export const FIELD = {
   drag: { stiffness: 1 },
 
   /**
+   * The glitch on impact.
+   *
+   * This was the original author's idea — `.collided` driving a `glitch`
+   * keyframe through an SVG feColorMatrix — left commented out in the 2017
+   * SCSS. It was abandoned for good reason: it fired on *every* collisionStart
+   * pair, and in a field where three undamped disturbers are ricocheting
+   * constantly that means every card flickering, forever.
+   *
+   * A threshold is what makes it read as impact rather than noise. Only a hit
+   * above `minImpactSpeed` (in px per step — disturbers cruise at 4–10, gentle
+   * card-on-card contact is well under 1) triggers it, and a card cannot
+   * glitch again until `cooldownMs` has passed.
+   */
+  collision: {
+    minImpactSpeed: 3.2,
+    cooldownMs: 420,
+    /** Must match the `card-hit` keyframe duration in field.css. */
+    flashMs: 260,
+  },
+
+  /**
    * Tap vs drag.
    *
    * The original compared press and release coordinates for exact equality,

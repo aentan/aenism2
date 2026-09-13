@@ -18,6 +18,12 @@ const post = defineCollection({
     topic: z.enum(TOPICS),
     /** Work posts read "for MyDoc" instead of "in work". */
     client: z.string().optional(),
+    /**
+     * Visible in `astro dev`, absent from a production build — no page, no
+     * card, no feed entry, no sitemap line. Scaffolded posts start as drafts
+     * so nothing ships by accident.
+     */
+    draft: z.boolean().default(false),
     tags: z.array(z.string()).default([]),
   }),
 });

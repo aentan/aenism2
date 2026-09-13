@@ -13,6 +13,7 @@ npm test                     # the interaction contract — physics, no DOM
 npm run test:gestures        # tap/drag/click/hover in a real Chrome (needs preview running)
 npm run audit                # Lighthouse across every template; fails under 100
 npm run images:measure       # record intrinsic sizes of remote images
+npm run post -- "Title"      # scaffold a post (starts as a draft)
 ./_scripts/deploy.sh         # verify, build, push dist/ to gh-pages
 ```
 
@@ -116,6 +117,17 @@ The eye's timing is part of this: 800ms stepped open → wireframe on → 3000ms
 hold → 1200ms close → wireframe off. The wireframe is visible exactly as long as
 the eye is open.
 
+The collision glitch is the one behaviour that is *new* rather than ported.
+The 2017 SCSS described it — `.collided` driving a `glitch` keyframe through an
+SVG `feColorMatrix` that split the red and blue channels — but left it
+commented out, and for good reason: it fired on every `collisionStart` pair, so
+in a field with three undamped disturbers every card would flicker constantly.
+`FIELD.collision` adds the threshold and per-card cooldown that make it read as
+impact instead of noise (measured: ~1.9 glitches/sec across nine cards, so each
+card flashes about every five seconds), and the effect is two offset
+box-shadows rather than an SVG filter, which would repaint the whole card
+through a filter graph.
+
 One addition the 2017 version lacked: `contain()` in `world.ts`, called at the
 top of `PhysicsField.paint()`. Drag is rigid at `stiffness: 1`, so a hard enough
 flick carries a card through 100px of wall in one step — and once out, there is
@@ -170,6 +182,18 @@ at 99 with the reason written next to the number: Lighthouse's simulated slow 4G
 burns ~1.8s on TTFB alone, and a perfect LCP score wants the hero painted inside
 ~1.2s. That is a floor, not a defect — and a guard that can never go green gets
 ignored.
+
+## Writing
+
+`npm run post -- "A title" [--topic=work] [--client="Name"]` scaffolds a post.
+It derives the filename from the title exactly the way Hugo derived the URL —
+verified against all fifteen existing posts — so the slug is right the first
+time and no inbound link is ever at risk from a rename.
+
+New posts start as `draft: true`: visible in `npm run dev` (dashed border, a
+"draft" label on the card), and absent from a production build entirely — no
+page, no card, no feed entry, no sitemap line. `getPosts()` filters on
+`import.meta.env.PROD`, so nothing downstream has to remember to.
 
 ## URLs are a contract
 

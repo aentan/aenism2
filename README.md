@@ -32,7 +32,15 @@ to the `gh-pages` branch.
 
 ## Writing
 
-Posts are markdown in `src/content/post/`. The filename is the URL.
+```sh
+npm run post -- "A title" --topic=idea
+```
+
+Scaffolds the file with the right name — the filename *is* the URL — and marks
+it a draft. Drafts show up in `npm run dev` and never reach a build; delete the
+`draft: true` line to publish.
+
+Posts are markdown in `src/content/post/`.
 
 ```yaml
 ---
@@ -42,6 +50,7 @@ date: 2014-03-15
 topic: idea          # design | idea | inspiration | tech | work
 client: "MyDoc"      # optional; renders "for MyDoc" instead of "in work"
 tags: ["taste", "aesthetic"]
+draft: true          # optional; hidden from production builds
 ---
 ```
 

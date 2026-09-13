@@ -19,7 +19,8 @@
     "test": "node --test --experimental-strip-types test/*.test.ts",
     "test:gestures": "node test/gestures.probe.mjs",
     "images:measure": "node scripts/measure-images.mjs",
-    "audit": "node scripts/audit.mjs"
+    "audit": "node scripts/audit.mjs",
+    "post": "node scripts/new-post.mjs"
   },
   "dependencies": {
     "astro": "^5.14.1",

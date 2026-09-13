@@ -44,6 +44,7 @@ const hasNext = page < totalPages;
       class={`card topic-${post.data.topic}`}
       href={`/${post.id}/`}
       draggable="false"
+      data-draft={post.data.draft ? "" : undefined}
     >
       <h2>{post.data.title}</h2>
       <div class="topic">{attribution(post.data)}</div>
