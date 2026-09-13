@@ -63,7 +63,11 @@ while IFS= read -r sample; do
     failed=1
   fi
 done < <(
-  grep -rho 'https://aenism\.com/cdn-cgi/image/[^"]*' dist --include=index.html \
+  # Stop at a space, not just a quote: a srcset is several URLs separated by
+  # ", " and the options segment contains commas of its own, so anything
+  # looser than this hands curl a blob rather than a URL.
+  grep -rho 'https://aenism\.com/cdn-cgi/image/[^" ]*' dist --include=index.html \
+    | sed 's/,$//' \
     | awk '{ if (match($0, /\/https?:\/\/[^\/]+/)) { h = substr($0, RSTART+1, RLENGTH-1); if (!(h in seen)) { seen[h]; print } } }'
 )
 
