@@ -48,7 +48,14 @@ while IFS= read -r sample; do
   fi
   checked=$((checked + 1))
   host=$(sed -E 's|.*/cdn-cgi/image/[^/]*/https?://([^/]+).*|\1|' <<<"$sample")
-  code=$(curl -s -o /dev/null -w '%{http_code}' -H 'Accept: image/avif,image/webp,image/*' --max-time 20 "$sample") || code=000
+  # The first transformation of a large original is slow, and a cold origin
+  # can rate-limit Cloudflare's fetch — both look like failure once and
+  # succeed on a retry. Do not fail a deploy over that.
+  for attempt in 1 2 3; do
+    code=$(curl -s -o /dev/null -w '%{http_code}' -H 'Accept: image/avif,image/webp,image/*' --max-time 45 "$sample") || code=000
+    [[ "$code" == "200" ]] && break
+    (( attempt < 3 )) && sleep 4
+  done
   if [[ "$code" == "200" ]]; then
     printf '    %-28s ok\n' "$host"
   else

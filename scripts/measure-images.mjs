@@ -26,6 +26,15 @@ const CONCURRENCY = 8;
 const IMAGE_RE =
   /(?:src\s*=\s*")(https?:\/\/[^"]+?\.(?:png|jpe?g|gif|webp))(?:"|\?)/gi;
 
+/**
+ * Embeds become facades with the video's own thumbnail as the poster, so those
+ * thumbnails need measuring like any other image — and four of this site's
+ * videos have since been deleted, taking their thumbnails with them. An entry
+ * here is what tells the facade plugin a poster is worth emitting.
+ */
+const YOUTUBE_RE = /(?:youtube\.com\/embed\/|youtu\.be\/|[?&]v=)([A-Za-z0-9_-]{6,})/gi;
+const poster = (id) => `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+
 function pngSize(b) {
   if (b.length < 24) return null;
   if (b.readUInt32BE(0) !== 0x89504e47) return null;
@@ -91,6 +100,7 @@ async function collectUrls() {
   for (const f of files) {
     const text = await readFile(path.join(POSTS, f), "utf8");
     for (const m of text.matchAll(IMAGE_RE)) urls.add(m[1]);
+    for (const m of text.matchAll(YOUTUBE_RE)) urls.add(poster(m[1]));
   }
   return [...urls].sort();
 }

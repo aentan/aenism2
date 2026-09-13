@@ -15,6 +15,8 @@
  */
 import { visit } from "unist-util-visit";
 
+import { lookup } from "./image-sizes.mjs";
+
 const IFRAME = /<iframe\b([^>]*)><\/iframe>|<iframe\b([^>]*)\/?>/gi;
 const ATTR = (name, s) => s.match(new RegExp(`\\b${name}\\s*=\\s*"([^"]*)"`, "i"))?.[1] ?? "";
 
@@ -24,12 +26,23 @@ const esc = (s) =>
 
 const VIDEO_HOST = /youtube\.com|youtu\.be|player\.vimeo\.com|embed\.ted\.com/i;
 
+/**
+ * Four of this site's embedded videos have been deleted, and a deleted video
+ * takes its thumbnail with it. `npm run images:measure` probes every poster and
+ * only records the ones that answered, so a missing entry means "do not emit
+ * this" — the facade reads fine as a plain play button without one.
+ */
 function poster(src) {
   const id = src.match(/(?:embed\/|v=|youtu\.be\/)([A-Za-z0-9_-]{6,})/)?.[1];
   if (!id || !/youtube\.com|youtu\.be/.test(src)) return "";
+
+  const url = `https://i.ytimg.com/vi/${id}/hqdefault.jpg`;
+  const dims = lookup(url);
+  if (!dims) return "";
+
   return (
-    `<img class="embed-poster" src="https://i.ytimg.com/vi/${id}/hqdefault.jpg" ` +
-    `alt="" width="480" height="360" loading="lazy" decoding="async">`
+    `<img class="embed-poster" src="${url}" alt="" ` +
+    `width="${dims[0]}" height="${dims[1]}" loading="lazy" decoding="async">`
   );
 }
 
