@@ -1,7 +1,7 @@
 // @ts-check
 import { defineConfig } from "astro/config";
 import sitemap from "@astrojs/sitemap";
-import optimizeRemoteImages from "./src/integrations/optimize-remote-images.mjs";
+import cdnImages from "./src/integrations/cdn-images.mjs";
 import remarkShortcodes from "./src/plugins/remark-shortcodes.mjs";
 import remarkEmbedFacades from "./src/plugins/remark-embed-facades.mjs";
 import remarkImageDimensions from "./src/plugins/remark-image-dimensions.mjs";
@@ -23,7 +23,7 @@ export default defineConfig({
   // Hugo emitted /page/1/ as an alias to the homepage. Keep the URL alive.
   redirects: { "/page/1/": "/" },
 
-  integrations: [sitemap(), optimizeRemoteImages()],
+  integrations: [sitemap(), cdnImages()],
 
   vite: {
     build: {

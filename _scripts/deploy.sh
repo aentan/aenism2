@@ -30,6 +30,25 @@ if [[ ! -f dist/.nojekyll ]]; then
   exit 1
 fi
 
+# Images are served through Cloudflare's transformations rather than built into
+# the deploy, so if that is switched off — or S3 drops off the source-origin
+# allowlist — every image on the site 404s. Check one before shipping, because
+# the failure is total and silent from the build's point of view.
+sample=$(grep -rhom1 'https://aenism\.com/cdn-cgi/image/[^"]*' dist --include=index.html | head -1 || true)
+if [[ -n "$sample" ]]; then
+  echo "==> Checking Cloudflare image transformations"
+  code=$(curl -s -o /dev/null -w '%{http_code}' -H 'Accept: image/avif,image/webp,image/*' --max-time 20 "$sample" || echo 000)
+  if [[ "$code" != "200" ]]; then
+    echo "    HTTP $code from /cdn-cgi/image — refusing to deploy."
+    echo "    Every image would 404. Check:"
+    echo "      · Images > Transformations is enabled for this zone"
+    echo "      · s3.amazonaws.com is on the source-origin allowlist"
+    echo "    Sample: ${sample:0:110}"
+    exit 1
+  fi
+  echo "    ok"
+fi
+
 echo "==> Publishing to gh-pages"
 WORKTREE=$(mktemp -d)
 trap 'git worktree remove --force "$WORKTREE" 2>/dev/null || true; rm -rf "$WORKTREE"' EXIT
