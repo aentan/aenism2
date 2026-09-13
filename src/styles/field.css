@@ -186,7 +186,17 @@ body.home:has(.field.is-live) {
 
 /* ── pagination pills ──────────────────────────────────────────────────── */
 
+/*
+ * Pagination rides above the posts.
+ *
+ * Everything here is a rigid body, so a nav pill can end up buried under a
+ * card — which axe flags as an obscured tap target, intermittently, depending
+ * on where the field happens to be when it looks. It is a real problem and not
+ * only a measurement one: the way out of a page should not be the thing you
+ * have to dig for.
+ */
 .card--nav {
+  z-index: 2;
   width: 64px;
   height: 64px;
   padding: 0;
@@ -202,7 +212,8 @@ body.home:has(.field.is-live) {
 .field-wireframe {
   position: fixed;
   inset: 0;
-  z-index: 1;
+  /* Above the cards and the nav pills, below the eye. */
+  z-index: 3;
   pointer-events: none;
 }
 

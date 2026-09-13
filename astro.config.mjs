@@ -25,6 +25,19 @@ export default defineConfig({
 
   integrations: [sitemap(), optimizeRemoteImages()],
 
+  vite: {
+    build: {
+      /*
+       * The stylesheet already uses :has(), CSS masks and the individual
+       * transform properties, so the real floor is roughly Chrome 105 /
+       * Safari 15.4. Shipping helpers and syntax downgrades for browsers that
+       * could never render the page anyway is pure weight — Lighthouse costs
+       * it at ~11 KB.
+       */
+      target: ["chrome105", "safari15.4", "firefox110", "edge105"],
+    },
+  },
+
   markdown: {
     // Posts still contain raw HTML from the Hugo days (goldmark ran with
     // unsafe: true). Keep allowing it rather than rewriting fifteen articles.

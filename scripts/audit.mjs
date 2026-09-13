@@ -30,18 +30,18 @@ const TARGET = {
 /**
  * One per template, not one per page — pages of a kind share their fate.
  *
- * An image-led post cannot reach 100 on this profile and it is not worth
- * pretending otherwise: Lighthouse's simulated slow 4G spends ~1.8s on time to
- * first byte alone, and a perfect LCP score wants the hero painted inside
- * ~1.2s. With the hero preloaded and served as a right-sized WebP it lands at
- * 2.0s, which is the floor rather than a defect. 99 still catches a real
- * regression; 100 would just mean the guard is always red.
+ * Every route holds 100 on all four categories. It did not start that way:
+ * image-led posts sat at 99 until the build target stopped shipping syntax
+ * downgrades for browsers the stylesheet could never run in, and the field
+ * pages failed accessibility about one run in four until the pagination pills
+ * were lifted above the cards that kept burying them. Both were found by this
+ * script, so leave the bar where it is.
  */
 const ROUTES = [
   ["homepage", "/"],
   ["paginated", "/page/2/"],
   ["post", "/good-taste/"],
-  ["post w/ images", "/miura-fold-map-of-san-francisco/", { performance: 99 }],
+  ["post w/ images", "/miura-fold-map-of-san-francisco/"],
   ["contact", "/contact/"],
 ];
 
