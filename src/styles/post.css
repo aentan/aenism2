@@ -212,3 +212,67 @@ body.single :not(pre) > code {
 .back {
   font: var(--t-body-2) var(--font-base);
 }
+
+/* ── embed facades ─────────────────────────────────────────────────────── */
+
+/*
+ * The player is not loaded until someone presses play — see
+ * src/scripts/embeds.ts. This is the thing they press.
+ */
+body.single .embed-facade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: var(--border-width) solid var(--line);
+  border-radius: 4px;
+  background: var(--gray-light);
+  overflow: hidden;
+  cursor: pointer;
+  display: grid;
+  place-items: center;
+}
+
+body.single .embed-poster {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+body.single .embed-play {
+  position: relative;
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: var(--surface);
+  border: var(--border-width) solid var(--line);
+  transition: scale 180ms cubic-bezier(0.2, 0.9, 0.3, 1);
+}
+
+/* A play triangle, drawn rather than fetched. */
+body.single .embed-play::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -40% -50%;
+  border-style: solid;
+  border-width: 11px 0 11px 18px;
+  border-color: transparent transparent transparent var(--ink);
+}
+
+body.single .embed-facade:hover .embed-play,
+body.single .embed-facade:focus-visible .embed-play {
+  scale: 1.08;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.single .embed-play {
+    transition: none;
+  }
+}

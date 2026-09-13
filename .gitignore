@@ -9,3 +9,6 @@ dist/
 
 # local lighthouse reports (npm run audit -- --view)
 lighthouse/
+
+# downloaded originals for the build-time image optimiser
+.cache/

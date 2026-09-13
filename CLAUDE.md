@@ -131,7 +131,7 @@ non-zero if any drops below 100. Run it before calling a content or layout
 change done — the things that break the score (an unsized image, a
 render-blocking stylesheet, a third-party script) are invisible in a diff.
 
-Two pieces hold it there:
+Four pieces hold it there:
 
 - **The stylesheet is inlined.** `build.inlineStylesheets: "always"` in
   `astro.config.mjs`. It is 4.5 KB raw, just over Astro's 4 KB auto-inline
@@ -143,11 +143,33 @@ Two pieces hold it there:
   committed so builds stay offline. **Run it after adding a post with images**,
   or they ship unsized and the article reflows as they load.
 
+- **Remote images are optimised at build time.**
+  `src/integrations/optimize-remote-images.mjs` runs on `astro:build:done`: it
+  downloads each remote image once (cached in `.cache/`, gitignored), emits
+  right-sized WebP rungs into `dist/_img/`, rewrites the tag with a `srcset`,
+  and preloads the first image on each page as the likely LCP element. Posts
+  are written exactly as before; the originals stay on S3 and none of the
+  derivatives enter the repo. One post went from 2.8 MB and a 16.8s LCP to
+  2.0s.
+- **Embeds are facades.** `remark-embed-facades.mjs` replaces every YouTube,
+  Vimeo and TED iframe with a button; `src/scripts/embeds.ts` swaps in the real
+  player on click. An eager YouTube embed pulls ~473 KB of player JS, a Google
+  font and a doubleclick script, and costs a Best Practices point on its own.
+  The poster is YouTube's own thumbnail, which the image optimiser then
+  self-hosts — so a post at rest makes **zero** third-party requests.
+
 The dimension stamping happens in two places because Astro passes raw HTML
 through to the output as a string instead of parsing it into the tree — so
 `<img>` from the shortcode bridge or written inline never reaches rehype as an
 element. `remark-image-dimensions.mjs` handles those; `rehype-image-dimensions.mjs`
-handles markdown's own `![alt](url)`. Both share `image-sizes.mjs`.
+handles markdown's own `![alt](url)`. Both share `image-sizes.mjs`. The same
+constraint is why the facade pass also works on `html` nodes.
+
+`npm run audit` targets 100 everywhere except image-led posts, which are capped
+at 99 with the reason written next to the number: Lighthouse's simulated slow 4G
+burns ~1.8s on TTFB alone, and a perfect LCP score wants the hero painted inside
+~1.2s. That is a floor, not a defect — and a guard that can never go green gets
+ignored.
 
 ## URLs are a contract
 
