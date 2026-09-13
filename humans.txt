@@ -1,0 +1,19 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+  Author, designer, developer: Aen
+  Contact: hello@aentan.com
+  Twitter: @Aen
+  From: Singapore
+
+# THANKS
+  Wife: Frjin
+  Son: Nuon
+
+# SITE
+  Standards: HTML5, CSS3
+  Libraries: jQuery
+  Generator: Hugo
+  Deploy: Github Pages
+  Editor: Sublime
