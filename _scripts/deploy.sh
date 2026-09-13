@@ -34,19 +34,33 @@ fi
 # the deploy, so if that is switched off — or S3 drops off the source-origin
 # allowlist — every image on the site 404s. Check one before shipping, because
 # the failure is total and silent from the build's point of view.
-sample=$(grep -rhom1 'https://aenism\.com/cdn-cgi/image/[^"]*' dist --include=index.html | head -1 || true)
-if [[ -n "$sample" ]]; then
-  echo "==> Checking Cloudflare image transformations"
-  code=$(curl -s -o /dev/null -w '%{http_code}' -H 'Accept: image/avif,image/webp,image/*' --max-time 20 "$sample" || echo 000)
-  if [[ "$code" != "200" ]]; then
-    echo "    HTTP $code from /cdn-cgi/image — refusing to deploy."
-    echo "    Every image would 404. Check:"
+# One sample per source host: the allowlist is per-origin, so S3 working tells
+# you nothing about whether the YouTube thumbnails do.
+mapfile -t samples < <(
+  grep -rho 'https://aenism\.com/cdn-cgi/image/[^"]*' dist --include=index.html \
+    | awk '{ if (match($0, /\/https?:\/\/[^\/]+/)) { h = substr($0, RSTART+1, RLENGTH-1); if (!(h in seen)) { seen[h]; print } } }'
+)
+if (( ${#samples[@]} )); then
+  echo "==> Checking Cloudflare image transformations (${#samples[@]} source origins)"
+  failed=0
+  for sample in "${samples[@]}"; do
+    host=$(sed -E 's|.*/cdn-cgi/image/[^/]*/https?://([^/]+).*|\1|' <<<"$sample")
+    code=$(curl -s -o /dev/null -w '%{http_code}' -H 'Accept: image/avif,image/webp,image/*' --max-time 20 "$sample") || code=000
+    if [[ "$code" == "200" ]]; then
+      printf '    %-28s ok\n' "$host"
+    else
+      printf '    %-28s HTTP %s\n' "$host" "$code"
+      failed=1
+    fi
+  done
+  if (( failed )); then
+    echo
+    echo "    Refusing to deploy — those images would 404 on the live site."
+    echo "    Check in the Cloudflare dashboard:"
     echo "      · Images > Transformations is enabled for this zone"
-    echo "      · s3.amazonaws.com is on the source-origin allowlist"
-    echo "    Sample: ${sample:0:110}"
+    echo "      · every host above is on the source-origin allowlist"
     exit 1
   fi
-  echo "    ok"
 fi
 
 echo "==> Publishing to gh-pages"
