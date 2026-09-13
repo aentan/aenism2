@@ -9,7 +9,8 @@ npm run dev                  # dev server, http://localhost:4321
 npm run build                # static build into dist/
 npm run preview              # serve the built site
 npm run check                # astro check — types across .astro and .ts
-npm test                     # the interaction contract (see below)
+npm test                     # the interaction contract — physics, no DOM
+npm run test:gestures        # tap/drag/click/hover in a real Chrome (needs preview running)
 ./_scripts/deploy.sh         # verify, build, push dist/ to gh-pages
 ```
 
@@ -41,8 +42,10 @@ rm -rf .astro node_modules/.vite && npm run build
 ### The homepage is a physics field, and the DOM is the renderer
 
 matter.js runs headless. Every frame, each body's position and angle is written
-onto a real `<a>` as a CSS transform — so the cards are live HTML with real
-text, real links and real focus order. The canvas only ever holds the wireframe
+onto a real `<a>` via the `translate` and `rotate` properties — so the cards are
+live HTML with real text, real links and real focus order. `scale` is left free
+for CSS so the hover pull can be transitioned underneath the loop. The canvas
+only ever holds the wireframe
 overlay, and only while the eye is open.
 
 | File | Role |
@@ -53,7 +56,7 @@ overlay, and only while the eye is open.
 | `src/styles/field.css` | Card geometry — the source of truth for collision shapes |
 | `test/field.test.ts` | The behaviours above, pinned |
 
-### Three non-obvious couplings
+### Four non-obvious couplings
 
 **1. CSS owns collision geometry.** `PhysicsField.buildBodies()` reads
 `offsetWidth`, `offsetHeight` and computed `borderRadius` off each rendered
@@ -85,6 +88,19 @@ expects `Render.create` before the world is populated; this renderer is built
 straight after the extend anyway, so `PhysicsField.setupRender()` passes only
 `element` and `options`, then sets `render.engine` itself. Re-adding `engine` to
 that call silently breaks the wireframe.
+
+**4. On touch, the click never arrives.** matter's `Mouse` binds
+`touchstart`/`touchend` and calls `preventDefault()` on both, which cancels the
+click the browser would otherwise synthesise. Anchors therefore never fire from
+a tap, and every desktop path keeps working — so this fails in exactly the place
+you are least likely to be testing. `PhysicsField.onPointerUp()` navigates by
+hand for non-mouse pointers, guarded by a `navigating` flag so a stray click
+cannot double-fire. The 2017 code called `window.location.href` from matter's
+own `mouseup` for the same reason.
+
+`npm test` is blind to all of this — it has no DOM. `npm run test:gestures`
+drives a real Chrome over CDP and covers tap, drag, click, mouse-drag and the
+hover pull. Run it after touching anything in the pointer path.
 
 ### The constants are the design, not defaults
 

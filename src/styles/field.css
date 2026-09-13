@@ -62,7 +62,8 @@ body.home:has(.field.is-live) {
   top: 0;
   left: 0;
   margin: 0;
-  will-change: transform;
+  /* The loop writes `translate` and `rotate`; `scale` below is ours. */
+  will-change: translate, rotate;
   cursor: grab;
 }
 
@@ -116,15 +117,33 @@ body.home:has(.field.is-live) {
 
 /*
  * The original applied a `hover` class that matched no rule, so the only
- * feedback was the cursor. Give it something to say.
+ * feedback was the cursor.
+ *
+ * The card leans toward the cursor rather than lighting up — a small pull, as
+ * if the pointer had a magnet in it. `scale` is a property of its own here
+ * precisely so it can be transitioned while the physics loop keeps rewriting
+ * position underneath; packed into one `transform` declaration it would be
+ * overwritten sixty times a second.
  */
-.card.is-hover,
-.card:focus-visible {
-  box-shadow: 0 0 0 3px var(--blue);
+.card {
+  scale: 1;
+  transition: scale 180ms cubic-bezier(0.2, 0.9, 0.3, 1);
 }
 
+.card.is-hover {
+  scale: 1.055;
+}
+
+/* Keyboard focus still needs a visible marker; a scale alone is not one. */
 .card:focus-visible {
-  outline: none;
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none;
+  }
 }
 
 /* ── pagination pills ──────────────────────────────────────────────────── */

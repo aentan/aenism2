@@ -16,7 +16,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "sync": "astro sync",
-    "test": "node --test --experimental-strip-types test/*.test.ts"
+    "test": "node --test --experimental-strip-types test/*.test.ts",
+    "test:gestures": "node test/gestures.probe.mjs"
   },
   "dependencies": {
     "astro": "^5.14.1",

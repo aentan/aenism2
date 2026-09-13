@@ -67,6 +67,7 @@ export class PhysicsField {
   private hovered: HTMLElement | null = null;
   private pressedAt: { x: number; y: number; t: number } | null = null;
   private wasDrag = false;
+  private navigating = false;
 
   private render: MatterRender | null = null;
   private eyeTimers: number[] = [];
@@ -134,7 +135,10 @@ export class PhysicsField {
     Engine.clear(this.engine);
 
     this.root.classList.remove("is-live");
-    for (const el of this.elementOf.values()) el.style.transform = "";
+    for (const el of this.elementOf.values()) {
+      el.style.translate = "";
+      el.style.rotate = "";
+    }
   }
 
   // ── world construction ─────────────────────────────────────────────────
@@ -218,7 +222,13 @@ export class PhysicsField {
     for (const [body, el] of this.elementOf) {
       const x = body.position.x - el.offsetWidth / 2;
       const y = body.position.y - el.offsetHeight / 2;
-      el.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${body.angle}rad)`;
+      // Individual transform properties, not `transform`: this loop rewrites
+      // position every frame, so anything packed into the same declaration
+      // could never be transitioned. Leaving `scale` free lets CSS own the
+      // hover pull. They compose as translate -> rotate -> scale, which is the
+      // order we want anyway.
+      el.style.translate = `${x}px ${y}px`;
+      el.style.rotate = `${body.angle}rad`;
     }
   };
 
@@ -261,15 +271,37 @@ export class PhysicsField {
   };
 
   private readonly onPointerUp = (event: PointerEvent): void => {
+    let tapped: HTMLElement | null = null;
+
     if (this.pressedAt) {
       const moved = this.distanceFrom(event);
       const held = event.timeStamp - this.pressedAt.t;
+      // Keep any latch set during the move: a finger that wanders out and
+      // comes back has a small net displacement but was still a drag.
       this.wasDrag =
-        moved > FIELD.tap.maxDistancePx || held > FIELD.tap.maxDurationMs;
+        this.wasDrag || moved > FIELD.tap.maxDistancePx || held > FIELD.tap.maxDurationMs;
+      if (!this.wasDrag) tapped = this.elementAt(event.clientX, event.clientY);
     }
+
     this.pressedAt = null;
-    if (event.pointerType !== "mouse") this.setHover(null);
+
+    if (event.pointerType !== "mouse") {
+      this.setHover(null);
+      // matter calls preventDefault() on touchstart and touchend, which
+      // cancels the click the browser would otherwise synthesise — so the
+      // anchor never fires and a tap goes nowhere. The 2017 code navigated by
+      // hand from matter's own mouseup for exactly this reason.
+      if (tapped) this.follow(tapped);
+    }
   };
+
+  /** Explicit navigation, for the pointers whose click never arrives. */
+  private follow(el: HTMLElement): void {
+    const href = el.getAttribute("href");
+    if (!href) return;
+    this.navigating = true;
+    window.location.assign(href);
+  }
 
   private readonly onPointerLeave = (): void => {
     this.setHover(null);
@@ -280,7 +312,7 @@ export class PhysicsField {
    * free. The only thing to suppress is the click that ends a fling.
    */
   private readonly onClick = (event: MouseEvent): void => {
-    if (this.wasDrag) {
+    if (this.wasDrag || this.navigating) {
       event.preventDefault();
       event.stopPropagation();
       this.wasDrag = false;

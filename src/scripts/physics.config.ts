@@ -59,11 +59,19 @@ export const FIELD = {
   drag: { stiffness: 1 },
 
   /**
-   * Tap vs drag. The original demanded pixel-exact equality between press and
-   * release, which no finger and few trackpads can deliver — so tapping a card
-   * on a phone simply never navigated.
+   * Tap vs drag.
+   *
+   * The original compared press and release coordinates for exact equality,
+   * which worked on touch more often than it looks: matter only updates
+   * `mouse.absolute` on touchmove, so a crisp tap that never fires one leaves
+   * the two readings identical. A tap that drifts enough to fire a touchmove
+   * was the one that silently did nothing.
+   *
+   * A threshold covers both. 700ms rather than something tighter because a
+   * deliberate press on a touchscreen is easily 400ms and should still open
+   * the card; past this you were holding it, not tapping it.
    */
-  tap: { maxDistancePx: 6, maxDurationMs: 350 },
+  tap: { maxDistancePx: 6, maxDurationMs: 700 },
 
   /**
    * The eye, to the millisecond. Click it and the wireframe is revealed for

@@ -234,11 +234,12 @@ describe("geometry comes from CSS", () => {
 
 describe("tap is distinguishable from drag", () => {
   it("allows a few pixels of tremor", () => {
-    // The original required pixel-exact equality, so a tap never navigated on
-    // touch. Anything at or under this threshold must still read as a tap.
+    // The original compared press and release for exact equality. A crisp
+    // tap passed that (matter only updates mouse.absolute on touchmove); one
+    // that drifted did not. Anything under this threshold must read as a tap.
     assert.ok(FIELD.tap.maxDistancePx >= 4, "too tight for a finger");
     assert.ok(FIELD.tap.maxDistancePx <= 12, "too loose — flings would navigate");
-    assert.ok(FIELD.tap.maxDurationMs >= 200 && FIELD.tap.maxDurationMs <= 600);
+    assert.ok(FIELD.tap.maxDurationMs >= 400 && FIELD.tap.maxDurationMs <= 900);
   });
 });
 
