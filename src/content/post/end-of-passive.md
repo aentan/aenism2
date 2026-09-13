@@ -7,7 +7,7 @@ tags: ["vision"]
 ---
 Human communication progresses in three primary dimensions – _relation_, _distance_ and _fidelity_. Relation is about how we are connected. The simplest network is a direct line between two nodes. A face-to-face (_one-to-one_) dialog for example. A speech is _one-to-many_. A campfire is _many-to-many_. With the Morse code, we conquered distance. The telephone allowed us to converse with somebody far away as if he was near. The internet grew similarly. Email started as one-to-one. Then came the web and people used websites to distribute information. Then came social networks and multi-player online games. Technology created the screen. First it was moving pictures, then came color. Next came touch interfaces. The fidelity of our media is the most observable dimension for it touches our senses directly.
 
-{{%figure src="http://farm4.staticflickr.com/3827/12200097803_236bd5b2d1_o.png"%}}
+{{%figure src="https://farm4.staticflickr.com/3827/12200097803_236bd5b2d1_o.png"%}}
 
 Despite new media's advances, it is still pretty much passive. Most online media consumption are either passive like watching a YouTube video or boringly low fidelity like commenting on or liking one that a friend had posted. Most people are lazy and boring but most are social. Media is entertaining but mostly passive. Social media is our current attempt at marrying the two – social people sharing entertaining things. But that's not real integration.
 
@@ -21,7 +21,7 @@ Books are on the rich but passive end of the spectrum. Multiplayer games are on 
 
 &hellip;as opposed to Massive Multiplayer Game. To visualize what I mean by _tree_:
 
-{{%figure src="http://farm4.staticflickr.com/3774/12200713904_72a4db2214_o.png"%}}
+{{%figure src="https://farm4.staticflickr.com/3774/12200713904_72a4db2214_o.png"%}}
 
 In a "massive" multiplayer network, the interactions between nodes in such an unstructured graph can only be primitive. One either engage the AI or other players in simple power play – dressing and leveling up, forming groups, killing monsters and each other. One can only affect another player this much.
 

@@ -24,6 +24,8 @@ npm run dev          # http://localhost:4321
 | `npm run preview`| Serve the built site                               |
 | `npm run check`  | Type-check `.astro` and `.ts`                      |
 | `npm test`       | The interaction contract (see below)               |
+| `npm run audit`  | Lighthouse across every template; fails under 100  |
+| `npm run images:measure` | Record intrinsic sizes of remote images    |
 
 Deploy with `./_scripts/deploy.sh`, which verifies, builds and pushes `dist/`
 to the `gh-pages` branch.
@@ -49,6 +51,10 @@ so it is a checked enum in `src/content.config.ts` rather than a free string.
 The three Hugo shortcodes still work — `{{%figure%}}`, `{{%embed%}}` and
 `{{%youtube%}}` — translated at build time by `src/plugins/remark-shortcodes.mjs`
 so the fifteen existing articles did not have to be rewritten.
+
+Posts point at images on S3. After adding one with images, run
+`npm run images:measure` so they ship with explicit dimensions and the article
+does not reflow as they arrive.
 
 ## The field
 

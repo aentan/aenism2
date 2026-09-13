@@ -6,3 +6,6 @@ dist/
 
 # Hugo leftovers, removed at cutover
 .hugo_build.lock
+
+# local lighthouse reports (npm run audit -- --view)
+lighthouse/

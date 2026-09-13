@@ -11,6 +11,8 @@ npm run preview              # serve the built site
 npm run check                # astro check — types across .astro and .ts
 npm test                     # the interaction contract — physics, no DOM
 npm run test:gestures        # tap/drag/click/hover in a real Chrome (needs preview running)
+npm run audit                # Lighthouse across every template; fails under 100
+npm run images:measure       # record intrinsic sizes of remote images
 ./_scripts/deploy.sh         # verify, build, push dist/ to gh-pages
 ```
 
@@ -120,6 +122,32 @@ flick carries a card through 100px of wall in one step — and once out, there i
 nothing to bring it back. It only fires on an escape (the walls stop a card's
 *edge* long before its centre reaches the boundary), and a test asserts it stays
 dormant during normal play. Do not drop it while tidying the paint loop.
+
+## Performance is a guard, not a goal
+
+Every template scores 100 on all four Lighthouse categories. `npm run audit`
+builds, serves, and audits each template under the mobile preset, and exits
+non-zero if any drops below 100. Run it before calling a content or layout
+change done — the things that break the score (an unsized image, a
+render-blocking stylesheet, a third-party script) are invisible in a diff.
+
+Two pieces hold it there:
+
+- **The stylesheet is inlined.** `build.inlineStylesheets: "always"` in
+  `astro.config.mjs`. It is 4.5 KB raw, just over Astro's 4 KB auto-inline
+  threshold, so without the override it ships as the site's only
+  render-blocking request.
+- **Remote images carry explicit dimensions.** Posts point at images on S3, so
+  the build cannot know their size. `npm run images:measure` fetches each
+  header once and records width/height in `src/data/image-sizes.json`, which is
+  committed so builds stay offline. **Run it after adding a post with images**,
+  or they ship unsized and the article reflows as they load.
+
+The dimension stamping happens in two places because Astro passes raw HTML
+through to the output as a string instead of parsing it into the tree — so
+`<img>` from the shortcode bridge or written inline never reaches rehype as an
+element. `remark-image-dimensions.mjs` handles those; `rehype-image-dimensions.mjs`
+handles markdown's own `![alt](url)`. Both share `image-sizes.mjs`.
 
 ## URLs are a contract
 

@@ -8,7 +8,7 @@ tags: ["branding", "identity"]
 ---
 ## 6degrees
 
-<p class="lead">Tailored to its essence, a geometrical fit cut for <a href="http://www.get6degrees.com" target="_blank"><em>6degrees</em></a> &ndash; a self-cleaning and self-updating digital phonebook.</p>
+<p class="lead">Tailored to its essence, a geometrical fit cut for <a href="https://www.get6degrees.com" target="_blank"><em>6degrees</em></a> &ndash; a self-cleaning and self-updating digital phonebook.</p>
 
 Initially available on Android and now on iOS, <em>6degrees</em> is a self-updating phonebook that automatically cleans duplicates and backs itself up. One of the first things I did for 6degrees was to refresh their identity.
 
@@ -91,7 +91,7 @@ Rich Persian blue was chosen to be a deliberate deviation from the usual yellow 
 
 ## Multiply
 
-<p class="lead">A leafy motif designed for <a href="http://multiply.is/" target="_blank"><em>Multiply</em></a> &ndash; affordable, short term software development courses for those who want practical new skills for a technology-centric future.</p>
+<p class="lead">A leafy motif designed for <a href="https://multiply.is/" target="_blank"><em>Multiply</em></a> &ndash; affordable, short term software development courses for those who want practical new skills for a technology-centric future.</p>
 
 Multiply offers affordable, short term software development courses. The courses which are meant for beginners will help those who want practical new skills for a technology-centric future. Courses are typically five days or less, conducted in 8-student batches and taught by real professional coders. Another highlight is post-course support which other coding courses don’t provide beyond the classroom.
 
@@ -113,7 +113,7 @@ I don&rsquo;t know but I get a sense blue is overused in education-related brand
 
 ## Curioucity
 
-<p class="lead">A horse to rock its debut in SXSW 2012 for <a href="http://jp.techcrunch.com/2012/03/19/jp20120319sxsw2012-1/" target="_blank"><em>Curioucity</em></a> &ndash; hyper-local chat + check-in app made in Tokyo.</p>
+<p class="lead">A horse to rock its debut in SXSW 2012 for <a href="https://jp.techcrunch.com/2012/03/19/jp20120319sxsw2012-1/" target="_blank"><em>Curioucity</em></a> &ndash; hyper-local chat + check-in app made in Tokyo.</p>
 
 Curioucity is an iPhone app made by O.N.E.R Inc based in Tokyo, which allows its users to quickly initiate chats with others within vicinity.
 
@@ -139,7 +139,7 @@ Here&rsquo;s team Curioucity exhibiting at SXSW in 2012 wearing my rocking horse
 
 ## LifeOpp
 
-<p class="lead">Refined and recolored to recommunicate what it means to be a part of <a href="http://lifeopp.com/"><em>LifeOpp</em></a> &ndash; a job platform for the Singapore service industry.</p>
+<p class="lead">Refined and recolored to recommunicate what it means to be a part of <a href="https://lifeopp.com/"><em>LifeOpp</em></a> &ndash; a job platform for the Singapore service industry.</p>
 
 LifeOpp wants to improve the lot of service industry professionals and odd job workers by making the industry more transparent and efficient.
 
@@ -162,7 +162,7 @@ To avoid changing the logo too radically, I decided to keep the wordmark typefac
 ---
 
 ## AngelRound
-<p class="lead">A halo and a ring are linked to represent <a href="http://angelround.co/" target="_blank"><em>AngelRound</em></a> &ndash; a crowfunding platform to connect great ideas to angel investors, without the cruft.</p>
+<p class="lead">A halo and a ring are linked to represent <a href="https://angelround.co/" target="_blank"><em>AngelRound</em></a> &ndash; a crowfunding platform to connect great ideas to angel investors, without the cruft.</p>
 
 A halo on the left to represent angel investors. A ring on the right to represent fundraising rounds entrepreneurs do. Connect them and you get what AngelRound is all about. Nothing more nothing less.
 

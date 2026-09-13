@@ -17,7 +17,9 @@
     "check": "astro check",
     "sync": "astro sync",
     "test": "node --test --experimental-strip-types test/*.test.ts",
-    "test:gestures": "node test/gestures.probe.mjs"
+    "test:gestures": "node test/gestures.probe.mjs",
+    "images:measure": "node scripts/measure-images.mjs",
+    "audit": "node scripts/audit.mjs"
   },
   "dependencies": {
     "astro": "^5.14.1",
@@ -28,6 +30,8 @@
     "@astrojs/rss": "^4.0.12",
     "@astrojs/sitemap": "^3.6.0",
     "@types/matter-js": "^0.20.0",
+    "chrome-launcher": "^1.2.1",
+    "lighthouse": "^13.4.1",
     "typescript": "^5.9.3",
     "unist-util-visit": "^5.0.0"
   }

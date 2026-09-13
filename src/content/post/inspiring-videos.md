@@ -49,11 +49,11 @@ Steve Jobs read a study on the locomotive efficiency of animals per unit of kilo
 
 Simon Sinek's _Golden Circle_ lecture was my main inspiration when designing Foound's pitch for the 2010 Echelon LaunchPad which we won and led to tremendous investor interest. I learned from Simon how inpsiring people meant showing people what you believe in is more important than what you have and how a dream is more powerful than a plan.
 
-<iframe src="http://embed.ted.com/talks/lang/en/simon_sinek_how_great_leaders_inspire_action.html" width="640" height="360" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://embed.ted.com/talks/lang/en/simon_sinek_how_great_leaders_inspire_action.html" width="640" height="360" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 First introduced to me by a friend, Seth Godin's book _Purple Cow_ was a great influence in my work as a product designer. It was him who taught me about creating products and services worth talking about and how to form a tribe for people who share the values I believe in.
 
-<iframe src="http://embed.ted.com/talks/lang/en/seth_godin_on_sliced_bread.html" width="640" height="360" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+<iframe src="https://embed.ted.com/talks/lang/en/seth_godin_on_sliced_bread.html" width="640" height="360" frameborder="0" scrolling="no" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
 ## Special mentions
 
