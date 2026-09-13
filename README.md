@@ -36,8 +36,12 @@ read from the environment and never stored in the repo:
 
 ```sh
 export CLOUDFLARE_ZONE_ID=...     # zone Overview in the Cloudflare dashboard
-export CLOUDFLARE_API_TOKEN=...   # a token scoped to "Cache Purge" only
+export CLOUDFLARE_API_TOKEN=...   # scoped to "Cache Purge" on this zone only
 ```
+
+Create it under **Manage Account → Account API Tokens**, not My Profile → API
+Tokens. An account-owned token is a service principal and keeps working
+regardless of individual user membership; a user token does not.
 
 ## Writing
 

@@ -61,7 +61,12 @@ git push origin gh-pages
 # them in your shell profile:
 #
 #   export CLOUDFLARE_ZONE_ID=...      # Cloudflare dashboard, zone Overview
-#   export CLOUDFLARE_API_TOKEN=...    # a token with the "Cache Purge" permission
+#   export CLOUDFLARE_API_TOKEN=...    # scoped to "Cache Purge" on this zone only
+#
+# Make it an *account-owned* token — Manage Account > Account API Tokens, not
+# My Profile > API Tokens. A user token acts on your behalf and stops working
+# if you ever leave the account; an account-owned one is a service principal
+# and outlives that, which is what a deploy script wants.
 #
 # Without them the deploy still succeeds; the edge just clears on its own TTL.
 if [[ -n "${CLOUDFLARE_ZONE_ID:-}" && -n "${CLOUDFLARE_API_TOKEN:-}" ]]; then
