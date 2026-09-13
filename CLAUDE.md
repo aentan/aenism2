@@ -45,8 +45,7 @@ matter.js runs headless. Every frame, each body's position and angle is written
 onto a real `<a>` via the `translate` and `rotate` properties — so the cards are
 live HTML with real text, real links and real focus order. `scale` is left free
 for CSS so the hover pull can be transitioned underneath the loop. The canvas
-only ever holds the wireframe
-overlay, and only while the eye is open.
+only ever holds the wireframe overlay, and only while the eye is open.
 
 | File | Role |
 | --- | --- |
