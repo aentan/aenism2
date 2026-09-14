@@ -6,8 +6,14 @@
  * third-party script or an oversized stylesheet is enough to drop it, and none
  * of those are visible in a diff.
  *
- *   npm run audit              # build, serve, audit, tear down
+ *   npm run audit              # build, serve locally, audit, tear down
+ *   npm run audit -- --live    # audit https://aenism.com instead
  *   npm run audit -- --view    # also write HTML reports to lighthouse/
+ *
+ * Images are transformed at Cloudflare's edge now, so a local run fetches them
+ * over the real network while serving everything else from localhost. That
+ * hybrid is worth about a point on image-led posts — see ALLOWANCE. `--live`
+ * measures the actual thing and has no such allowance.
  *
  * Runs Lighthouse's default mobile preset (4x CPU throttle, slow 4G) — the
  * harsher of the two, and the one that matches how most people arrive.
@@ -44,6 +50,11 @@ const ROUTES = [
   ["post w/ images", "/miura-fold-map-of-san-francisco/"],
   ["contact", "/contact/"],
 ];
+
+/** Local-only slack, for routes whose images come from the edge. */
+const ALLOWANCE = { "post w/ images": { performance: 99 } };
+
+const LIVE_ORIGIN = "https://aenism.com";
 
 const wait = (ms) => new Promise((r) => setTimeout(r, ms));
 
@@ -85,13 +96,20 @@ function build() {
 
 async function main() {
   const writeReports = process.argv.includes("--view");
+  const live = process.argv.includes("--live");
 
-  console.log("  building…");
-  await build();
+  if (live) {
+    console.log(`  auditing ${LIVE_ORIGIN} (live)`);
+  } else {
+    console.log("  building…");
+    await build();
+  }
 
-  const server = spawn("npx", ["astro", "preview", "--port", String(PREFERRED_PORT)], {
-    stdio: ["ignore", "pipe", "pipe"],
-  });
+  const server = live
+    ? null
+    : spawn("npx", ["astro", "preview", "--port", String(PREFERRED_PORT)], {
+        stdio: ["ignore", "pipe", "pipe"],
+      });
   const chrome = await chromeLauncher.launch({
     chromeFlags: ["--headless", "--disable-gpu", "--no-first-run"],
   });
@@ -100,18 +118,18 @@ async function main() {
   const cleanup = () => {
     if (closed) return;
     closed = true;
-    server.kill("SIGKILL");
+    server?.kill("SIGKILL");
     chrome.kill();
   };
   process.on("exit", cleanup);
   process.on("SIGINT", () => { cleanup(); process.exit(130); });
 
   try {
-    const base = await serverUrl(server);
+    const base = live ? LIVE_ORIGIN : await serverUrl(server);
     await wait(300);
 
     const rows = [];
-    for (const [name, path, overrides] of ROUTES) {
+    for (const [name, path] of ROUTES) {
       process.stdout.write(`  auditing ${path} …\r`);
       const result = await lighthouse(base + path, {
         port: chrome.port,
@@ -121,7 +139,7 @@ async function main() {
       const { categories, audits } = result.lhr;
       rows.push({
         name,
-        target: { ...TARGET, ...(overrides ?? {}) },
+        target: { ...TARGET, ...(live ? {} : ALLOWANCE[name] ?? {}) },
         scores: Object.fromEntries(
           Object.entries(categories).map(([k, c]) => [
             k, c.score == null ? null : Math.round(c.score * 100),

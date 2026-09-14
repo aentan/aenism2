@@ -1,14 +1,20 @@
 /*
  * Fonts, reset and typography.
  *
+ * Assets live under /_static/ rather than /fonts/ and /img/ so that the
+ * Cloudflare cache rule for "/_" covers them — it gives anything under that
+ * prefix a year, and these change about as often as the hashed build output
+ * does. Left at the old paths they inherited the five-minute page rule, which
+ * Lighthouse costs at ~61 KiB of needless revalidation per repeat visit.
+ *
  * Replaces normalize.css (427 lines), scut (1,534) and include-media (569)
  * with what this site actually used out of them.
  */
 
 @font-face {
   font-family: "avenue-mono";
-  src: url("/fonts/avenue-mono-regular-webfont.woff2") format("woff2"),
-       url("/fonts/avenue-mono-regular-webfont.woff") format("woff");
+  src: url("/_static/fonts/avenue-mono-regular-webfont.woff2") format("woff2"),
+       url("/_static/fonts/avenue-mono-regular-webfont.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -16,8 +22,8 @@
 
 @font-face {
   font-family: "ArgentPixelCF";
-  src: url("/fonts/ArgentPixelCF-Italic.woff2") format("woff2"),
-       url("/fonts/ArgentPixelCF-Italic.woff") format("woff");
+  src: url("/_static/fonts/ArgentPixelCF-Italic.woff2") format("woff2"),
+       url("/_static/fonts/ArgentPixelCF-Italic.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -25,8 +31,8 @@
 
 @font-face {
   font-family: "Kawingan";
-  src: url("/fonts/KawinganDEMO-Bold.woff2") format("woff2"),
-       url("/fonts/KawinganDEMO-Bold.woff") format("woff");
+  src: url("/_static/fonts/KawinganDEMO-Bold.woff2") format("woff2"),
+       url("/_static/fonts/KawinganDEMO-Bold.woff") format("woff");
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -34,8 +40,8 @@
 
 @font-face {
   font-family: "VarentGrotesk";
-  src: url("/fonts/VarentGrotesk-Bold.woff2") format("woff2"),
-       url("/fonts/VarentGrotesk-Bold.woff") format("woff");
+  src: url("/_static/fonts/VarentGrotesk-Bold.woff2") format("woff2"),
+       url("/_static/fonts/VarentGrotesk-Bold.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
@@ -43,8 +49,8 @@
 
 @font-face {
   font-family: "OffBit";
-  src: url("/fonts/OffBitTrial-DotBold.woff2") format("woff2"),
-       url("/fonts/OffBitTrial-DotBold.woff") format("woff");
+  src: url("/_static/fonts/OffBitTrial-DotBold.woff2") format("woff2"),
+       url("/_static/fonts/OffBitTrial-DotBold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -165,8 +171,8 @@ hr::before {
   width: 24px;
   height: 24px;
   background-color: var(--ink);
-  -webkit-mask: url("/img/eye.svg") no-repeat -96px 0 / 120px 24px;
-  mask: url("/img/eye.svg") no-repeat -96px 0 / 120px 24px;
+  -webkit-mask: url("/_static/img/eye.svg") no-repeat -96px 0 / 120px 24px;
+  mask: url("/_static/img/eye.svg") no-repeat -96px 0 / 120px 24px;
 }
 
 .eye.is-opening > i {

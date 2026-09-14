@@ -24,7 +24,7 @@ body.home {
   margin: 32px;
   width: 200px;
   height: 64px;
-  background: url("/img/logo.svg") center / contain no-repeat;
+  background: url("/_static/img/logo.svg") center / contain no-repeat;
   text-indent: -999em;
   overflow: hidden;
   text-transform: uppercase;
