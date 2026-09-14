@@ -74,9 +74,22 @@ The three Hugo shortcodes still work — `{{%figure%}}`, `{{%embed%}}` and
 `{{%youtube%}}` — translated at build time by `src/plugins/remark-shortcodes.mjs`
 so the fifteen existing articles did not have to be rewritten.
 
-Posts point at images on S3. After adding one with images, run
-`npm run images:measure` so they ship with explicit dimensions and the article
-does not reflow as they arrive.
+### Images
+
+```sh
+npm run image -- ~/Desktop/shot.png --title="What it shows"
+```
+
+Uploads to S3, records the intrinsic size, and prints the `{{%figure%}}` line
+to paste. Nothing is resized here — Cloudflare transforms from the original at
+the edge, so one upload serves every screen.
+
+Needs `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` in `~/.zshenv` (not
+`.zshrc` — zsh does not read that for non-interactive shells, so tooling cannot
+see it).
+
+`npm run images:measure` still exists for images added by hand or edited
+elsewhere; `npm run image` does it for you.
 
 ## The field
 

@@ -12,7 +12,8 @@ npm run check                # astro check — types across .astro and .ts
 npm test                     # the interaction contract — physics, no DOM
 npm run test:gestures        # tap/drag/click/hover in a real Chrome (needs preview running)
 npm run audit                # Lighthouse across every template; fails under 100
-npm run images:measure       # record intrinsic sizes of remote images
+npm run image -- <file…>     # upload to S3, record size, print the shortcode
+npm run images:measure       # re-record sizes for images added by hand
 npm run post -- "Title"      # scaffold a post (starts as a draft)
 ./_scripts/deploy.sh         # verify, build, push dist/ to gh-pages
 ```
@@ -150,19 +151,24 @@ Four pieces hold it there:
   threshold, so without the override it ships as the site's only
   render-blocking request.
 - **Remote images carry explicit dimensions.** Posts point at images on S3, so
-  the build cannot know their size. `npm run images:measure` fetches each
-  header once and records width/height in `src/data/image-sizes.json`, which is
-  committed so builds stay offline. **Run it after adding a post with images**,
-  or they ship unsized and the article reflows as they load.
+  the build cannot know their size. Sizes live in `src/data/image-sizes.json`,
+  committed so builds stay offline. `npm run image` records them on upload;
+  `npm run images:measure` back-fills anything added by hand. Without an entry
+  an image ships unsized and the article reflows as it loads.
 
-- **Remote images are optimised at build time.**
-  `src/integrations/optimize-remote-images.mjs` runs on `astro:build:done`: it
-  downloads each remote image once (cached in `.cache/`, gitignored), emits
-  right-sized WebP rungs into `dist/_img/`, rewrites the tag with a `srcset`,
-  and preloads the first image on each page as the likely LCP element. Posts
-  are written exactly as before; the originals stay on S3 and none of the
-  derivatives enter the repo. One post went from 2.8 MB and a 16.8s LCP to
-  2.0s.
+- **Remote images are transformed at Cloudflare's edge.**
+  `src/integrations/cdn-images.mjs` rewrites every remote `<img>` to
+  `/cdn-cgi/image/…` with a `srcset`, and preloads the first on each page as
+  the likely LCP element. A 711 KB 4800px JPEG comes back as 16 KB of AVIF at
+  1024px. Nothing image-shaped enters the repo or the deploy.
+
+  This is a hard dependency: if transformations are disabled, or a host falls
+  off the source-origin allowlist, every image 404s and the build cannot tell.
+  `_scripts/deploy.sh` fetches one transformed URL **per source origin** as a
+  preflight and refuses to ship on anything but a 200. The site pulls from four
+  origins — `s3.amazonaws.com`, `i.ytimg.com`, `farm4.staticflickr.com`,
+  `upload.wikimedia.org` — and the allowlist is per-origin, so all four must be
+  listed.
 - **Embeds are facades.** `remark-embed-facades.mjs` replaces every YouTube,
   Vimeo and TED iframe with a button; `src/scripts/embeds.ts` swaps in the real
   player on click. An eager YouTube embed pulls ~473 KB of player JS, a Google
