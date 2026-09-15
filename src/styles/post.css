@@ -153,10 +153,18 @@ body.single figure {
   }
 }
 
-body.single figure img {
+/*
+ * Figures get the same hairline the cards and buttons have — screenshots of
+ * pale UI otherwise bleed into the page with no edge at all.
+ *
+ * `.embed-poster` is excluded: it already sits inside the facade's border, and
+ * a second one inside the first reads as a mistake.
+ */
+body.single figure img:not(.embed-poster) {
   width: 100%;
   height: auto;
   display: block;
+  border: var(--border-width) solid var(--line);
 }
 
 body.single figcaption {
