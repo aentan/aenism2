@@ -172,28 +172,59 @@ body.home:has(.field.is-live) {
   0% {
     box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
   }
-  10% {
+  8% {
+    box-shadow:
+      calc(var(--ca-x) * -7px) calc(var(--ca-y) * -7px) 0 0 var(--ca-warm),
+      calc(var(--ca-x) * 7px) calc(var(--ca-y) * 7px) 0 0 var(--ca-cool);
+  }
+  40% {
     box-shadow:
       calc(var(--ca-x) * -3px) calc(var(--ca-y) * -3px) 0 0 var(--ca-warm),
       calc(var(--ca-x) * 3px) calc(var(--ca-y) * 3px) 0 0 var(--ca-cool);
-  }
-  45% {
-    box-shadow:
-      calc(var(--ca-x) * -1.5px) calc(var(--ca-y) * -1.5px) 0 0 var(--ca-warm),
-      calc(var(--ca-x) * 1.5px) calc(var(--ca-y) * 1.5px) 0 0 var(--ca-cool);
   }
   100% {
     box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
   }
 }
 
+/*
+ * The type splits too. A lens aberrates everything in the frame, not just the
+ * outline — fringing only the border reads as a coloured shadow, which is the
+ * thing this was trying to stop looking like.
+ */
+@keyframes card-hit-text {
+  0% {
+    text-shadow: none;
+  }
+  8% {
+    text-shadow:
+      calc(var(--ca-x) * -4px) calc(var(--ca-y) * -4px) 0 var(--ca-warm),
+      calc(var(--ca-x) * 4px) calc(var(--ca-y) * 4px) 0 var(--ca-cool);
+  }
+  40% {
+    text-shadow:
+      calc(var(--ca-x) * -2px) calc(var(--ca-y) * -2px) 0 var(--ca-warm),
+      calc(var(--ca-x) * 2px) calc(var(--ca-y) * 2px) 0 var(--ca-cool);
+  }
+  100% {
+    text-shadow: none;
+  }
+}
+
 /* Decays like a lens settling, not like a stepped glitch. */
 .card.is-hit {
-  animation: card-hit 240ms cubic-bezier(0.1, 0.8, 0.3, 1) 1;
+  animation: card-hit 320ms cubic-bezier(0.1, 0.75, 0.3, 1) 1;
+}
+
+.card.is-hit h2,
+.card.is-hit .topic {
+  animation: card-hit-text 320ms cubic-bezier(0.1, 0.75, 0.3, 1) 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .card.is-hit {
+  .card.is-hit,
+  .card.is-hit h2,
+  .card.is-hit .topic {
     animation: none;
   }
 }
