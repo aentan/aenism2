@@ -17,17 +17,23 @@ I don't object to paying for software. I object to renting something I can descr
 
 NestJS, Prisma, Postgres, React, one container on Fly.io. Visitors land on a public page, pick a slot, and the event appears in my Google Calendar with a Meet link and a confirmation email.
 
+{{%figure src="https://media.aenism.com/scheduler-booking.png" title="The public booking page. Only dates with real availability are selectable — everything else has already been reasoned about."%}}
+
 The interesting part isn't the booking form. It's `getAvailableSlots`, which has to compose a single busy set out of things that disagree with each other: free/busy from _every_ connected Google account, existing bookings padded by each slot type's before and after buffers, recurring breaks, holidays, working hours, and any slot another visitor is mid-way through claiming. Candidates come out on a fixed 30-minute grid — not stepped by duration, which would produce ugly 11:47 offers — clamped to minimum notice and maximum lead time.
 
 All of it is timezone-aware, and this is where the bodies are buried. Working hours, breaks and holidays are evaluated in _my_ timezone; slots are returned as UTC. Get that boundary wrong in one direction and you offer meetings at 3am.
 
 Double-booking is prevented twice. The frontend takes a five-minute lock while the visitor fills the form, and then the commit path re-checks everything anyway — database conflicts, per-day caps, live Google free/busy — before it inserts. The lock is a courtesy. The re-check is the guarantee.
 
+{{%figure src="https://media.aenism.com/scheduler-slots.png" title="Slots are meeting types: duration, which calendar to write to, daily cap, buffers, how much notice I need."%}}
+
 One decision I'd defend anywhere: **if Google Calendar fails, the booking is still saved.** It lands with a null event ID and I get an alert email. The alternative is telling someone their interview didn't happen because an API had a bad minute.
 
 ## CalSync
 
 Next.js, Drizzle, Neon Postgres. Connect several Google accounts, then define directional rules — copy busy blocks from A to B, or tick "mirror both ways".
+
+{{%figure src="https://media.aenism.com/calsync-dashboard.png" title="Two accounts, twenty-five calendars, one rule. Calendar names are redacted — they are mostly colleagues' addresses, which is rather the point."%}}
 
 Mirrors are deliberately dumb. By default they carry no title, no description, no reminders, and are marked private and busy. My work calendar learns that I'm unavailable at 2pm without learning why.
 
