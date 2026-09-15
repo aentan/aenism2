@@ -13,6 +13,14 @@
   --blue: #6977fd;
   --red: #fb6b75;
 
+  /*
+   * Chromatic aberration. Real lateral CA is the channel split: shift red one
+   * way and what is left on the other side is cyan, because cyan is white
+   * minus red. Two arbitrary tints read as coloured shadows instead.
+   */
+  --ca-warm: #ff2d1f;
+  --ca-cool: #00d8e8;
+
   --gray-light: rgba(0, 0, 0, 0.12);
   --gray: rgba(0, 0, 0, 0.24);
   --gray-dark: rgba(0, 0, 0, 0.48);

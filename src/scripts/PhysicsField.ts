@@ -245,6 +245,21 @@ export class PhysicsField {
         if (now - (this.lastHit.get(el) ?? -Infinity) < cooldownMs) continue;
         this.lastHit.set(el, now);
 
+        // Lateral chromatic aberration is radial: the fringe points away from
+        // the optical centre, and separates further the further out you are.
+        // Hand the card its own vector and let the keyframe follow it.
+        const dx = (body.position.x - this.width / 2) / (this.width / 2);
+        const dy = (body.position.y - this.height / 2) / (this.height / 2);
+        const distance = Math.min(1, Math.hypot(dx, dy));
+        const unit = distance || 0.0001;
+
+        // Separation grows toward the edge of the frame, as it does through a
+        // real lens. Not all the way to zero at the centre though — a card hit
+        // dead-centre should still register, just barely.
+        const magnitude = 0.35 + 0.65 * distance;
+        el.style.setProperty("--ca-x", ((dx / unit) * magnitude).toFixed(3));
+        el.style.setProperty("--ca-y", ((dy / unit) * magnitude).toFixed(3));
+
         // Restart the animation even if one is already mid-flight.
         el.classList.remove("is-hit");
         void el.offsetWidth;

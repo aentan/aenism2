@@ -153,29 +153,43 @@ body.home:has(.field.is-live) {
  * `glitch` keyframe through an SVG feColorMatrix that split the red and blue
  * channels.
  *
- * Same read, without the filter. An SVG filter forces a repaint of the whole
- * card through the filter graph, on a page where something is colliding most
- * frames; two offset box-shadows in the site's own red and blue give the same
- * channel-split impression for a fraction of the cost. The physics side only
- * fires this on a real knock — see FIELD.collision.
+ * Same idea, done as lens aberration rather than as two coloured shadows. Real
+ * lateral CA is radial — the fringe points away from the optical centre, so a
+ * card at the left edge separates horizontally and one near the top separates
+ * vertically. PhysicsField sets `--ca-x`/`--ca-y` per card from where it sits
+ * in the field; the keyframe just follows that vector.
+ *
+ * An SVG filter would repaint the whole card through a filter graph on a page
+ * where something is colliding most frames. Two offset shadows of the card's
+ * own silhouette cost nothing and land in the same place.
  */
+.card {
+  --ca-x: 1;
+  --ca-y: 0;
+}
+
 @keyframes card-hit {
   0% {
     box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
   }
-  18% {
-    box-shadow: -3px 2px 0 0 var(--red), 3px -2px 0 0 var(--blue);
+  10% {
+    box-shadow:
+      calc(var(--ca-x) * -3px) calc(var(--ca-y) * -3px) 0 0 var(--ca-warm),
+      calc(var(--ca-x) * 3px) calc(var(--ca-y) * 3px) 0 0 var(--ca-cool);
   }
-  55% {
-    box-shadow: -1px 1px 0 0 var(--red), 1px -1px 0 0 var(--blue);
+  45% {
+    box-shadow:
+      calc(var(--ca-x) * -1.5px) calc(var(--ca-y) * -1.5px) 0 0 var(--ca-warm),
+      calc(var(--ca-x) * 1.5px) calc(var(--ca-y) * 1.5px) 0 0 var(--ca-cool);
   }
   100% {
     box-shadow: 0 0 0 0 transparent, 0 0 0 0 transparent;
   }
 }
 
+/* Decays like a lens settling, not like a stepped glitch. */
 .card.is-hit {
-  animation: card-hit 260ms steps(4, end) 1;
+  animation: card-hit 240ms cubic-bezier(0.1, 0.8, 0.3, 1) 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
