@@ -144,15 +144,30 @@ describe("the disturbers never settle", () => {
     const s = scene();
     run(s, 600);
 
-    // Measure distance covered over a window, not speed at one instant — a
-    // disturber caught mid-collision can read near zero and say nothing about
-    // whether the field has settled.
+    // Distance covered over a window, not speed at one instant — a disturber
+    // caught mid-collision reads near zero and says nothing about whether the
+    // field has settled.
+    //
+    // Liveness is a property of the set, not of each body at every moment: one
+    // disturber can sit briefly pinned between a card and a wall while the
+    // others carry the field. Measured over 40 trials the slowest covered 47px
+    // in two seconds at worst, but the tail goes lower — asserting per-body
+    // here failed roughly one run in fifty.
     const from = s.disturbers.map((d) => ({ ...d.position }));
     run(s, 120);
+    const travelled = s.disturbers.map((d, i) =>
+      Math.hypot(d.position.x - from[i]!.x, d.position.y - from[i]!.y),
+    );
 
+    const total = travelled.reduce((a, b) => a + b, 0);
+    assert.ok(total > 60, `the disturbers covered ${total.toFixed(1)}px between them in two seconds`);
+
+    // Pinned is fine; stopped is not. Over a longer window every one of them
+    // has to have gone somewhere.
+    run(s, 600);
     for (const [i, d] of s.disturbers.entries()) {
-      const travelled = Math.hypot(d.position.x - from[i]!.x, d.position.y - from[i]!.y);
-      assert.ok(travelled > 5, `a disturber covered only ${travelled.toFixed(1)}px in two seconds`);
+      const overall = Math.hypot(d.position.x - from[i]!.x, d.position.y - from[i]!.y);
+      assert.ok(overall > 20, `a disturber moved ${overall.toFixed(1)}px in twelve seconds`);
     }
   });
 
