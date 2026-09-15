@@ -4,7 +4,6 @@ description: "This site had stopped building and nobody noticed. Rebuilding it w
 date: 2026-09-15
 topic: tech
 tags: ["astro", "performance", "ai"]
-draft: true
 ---
 
 This site had been broken for over a year and I hadn't noticed. The published version kept serving — static files don't rot — but the thing that _made_ them had quietly stopped working. Gulp couldn't load its own config on a current Node. A missing manifest meant a clean build shipped a homepage with `<script src="/js/">` and no physics at all.
