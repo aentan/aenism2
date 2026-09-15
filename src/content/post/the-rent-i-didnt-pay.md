@@ -5,7 +5,6 @@ date: 2026-09-15
 topic: work
 client: "Self"
 tags: ["side projects", "calendars", "ai", "google api"]
-draft: true
 ---
 
 I needed two things. A booking page, so candidates and [ADPList](https://adplist.org) mentees could take time with me without the email ping-pong. And a way to stop co-workers booking me into slots where I was already busy on another calendar.
