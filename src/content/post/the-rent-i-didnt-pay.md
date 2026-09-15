@@ -2,7 +2,8 @@
 title: "The rent I didn't pay"
 description: "Two small tools I built instead of subscribing — a scheduler and a calendar sync — and what broke along the way."
 date: 2026-09-15
-topic: tech
+topic: work
+client: "Self"
 tags: ["side projects", "calendars", "ai", "google api"]
 draft: true
 ---
@@ -15,7 +16,7 @@ I don't object to paying for software. I object to renting something I can descr
 
 ## Scheduler
 
-NestJS, Prisma, Postgres, React, one container on Fly.io. Visitors land on a public page, pick a slot, and the event appears in my Google Calendar with a Meet link and a confirmation email.
+[`aen-scheduler`](https://github.com/aentan/aen-scheduler) — NestJS, Prisma, Postgres, React, one container on Fly.io. Visitors land on a public page, pick a slot, and the event appears in my Google Calendar with a Meet link and a confirmation email.
 
 {{%figure src="https://media.aenism.com/scheduler-booking.png" title="The public booking page. Only dates with real availability are selectable — everything else has already been reasoned about."%}}
 
@@ -31,7 +32,7 @@ One decision I'd defend anywhere: **if Google Calendar fails, the booking is sti
 
 ## CalSync
 
-Next.js, Drizzle, Neon Postgres. Connect several Google accounts, then define directional rules — copy busy blocks from A to B, or tick "mirror both ways".
+[`aen-calsync`](https://github.com/aentan/aen-calsync) — Next.js, Drizzle, Neon Postgres. Connect several Google accounts, then define directional rules — copy busy blocks from A to B, or tick "mirror both ways".
 
 {{%figure src="https://media.aenism.com/calsync-dashboard.png" title="Two accounts, twenty-five calendars, one rule. Calendar names are redacted — they are mostly colleagues' addresses, which is rather the point."%}}
 
@@ -63,4 +64,4 @@ The value isn't documentation. It's that an agent will cheerfully reintroduce a 
 
 The other thing worth stealing: the design system moved between projects by being described rather than copied. Two colours, sharp rectangles, one monospace face. CalSync inherited it from Scheduler in an afternoon.
 
-Two apps, both public repos, both on 256 MB machines that sleep when nobody's looking. Neither is free to run — but neither is three hundred dollars a year, and the version I own doesn't get to change its pricing page.
+Two apps, both [open](https://github.com/aentan/aen-scheduler) [source](https://github.com/aentan/aen-calsync), both on 256 MB machines that sleep when nobody's looking. Neither is free to run — but neither is three hundred dollars a year, and the version I own doesn't get to change its pricing page.
