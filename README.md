@@ -80,13 +80,17 @@ so the fifteen existing articles did not have to be rewritten.
 npm run image -- ~/Desktop/shot.png --title="What it shows"
 ```
 
-Uploads to S3, records the intrinsic size, and prints the `{{%figure%}}` line
+Uploads to R2, records the intrinsic size, and prints the `{{%figure%}}` line
 to paste. Nothing is resized here — Cloudflare transforms from the original at
 the edge, so one upload serves every screen.
 
-Needs `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` in `~/.zshenv` (not
+Needs `R2_ACCESS_KEY_ID` and `R2_SECRET_ACCESS_KEY` in `~/.zshenv` (not
 `.zshrc` — zsh does not read that for non-interactive shells, so tooling cannot
-see it).
+see it). Create the token under **R2 → Account Details → Manage API Tokens**,
+scoped to *Object Read & Write* on `aenism-media` only.
+
+Uploads are immutable, so replacing an image at an existing name needs
+`--force`, which also purges the old one from the edge.
 
 `npm run images:measure` still exists for images added by hand or edited
 elsewhere; `npm run image` does it for you.

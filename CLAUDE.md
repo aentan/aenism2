@@ -12,7 +12,7 @@ npm run check                # astro check — types across .astro and .ts
 npm test                     # the interaction contract — physics, no DOM
 npm run test:gestures        # tap/drag/click/hover in a real Chrome (needs preview running)
 npm run audit                # Lighthouse across every template; fails under 100
-npm run image -- <file…>     # upload to S3, record size, print the shortcode
+npm run image -- <file…>     # upload to R2, record size, print the shortcode
 npm run images:measure       # re-record sizes for images added by hand
 npm run post -- "Title"      # scaffold a post (starts as a draft)
 ./_scripts/deploy.sh         # verify, build, push dist/ to gh-pages
@@ -166,9 +166,20 @@ Four pieces hold it there:
   off the source-origin allowlist, every image 404s and the build cannot tell.
   `_scripts/deploy.sh` fetches one transformed URL **per source origin** as a
   preflight and refuses to ship on anything but a 200. The site pulls from four
-  origins — `s3.amazonaws.com`, `i.ytimg.com`, `farm4.staticflickr.com`,
-  `upload.wikimedia.org` — and the allowlist is per-origin, so all four must be
-  listed.
+  origins — `s3.amazonaws.com`, `media.aenism.com`, `i.ytimg.com`,
+  `farm4.staticflickr.com`, `upload.wikimedia.org` — and the allowlist is
+  per-origin, so all five must be listed. Note that `media.aenism.com` is a
+  subdomain of the site's own zone and *still* needs listing: defining an
+  explicit allowlist replaces the default same-zone permission. Cloudflare
+  reports this as `ERROR 9401: Transformation origin is not in allowed origins
+  list`.
+
+New images go to the R2 bucket `aenism-media`, served at `media.aenism.com`.
+The 83 originals from the Hugo era stay on S3 and are not worth moving. R2
+custom domains do not pick up the zone's cache rules, so originals show
+`cf-cache-status: DYNAMIC` — that is fine, since only the transformation
+pipeline ever fetches them and the variants it produces are served from
+`aenism.com`, where the rules do apply.
 - **Embeds are facades.** `remark-embed-facades.mjs` replaces every YouTube,
   Vimeo and TED iframe with a button; `src/scripts/embeds.ts` swaps in the real
   player on click. An eager YouTube embed pulls ~473 KB of player JS, a Google
