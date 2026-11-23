@@ -7,18 +7,18 @@ body.single{height:auto}@media(min-width:1023px){body.single{display:flex}}body.
 <p>The obvious fix is a single shared AI: a team account, a shared project, a long prompt everyone pastes in. We decided against it early. A shared project holds knowledge that slowly drifts away from the work, and the conversations inside it aren’t shared anyway. People also already have their own AI, with their own connectors and habits, and taking that away to buy alignment is a bad trade. So everyone brings their own Claude, and what they share is the brain.</p>
 <p>The brain is a handful of files in Git. Part 2 showed the folder every workspace starts with, and two lines in it are easy to skip: <code>.claude/</code> and <code>CONTEXT.md</code>. They’re that workspace’s brain, and the engine ships them to every workspace. The team has one too, in the repo where we plan and decide:</p>
 <pre class="astro-code github-light" style="background-color:#fff;color:#24292e; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;" tabindex="0" data-language="text"><code><span class="line"><span>design-next-planning/</span></span>
-<span class="line"><span>├─ .claude/</span></span>
-<span class="line"><span>│  ├─ agents/          the agents' prompts</span></span>
-<span class="line"><span>│  ├─ hooks/           what can never happen</span></span>
-<span class="line"><span>│  ├─ rules/           how we write</span></span>
-<span class="line"><span>│  └─ skills/          how we do recurring jobs</span></span>
-<span class="line"><span>├─ decisions/          what we decided, one file each</span></span>
-<span class="line"><span>├─ docs/               how it all works</span></span>
-<span class="line"><span>├─ memory/</span></span>
-<span class="line"><span>│  └─ learnings.md     what we learned, one line each</span></span>
-<span class="line"><span>├─ CLAUDE.md           how we work</span></span>
-<span class="line"><span>├─ CONTEXT.md          where Claude starts reading</span></span>
-<span class="line"><span>└─ open-questions.md   what's still open</span></span></code></pre>
+<span class="line"><span>├─ .claude/           the team's Claude kit</span></span>
+<span class="line"><span>│  ├─ agents/         the agents' prompts</span></span>
+<span class="line"><span>│  ├─ hooks/          what can never happen</span></span>
+<span class="line"><span>│  ├─ rules/          how we write</span></span>
+<span class="line"><span>│  └─ skills/         how we do recurring jobs</span></span>
+<span class="line"><span>├─ decisions/         what we decided, one file each</span></span>
+<span class="line"><span>├─ docs/              how it all works</span></span>
+<span class="line"><span>├─ memory/            the team's memory</span></span>
+<span class="line"><span>│  └─ learnings.md    what we learned, one line each</span></span>
+<span class="line"><span>├─ CLAUDE.md          how we work</span></span>
+<span class="line"><span>├─ CONTEXT.md         where Claude starts reading</span></span>
+<span class="line"><span>└─ open-questions.md  what's still open</span></span></code></pre>
 <p>Whoever’s Claude opens it reads the same files first. It learns how we work, what we’ve decided and what we’ve learned, and it picks up skills for the recurring jobs: proposing a change, recording a decision, triaging feedback from the design board. It won’t reopen a settled decision; it proposes a replacement instead. Because these files live in Git next to the work, they change the way everything else does, by pull request, and once a change merges, every teammate’s Claude picks it up at their next sync. We don’t train people on a convention any more. We merge it.</p>
 <figure><img src="https://aenism.com/cdn-cgi/image/width=4224,format=auto,quality=78/https://media.aenism.com/shared-brain-pixel.png" alt="Before: each person has a private AI that knows only what they told it. Now: one repo of instructions, decisions, lessons and skills, read by everyone&#x27;s own AI. One merge reaches every Claude." decoding="async" width="4224" height="1440" srcset="https://aenism.com/cdn-cgi/image/width=360,format=auto,quality=78/https://media.aenism.com/shared-brain-pixel.png 360w, https://aenism.com/cdn-cgi/image/width=540,format=auto,quality=78/https://media.aenism.com/shared-brain-pixel.png 540w, https://aenism.com/cdn-cgi/image/width=768,format=auto,quality=78/https://media.aenism.com/shared-brain-pixel.png 768w, https://aenism.com/cdn-cgi/image/width=1024,format=auto,quality=78/https://media.aenism.com/shared-brain-pixel.png 1024w, https://aenism.com/cdn-cgi/image/width=1440,format=auto,quality=78/https://media.aenism.com/shared-brain-pixel.png 1440w, https://aenism.com/cdn-cgi/image/width=2112,format=auto,quality=78/https://media.aenism.com/shared-brain-pixel.png 2112w, https://aenism.com/cdn-cgi/image/width=4224,format=auto,quality=78/https://media.aenism.com/shared-brain-pixel.png 4224w" sizes="(min-width: 1023px) 1056px, 100vw" fetchpriority="high"></figure>
 <h2 id="a-lesson-learned-once">A lesson, learned once</h2>
